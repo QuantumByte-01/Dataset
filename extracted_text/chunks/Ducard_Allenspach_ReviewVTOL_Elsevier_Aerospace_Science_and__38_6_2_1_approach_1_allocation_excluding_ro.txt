@@ -1,0 +1,29 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.2.1. Approach 1: allocation excluding rotor-tilt angle
+# START_PAGE: 19
+
+This approach can only be pursued if the rotors provide suﬃ-
+cient thrust to control the vehicle in the VTOL mode. This is the 
+case for a four-rotor vehicle as shown in Fig. 6 or a tri-copter 
+with laterally tiltable-tail propeller as shown in Fig. 26. For these 
+UAVs, the approach reported in [130,135,118] provides an equation 
+similar to (28), allowing actuator command computation through 
+matrix inversion.
+The work in [117] allocates rotor speeds and elevon deﬂections 
+using a model-inversion approach to track the virtual roll-, pitch-
+and yaw-desired moments. A similar approach is found in [107], 
+where model inversion is used to compute actuator commands for 
+all primary control-surfaces. The algorithm employed in [142] dis-
+tributes the torque control actions between differential rotor thrust 
+and control-surface deﬂection, based on an airspeed-dependent 
+gain. The works in [143,145,147,146] use a daisy-chaining ap-
+proach, where energy-cheap actuators, namely aerodynamic con-
+trol surfaces, are prioritized over propeller thrusts. In addition, 
+differential rotor-tilt angle is used to generate a motion around 
+the thrust axis, resulting in an eﬃcient way to produce high-yaw 
+torque without resorting to propeller differential thrusts. To re-
+Fig. 26. Tri-copter with laterally tiltable tail propeller [118].
+Fig. 27. Yaw motion for three-rotor UAV with rigidly mounted tail rotor [116].
+duce complexity, [242,247] simply weight the control-surface com-
+mands with airspeed-dependent gains to account for the changing 
+control authority.

@@ -1,0 +1,157 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 3.2.1. Tailsitter aircraft
+# START_PAGE: 7
+
+Fig. 5 shows two common conﬁgurations for a tailsitter VTOL 
+aircraft. In case a) there are four propellers and no ﬂap, in case 
+b) there are only two propellers but two ﬂaps are added. In both 
+cases, the total propelling force vector F r has a direction which is 
+only along the longitudinal x−body axis xB:
+case a):
+F B
+r =
+⎛
+⎝
+cT
+ω2
+L1 + ω2
+L2 + ω2
+R1 + ω2
+R2
+
+0
+0
+⎞
+⎠
+case b):
+F B
+r =
+⎛
+⎝
+cT
+ω2
+L + ω2
+R
+
+0
+0
+⎞
+⎠
+(6)
+with propeller-thrust coeﬃcient cT and rotor spinning rates ωi. 
+This means that the direction of F B
+r
+is purely imposed by the ve-
+hicle’s orientation.
+The aerodynamic force F B
+a
+on the other hand depends on the 
+air density ρ, the characteristic surface area S and the vehicle ve-
+locity vB. In the absence of wind, it can be approximated as:
+F B
+a = ρ
+2 S
+
+
+
+vB
+
+
+
+
+cL(vB)v⊥B −cD(vB)vB
+
+,
+(7)
+where v⊥B is orthogonal to vB and the airfoil span. Due to the 
+construction of the tailsitter, the AoA and in turn the lift and drag 
+coeﬃcients cL, cD depend only on the body-frame velocity vector 
+vB.
+To change the orientation of the vehicle, an appropriate torque 
+needs to be produced, either through pure differential thrust (case 
+a)) or through the combination of differential thrust and control-
+surface deﬂections (case b)). Hereby, the torque due to propelling 
+actuators takes the form:
+case a):
+B
+r =
+⎛
+⎝
+cQ
+−cQ
+cQ
+−cQ
+cTl
+−cT l
+cTl
+−cT l
++cT l
++cT l
+−cT l
+−cT l
+⎞
+⎠
+⎛
+⎜⎜⎝
+ω2
+L1
+ω2
+L2
+ω2
+R1
+ω2
+R2
+⎞
+⎟⎟⎠
+case b):
+B
+r =
+⎛
+⎝
+cQ
+−cQ
+0
+0
+−cT l
+cTl
+⎞
+⎠
+ω2
+L
+ω2
+R
+
+,
+(8)
+with propeller-torque coeﬃcient cQ and where l is the z- and y-
+axis distance from G to the rotors’ center. Aerodynamic torques 
+originating due to control-surface deﬂections in case b) are ob-
+tained as follows:
+B
+a =
+⎛
+⎝
+cF (ωR)
+−cF (ωL)
+cF (ωR)
+cF (ωL)
+0
+0
+⎞
+⎠
+
+δR
+δL
+
+,
+(9)
+7
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 6. Left: tiltrotor in helicopter mode, propellers tilted by χ = 0 [rad]. Right: ﬁxed-wing mode, propellers tilted by χ = π
+2 [rad] [134].
+where the coeﬃcient cF captures the effectiveness of the control 
+surfaces. Since they are located in the propeller down-wash, the 
+effectiveness strongly depends on the corresponding rotor spinning 
+rate. Although this complicates the actuator allocation, non-zero 
+control authority is achieved even at hover.

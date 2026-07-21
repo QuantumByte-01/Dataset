@@ -1,0 +1,22 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 1. Introduction
+# START_PAGE: 1
+
+About a decade ago, unmanned aerial vehicles (UAV) or ﬂying 
+drones were still mostly curiosities within some laboratories and 
+still at early operational stages in the military and civil domains. 
+In the last few years, there has been an enormous research inter-
+est for these ﬂying vehicles, which have become very accessible 
+to the public domain for a whole lot of commercial and industrial 
+applications. These applications range from mapping, inspection, 
+surveillance, search and rescue, forest-ﬁre detection and monitor-
+ing, to name just a few. Recent advances in electric propulsion sys-
+tems, high-storage batteries and modern control techniques have 
+also opened up new possibilities for autonomous payload trans-
+portation and urban air-taxi mobility [1].
+Aerial platforms can generally be separated into two categories, 
+namely a) vertical take off and landing (VTOL) or rotary-wing 
+(RW), such as helicopters and multirotor platforms, and b) ﬁxed-
+wing (FW) aircraft. Depending on the application, each type has 
+different advantages over the other. While VTOL UAVs do not re-
+* Corresponding author.

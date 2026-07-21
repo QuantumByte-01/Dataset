@@ -1,0 +1,77 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 3.1. Common 6 degree-of-freedom (DoF) translational and rotational
+# START_PAGE: 7
+
+dynamics
+Let an inertial frame be denoted by I = {0; xI, yI, zI} with zI
+pointing downward to be consistent with the common use in aero-
+nautics of the North-East-Down (NED) frames. The body frame is 
+denoted B = {G; xb, yb, zb}, with the vehicle’s center of mass G. 
+The orientation and angular rate of the aircraft body-ﬁxed frame B
+with respect to the inertial frame I can be represented by an at-
+titude quaternion qB
+I =
+
+q0
+q⊤
+v
+⊤∈H where H is the Hamilton 
+space and the body-rotation rates vector ω := ωB
+B/I = [p, q, r]⊤∈
+R3. The corresponding rotation matrix RB
+I is obtained using the 
+Rodrigues’ rotation formula:
+RB
+I = I3 + 2q0qv× + 2(qv×)2
+(1)
+with 3 ×3-identity matrix I 3, and the skew-symmetric matrix (·)×
+associated with the cross product, i.e. u × v = u×v, ∀u, v ∈R3. 
+The position and velocity of the vehicle’s center of mass G with re-
+spect to 0 are described by p ∈R3 and v ∈R3, respectively. Based 
+on standard Newton-Euler equations, the general continuous-time 
+6DoF dynamics of hybrid UAVs then take the following form:
+˙pB
+= vB −ω × pB
+(2)
+˙vB
+= −ω × vB + gRB
+I
+⊤zI + 1
+m
+
+F B
+r + F B
+a
+
+(3)
+˙qB
+I
+= 1
+2
+
+0
+−ω⊤
+ω
+−ω×
+
+qB
+I
+(4)
+IB ˙ω = −ω×IBω + B
+r + B
+a ,
+(5)
+with gravitational acceleration g, mass m and moment of iner-
+tia IB. The total force and torque induced by the propellers/ro-
+tors/thrusters systems is denoted as F B
+r
+and B
+r , respectively. 
+Similarly, F B
+a
+and B
+a
+describe the total aerodynamic forces and 
+torques. As mentioned, the speciﬁcs of these four terms depend 
+on the vehicle type. Simple examples to highlight the fundamental 
+differences are shown in the next section.

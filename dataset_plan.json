@@ -1,0 +1,5958 @@
+[
+  {
+    "id": "REQ-ML-001",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "overall FW-VTOL mission capability (VTOL + cruise + payload delivery)",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-002",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "operational endurance and range envelope",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-003",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "payload carriage capability",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-004",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "autonomous mission execution and waypoint navigation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-005",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "operator command and monitoring capability",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-006",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "environmental operating envelope for the mission",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-007",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "safety-of-flight and contingency-return capability",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-008",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "airworthiness / regulatory compliance posture",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-009",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "transportability and field deployability",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-ML-010",
+    "level": "mission",
+    "parent_id": null,
+    "subsystem_tag": "_integration",
+    "topic_hint": "data/imagery return-to-operator capability",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-001",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "_integration",
+    "topic_hint": "cross-subsystem mode transition (vertical <-> forward flight) coordination",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": [
+      "REQ-ML-003"
+    ]
+  },
+  {
+    "id": "REQ-SYS-002",
+    "level": "system",
+    "parent_id": "REQ-ML-002",
+    "subsystem_tag": "_integration",
+    "topic_hint": "system-level health monitoring and fault reporting",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-003",
+    "level": "system",
+    "parent_id": "REQ-ML-003",
+    "subsystem_tag": "_integration",
+    "topic_hint": "system-level interface control between airframe, propulsion and FCS",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-004",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "_integration",
+    "topic_hint": "system-level mass/power budget allocation across subsystems",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-005",
+    "level": "system",
+    "parent_id": "REQ-ML-005",
+    "subsystem_tag": "_integration",
+    "topic_hint": "system-level compliance with a named airworthiness standard",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-006",
+    "level": "system",
+    "parent_id": "REQ-ML-002",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "wing/tail structural load capability",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-007",
+    "level": "system",
+    "parent_id": "REQ-ML-002",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "mass budget compliance",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-008",
+    "level": "system",
+    "parent_id": "REQ-ML-005",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "aerodynamic performance across flight regimes",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      },
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-009",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "structural interface to propulsion/tilt mounts",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-010",
+    "level": "system",
+    "parent_id": "REQ-ML-003",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "thrust-to-weight capability across the envelope",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-011",
+    "level": "system",
+    "parent_id": "REQ-ML-002",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "rotor redundancy on partial failure",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-012",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion system interface to FCS",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-013",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion thermal/power limits",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-014",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "wing/tail tilt range and rate capability",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-015",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt subsystem interface to FCS",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-016",
+    "level": "system",
+    "parent_id": "REQ-ML-005",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuator fault behavior",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-017",
+    "level": "system",
+    "parent_id": "REQ-ML-007",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt position sensing accuracy",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": [
+      "REQ-SYS-015"
+    ]
+  },
+  {
+    "id": "REQ-SYS-018",
+    "level": "system",
+    "parent_id": "REQ-ML-008",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "energy budget for full mission profile",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-019",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power distribution to subsystems",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-020",
+    "level": "system",
+    "parent_id": "REQ-ML-003",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "battery health monitoring",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-021",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power subsystem interface to propulsion and payload",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-022",
+    "level": "system",
+    "parent_id": "REQ-ML-003",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "6-DoF control across all trim points",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-023",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "gain-scheduled control through transition",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-024",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "control allocation across rotors and surfaces",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": [
+      "REQ-SYS-022"
+    ]
+  },
+  {
+    "id": "REQ-SYS-025",
+    "level": "system",
+    "parent_id": "REQ-ML-007",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "FCS interface to navigation and actuators",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-026",
+    "level": "system",
+    "parent_id": "REQ-ML-006",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "state estimation accuracy across flight regimes",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-027",
+    "level": "system",
+    "parent_id": "REQ-ML-010",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "sensor suite redundancy",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-028",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation interface to FCS",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-029",
+    "level": "system",
+    "parent_id": "REQ-ML-003",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "sensor fault detection",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-030",
+    "level": "system",
+    "parent_id": "REQ-ML-009",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "command and telemetry link availability",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-031",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "link interface to GCS",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-032",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "link security posture",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-033",
+    "level": "system",
+    "parent_id": "REQ-ML-002",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "link loss contingency behavior",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-034",
+    "level": "system",
+    "parent_id": "REQ-ML-003",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload capacity and mounting interface",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-035",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload power/data interface",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "interface",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-036",
+    "level": "system",
+    "parent_id": "REQ-ML-006",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload effect on flight envelope",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-037",
+    "level": "system",
+    "parent_id": "REQ-ML-007",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload data return to GCS",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "structural",
+    "context_refs": [
+      "REQ-SYS-036"
+    ]
+  },
+  {
+    "id": "REQ-SYS-038",
+    "level": "system",
+    "parent_id": "REQ-ML-009",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "GCS mission planning and monitoring capability",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-039",
+    "level": "system",
+    "parent_id": "REQ-ML-004",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "GCS-to-aircraft command interface",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-040",
+    "level": "system",
+    "parent_id": "REQ-ML-008",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "GCS operator alerting",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-041",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "GCS logging of flight data",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-042",
+    "level": "system",
+    "parent_id": "REQ-ML-007",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "system-level safe-state definition",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-043",
+    "level": "system",
+    "parent_id": "REQ-ML-010",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "geofence and RTL capability",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-044",
+    "level": "system",
+    "parent_id": "REQ-ML-001",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "flight termination interface",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SYS-045",
+    "level": "system",
+    "parent_id": "REQ-ML-010",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety monitoring across subsystems",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": [
+      "REQ-SYS-044"
+    ]
+  },
+  {
+    "id": "REQ-SUB-001",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-006",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "primary functional obligation of airframe aerostructures",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-002",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-007",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures performance envelope / quantitative bound",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_maintainability",
+    "axis2_behavior": "structural",
+    "context_refs": [
+      "REQ-SYS-009"
+    ]
+  },
+  {
+    "id": "REQ-SUB-003",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-008",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures interface to an adjacent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_maintainability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-004",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-009",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures behavior in a specific flight mode/state",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_maintainability",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-005",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-006",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures response to a triggering event",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-006",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-007",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures fault/degraded-mode behavior",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_maintainability",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-007",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-008",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures design constraint (mass/volume/standard)",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-008",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-009",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_maintainability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-009",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-006",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures calibration/initialization obligation",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-010",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-007",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "airframe aerostructures redundancy or margin requirement",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_maintainability",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SUB-004"
+    ]
+  },
+  {
+    "id": "REQ-SUB-011",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-010",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "primary functional obligation of propulsion",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-012",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-011",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion performance envelope / quantitative bound",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-013",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-012",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion interface to an adjacent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SYS-010"
+    ]
+  },
+  {
+    "id": "REQ-SUB-014",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-013",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion behavior in a specific flight mode/state",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-015",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-010",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion response to a triggering event",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-016",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-011",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion fault/degraded-mode behavior",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-017",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-012",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion design constraint (mass/volume/standard)",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-018",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-013",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 3,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-019",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-010",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion calibration/initialization obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 5,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-020",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-011",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "propulsion redundancy or margin requirement",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-021",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-014",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "primary functional obligation of tilt actuation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 5,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-022",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-015",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation performance envelope / quantitative bound",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coreferential",
+        "family": "referential"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-023",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-016",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation interface to an adjacent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-024",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-017",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation behavior in a specific flight mode/state",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-025",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-014",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation response to a triggering event",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-026",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-015",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation fault/degraded-mode behavior",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-027",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-016",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation design constraint (mass/volume/standard)",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": [
+      "REQ-SUB-022"
+    ]
+  },
+  {
+    "id": "REQ-SUB-028",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-017",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation monitoring/reporting obligation",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-029",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-014",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation calibration/initialization obligation",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-030",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-015",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "tilt actuation redundancy or margin requirement",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": [
+      "REQ-SUB-024"
+    ]
+  },
+  {
+    "id": "REQ-SUB-031",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-018",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "primary functional obligation of power energy",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-032",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-019",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy performance envelope / quantitative bound",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-033",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-020",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy interface to an adjacent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-034",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-021",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy behavior in a specific flight mode/state",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-035",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-018",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy response to a triggering event",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SUB-031"
+    ]
+  },
+  {
+    "id": "REQ-SUB-036",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-019",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy fault/degraded-mode behavior",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-037",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-020",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy design constraint (mass/volume/standard)",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-038",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-021",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-039",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-018",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy calibration/initialization obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-040",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-019",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "power energy redundancy or margin requirement",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-041",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-022",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "primary functional obligation of flight control system",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-042",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-023",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system performance envelope / quantitative bound",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-043",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-024",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system interface to an adjacent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-044",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-025",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system behavior in a specific flight mode/state",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": [
+      "REQ-SYS-022"
+    ]
+  },
+  {
+    "id": "REQ-SUB-045",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-022",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system response to a triggering event",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-046",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-023",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system fault/degraded-mode behavior",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-047",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-024",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system design constraint (mass/volume/standard)",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-048",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-025",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-049",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-022",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system calibration/initialization obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-050",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-023",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "flight control system redundancy or margin requirement",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-051",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-026",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "primary functional obligation of navigation sensing",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-052",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-027",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing performance envelope / quantitative bound",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "probabilistic",
+    "context_refs": [
+      "REQ-SYS-028"
+    ]
+  },
+  {
+    "id": "REQ-SUB-053",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-028",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing interface to an adjacent subsystem",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-054",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-029",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing behavior in a specific flight mode/state",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-055",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-026",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing response to a triggering event",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-056",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-027",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing fault/degraded-mode behavior",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-057",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-028",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing design constraint (mass/volume/standard)",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-058",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-029",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": [
+      "REQ-SUB-057"
+    ]
+  },
+  {
+    "id": "REQ-SUB-059",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-026",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing calibration/initialization obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-060",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-027",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "navigation sensing redundancy or margin requirement",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-061",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-030",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "primary functional obligation of datalink comms",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 5,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-062",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-031",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms performance envelope / quantitative bound",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-063",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-032",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms interface to an adjacent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SUB-062"
+    ]
+  },
+  {
+    "id": "REQ-SUB-064",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-033",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms behavior in a specific flight mode/state",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-065",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-030",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms response to a triggering event",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-066",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-031",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms fault/degraded-mode behavior",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-067",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-032",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms design constraint (mass/volume/standard)",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SYS-033"
+    ]
+  },
+  {
+    "id": "REQ-SUB-068",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-033",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-069",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-030",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms calibration/initialization obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-070",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-031",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "datalink comms redundancy or margin requirement",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-071",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-034",
+    "subsystem_tag": "payload",
+    "topic_hint": "primary functional obligation of payload",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SYS-037"
+    ]
+  },
+  {
+    "id": "REQ-SUB-072",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-035",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload performance envelope / quantitative bound",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-073",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-036",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload interface to an adjacent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-074",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-037",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload behavior in a specific flight mode/state",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-075",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-034",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload response to a triggering event",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-076",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-035",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload fault/degraded-mode behavior",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-077",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-036",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload design constraint (mass/volume/standard)",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-078",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-037",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-079",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-034",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload calibration/initialization obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-080",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-035",
+    "subsystem_tag": "payload",
+    "topic_hint": "payload redundancy or margin requirement",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-081",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-038",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "primary functional obligation of ground control station",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-082",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-039",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station performance envelope / quantitative bound",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-083",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-040",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station interface to an adjacent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-084",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-041",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station behavior in a specific flight mode/state",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-085",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-038",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station response to a triggering event",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-086",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-039",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station fault/degraded-mode behavior",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-087",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-040",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station design constraint (mass/volume/standard)",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-088",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-041",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station monitoring/reporting obligation",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-089",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-038",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station calibration/initialization obligation",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "state_driven",
+    "context_refs": [
+      "REQ-SUB-084"
+    ]
+  },
+  {
+    "id": "REQ-SUB-090",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-039",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "ground control station redundancy or margin requirement",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-091",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-042",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "primary functional obligation of safety flight termination",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-092",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-043",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination performance envelope / quantitative bound",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-093",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-044",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination interface to an adjacent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-094",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-045",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination behavior in a specific flight mode/state",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-095",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-042",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination response to a triggering event",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-096",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-043",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination fault/degraded-mode behavior",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-097",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-044",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination design constraint (mass/volume/standard)",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-098",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-045",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination monitoring/reporting obligation",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": [
+      "REQ-SYS-044"
+    ]
+  },
+  {
+    "id": "REQ-SUB-099",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-042",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination calibration/initialization obligation",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-SUB-100",
+    "level": "subsystem",
+    "parent_id": "REQ-SYS-043",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "safety flight termination redundancy or margin requirement",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-001",
+    "level": "component",
+    "parent_id": "REQ-SUB-001",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's precise obligation within airframe aerostructures",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-002",
+    "level": "component",
+    "parent_id": "REQ-SUB-002",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's quantitative parameter within airframe aerostructures",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coreferential",
+        "family": "referential"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 5,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-003",
+    "level": "component",
+    "parent_id": "REQ-SUB-003",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-004",
+    "level": "component",
+    "parent_id": "REQ-SUB-004",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's event-triggered response within airframe aerostructures",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-005",
+    "level": "component",
+    "parent_id": "REQ-SUB-005",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's fault-condition response within airframe aerostructures",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-006",
+    "level": "component",
+    "parent_id": "REQ-SUB-006",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's state/mode-dependent behavior within airframe aerostructures",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-007",
+    "level": "component",
+    "parent_id": "REQ-SUB-007",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's design constraint within airframe aerostructures",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-008",
+    "level": "component",
+    "parent_id": "REQ-SUB-008",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's calibration/init obligation within airframe aerostructures",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-009",
+    "level": "component",
+    "parent_id": "REQ-SUB-009",
+    "subsystem_tag": "airframe_aerostructures",
+    "topic_hint": "a named component's monitoring/telemetry obligation within airframe aerostructures",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_maintainability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-010",
+    "level": "component",
+    "parent_id": "REQ-SUB-011",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's precise obligation within propulsion",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "state_driven",
+    "context_refs": [
+      "REQ-SYS-012"
+    ]
+  },
+  {
+    "id": "REQ-CMP-011",
+    "level": "component",
+    "parent_id": "REQ-SUB-012",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's quantitative parameter within propulsion",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SUB-011"
+    ]
+  },
+  {
+    "id": "REQ-CMP-012",
+    "level": "component",
+    "parent_id": "REQ-SUB-013",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 5,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": [
+      "REQ-SUB-011"
+    ]
+  },
+  {
+    "id": "REQ-CMP-013",
+    "level": "component",
+    "parent_id": "REQ-SUB-014",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's event-triggered response within propulsion",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-SUB-016"
+    ]
+  },
+  {
+    "id": "REQ-CMP-014",
+    "level": "component",
+    "parent_id": "REQ-SUB-015",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's fault-condition response within propulsion",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-CMP-012"
+    ]
+  },
+  {
+    "id": "REQ-CMP-015",
+    "level": "component",
+    "parent_id": "REQ-SUB-016",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's state/mode-dependent behavior within propulsion",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-016",
+    "level": "component",
+    "parent_id": "REQ-SUB-017",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's design constraint within propulsion",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-017",
+    "level": "component",
+    "parent_id": "REQ-SUB-018",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's calibration/init obligation within propulsion",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-018",
+    "level": "component",
+    "parent_id": "REQ-SUB-019",
+    "subsystem_tag": "propulsion",
+    "topic_hint": "a named component's monitoring/telemetry obligation within propulsion",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-019",
+    "level": "component",
+    "parent_id": "REQ-SUB-021",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's precise obligation within tilt actuation",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": [
+      "REQ-SYS-016"
+    ]
+  },
+  {
+    "id": "REQ-CMP-020",
+    "level": "component",
+    "parent_id": "REQ-SUB-022",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's quantitative parameter within tilt actuation",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-021",
+    "level": "component",
+    "parent_id": "REQ-SUB-023",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-022",
+    "level": "component",
+    "parent_id": "REQ-SUB-024",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's event-triggered response within tilt actuation",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-023",
+    "level": "component",
+    "parent_id": "REQ-SUB-025",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's fault-condition response within tilt actuation",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-024",
+    "level": "component",
+    "parent_id": "REQ-SUB-026",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's state/mode-dependent behavior within tilt actuation",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-025",
+    "level": "component",
+    "parent_id": "REQ-SUB-027",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's design constraint within tilt actuation",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": [
+      "REQ-SYS-016"
+    ]
+  },
+  {
+    "id": "REQ-CMP-026",
+    "level": "component",
+    "parent_id": "REQ-SUB-028",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's calibration/init obligation within tilt actuation",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": [
+      "REQ-SUB-022"
+    ]
+  },
+  {
+    "id": "REQ-CMP-027",
+    "level": "component",
+    "parent_id": "REQ-SUB-029",
+    "subsystem_tag": "tilt_actuation",
+    "topic_hint": "a named component's monitoring/telemetry obligation within tilt actuation",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-028",
+    "level": "component",
+    "parent_id": "REQ-SUB-031",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's precise obligation within power energy",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-029",
+    "level": "component",
+    "parent_id": "REQ-SUB-032",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's quantitative parameter within power energy",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-030",
+    "level": "component",
+    "parent_id": "REQ-SUB-033",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": [
+      "REQ-SUB-034"
+    ]
+  },
+  {
+    "id": "REQ-CMP-031",
+    "level": "component",
+    "parent_id": "REQ-SUB-034",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's event-triggered response within power energy",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-032",
+    "level": "component",
+    "parent_id": "REQ-SUB-035",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's fault-condition response within power energy",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-033",
+    "level": "component",
+    "parent_id": "REQ-SUB-036",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's state/mode-dependent behavior within power energy",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-034",
+    "level": "component",
+    "parent_id": "REQ-SUB-037",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's design constraint within power energy",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-035",
+    "level": "component",
+    "parent_id": "REQ-SUB-038",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's calibration/init obligation within power energy",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "probabilistic",
+    "context_refs": [
+      "REQ-SUB-035"
+    ]
+  },
+  {
+    "id": "REQ-CMP-036",
+    "level": "component",
+    "parent_id": "REQ-SUB-039",
+    "subsystem_tag": "power_energy",
+    "topic_hint": "a named component's monitoring/telemetry obligation within power energy",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 4,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-037",
+    "level": "component",
+    "parent_id": "REQ-SUB-041",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's precise obligation within flight control system",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-038",
+    "level": "component",
+    "parent_id": "REQ-SUB-042",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's quantitative parameter within flight control system",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-039",
+    "level": "component",
+    "parent_id": "REQ-SUB-043",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-040",
+    "level": "component",
+    "parent_id": "REQ-SUB-044",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's event-triggered response within flight control system",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "functional",
+    "axis2_behavior": "hybrid_continuous",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-041",
+    "level": "component",
+    "parent_id": "REQ-SUB-045",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's fault-condition response within flight control system",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-042",
+    "level": "component",
+    "parent_id": "REQ-SUB-046",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's state/mode-dependent behavior within flight control system",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-043",
+    "level": "component",
+    "parent_id": "REQ-SUB-047",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's design constraint within flight control system",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-044",
+    "level": "component",
+    "parent_id": "REQ-SUB-048",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's calibration/init obligation within flight control system",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-045",
+    "level": "component",
+    "parent_id": "REQ-SUB-049",
+    "subsystem_tag": "flight_control_system",
+    "topic_hint": "a named component's monitoring/telemetry obligation within flight control system",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "elliptical",
+        "family": "referential"
+      },
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-046",
+    "level": "component",
+    "parent_id": "REQ-SUB-051",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's precise obligation within navigation sensing",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-047",
+    "level": "component",
+    "parent_id": "REQ-SUB-052",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's quantitative parameter within navigation sensing",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-048",
+    "level": "component",
+    "parent_id": "REQ-SUB-053",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coreferential",
+        "family": "referential"
+      },
+      {
+        "type": "elliptical",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "interface",
+    "axis2_behavior": "probabilistic",
+    "context_refs": [
+      "REQ-SUB-054"
+    ]
+  },
+  {
+    "id": "REQ-CMP-049",
+    "level": "component",
+    "parent_id": "REQ-SUB-054",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's event-triggered response within navigation sensing",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-050",
+    "level": "component",
+    "parent_id": "REQ-SUB-055",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's fault-condition response within navigation sensing",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-051",
+    "level": "component",
+    "parent_id": "REQ-SUB-056",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's state/mode-dependent behavior within navigation sensing",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-052",
+    "level": "component",
+    "parent_id": "REQ-SUB-057",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's design constraint within navigation sensing",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": [
+      "REQ-SUB-056"
+    ]
+  },
+  {
+    "id": "REQ-CMP-053",
+    "level": "component",
+    "parent_id": "REQ-SUB-058",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's calibration/init obligation within navigation sensing",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-054",
+    "level": "component",
+    "parent_id": "REQ-SUB-059",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's monitoring/telemetry obligation within navigation sensing",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-055",
+    "level": "component",
+    "parent_id": "REQ-SUB-060",
+    "subsystem_tag": "navigation_sensing",
+    "topic_hint": "a named component's margin/tolerance requirement within navigation sensing",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "quantitative",
+    "context_refs": [
+      "REQ-CMP-048"
+    ]
+  },
+  {
+    "id": "REQ-CMP-056",
+    "level": "component",
+    "parent_id": "REQ-SUB-061",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's precise obligation within datalink comms",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-057",
+    "level": "component",
+    "parent_id": "REQ-SUB-062",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's quantitative parameter within datalink comms",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-058",
+    "level": "component",
+    "parent_id": "REQ-SUB-063",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "coordination",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-059",
+    "level": "component",
+    "parent_id": "REQ-SUB-064",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's event-triggered response within datalink comms",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-060",
+    "level": "component",
+    "parent_id": "REQ-SUB-065",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's fault-condition response within datalink comms",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-061",
+    "level": "component",
+    "parent_id": "REQ-SUB-066",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's state/mode-dependent behavior within datalink comms",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 5,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-062",
+    "level": "component",
+    "parent_id": "REQ-SUB-067",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's design constraint within datalink comms",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-063",
+    "level": "component",
+    "parent_id": "REQ-SUB-068",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's calibration/init obligation within datalink comms",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": [
+      "REQ-SYS-032"
+    ]
+  },
+  {
+    "id": "REQ-CMP-064",
+    "level": "component",
+    "parent_id": "REQ-SUB-069",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's monitoring/telemetry obligation within datalink comms",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-065",
+    "level": "component",
+    "parent_id": "REQ-SUB-070",
+    "subsystem_tag": "datalink_comms",
+    "topic_hint": "a named component's margin/tolerance requirement within datalink comms",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_security",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-066",
+    "level": "component",
+    "parent_id": "REQ-SUB-071",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's precise obligation within payload",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-067",
+    "level": "component",
+    "parent_id": "REQ-SUB-072",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's quantitative parameter within payload",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 5,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-068",
+    "level": "component",
+    "parent_id": "REQ-SUB-073",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-069",
+    "level": "component",
+    "parent_id": "REQ-SUB-074",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's event-triggered response within payload",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "threshold_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 4,
+    "axis1_nature": "interface",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-070",
+    "level": "component",
+    "parent_id": "REQ-SUB-075",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's fault-condition response within payload",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 2,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-071",
+    "level": "component",
+    "parent_id": "REQ-SUB-076",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's state/mode-dependent behavior within payload",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-072",
+    "level": "component",
+    "parent_id": "REQ-SUB-077",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's design constraint within payload",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-073",
+    "level": "component",
+    "parent_id": "REQ-SUB-078",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's calibration/init obligation within payload",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "structural",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-074",
+    "level": "component",
+    "parent_id": "REQ-SUB-079",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's monitoring/telemetry obligation within payload",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "quantitative",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-075",
+    "level": "component",
+    "parent_id": "REQ-SUB-080",
+    "subsystem_tag": "payload",
+    "topic_hint": "a named component's margin/tolerance requirement within payload",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "constraint",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-076",
+    "level": "component",
+    "parent_id": "REQ-SUB-081",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's precise obligation within ground control station",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "polysemy",
+        "family": "lexical"
+      },
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-077",
+    "level": "component",
+    "parent_id": "REQ-SUB-082",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's quantitative parameter within ground control station",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_quantification",
+        "family": "scopal"
+      },
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "functional",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": [
+      "REQ-SUB-083"
+    ]
+  },
+  {
+    "id": "REQ-CMP-078",
+    "level": "component",
+    "parent_id": "REQ-SUB-083",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-079",
+    "level": "component",
+    "parent_id": "REQ-SUB-084",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's event-triggered response within ground control station",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 2,
+    "num_obligations": 1,
+    "axis1_nature": "functional",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-080",
+    "level": "component",
+    "parent_id": "REQ-SUB-085",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's fault-condition response within ground control station",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-081",
+    "level": "component",
+    "parent_id": "REQ-SUB-086",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's state/mode-dependent behavior within ground control station",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "subject_vagueness",
+        "family": "vagueness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "domain_semantics_heavy",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-082",
+    "level": "component",
+    "parent_id": "REQ-SUB-087",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's design constraint within ground control station",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "sequence_syntactic",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-083",
+    "level": "component",
+    "parent_id": "REQ-SUB-088",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's calibration/init obligation within ground control station",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "functional",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-084",
+    "level": "component",
+    "parent_id": "REQ-SUB-089",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's monitoring/telemetry obligation within ground control station",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "interface",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-085",
+    "level": "component",
+    "parent_id": "REQ-SUB-090",
+    "subsystem_tag": "ground_control_station",
+    "topic_hint": "a named component's margin/tolerance requirement within ground control station",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_usability",
+    "axis2_behavior": "event_driven",
+    "context_refs": [
+      "REQ-SUB-085"
+    ]
+  },
+  {
+    "id": "REQ-CMP-086",
+    "level": "component",
+    "parent_id": "REQ-SUB-091",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's precise obligation within safety flight termination",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "type_ambiguity",
+        "family": "pragmatic"
+      },
+      {
+        "type": "coreferential",
+        "family": "referential"
+      },
+      {
+        "type": "idiomatic",
+        "family": "pragmatic"
+      },
+      {
+        "type": "optionality_vague_modals",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 4,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-087",
+    "level": "component",
+    "parent_id": "REQ-SUB-092",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's quantitative parameter within safety flight termination",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "coreferential",
+        "family": "referential"
+      },
+      {
+        "type": "underspecification_common_noun",
+        "family": "referential"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-088",
+    "level": "component",
+    "parent_id": "REQ-SUB-093",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's interface to its parent subsystem",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "probabilistic",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-089",
+    "level": "component",
+    "parent_id": "REQ-SUB-094",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's event-triggered response within safety flight termination",
+    "bucket": "amb3plus",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "underspecification",
+        "family": "incompleteness"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      },
+      {
+        "type": "temporal_vagueness",
+        "family": "vagueness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-090",
+    "level": "component",
+    "parent_id": "REQ-SUB-095",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's fault-condition response within safety flight termination",
+    "bucket": "amb12",
+    "ambiguity_class": "vague",
+    "ambiguity_sites": [
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 3,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-091",
+    "level": "component",
+    "parent_id": "REQ-SUB-096",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's state/mode-dependent behavior within safety flight termination",
+    "bucket": "amb12",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "pp_attachment",
+        "family": "syntactic_structural"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-092",
+    "level": "component",
+    "parent_id": "REQ-SUB-097",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's design constraint within safety flight termination",
+    "bucket": "precise",
+    "ambiguity_class": "precise",
+    "ambiguity_sites": [],
+    "num_sites": 0,
+    "num_obligations": 1,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-093",
+    "level": "component",
+    "parent_id": "REQ-SUB-098",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's calibration/init obligation within safety flight termination",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_negation",
+        "family": "scopal"
+      },
+      {
+        "type": "subjectivity",
+        "family": "vagueness"
+      },
+      {
+        "type": "metonymy",
+        "family": "referential"
+      },
+      {
+        "type": "comparative_superlative",
+        "family": "vagueness"
+      },
+      {
+        "type": "missing_units",
+        "family": "incompleteness"
+      }
+    ],
+    "num_sites": 5,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-094",
+    "level": "component",
+    "parent_id": "REQ-SUB-099",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's monitoring/telemetry obligation within safety flight termination",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "presuppositional",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 1,
+    "num_obligations": 2,
+    "axis1_nature": "non_functional_reliability_availability",
+    "axis2_behavior": "event_driven",
+    "context_refs": []
+  },
+  {
+    "id": "REQ-CMP-095",
+    "level": "component",
+    "parent_id": "REQ-SUB-100",
+    "subsystem_tag": "safety_flight_termination",
+    "topic_hint": "a named component's margin/tolerance requirement within safety flight termination",
+    "bucket": "amb3plus",
+    "ambiguity_class": "ambiguous",
+    "ambiguity_sites": [
+      {
+        "type": "scope_numbers",
+        "family": "scopal"
+      },
+      {
+        "type": "homonymy",
+        "family": "lexical"
+      },
+      {
+        "type": "generic_nongeneric",
+        "family": "pragmatic"
+      }
+    ],
+    "num_sites": 3,
+    "num_obligations": 4,
+    "axis1_nature": "non_functional_safety",
+    "axis2_behavior": "state_driven",
+    "context_refs": []
+  }
+]

@@ -1,0 +1,600 @@
+{
+  "batch_name": "01_airframe_aerostructures",
+  "subsystem_tag": "airframe_aerostructures",
+  "grounding_chunk_files": [
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__05_2_aerodynamic_design_and_optimization.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__01_abstract.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__03_2_platform_designs.txt"
+  ],
+  "shared_config_files": {
+    "schema_and_contract": "C:\\Users\\Swastik R\\Downloads\\dataset\\dataset_schema.md",
+    "ambiguity_taxonomy": "C:\\Users\\Swastik R\\Downloads\\dataset\\ambiguity_taxonomy.yaml",
+    "requirement_categories": "C:\\Users\\Swastik R\\Downloads\\dataset\\requirement_categories.yaml",
+    "grounding_facts": "C:\\Users\\Swastik R\\Downloads\\dataset\\grounding_facts.md"
+  },
+  "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_01_airframe_aerostructures.jsonl",
+  "records_to_generate": [
+    {
+      "id": "REQ-SYS-006",
+      "level": "system",
+      "parent_id": "REQ-ML-002",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "wing/tail structural load capability",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 3,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-007",
+      "level": "system",
+      "parent_id": "REQ-ML-002",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "mass budget compliance",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 3,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-008",
+      "level": "system",
+      "parent_id": "REQ-ML-005",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "aerodynamic performance across flight regimes",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "coreferential",
+          "family": "referential"
+        },
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 4,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-009",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "structural interface to propulsion/tilt mounts",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-001",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-006",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "primary functional obligation of airframe aerostructures",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-002",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-007",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures performance envelope / quantitative bound",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_maintainability",
+      "axis2_behavior": "structural",
+      "context_refs": [
+        "REQ-SYS-009"
+      ]
+    },
+    {
+      "id": "REQ-SUB-003",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-008",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures interface to an adjacent subsystem",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_maintainability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-004",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-009",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures behavior in a specific flight mode/state",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_maintainability",
+      "axis2_behavior": "structural",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-005",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-006",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures response to a triggering event",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-006",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-007",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures fault/degraded-mode behavior",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "coreferential",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_maintainability",
+      "axis2_behavior": "structural",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-007",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-008",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures design constraint (mass/volume/standard)",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-008",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-009",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures monitoring/reporting obligation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_maintainability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-009",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-006",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures calibration/initialization obligation",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-010",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-007",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "airframe aerostructures redundancy or margin requirement",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        },
+        {
+          "type": "coreferential",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_maintainability",
+      "axis2_behavior": "quantitative",
+      "context_refs": [
+        "REQ-SUB-004"
+      ]
+    },
+    {
+      "id": "REQ-CMP-001",
+      "level": "component",
+      "parent_id": "REQ-SUB-001",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's precise obligation within airframe aerostructures",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 2,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "structural",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-002",
+      "level": "component",
+      "parent_id": "REQ-SUB-002",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's quantitative parameter within airframe aerostructures",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coreferential",
+          "family": "referential"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 5,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-003",
+      "level": "component",
+      "parent_id": "REQ-SUB-003",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's interface to its parent subsystem",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-004",
+      "level": "component",
+      "parent_id": "REQ-SUB-004",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's event-triggered response within airframe aerostructures",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        },
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-005",
+      "level": "component",
+      "parent_id": "REQ-SUB-005",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's fault-condition response within airframe aerostructures",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-006",
+      "level": "component",
+      "parent_id": "REQ-SUB-006",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's state/mode-dependent behavior within airframe aerostructures",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "structural",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-007",
+      "level": "component",
+      "parent_id": "REQ-SUB-007",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's design constraint within airframe aerostructures",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-008",
+      "level": "component",
+      "parent_id": "REQ-SUB-008",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's calibration/init obligation within airframe aerostructures",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-009",
+      "level": "component",
+      "parent_id": "REQ-SUB-009",
+      "subsystem_tag": "airframe_aerostructures",
+      "topic_hint": "a named component's monitoring/telemetry obligation within airframe aerostructures",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_maintainability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    }
+  ]
+}

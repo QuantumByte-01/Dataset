@@ -1,0 +1,2356 @@
+# SOURCE: index
+# SECTION: 2 AERODYNAMIC DESIGN AND OPTIMIZATION
+# START_PAGE: 39
+
+2.1 
+Conceptual design  
+2.1.1 
+Design Requirements  
+The Design Performance Requirements of the system are given in Table 2.1. 
+Table 2.1 Performance Requirements 
+Requirements 
+Value 
+Flight Time (min) 
+60 
+Operational Radius (m) 
+1000 
+Payload (kg) 
+2.5 
+Cruise Speed(m/s) 
+15-25 
+Engine Type 
+Electric Driven 
+Engine Number 
+6 
+Hover 
+Yes 
+VTOL 
+Yes 
+ 
+The aircraft should be capable of performing the mission profile, which is given in 
+Figure 2.1.  
+ 
+Figure 2.1. Mission Profile 
+ 
+ 
+18 
+Mission will start on the ground at VTOL mode. The aircraft will climb 10-meter 
+altitude and start to transition flight. The transition flight speed range will be between 
+0-16 m/s. After the transition phase, aircraft will start to climb. When the desired 
+altitude is achieved, turn maneuvers will be started. After the 360o turn is completed, 
+aircraft will track windfall, base leg and final approach. The aircraft will finish the 
+mission with a transition flight from level flight to vertical flight. 
+2.1.2 
+Planform Selection 
+2.1.2.1 
+Figures of Merit 
+VTOL capable aircraft configurations mentioned in Chapter 1 have been evaluated 
+using the figure of merit (Table 2.2). It is seen from the table that the tilt-wing aircraft 
+had the top score. The most important reason to choose the tilt-wing aircraft is that 
+its aerodynamic performance and payload capacity is the best. After having selected 
+the tilt-wing aircraft, configuration selection is performed using several figures of 
+merit. 
+Table 2.2 Figure of Merit for VTOL FW Aircrafts  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Tilt-rotor 
+Tail-sitter 
+Quadrotor-FW 
+Ducted fun 
+Tilt-wing 
+Aerodynamic 
+5 
+4 
+2 
+2 
+5 
+Durability 
+3 
+5 
+5 
+3 
+5 
+Flight Time  
+4 
+3 
+2 
+2 
+4 
+Weight 
+4 
+5 
+4 
+3 
+4 
+Payload 
+3 
+2 
+2 
+1 
+4 
+Manufacturability 
+3 
+4 
+5 
+2 
+4 
+Stability 
+3 
+2 
+4 
+4 
+3 
+Control System 
+2 
+2 
+4 
+4 
+2 
+Maintainability 
+3 
+4 
+4 
+2 
+3 
+Total Score 
+30 
+31 
+32 
+23 
+34 
+ 
+ 
+ 
+19 
+The first step of the configuration selection is to determine the best aircraft planform 
+type (Table 2.3). Scoring of the Figure of Merits has been performed using the 
+information found in the literature [43]. Conventional aircraft had the top score 
+according to the parameters and weight matrix. In the literature, we can easily see 
+that designers choose conventional type since it has fewer risks than the others. 
+Table 2.3 Figure of Merit for Planform Types 
+ 
+                                     
+ 
+Figure of Merit Weight Conventional 
+Flying 
+Wing 
+Canard Bi-Plane 
+Blended 
+Elliptical 
+Weight 
+30 
+3 
+4 
+3 
+2 
+3 
+3 
+Payload 
+15 
+4 
+2 
+3 
+3 
+2 
+3 
+Aerodynamics 
+20 
+4 
+3 
+3 
+1 
+4 
+5 
+Manufacturing 
+10 
+3 
+2 
+3 
+3 
+3 
+1 
+Control System 
+25 
+3 
+1 
+2 
+4 
+3 
+3 
+Maintainability 
+10 
+3 
+3 
+2 
+3 
+3 
+3 
+TOTAL 
+100 
+365 
+275 
+295 
+285 
+335 
+350 
+ 
+For the tail types selection, Table 2.4 is used. Conventional horizontal tail types will 
+be used in the aircraft design because of their complexity. Like planform type, in the 
+selection of tail type, risky areas tried to be eliminated. 
+Table 2.4 Figure of Merit for Tail Types 
+ 
+                                    
+ 
+Figure of Merit Weight 
+Boom Mounted 
+or Normal 
+T-tail Conventional  U-tail V-tail Cruciform 
+Weight 
+30 
+4 
+3 
+2 
+3 
+3 
+4 
+2 
+S&C 
+30 
+2 
+4 
+3 
+4 
+3 
+4 
+4 
+Aerodynamics 
+30 
+4 
+3 
+4 
+4 
+2 
+3 
+3 
+Manufacturing 
+10 
+3 
+4 
+3 
+4 
+3 
+3 
+3 
+TOTAL 
+100 
+330 
+340 
+330 
+370 
+270 
+360 
+300 
+ 
+ 
+ 
+20 
+Conventional Tail - simple, easy to manufacture, and usually provides sufficient 
+stability and control with a light structure weight. However, it should be considered 
+that it is possible to lose effectiveness due to wing wake effects. 
+V-Tail - overcomes the problems mentioned in the Conventional Tail part, and also 
+offers reduced wetted area. Nevertheless, the use of the same control surfaces as an 
+elevator and rudder brings some control actuation complexity. Additionally, moving 
+the control surfaces toward one side to act as a rudder produces an awkward rolling 
+moment in opposition to the desired direction of the turn. 
+T-Tail – it is usually heavier, necessitating a strong vertical tail to support the 
+horizontal tail structurally. However, it is easy to manufacture and control, and also 
+offers a few remarkable advantages. Locating the horizontal surface upward is 
+decreasing the wing wake effects, increasing its effectiveness, and allowing 
+reduction of its size, hence its weight. Furthermore, the horizontal surfaces high 
+position prevents it from touching the ground during belly landings and guarantees 
+an excellent clearance from the thrower’s upper body during hand launch. The 
+disadvantage of the configuration is that landing gear will be needed if this type of 
+tail will be chosen. 
+Table 2.5 Figure of Merit for Wing Position 
+ 
+                                 
+ 
+Figure of Merit 
+Weight 
+Low Wing 
+High Wing 
+Middle Wing 
+Aerodynamics 
+50 
+4 
+3 
+4 
+Stability 
+30 
+2 
+4 
+4 
+Durability 
+20 
+3 
+4 
+3 
+TOTAL 
+100 
+320 
+350 
+380 
+ 
+Low Wing – Wing is positioned below the centerline of the body. Aircraft may 
+become unstable in the lateral direction. However, it will have better 
+maneuverability.  
+ 
+ 
+21 
+Middle Wing – This is a conventional type. It has advantages in both maneuverability 
+and stability. The wing is positioned around the centerline of the body. It can have 
+benefits at take-off and landings. 
+High Wing – Wing is positioned above the centerline of the body. Aircraft will 
+become very stable in the lateral direction. However, it will have worse 
+maneuverability.  
+In the first iteration of this study, the high wing was chosen. However, a high wing 
+position was precarious for the study because of the distance of the landing gear to 
+the ground. Our landing gear is on the wingtips, and when we tilt the wing, the 
+landing gear should touch to the ground. Also, by choosing the middle wing position, 
+we are eliminating the risk of a complex tilting mechanism. 
+2.1.2.2 
+Tilt Wing Mechanism 
+The tilting mechanism aims to tilt the wings to the desired position. The mechanism 
+is designed as simple as possible to eliminate the risk of failure. The wing tilting 
+mechanism has three parts; servo motor, which will be mounted to the bottom of the 
+fuselage, bearing which will be on both sides of the fuselage, and gear which is 
+mounted on the spar of the middle wing. The gear ratio of the servo and gear will be 
+the same. Servo power will be transferred directly to the gear. As gear tilts, the wing 
+will be tilting. The CAD Model of the tilt-wing mechanism can be seen in  
+Figure 2.2.  
+ 
+Figure 2.2. Tilting mechanism  
+Bearing 
+Gear 
+Servo Motor 
+ 
+ 
+22 
+As wing tilts around the fuselage, the inertia and center of mass may change. The 
+CoM of the wing is placed at the center of the tilting line, which lines with the middle 
+of the wing spar (Figure 2.3) to hinder the change of the CoM of the aircraft. The 
+same condition is valid for the tail. By using this way, the displace of CoM of aircraft 
+and inertia matrix during the transition will be zero. 
+Figure 2.3. CoM of Tilting Wing and CoM of the aircraft 
+2.1.2.3 
+Control Inputs  
+There are three types of control inputs for the tilt-wing aircraft, including rotors, 
+tilting mechanisms, and control surfaces. For the selection of the number of these 
+inputs, the information in the literature is employed. The advantages and 
+disadvantages of the alternatives are introduced. Table 2.6 gives the design space 
+survey for the control inputs, which lead us to choose six rotors, two tilting 
+mechanisms, and three control surfaces. 
+ 
+ 
+Figure 2.4. Configurations Studied in terms of Control Inputs  
+ 
+As part of the control input selection study, four planforms are studied. Each 
+planform was having different types of control inputs. If the planform were designed 
+with a rudder, the total aircraft weight would be increased by %5, and drag would be 
+100 cm 
+20 cm 
+20 cm 
+CoM of the wing 
+CoM of the Aircraft 
+77 cm 
+2 cm 
+ 
+ 
+23 
+increased by %4. Hence it has been decided that it would be better not to use rudder 
+as part of this study. 
+One of the alternatives about the VTOL aircraft is using tilt-wing without tilt-tail. 
+Constraints about that planform were in case of losing one engine aircraft would be 
+uncontrollable, the aerodynamic efficiency will be decreased because of the fan duct, 
+and finally, propeller diameter is constrained by the fuselage diameter. The 
+constrained propeller will result from having less thrust than it is needed. Moreover, 
+there will be an additional landing gear need in case of using a ducted balance fan. 
+Another disadvantage is decreasing the structural endurance of the body. Apart from 
+these disadvantages, there is a slight decrease in total aircraft weight because of not 
+using engine nacelle, rear motors, and batteries. 
+Table 2.6 Design Space Survey for Control Inputs 
+ 
+ 
+Preferable. Good to choose.  
+ 
+It can be chosen. 
+ 
+A little bit risky. 
+ 
+Do not use it. 
+ 
+Alternative 1 Alternative 2  Alternative 3  Alternative 4 
+Remarks 
+Rotor 
+Number 
+3 
+4 
+6 
+10 
+Three rotors should not be 
+chosen; aircraft will be 
+uncontrollable in case of an 
+emergency.  
+Tilting 
+mechanism 
+number 
+1 
+2 
+ 
+ 
+Hard to stabilize at hover and 
+transition 
+Actuator 
+number 
+Aileron 
+Rudder 
+Elevator 
+Aileron 
+Elevator 
+Aileron 
+Rudder 
+Aileron Only 
+All actuators should be used 
+in level flight because of the 
+aerodynamic efficiency. 
+However, very much excess 
+motor power in airplane 
+mode lets us not to use a 
+rudder. 
+ 
+NASA GL-10 [4] suggests that utilizing all motors during forward flight is the 
+“dirtiest” form of the aircraft, and it is designed to be operated when inboard motors 
+would be turned off. Only forward motors would be used for forward flight. Hence, 
+only four of the motors will be employed during forward flight. By using this logic, 
+we can increase the endurance of the aircraft. Another issue about the stopped motors 
+is the question of stopping the propeller or using windmilling. This is surveyed in 
+the literature, and it is decided to stop the propeller during forward flight. 
+ 
+ 
+24 
+2.1.3 
+Conceptual Design Process 
+The aircraft design process starts directly with the requirements for the UAV. In tilt-
+wing aircraft design, the most challenging part is the transition period between 
+vertical flight and forward flight. The main aim of the study is to produce enough 
+aerodynamic force to lift the aircraft in a minimum time interval while aircraft 
+velocity increases. The stall speed should be kept as low as possible to exploit from 
+aerodynamic forces instead of thrust forces during conversion flight, considering this 
+target. Another critical point is the targeted payload capacity, which is determined 
+as 2.5 kg by searching for similar platforms in the literature.  
+The first step in the conceptual design is weight estimation[44]. By using the empty 
+weight calculation formulas given in [44], the total weight is calculated 
+approximately 10 kg. The CATIA model of aircraft showed us the approximate 
+weights of the structural parts would be about 2 kg. After choosing the motor, our 
+target design weight is 9.5 kg. Having determined that the target weight is 9.5 kg, 
+the airfoil selection is performed. Since the estimated maximum Reynolds Number 
+is about 500,000 and flight velocity is not too high, it is frequently aimed to select 
+an airfoil that has higher L/D ratio. However, while passing through transition flight 
+to level flight, which is the most demanding part of the flight, a high maximum lift 
+coefficient will be needed. So beside L/D ratio, the maximum lift coefficient is also 
+a parameter in the selection process of the airfoil. Different airfoils were analyzed at 
+different Reynolds Numbers via using XFLR5 [45] program. The most suitable 
+airfoil which satisfies the requirements was S1223 in the airfoil family at determined 
+Reynolds number interval. The S1223 airfoil was selected due to its high lift 
+coefficient at stall speed. Usually, low drag and high L/D ratio take precedence, but 
+in our case, we should have stall speed as low as possible to eliminate the risk of the 
+transition phase.  
+[44] suggests that for similar aircraft, fuselage length should be around 2 meters for 
+the initial assumption. After longitudinal stability analysis performed, it was 
+concluded that the fuselage length of 1.8 m could give sufficient pitch control power. 
+ 
+ 
+25 
+Lower fuselage length has been selected to decrease the drag effect of the fuselage. 
+Fuselage equivalent diameter has been calculated as 0.2 m using relation given in 
+[44]. 
+2.2 
+Preliminary Design  
+Numerous trade studies were performed using software simulations and models to 
+develop the optimum sizing for all components of the aircraft. The main design 
+objectives are to minimize the stall speed, minimize empty weight, and maximize 
+endurance. 
+2.2.1 
+Design Methodology  
+The preliminary design was developed through an iterative and collaborative process 
+that required the input of numerous disciplines. The critical components in the 
+preliminary design phase and their corresponding design requirements are described 
+as follows: 
+2.2.1.1 
+Wing Design Methodology 
+Wing planform area (𝑆): The wing area produces the lift required to support the 
+aircraft payload. The stall speed constrains the wing area at transition flight. As a 
+driving factor in the minimum stall speed, the wing area was optimized to reduce 
+stall speed and aircraft weight. 
+Aspect Ratio (𝐴𝑅): High 𝐴𝑅 wings reduce induced drag, offering better transition 
+and cruise performance than low 𝐴𝑅 wings. As a function of the wing chord, 𝑐, and 
+wingspan, 𝑏, the 𝐴𝑅 of the wing largely determines, total lift and drag of the aircraft.  
+Airfoil: An open-source airfoil is employed to operate efficiently at low Reynolds 
+numbers. The average Reynolds number for this airfoil to operate is 𝑅𝑒 = 500,000. 
+ 
+ 
+26 
+The airfoil is chosen to generate the required lift at transition and then optimized for 
+(𝐿⁄𝐷) 𝑐𝑟𝑢𝑖𝑠𝑒 to improve lifting efficiency and minimize the power required at cruise. 
+2.2.1.2 
+Tail Design Methodology 
+Raymer [44] stated that the Horizontal Tail Volume Coefficient, 𝑐𝐻𝑇, which is given 
+in Eq. 1 should be 𝑐𝐻𝑇= 0.5 for homebuilt aircraft. 
+ 
+For the vertical stabilization, the Vertical Tail Volume Coefficient, 𝑐𝑉𝑇, should be 
+about 𝑐𝑉𝑇= 0.05, according to Raymer [44]. However, for this study, it has been 
+decided not to use a vertical stabilizer. 
+Static Margin is an indicator of the static stability, which should be greater than zero 
+to have a statically stable aircraft. Also, we can find the static margin by looking at 
+the relation between 𝑐𝑚𝛼 𝑎𝑛𝑑 𝑐𝐿𝛼. 
+where {
+xcg
+c̅ −
+xNP
+c̅ } refers to the static margin. 
+2.2.1.3 
+Propulsion System Selection Methodology 
+The motor, propeller, and battery pack: The components were selected to meet the 
+performance goals of the aircraft while minimizing the overall package weight. Two 
+different configurations have been studied to see the effect of the motor number on 
+the whole aircraft. One of them is a four-motored, which has two bigger motors on 
+the wing and two smaller motors on the tail. The other configuration is equipped 
+ 
+𝑐𝐻𝑇= 𝐿𝐻𝑇𝑆𝐻𝑇
+𝑐̅𝑤𝑆𝑤
+ 
+(1) 
+ 
+𝑐𝑉𝑇= 𝐿𝑉𝑇𝑆𝑉𝑇
+𝑏𝑤𝑆𝑤
+ 
+ 
+(2) 
+ 
+cmα = {
+xcg
+c̅ −xNP
+c̅ } cLα 
+(3) 
+ 
+ 
+27 
+with six motors, of which four are on the wing, and two are on the tail. The second 
+configuration was chosen due to smaller overall weight and less energy consumption. 
+Motor Selection: A larger motor has increased power, increasing flight speed and 
+payload capabilities, but weighs more, increasing the empty weight and thus the total 
+aircraft weight.  
+Propeller Selection: A large diameter propeller spinning at slow speeds produces 
+similar thrust to a small diameter propeller spinning at fast speeds. A large pitch-to-
+diameter ratio is most efficient at high airspeeds, and a small pitch-to-diameter 
+propeller is most efficient at lower airspeeds.  
+Battery Selection: Lower capacity batteries are lighter and help produce greater RPM 
+and voltage, but higher capacity batteries can store more energy and are able to 
+endure higher current draws. Also, more cells have more power, allowing the aircraft 
+to fly faster or with a heavier payload. 
+2.2.2 
+Design Trade Studies  
+2.2.2.1 
+Airfoil Selection  
+Since the estimated maximum Reynolds Number is about 500,000 and flight velocity 
+is not high much, it is aimed to select an airfoil that has a high 𝐿⁄𝐷 ratio. However, 
+while passing through transition flight to level flight, which is the most demanding 
+part of our flight, we will need a high maximum lift coefficient. So beside 𝐿⁄𝐷 ratio, 
+the maximum lift coefficient is also a parameter in choosing an airfoil. Different 
+airfoils are analyzed at different Reynolds Numbers via using the XFLR5 program. 
+The most suitable airfoil which satisfies the requirements was S1223 in the airfoil 
+family at determined Reynolds number interval. Lift and drag coefficients and 𝐿⁄𝐷 
+ratios calculated at various Reynolds numbers and angle of attacks are given in  
+Figure 2.5. A comparison of simulated coefficients was made using XFLR5 for 
+several airfoils; the best are shown in Figure 2.5. The S1223 airfoil was selected due 
+ 
+ 
+28 
+to its high lift coefficient at stall speed. Usually, priority is low drag and high 𝐿⁄𝐷 
+ratio, but in our case, we should have stall speed as low as possible to eliminate the 
+risk of the transition phase. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.5. Aerodynamic Characteristics of Competitive Airfoils  
+𝟏 
+𝜶 
+𝜶 
+ 
+ 
+29 
+For the horizontal stabilizer, there are four main options: thin or thick, symmetric, or 
+semi-symmetric airfoils. The thickness of the airfoil determines its drag and lift 
+characteristics. Thicker airfoil could produce more lift but also more drag. Because 
+the stabilizer’s purpose is to provide moments only, a thin airfoil was chosen due to 
+its relatively low drag. In contrast, a relatively small lift force was compensated by 
+designing a slightly longer arm.  
+Symmetric airfoil is commonly used in UAV’s, gliders, and light aircraft, providing 
+the vehicle more stability and identical pitch moment for both positive and negative 
+angles of the stabilizer. On the other hand, a semi-symmetric foil could theoretically 
+achieve a slightly higher total lift coefficient for the whole airplane, allowing the 
+vehicle to reach a higher pitch-up moment. Also, a semi-symmetric foil-based wing 
+is easier to manufacture. 
+Because the symmetric airfoil adds adequate stability, and possible lift addition from 
+the horizontal stabilizer would be negligible due to its relatively small surface area 
+in comparison to the main wing surface area, it was decided to use the NACA 0009 
+airfoil. 
+2.2.2.2 
+Wing Geometry  
+A trade study determining the effect of variations in 𝐴𝑅, 𝑏, and 𝑆 on 𝐿⁄𝐷 ratio was 
+performed. The results of this trade study are shown in Figure 2.6, which presents 
+the 𝐿⁄𝐷 vs. Wing Span. 
+The optimal wing geometry minimizes drag while still meeting the lift-off 
+requirement. Studies showed that increasing the wing area decreases Vstall. However, 
+this condition is increasing total drag by increasing aircraft dimensions and structural 
+weight. Furthermore, increasing AR also decreases 𝑉𝑠𝑡𝑎𝑙𝑙 however, increasing the 
+structural weight of the wing, which is fatal for the tilting spars. A limitation on 
+wingspan is employed due to eliminating structural failures of the tilting spar. AR is 
+limited between 5 and 7 to have logical results. The highest scoring wing 
+ 
+ 
+30 
+configuration has an AR of 6.95 and a wing area of 0.575 𝑚2 due to the wingspan 
+limitation. The maximum (𝐿/𝐷) is positioned at almost the cruise flight 𝛼. This 
+allows for relatively low drag in all phases of flight. 
+ 
+Figure 2.6. Wing Area and AR Optimization  
+2.2.2.3 
+Tail Geometry  
+[44] suggests that for an aircraft which has the design features like in this study "𝑐𝐻𝑇" 
+should be around 0.5; however, the analysis showed that a small tail volume 
+coefficient would not be enough to compensate for the moment which is generated 
+by a high lift producer wing. 
+Horizontal Tail Volume Coefficient: 
+Static Margin can be calculated as 10% using Eq. 5, which means that the CoM of 
+the aircraft is 3 cm forward from the neutral point. 
+As it can be seen from Figure 2.7, that wing and wing-body pair are highly unstable, 
+and they have an extreme pitch-up characteristic. However, thanks to the tail with a 
+high volume coefficient, we are able to compensate for these unstable features. As a 
+result of the initial assessment, we can say that our aircraft is statically stable. 
+ 
+𝑐𝐻𝑇= 𝐿𝐻𝑇𝑆𝐻𝑇
+𝑐̅𝑤𝑆𝑤
+= 0.82 ∗0.13
+0.29 ∗0.575 = 0.61 
+(4) 
+ 
+{
+𝒙𝒄𝒈
+𝒄̅ −𝒙𝑵𝑷
+𝒄̅ } = {𝟎. 𝟎𝟖𝟓−𝟎. 𝟏𝟏𝟓
+𝟎. 𝟐𝟗𝟏
+} = −𝟎. 𝟏𝟎𝟑 
+ 
+(5) 
+ 
+ 
+31 
+ 
+Figure 2.7. Moment Coefficient variation with respect to Angle of Attack  
+2.2.2.4 
+Design Parameters  
+Design Parameters found using [44] are evolved via using XFLR5 and ANSYS 
+Fluent v.18 programs. It is being considered that the aerodynamic design parameters 
+should be as given in Table 2.7 to fly safely in level flight according to the last 
+analysis results. 
+ 
+Table 2.7 Aerodynamic Design Parameters  
+ 
+Wing Span 
+2 m 
+Wing Airfoil 
+S1223 
+Wing Area 
+0.575 m2 
+Horizontal Tail Airfoil 
+NACA 0009 
+Length 
+1.8 m 
+Cruise True Airspeed 
+19.57 m/s 
+Mass 
+9.5 kg 
+CL at Cruise 
+0.76 
+Wing Loading 
+16.52 kg/m2 
+CD 
+0.089 
+MAC 
+0.291 m 
+CL/CD 
+8.53 
+croot 
+0.33 m 
+Aspect Ratio 
+6.957 
+ctip 
+0.23 m 
+Taper Ratio 
+0.696 
+2.2.2.5 
+Propulsion System Selection 
+A common way to characterize the flight performance of model aircraft is through 
+power loading or the propulsion package’s instantaneous power output divided by 
+the total weight of the plane. Electric driven UAVs should have a power loading of 
+more than 300 W/kg [46] to have the capability of the vertical flight. For an initial 
+-0,05
+0
+0,05
+0,1
+0,15
+0,2
+0,25
+0,3
+0,35
+0,4
+0,45
+-1
+0
+1
+2
+3
+4
+5
+6
+7
+Cm
+Angle of Attack [deg]
+Wing
+Wing+Body
+Wing+Body+Tail
+ 
+ 
+32 
+search of power components, a target power loading of 300 W/kg was chosen. 300 
+W/kg was used as an initial assumption based on previous experience with Li-Po 
+batteries until further trade studies could fully optimize the propulsion package. 
+Since our airframe was expected to weigh 9.5 kg, the initial power package selection 
+was supposed to have a power output of approximately 2700 W. Additional 
+assumptions for propulsion system weight were based on the literature survey [44] 
+and other model airplanes. Namely that the propulsion system would be 40% of total 
+aircraft weight or 3.6 kg, and that the battery pack would be 50% of the propulsion 
+package weight or 1.8 kilograms. 
+The distributed electric propulsion concept is put forward by [47], which shows that 
+increasing the number of propeller results in an increase of power to weight ratio. 
+This phenomenon provides airflow, which flows all over the wing and tail during 
+even hover conditions. This condition gives us an additional aerodynamic power to 
+control the aircraft. A propeller which is covering all over the wing and tail was 
+chosen to have enough propeller slipstream on the wing during the hover and 
+transition phase (Figure 2.8). The propulsion system gives us enough power to 
+stabilize the aircraft in the yaw axis in transition and forward flight; therefore, the 
+vertical stabilizer is not used in the design. 
+The propulsion system was chosen to maximize the endurance and range of the 
+aircraft while reducing weight. The following steps are performed To start the 
+selection process; Maximum thrust need is determined as 15 kg in total since we 
+aimed to have at least 1.5 thrust to weight ratio of which the forward motors should 
+provide most of them. The center of mass is placed using the standard stability 
+considerations; therefore, the CoM of the aircraft is very close to the thrust 
+application point of the forward motors (Figure 2.8). On the other hand, the distance 
+ratio of the front and rear motors are about eight; therefore, the thrust provided by 
+forward engines should be approximately eight times greater than rear motors. 
+ 
+ 
+ 
+33 
+ 
+Figure 2.8. Propulsion Package Selection Process  
+ 
+Neu-Motors e-Calc motor and battery package selection tool [48] was used to 
+determine the motor, battery, and propeller pairs accurately. This tool takes the total 
+aircraft weight, the number of motors, wing area, drag coefficient, cross-sectional 
+area, motor type, battery, driver, and propeller as inputs. The airframe weight was 
+calculated as 2 kg, and the target payload was 2.5 kg, and it is estimated that 
+electronic components would weigh about 1 kg. Therefore, total aircraft weight 
+without motor, battery, and propeller is assumed to be 5500 grams. The variables of 
+this selection method are motor type, battery type, driver, and propeller. The 
+Select a motor 
+Enter the aircraft geometry parameters 
+Run the tool 
+Select a driver 
+Select battery 
+Select propeller 
+Check if the max pitch 
+speed is in limits 
+Check if the max 
+power is in limits 
+Check if  
+𝑇
+𝑊≅1.5 
+Check if the total aircraft 
+weight is less than 10 kg
+Check if the flight time is 
+more than 60 min
+Propulsion System 
+Selection 
+ 
+ 
+34 
+propulsion system selection process is as given in Figure 2.8, where the tool refers 
+to Neu-Motors e-Calc tool, maximum power refers to the power capacity of the 
+chosen battery pack, pitch speed refers to the speed at which the propeller is most 
+efficient.  
+Table 2.8 Motor specifications  
+ 
+ 
+Forward Motors 
+Rear Motors 
+Motor 
+NeuMotors 1112/6D(1092) 
+NeuMotors 1902/4Y(1000) 
+Controller 
+CC Phoenix Edge 130 
+CC Phoenix Edge 75 
+Battery Cell 
+LiPo 450 mAh-20/30C 6X24 
+LiPo 1200 mAh-20/30C 3X4 
+Propeller 
+APC Electric E 14X16 
+APC Electric E 8X10 
+Weight (Each Pack) 
+748 grams 
+460 grams 
+Shaft Power 
+363.9 W 
+122.6 W 
+ 
+Several motors, battery, driver, and propeller combinations were analyzed. The 
+propeller diameter was chosen in each iteration again, considering the wing semi 
+span. Since there is a target to cover the wing with propeller slipstream, the diameter 
+of the propeller should be around 15 inches to cover a reasonable area over the wing. 
+As a result of the iterative selection process, it is chosen to use the motor pairs, which 
+are given in Table 2.8. 
+The thrusts generated by forward and rear motors are different. Main thrust 
+generators are forward motors, and the rear motors are used for moment balancing. 
+During the forward flight, only forward motors will be used since the horizontal 
+stabilizer will be active in forward flight to balance the pitch moment. The rear 
+motors can also be used in forward flight if the endurance is wanted to be increased. 
+The rear motors, since they are placed a little above from forward engines, are set 
+with an angle of −3° with respect to the body frame to pass the thrust line through 
+the center of gravity, which eliminates the motor pitching moment during forward 
+flight. This condition is also required for balancing the moment with elevators since 
+they have symmetrical airfoils.  
+ 
+ 
+ 
+ 
+ 
+35 
+Table 2.9 Transition Mode Power Requirements for One Motor  
+ 
+Horizontal 
+Velocity (𝑢) (m/s) 
+Throttle 
+Level (Front) 
+Throttle 
+Level (Rear) 
+𝛿𝑇𝑊 [°] 
+𝛼 [°] 
+Motor Power 
+(W) 
+Current(A) 
+0 
+85% 
+63% 
+90 
+0 
+276 
+12.8 
+1.21 
+83% 
+56% 
+75 
+8.609 
+250 
+11.6 
+3.19 
+77% 
+53% 
+60 
+18.1 
+225.1 
+10.4 
+5.41 
+69% 
+45% 
+45 
+20.3 
+242 
+11.2 
+6.82 
+58% 
+0% 
+30 
+17.27 
+250 
+11.6 
+9.79 
+47% 
+0% 
+15 
+10.798 
+45.5 
+2.1 
+16.47 
+42% 
+0% 
+0 
+0 
+21.2 
+1 
+ 
+Longitudinal control of the aircraft mainly depends on the pitch control of the plane. 
+Pitch control power can be generated either by the thrust difference between forward 
+and rear motors or by changing the elevator deflection angle. From  
+Table 2.9, it can be clearly seen that as the horizontal velocity increases, pitch control 
+by PWM difference diminishes since the control power of the horizontal stabilizer is 
+coming forward. Another remarkable result that can be seen from Table 2.9 is that 
+the throttle level of the rear motors is dependent purely on the forward motor throttle 
+level. The high-level controller decides the rear motor throttle level to stabilize the 
+pitching moment coming from the forward engines during vertical and transition 
+flight mode. Table 2.9 has been prepared under the trim conditions data, which is 
+obtained from MATLAB/Simulink/Linear Analysis Toolbox. 
+2.3 
+Final Aircraft  
+ 
+Figure 2.9. Current study CAD models 
+ 
+As a result of the preliminary design analysis, the final aerodynamic design has been 
+delivered, which can be seen in Figure 2.9.  
+ 
+ 
+36 
+Weight and Mass Information has been taken from the CATIA Model and can be 
+seen in Table 2.10. 
+ 
+Table 2.10 Mass and Inertia Information  
+ 
+Component 
+Mass[kg] Gx[mm] 
+Gy[mm] 
+Gz[mm] 
+Ixx [kg.m2] 
+Iyy[kg.m2] Izz[kg.m2] 
+Fuselage_Main 
+0.484 
+-68.638 
+-0.477 
+28.175 
+0.003 
+0.089 
+0.088 
+Fuselage_Payload 
+2.513 
+718.24 
+7.77E-14 
+31.35 
+1.01E-04 
+1.01E-04 
+1.01E-04 
+Fuselage_Gear 
+0.028 
+22.24 
+-7.59E-15 
+60.35 
+3.63E-05 
+1.27E-05 
+3.63E-05 
+Wing_Middle 
+0.266 
+26.289 
+0.0003 
+5.498 
+0.005 
+0.002 
+0.004 
+Wing_Right 
+0.33 
+29.485 
+482.645 
+31.788 
+0.016 
+0.001 
+0.015 
+Wing_Right_Aileron 0.047 
+35.246 
+498.379 
+183.138 
+0.002 
+1.62E-05 
+0.002 
+Wing_Left 
+0.33 
+29.207 
+-482.906 
+31.493 
+0.016 
+0.001 
+0.015 
+Wing_Left_Aileron 0.047 
+34.95 
+-498.625 
+182.842 
+0.002 
+1.62E-05 
+0.002 
+Engine_1_House 
+0.07 
+34.276 
+874.993 
+77.64 
+8.52E-04 
+8.31E-04 
+9.09E-05 
+Engine_1_Main 
+0.315 
+29.519 
+874.996 
+-140.499 
+7.97E-05 
+7.97E-05 
+9.50E-05 
+Engine_1_Battery 
+0.448 
+16.26 
+880.996 
+101.363 
+1.20E-04 
+7.47E-05 
+7.47E-05 
+Engine_2_House 
+0.07 
+34.311 
+399.995 
+78.803 
+8.51E-04 
+8.30E-04 
+9.09E-05 
+Engine_2_Main 
+0.315 
+29.519 
+399.996 
+-140.499 
+7.97E-05 
+7.97E-05 
+9.50E-05 
+Engine_2_Battery 
+0.448 
+11.26 
+399.996 
+36.363 
+1.20E-04 
+7.47E-05 
+7.47E-05 
+Engine_3_House 
+0.07 
+34.015 
+-400.201 
+77.87 
+8.52E-04 
+8.31E-04 
+9.09E-05 
+Engine_3_Main 
+0.315 
+29.24 
+-400.2 
+-140.794 
+7.97E-05 
+7.97E-05 
+9.50E-05 
+Engine_3_Battery 
+0.448 
+10.981 
+-400.2 
+36.068 
+1.20E-04 
+7.47E-05 
+7.47E-05 
+Engine_4_House 
+0.07 
+34.042 
+-875.203 
+78.629 
+8.52E-04 
+8.31E-04 
+9.09E-05 
+Engine_4_Main 
+0.315 
+29.24 
+-875.2 
+-140.794 
+7.97E-05 
+7.97E-05 
+9.50E-05 
+Engine_4_Battery 
+0.448 
+15.981 
+-881.2 
+101.068 
+1.20E-04 
+7.47E-05 
+7.47E-05 
+Tail_Main 
+0.116 
+-895.02 
+0.021 
+-14.499 
+0.004 
+1.31E-04 
+0.004 
+Tail_Elevator 
+0.035 
+-895.459 
+-0.002 
+69.619 
+8.90E-04 
+5.77E-06 
+8.84E-04 
+Engine_5_House 
+0.074 
+-897.495 
+323.051 
+51.25 
+9.30E-04 
+8.94E-04 
+1.17E-04 
+Engine_5_Main 
+0.315 
+-896.26 
+325 
+-159.194 
+7.97E-05 
+7.97E-05 
+9.50E-05 
+Engine_5_Battery 
+0.512 
+-899.343 
+325 
+11.145 
+8.53E-05 
+1.37E-04 
+8.53E-05 
+Engine_6_House 
+0.074 
+-895.029 
+-323.051 
+51.229 
+9.30E-04 
+8.94E-04 
+1.17E-04 
+Engine_6_Main 
+0.315 
+-896.26 
+-325 
+-159.194 
+7.97E-05 
+7.97E-05 
+9.50E-05 
+Engine_6_Battery 
+0.512 
+-899.115 
+-325 
+11.139 
+8.53E-05 
+1.37E-04 
+8.53E-05 
+Overall Aircraft 
+9.464 
+-0.00013 
+-0,07 
+0,00022 
+2.041 
+3.15 
+5.037 
+ 
+The major components of the aircraft are illustrated in Figure 2.10. The tilting 
+mechanism and batteries are already mentioned in Sections 2.1.2.2 and 2.2.2.5. 
+Additionally, there will be separate batteries for each motor to minimize energy loss 
+due to long cables. Futaba S3003 servo actuators will be employed for aileron and 
+elevator actuators. The payload is considered to be a camera with approximately 2.5 
+kg weight. An RF telemetry with 433 MHz frequency and 100 mW RF Power is 
+decided to be used. IMU will be used for accelerometer, and gyroscope data need. 
+The accelerometer range will be between -8 and 8 m/s2, and the gyroscope will be 
+ 
+ 
+37 
+capable of measuring -100 to 100 deg/s. 200 kHz output rate will be enough for IMU. 
+GPS with 3 m resolution and a 10 Hz output rate will be used for guidance 
+commands, which will be given by the pilot manually. The electronic speed 
+controller will be used for motor RPM control. 
+There will be a ground control station that is responsible for sending the commands 
+to the aircraft and receive data sent by payload (camera), GPS, and the controller. 
+The pilot will give the guidance commands manually, which means that the ground 
+control station is a crucial factor to fly safely. Note that pilot will not control the 
+aircraft, he will give commands, and the aircraft will be under the control of the 
+controller. 
+ 
+Figure 2.10. Major Components of the Aircraft and Ground Control Station 
+2.4 
+Aerodynamic Analysis 
+The vehicle body-fixed frame ℱ𝐵 has its origin 𝐵 located at the instantaneous CoM 
+of the air vehicle, as shown in Figure 2.11. As the vehicle moves through the air, it 
+experiences a relative wind over its body, which gives rise to aerodynamic forces. 
+Introducing the wind frame ℱ𝑊{𝑊; 𝚤̂𝑊, 𝑗̂𝑊, 𝑘̂𝑊}, having its origin 𝑊 coinciding with 
+point 𝐵 (vehicle CoM), the 𝑋𝑊-axis of its preferred wind coordinate system is also 
+depicted in Figure 2.11. The wind frame ℱ𝑊, having origin 𝑊 coinciding with 𝐵, 
+ 
+ 
+38 
+relates 𝑣⃗𝐵/𝑊
+𝐸
+ to the body frame ℱ𝐵. An additional frame is introduced called the 
+velocity frame ℱ𝑉{𝑉; 𝚤̂𝑉, 𝑗̂𝑉, 𝑘̂𝑉} (also known as the flight path frame), having origin 
+𝑉 coinciding with B, and the 𝑋𝑉 the coordinate axis of its preferred velocity 
+coordinate system lies along the geographic velocity vector 𝑣⃗𝐵/𝐸
+𝐸
+. 
+The velocity vector of the CoM with respect to the air can be expressed in terms of 
+the geographic velocity vector of the CoM with respect to the earth and the velocity 
+vector of the wind with respect to earth, as: 
+Resolving this equation in vehicle body coordinates, 
+These velocities can be demonstrated in vector form as, 
+and 𝑉𝑇 is the true airspeed, given by the magnitude of the velocity vector 𝑣⃗𝐵/𝑊
+𝐸
+ of 
+the CoM with respect to the air mass (|𝑣⃗𝐵/𝑊
+𝐸
+|), such that; 
+ 
+Figure 2.11. Vehicle Body, Wind and Velocity Frames, and Coordinate Systems 
+ 
+ 
+𝑣⃗𝐵/𝑊
+𝐸
+= 𝑣⃗𝐵/𝐸
+𝐸
+−𝑣⃗𝑊/𝐸
+𝐸
+ 
+(6) 
+ 
+𝑇̌ (𝐵,𝑊){𝑣⃗𝐵/𝑊
+𝐸
+}
+(𝑊) = 𝑇̌ (𝐵,𝐸){𝑣⃗𝐵/𝐸
+𝐸
+}
+(𝐸) −𝑇̌ (𝐵,𝐸){𝑣⃗𝑊/𝐸
+𝐸
+}
+(𝐸) = {𝑣⃗𝐵/𝐸
+𝐸
+}
+(𝐵) −{𝑣⃗𝑊/𝐸
+𝐸
+}
+(𝐵) 
+(7) 
+ 
+{𝑣⃗𝐵/𝑊
+𝐸
+}
+(𝑊) = [
+𝑉𝑇
+0
+0
+],     {𝑣⃗𝐵/𝐸
+𝐸
+}
+(𝐵) = [
+𝑢
+𝑣
+𝑤
+],      {𝑣⃗𝑊/𝐸
+𝐸
+}
+(𝐵) = [
+𝑢𝑊
+𝑣𝑊
+𝑤𝑊
+] 
+(8) 
+ 
+𝑉𝑇= √(𝑢−𝑢𝑊)2 + (𝑣−𝑣𝑊)2 + (𝑤−𝑤𝑊)2 
+(9) 
+ 
+ 
+39 
+For VTOL and Transition mode, there will be an additional airspeed that is coming 
+from the propeller slipstream. The propeller slipstream velocity in forward flight is 
+assumed to be negligible. This extra airspeed should be added to total airspeed for 
+related flight phases. Since the additional speed will be in the only the opposite 
+direction of the engine, we can add it in the propulsion coordinates (wing 
+coordinates) as; 
+ 
+We can transform it into the body coordinates as; 
+ 
+Dynamic pressure, denoted by 𝑞̅, is defined as a function of true airspeed 𝑉𝑇 and 
+atmospheric air density 𝜌, as follows: 
+ 
+Using the two coordinate transformation matrices for 𝑇̌ (𝐵,𝑊) derived separately in 
+terms of angle of attack and sideslip angles (𝛼 and 𝛽), substitution in Eq. 9 yields the 
+components of 𝑣⃗𝐵/𝑊
+𝐸
+ in body coordinates as; 
+ 
+The respective definitions for Cartesian (wind) incidence angles are now derived 
+from these two sets of relations, in terms of the body-axes components of 𝑣⃗𝐵/𝐸
+𝐸
+ and 
+𝑣⃗𝑊/𝐸
+𝐸
+, together with the relative wind-axis component (true airspeed 𝑉𝑇) of 𝑣⃗𝐵/𝑊
+𝐸
+ , 
+obtaining the trigonometric relationships; 
+ 
+{𝑣⃗𝐵/𝑊
+𝐸
+}
+(𝑃(𝐹)) = [
+−𝑉𝑃𝑟𝑜𝑝
+0
+0
+] 
+(10) 
+ 
+{𝑣⃗𝑊𝑖𝑛𝑔/𝑊
+𝐸
+}
+(𝐵) = [
+𝑢𝑊
+𝑣𝑊
+𝑤𝑊
+] + [
+𝑐(𝛿𝑇(𝐹))
+0
+𝑠(𝛿𝑇(𝐹))
+0
+1
+0
+−𝑠(𝛿𝑇(𝐹))
+0
+𝑐(𝛿𝑇(𝐹))
+] [
+−𝑉𝑃𝑟𝑜𝑝
+0
+0
+] = [
+𝑢𝑊−𝑐(𝛿𝑇(𝐹))𝑉𝑃𝑟𝑜𝑝
+𝑣𝑊
+𝑤𝑊+ 𝑠(𝛿𝑇(𝐹))𝑉𝑃𝑟𝑜𝑝
+] 
+(11) 
+ 
+𝑞̅ = 1
+2 𝜌𝑉𝑇
+2 
+(12) 
+ 
+𝑉𝑇𝑐(𝛼)𝑐(𝛽) = 𝑢−𝑢𝑊+ 𝑐(𝛿𝑇(𝐹𝑅))𝑉𝑃𝑟𝑜𝑝 
+(13) 
+ 
+𝑉𝑇𝑠(𝛽) = 𝑣−𝑣𝑊 
+(14) 
+ 
+𝑉𝑇𝑠(𝛼)𝑐(𝛽) = 𝑤−𝑤𝑊−𝑠(𝛿𝑇(𝐹𝑅))𝑉𝑃𝑟𝑜𝑝 
+(15) 
+ 
+ 
+40 
+ 
+Here, 𝛽𝑓 is the so-called flank angle, which is the projection of the sideslip angle 𝛽 
+onto the body coordinates. Note that there is virtually no difference between 𝛽 and 
+𝛽𝑓 at low 𝛼, but the correct definition of 𝛽 must be applied for very high 𝛼. 
+Mathematical manipulations can be performed on these expressions to derive the 
+following trigonometric relationships for converting between all incidence/wind 
+angles, 
+ 
+Lift and drag are defined to be the components of the aerodynamic force in the 
+perpendicular and parallel to flow directions, respectively. Therefore, lift (𝐿), drag 
+(𝐷) and crosswind force (𝐶) are directly measured in the wind coordinate system. 
+Using 
+body-axes 
+components 
+of 
+the 
+aerodynamic 
+force 
+vector 
+{𝑓⃗𝛼}
+(𝐵)
+= [𝑓⃗𝛼𝑋𝐵
+𝑓⃗𝛼𝑌𝐵
+𝑓⃗𝛼𝑍𝐵]
+𝑇
+, together with the transformation matrix 𝑇̌ (𝐵,𝑊) of 
+wind with respect to vehicle body coordinates, yields the wind-axes components of 
+the aerodynamic force vector {𝑓⃗𝛼}
+(𝑊)
+= [−𝐷
+−𝐶
+−𝐿]𝑇 as follows: 
+where c represents cosine and s represents sine functions. 
+ 
+𝛼= tan−1 (𝑤−𝑤𝑊
+𝑢−𝑢𝑊
+)       𝛼𝑤𝑖𝑛𝑔= tan−1 (
+𝑤−𝑤𝑊−𝑠(𝛿𝑇(𝐹𝑅))𝑉𝑃𝑟𝑜𝑝
+𝑢−𝑢𝑊+ 𝑐(𝛿𝑇(𝐹𝑅))𝑉𝑃𝑟𝑜𝑝
+) 
+(16) 
+ 
+𝛽= sin−1 (𝑣−𝑣𝑊
+𝑉𝑇
+) 
+(17) 
+ 
+𝛽𝑓= tan−1 (
+𝑣−𝑣𝑊
+𝑢−𝑢𝑊+ 𝑐(𝛿𝑇(𝐹𝑅))𝑉𝑃𝑟𝑜𝑝
+) 
+(18) 
+ 
+𝛼= tan−1(𝑐𝜑𝑡𝛼𝑇) 
+(19) 
+ 
+𝛽= sin−1(𝑠𝜑𝑠𝛼𝑇) = tan−1 (𝑐𝑎𝑡𝛽𝑓) 
+(20) 
+ 
+𝛽𝑓= tan−1(𝑠𝜑𝑡𝛼𝑇) 
+(21) 
+ 
+{𝑓⃗𝛼}
+(𝑊)
+= 𝑇̌ (𝑊,𝐵){𝑓⃗𝛼}
+(𝐵)
+ 
+(22) 
+ 
+[
+−𝐷
+−𝐶
+−𝐿
+] = [
+𝑐(𝛽)𝑐(𝛼)
+𝑠(𝛽)
+𝑐(𝛽)𝑠(𝛼)
+−𝑠(𝛽)𝑐(𝛼)
+𝑐(𝛽)
+−𝑠(𝛽)𝑠(𝛼)
+−𝑠(𝛼)
+0
+𝑐(𝛼)
+]
+[
+ 
+ 
+ 
+ 𝑓⃗𝛼𝑋𝐵
+𝑓⃗𝛼𝑌𝐵
+𝑓⃗𝛼𝑍𝐵]
+ 
+ 
+ 
+ 
+ 
+(23) 
+ 
+ 
+41 
+Note that the negative directions of aerodynamic force components relative to the 
+positive directions of the wind axes, which is a universally used convention in the 
+definition of positive lift and drag. In non-dimensional form, using non-
+dimensionalized aerodynamic force coefficients 𝐶𝑋, 𝐶𝑌, 𝐶𝑍 for body axes and 
+−𝐶𝐷, −𝐶𝐶, −𝐶𝐿 for wind axes: 
+ 
+we can write it in the equation form as, 
+conversely, 
+giving; 
+ 
+The incidence angle of the effective velocity vector over the body is changing during 
+the transition, as can be seen in Figure 2.12. The wing axis will be rotating during 
+the transition, while the body axis will be stationary during that period. The effective 
+velocity vector is a vector summation of propeller slipstream velocity and body 
+velocity. This issue is explained previously in Eq. 10 and 11. In hover mode, since 
+body velocity is zero, the velocity vector is formed by propeller slipstream velocity. 
+As wing tilts, the contribution of the propeller velocity vector to effective velocity 
+decreases, and the contribution of the body velocity vector increases. The change of 
+𝛼 of the body is shown in the last column of Table 2.11, and it can be clearly seen 
+that 𝛼𝑏𝑜𝑑𝑦 will always be negative and useless for aerodynamic analysis. Therefore 
+ 
+[
+−𝐶𝐷
+−𝐶𝐶
+−𝐶𝐿
+] = [
+𝑐(𝛽)𝑐(𝛼)
+𝑠(𝛽)
+𝑐(𝛽)𝑠(𝛼)
+−𝑠(𝛽)𝑐(𝛼)
+𝑐(𝛽)
+−𝑠(𝛽)𝑠(𝛼)
+−𝑠(𝛼)
+0
+𝑐(𝛼)
+] [
+𝐶𝑋
+𝐶𝑌
+𝐶𝑍
+] 
+(24) 
+ 
+𝐶𝐷= −𝑐(𝛼)𝑐(𝛽)𝐶𝑋−𝑠(𝛽)𝐶𝑌−𝑠(𝛼)𝑐(𝛽)𝐶𝑍 
+(25) 
+ 
+𝐶𝐶= 𝑐(𝛼)𝑠(𝛽)𝐶𝑋−𝑐(𝛽)𝐶𝑌+ 𝑠(𝛼)𝑠(𝛽)𝐶𝑍 
+(26) 
+ 
+𝐶𝐿= 𝑠(𝛼)𝐶𝑋−𝑐(𝛼)𝐶𝑍 
+(27) 
+ 
+{𝑓⃗𝛼}
+(𝐵)
+= 𝑇̌ (𝐵,𝑊){𝑓⃗𝛼}
+(𝑊)
+= [𝑇̌ (𝑊,𝐵)]
+𝑇{𝑓⃗𝛼}
+(𝑊)
+ 
+(28) 
+ 
+[
+𝐶𝑋
+𝐶𝑌
+𝐶𝑍
+] = [
+𝑐(𝛽)𝑐(𝛼)
+−𝑠(𝛽)𝑐(𝛼)
+−𝑠(𝛼)
+𝑠(𝛽)
+𝑐(𝛽)
+0
+𝑐(𝛽)𝑠(𝛼)
+−𝑠(𝛽)𝑠(𝛼)
+𝑐(𝛼)
+] [
+−𝐶𝐷
+−𝐶𝐶
+−𝐶𝐿
+] 
+(29) 
+ 
+𝐶𝑋= −𝑐(𝛼)𝑐(𝛽)𝐶𝐷+ 𝑐(𝛼)𝑠(𝛽)𝐶𝐶+ 𝑠(𝛼)𝐶𝐿 
+(30) 
+ 
+𝐶𝑌= −𝑠(𝛽)𝐶𝐷−𝑐(𝛽)𝐶𝐶 
+(31) 
+ 
+𝐶𝑍= −𝑠(𝛼)𝑐(𝛽)𝐶𝐷+ 𝑠(𝛼)𝑠(𝛽)𝐶𝐶−𝑐(𝛼)𝐶𝐿 
+(32) 
+ 
+ 
+42 
+𝛼𝑤𝑖𝑛𝑔 should be used as the angle of attack during transition flight analysis. While 
+generating the CFD database wing coordinate system will be used as a base 
+coordinate system. By the way, aerodynamic coefficients have been taken from CFD 
+in the body coordinate system. 
+Table 2.11 Transition Flight Mode Power Requirements for One Motor 
+ 
+𝛿𝑇𝑊 (𝑑𝑒𝑔) 
+𝑅𝑃𝑀 
+𝑉𝑝𝑟𝑜𝑝(𝑚/𝑠) 𝑢𝑏𝑜𝑑𝑦(𝑚/𝑠) 𝑢𝑤𝑖𝑛𝑔(𝑚/𝑠) 𝑤𝑤𝑖𝑛𝑔(𝑚/𝑠) 𝑉𝑤𝑖𝑛𝑔(𝑚/𝑠) 𝛼𝑤𝑖𝑛𝑔(𝑑𝑒𝑔) 𝛼𝑏𝑜𝑑𝑦(𝑑𝑒𝑔)
+90 
+488 
+7.559 
+0 
+7.559 
+0 
+7.559 
+0 
+−90 
+75 
+478 
+7.401 
+1.21 
+7.714 
+1.168 
+7.8 
+8.609 
+−66.391 
+60 
+444 
+6.855 
+3.19 
+8.445 
+2.762 
+8.884 
+18.1 
+−41.9 
+45 
+399 
+6.123 
+5.41 
+9.95 
+3.7 
+10.655 
+20.3 
+−24.7 
+30 
+333 
+5.022 
+6.82 
+10.93 
+3.41 
+11.449 
+17.27 
+−12.73 
+15 
+270 
+3.832 
+9.79 
+13.28 
+2.533 
+13.519 
+10.798 
+−4.202 
+0 
+244 
+2.594 
+16.47 
+19.06 
+0 
+19.06 
+0 
+0 
+ 
+The propeller velocity given in Table 2.11 is calculated using Eq. 33, which is given 
+in [35]. The equation assumes that as thrust generated by propellers increases, 
+induced velocity through propeller disc also increases. 
+where T is thrust, ρ is the air density, and A is the propeller disc area, respectively. 
+Another study showed that propeller slipstream caused additional airspeed of 7-10 
+m/s on the wings [49]. It can be said that propeller velocity dominates the body 
+velocity vector from tilt angles of 90⁰ to 45⁰, while the opposite condition occurs 
+between tilt angles of 45⁰ and 0⁰. It should be noted that effective velocity is the 
+𝑉𝑤𝑖𝑛𝑔 for all flight conditions. 
+ 
+Figure 2.12. Effective Velocity and Angle of Attack changes during the transition  
+ 
+𝑉𝑝𝑟𝑜𝑝= √𝑇
+2𝜌𝐴 
+(33) 
+𝑊𝑖𝑛𝑔 𝑥−𝑎𝑥𝑒𝑠 
+𝑉𝑝𝑟𝑜𝑝(𝑚/𝑠) 
+𝑉𝑒𝑓𝑓𝑒𝑐𝑡𝑖𝑣𝑒(𝑚/𝑠) 
+𝑢𝑏𝑜𝑑𝑦(𝑚/𝑠) 
+ 
+ 
+43 
+CFD analysis velocity vector coverage has been shown in Figure 2.12 with black, 
+red, blue, and orange arcs. These arcs show where the velocity comes from during 
+CFD analysis. For instance, at 45o tilt angle, the velocity vector spectrum changes 
+from -59o to -25o with respect to the body. Resolving the vector in any coordinates 
+is not essential for the accuracy of the analysis. It is essential to analyze the velocity 
+spectrum, which represents the real flight conditions. Resolving the velocity vector 
+in the wing coordinate does not affect the results; it only makes the velocity spectrum 
+understandable.  
+2.4.1 
+Aerodynamic Database Generation  
+Aerodynamic forces and moments are modeled directly in wing coordinates, using 
+non-dimensionalized body-axes aerodynamic force coefficients 𝐶𝑋, 𝐶𝑌, 𝐶𝑍 and 
+nondimensionalized body-axes aerodynamic moment coefficients (about vehicle 
+CoM) 𝐶𝑙, 𝐶𝑚, 𝐶𝑛. The sign convention for a positive sense of the non-dimensional 
+aerodynamic force and moment coefficients follow the positive direction 
+(respectively, along with and about) the vehicle body coordinate axes. 
+The general functional form of aerodynamic force and moment coefficients can be 
+represented as; 
+ 
+where (∙)∗ represents non-dimensionalized motion-related variables for angular 
+rates, with reference length 𝑑 representing wingspan 𝑏 for lateral-directional 
+parameters (𝑖= 𝑌, 𝑙, 𝑛), and wing MAC 𝑐̿ for longitudinal parameters (𝑖= 𝑋, 𝑍, 𝑀).  
+ 
+𝐶𝑖= 𝐶𝑖(𝑅𝑒, 𝛼, 𝛽,  𝛼̇ ∗,  𝛽̇∗,  𝑝∗,  𝑞∗,  𝑟∗, 𝛿𝑎, 𝛿𝑒, 𝛿𝑇𝑊, ℎ, 𝑥𝐶𝑀) 
+(34) 
+ 
+𝑖= 𝑋, 𝑌, 𝑍, 𝑙, 𝑚, 𝑛      (∙)∗= 𝑑
+2𝑉𝑇
+(∙) 
+(35) 
+ 
+𝐶𝑋= 𝐶̅𝑋+ 𝐶𝑋𝑞𝑞∗ 
+(36) 
+ 
+𝐶𝑌= 𝐶̅𝑌+ 𝐶𝑌𝑟𝑟∗+ 𝐶𝑌𝑝𝑝∗ 
+(37) 
+ 
+𝐶𝑍= 𝐶̅𝑍+ 𝐶𝑍𝑞𝑞∗+ 𝐶𝑍𝛼̇ 𝛼̇ ∗ 
+(38) 
+ 
+𝐶𝑙= 𝐶̅𝑙+ 𝐶𝑙𝑝𝑝∗+ 𝐶𝑙𝑟𝑟∗ 
+(39) 
+ 
+𝐶𝑚= 𝐶̅𝑚+ 𝐶𝑚𝑞𝑞∗+ 𝐶𝑚𝛼̇ 𝛼̇ ∗ 
+(40) 
+ 
+𝐶𝑛= 𝐶̅𝑛+ 𝐶𝑛𝑟𝑟∗+ 𝐶𝑛𝑝𝑝∗ 
+(41) 
+ 
+ 
+44 
+ 
+For simulation (6-DoF Air Vehicle Simulation Model) and autopilot synthesis of 
+VTOL UAV, the complicated functional form of aerodynamic coefficients are 
+simplified using component buildup, where each “total” coefficient is modeled as 
+the sum of static coefficients (that are, individually, functions of fewer variables), 
+plus dynamic damping derivatives that correspond to the linear terms of the Taylor-
+series expansions (partial derivatives of the total coefficients) with respect to 
+angular-rate variables (𝛼̇, 𝛽̇, 𝑝, 𝑞, 𝑟). Component buildups of the “total” 
+nondimensional aerodynamic coefficients for VTOL UAV, in their most general 
+form, are then expressed in Eq. 36-41. Static coefficients, designated by an overhead 
+bar, are the first terms on the right-hand side of the equations. These are followed by 
+incremental terms, in the order of importance, consisting of the product of dynamic 
+damping derivatives (indicated by an additional level of subscripts) with non-
+dimensionalized angular-rate variables, where (∙)∗=
+𝑏
+2𝑉𝑇 for (𝑝, 𝑟)-parameters and 
+(∙)∗=
+𝑐̿
+2𝑉𝑇 for (𝑞, 𝛼̇)-parameters. Body-rate (𝑝, 𝑞, 𝑟) derivatives are the source of the 
+critical damping effects on the natural modes of the vehicle.  
+Damping derivatives can be found using the Eq. 42-55, which are taken from[50]. 
+While finding 𝐶𝑋𝑞 𝑎𝑛𝑑 𝐶𝑍𝑞, it has been assumed that 𝐶𝐷𝑞= 0 since we are in the 
+subsonic Mach number regime. In the Eq. 42, 𝑥𝑤 represents the distance between 
+wing MAC and CoM, 𝐶𝐿𝛼𝑤 𝑎𝑛𝑑 𝐶𝐿𝛼𝐻 are the lift curve slope of the wing and tail, 
+𝜂𝐻 is the ratio of dynamic pressure at the tail to that of the free stream, and , 𝐶𝐻𝑇 is 
+the tail volume coefficient, respectively. 
+ 
+Variation of pitching moment coefficient with pitch rate may be considered to be the 
+sum of the wing and the tail contribution and be found by the Eq. (44). 𝐾 is the 
+ 
+𝐶𝑋𝑞= 𝑠(𝛼)𝐶𝐿𝑞= 𝑠(𝛼) ((1
+2 + 2𝑥𝑤
+𝑐̅ ) 𝐶𝐿𝛼𝑤+ 2𝐶𝐿𝛼𝐻𝜂𝐻𝐶𝐻𝑇 ) 
+(42) 
+ 
+𝐶𝑍𝑞= −𝑐(𝛼)𝐶𝐿𝑞= −𝑐(𝛼) ((1
+2 + 2𝑥𝑤
+𝑐̅ ) 𝐶𝐿𝛼𝑤+ 2𝐶𝐿𝛼𝐻𝜂𝐻𝐶𝐻𝑇 ) 
+(43) 
+ 
+ 
+45 
+correction constant for wing contribution to 𝐶𝑚𝑞, where 𝐾= 0.7 for a wing with an 
+aspect ratio (AR) of 6.95. For the current design, Λ𝑐/4 = 5° and 𝑐̿ is the mean 
+aerodynamic chord of the wing. 
+ 
+The equations for the angle of attack derivatives are given in Eq. 45 and 46; 
+ 
+The roll rate derivative of the side force can be assumed as zero. The roll rate 
+derivative of the roll moment equation is Eq. (47). In this equation; 𝜅=
+𝐶𝑙𝛼
+2𝜋 and 
+𝑆 𝑎𝑛𝑑 𝑏 reference area and wingspan, respectively. 
+ 
+Variation of yawing moment coefficient with roll rate may be approximated from, 
+ 
+Variation of side force coefficient with yaw rate can be approximated as 𝐶𝑌𝑟= 0. An 
+approximation can be made that the variation of the rolling moment with yaw rate is 
+equal to wing yawing derivative and be found from; 
+ 
+𝐶𝑚𝑞= −𝐾𝐶𝐿𝛼𝑤𝑐𝑜𝑠(Λ𝑐/4) [
+𝐴𝑅[2 (𝑥𝑤
+𝑐̅ )
+2
++ 1
+2 (𝑥𝑤
+𝑐̅ )]
+𝐴𝑅+ 2𝑐𝑜𝑠(Λ𝑐/4)
++ 1
+24
+𝐴𝑅3𝑡𝑎𝑛2(Λ𝑐/4)
+𝐴𝑅+ 6𝑐𝑜𝑠(Λ𝑐/4) + 1
+8]
+−2𝐶𝐿𝛼𝐻𝜂𝐻𝐶𝐻𝑇 (𝑥𝐻
+𝑐̿ ) 
+(44) 
+ 
+𝐶𝑍𝛼̇ = −𝑐(𝛼)𝐶𝐿𝛼̇ = −𝑐(𝛼) (1.5 (
+𝑥𝑎𝑐𝑤
+𝑐̅ ) 𝐶𝐿𝛼𝑤+ 3𝐶𝐿(𝑔) + 2𝐶𝐿𝛼𝐻𝜂𝐻𝐶𝐻𝑇
+𝑑𝜖
+𝑑𝛼) = −𝑐(𝛼)0.53 (45) 
+ 
+𝐶𝑚𝛼̇ = −𝐶𝐿𝛼𝐻𝜂𝐻𝐶𝐻𝑇(𝑥𝐻
+𝑐̅ ) 𝑑𝜖
+𝑑𝛼= −3.72 ∗0.61 ∗(𝑥𝐻
+𝑐̅ ) ∗0.4 = −2.4 
+(46) 
+ 
+𝐶𝑙𝑝= 𝐶𝑙𝑝𝑊+ 𝐶𝑙𝑝𝐻 
+(47)
+ 𝐶𝑙𝑝𝑊= [(
+√1 −𝑀2𝐶𝑙𝑝
+𝜅
+)
+𝜅
+√1 −𝑀2]
+𝑊
++ 0.5 [(
+√1 −𝑀2𝐶𝑙𝑝
+𝜅
+)
+𝜅
+√1 −𝑀2]
+𝐻
+𝑆𝐻
+𝑆(𝑏𝐻
+𝑏)
+2
+= −0.28  (48) 
+ 
+𝐶𝑛𝑝= 𝐶𝑛𝑝𝑊 
+(49) 
+ 
+𝐶𝑛𝑝= (
+𝐶𝑛𝑝
+𝐶𝐿
+)
+𝐶𝐿=0
+𝑀=0
+𝐶𝐿𝛼𝛼
+= −1
+6
+𝐴𝑅+ 6 (𝐴𝑅+ 𝑐𝑜𝑠(Λ𝑐/4)) (𝑥̅
+𝑐
+𝑡𝑎𝑛(Λ𝑐/4)
+𝐴𝑅
++ 𝑡𝑎𝑛2(Λ𝑐/4)
+12
+)
+𝐴𝑅+ 4𝑐𝑜𝑠(Λ𝑐/4)
+𝐶𝐿𝛼𝛼 
+(50) 
+ 
+ 
+46 
+ 
+Finally, the variation of yawing moment coefficient with yaw rate can be found using 
+the following equation; 
+ 
+Computational aerodynamic data (or “Aerodynamic Database”) consists of the entire 
+static coefficients and dynamic damping derivatives discussed in the previous 
+section. Data is compiled in the “Aerodynamic Database” in the form of multi-
+dimensional look-up tables as functions of the indicated variables. The functional 
+dependency of all coefficients on geometric altitude ℎ is ignored. 
+To give an example of creating aerodynamic database methodology, consider the 
+minimum requirement for a simplified “Aerodynamic Database” of the static 
+pitching moment coefficient 𝐶̅𝑚, by ignoring secondary effects caused by the angle 
+of attack (𝛼), based on the following breakpoints of the independent variables: 
+𝛼= [−14°, 20°] 𝑤𝑖𝑡ℎ 2° 𝑖𝑛𝑐𝑟𝑒𝑚𝑒𝑛𝑡𝑠 
+𝛿𝑒= [−20°, 0°, 20°] 
+𝛿𝑇𝑊= [0°, 90°] 𝑤𝑖𝑡ℎ 15° 𝑖𝑛𝑐𝑟𝑒𝑚𝑒𝑛𝑡𝑠 
+𝛽𝑓= [−30°, 30°] 𝑤𝑖𝑡ℎ 15° 𝑖𝑛𝑐𝑟𝑒𝑚𝑒𝑛𝑡𝑠 
+𝛿𝑎= [−20°, 0°, 20°] 
+Breakpoints indicate the values of independent variables (α, 𝛿𝑒, 𝛿𝑇𝑊, βf, 𝛿𝑎) at which 
+the value of its dependent variable (in this case: C̅𝑚) is specified. They are given in 
+ 
+𝐶𝑙𝑟= 𝐶𝑙𝑟𝑊 
+(51) 
+ 
+𝐶𝑙𝑟𝑊= (
+𝐶𝑙𝑟
+𝐶𝐿
+)
+𝐶𝐿=0
+𝑀
+𝐶𝐿+ (
+Δ𝐶𝑙𝑟
+Γ ) Γ + (
+Δ𝐶𝑙𝑟
+θ ) θ + (
+Δ𝐶𝑙𝑟
+𝛼𝛿𝑓𝛿𝑓
+) 𝛼𝛿𝑓𝛿𝑓 
+(52) 
+ 
+𝐶𝑙𝑟𝑤= (
+𝐶𝑙𝑟
+𝐶𝐿
+)
+𝐶𝐿=0
+𝑀
+𝐶𝐿= (1 +
+𝐴𝑅
+2 (𝐴𝑅+ 2𝑐𝑜𝑠(Λ𝑐/4))
+) (
+𝐶𝑙𝑟
+𝐶𝐿
+)
+𝐶𝐿=0
+𝑀=0
+𝐶𝐿+ (
+Δ𝐶𝑙𝑟
+𝛼𝛿𝑓𝛿𝑓
+) 𝛼𝛿𝑓𝛿𝑓 (53) 
+ 
+𝐶𝑙𝑟= 𝐶𝑙𝑟𝑤= (1 +
+𝐴𝑅
+2 (𝐴𝑅+ 2𝑐𝑜𝑠(Λ𝑐/4))
+) ∗0.26 ∗𝐶𝐿𝛼𝛼−0.0055 ∗𝛿𝑓 (54) 
+ 
+𝐶𝑛𝑟= 𝐶𝑛𝑟𝑊= (
+𝐶𝑛𝑟
+𝐶𝐿
+2) 𝐶𝐿
+2 + (
+𝐶𝑛𝑟
+𝐶̅𝐷0
+) 𝐶̅𝐷0 = −0.03 ∗(𝐶𝐿𝛼𝛼)
+2 −0.006 
+(55) 
+ 
+ 
+47 
+monotonically increasing form, starting with the minimum and ending with the 
+maximum value. The resulting  C̅𝑚 database, at these breakpoints, would then 
+contain 5670 data points (18×3×7×5×3). Note that secondary effects caused by the 
+angle of attack have been ignored. Also, note the sweep sequence of independent 
+variables, starting with the breakpoints (from minimum to maximum) of the 
+innermost independent variable, and proceeding outward towards the outermost 
+independent variable. 
+2.4.2 
+Aerodynamic Analysis Results  
+The aerodynamic database has been generated using ANSYS/Fluent considering the 
+methodology given above. 63 CAD geometries, (the combination of seven tilt angles 
+position, three elevator deflections, and three aileron deflections) have been 
+produced to generate the CFD data. CFD results are obtained, assuming that airspeed 
+is equal to 20 m/s. This assumption is valid since, during the flight, airspeed is 
+varying between 10 and 20 m/s, which means that Reynolds number is not changing 
+very much and can be assumed to be equal for each tilt angle position. For Reynolds 
+number calculation Eq. 56 can be used; 
+The flight envelope is very close to sea level. Therefore, air density and viscosity can 
+be assumed as constant. The reference length is also not changing during the flight. 
+The only variable is airspeed to cover the whole flight envelope for the aerodynamic 
+analysis. It has been calculated that for the level flight, the Reynolds number will be 
+500000, while for the vertical flight, it will be 250000. Assuming that, for all flight 
+conditions, airspeed is constant, caused only %3 error in lift coefficient and 2.5% 
+error in the drag coefficient. 
+Data gathered from CFD has been used to investigate the aircraft stability and 
+augmentation of stability by designing a controller. In the following steps, the 
+generated aerodynamic database will be presented. 
+ 
+𝑅𝑒= 𝜌𝑉𝑙
+𝜇 
+(56) 
+ 
+ 
+48 
+Grid refinement study has been performed to obtain the optimal grid number, which 
+gives an accurate solution by minimizing the grid number. Since CFD geometry of 
+the study is not very simple and 44-core workstation, which reduces the run time of 
+the analysis, has been employed for CFD runs, four million mesh number is 
+acceptable for the study. Grid refinement study showed that after four million 
+element number results became constant (Figure 2.13), which concludes that 
+between four and five million elements will be sufficient for this study. Both drag 
+and lift coefficients showed the same convergence characteristics. The CAD 
+geometry, which is prepared for 𝛿𝑇𝑊= 0°, 𝛿𝑎= 0°𝑎𝑛𝑑 𝛿𝑒= 0°, has been used to 
+conduct the grid refinement study. In addition to the grid refinement study, the results 
+of the CFD have been compared with XFLR5 panel code results. They have 
+complied with each other. 
+ 
+ 
+ 
+ 
+ 
+Figure 2.13. Grid Refinement Results for 𝐶𝐿 and 𝐶𝐷 
+During the CFD analysis period, 5670 runs have been performed. Spalart Allmaras 
+Turbulence model (1 Eq.) has been selected since this model is adequate to be used 
+for low Reynolds number region. Typical y+ value, which is one for Spalart Allmaras 
+Turbulence Model, has been used for calculation of first layer thickness of the 
+boundary layer. The first layer thickness of the boundary layer has been calculated 
+as 0.03 mm. Element size has been calculated around between 4 and 5 million in 
+accordance with the grid refinement study. There may be small differences in 
+element size due to 63 different CAD geometries. It has been assumed that the flight 
+level will be close to the sea level; therefore, air pressure is assumed to be 101325 
+Pa.  
+𝐂𝑫 
+Element number 
+Element number 
+𝐂𝑳 
+ 
+ 
+49 
+The propeller slipstream causes additional airspeed of 7-10 m/s on the wings during 
+the transition [49]. Moreover, the body velocity increases from 0 to 16.1 m/s during 
+the transition flight. We can say that total airspeed over the aircraft is varying from 
+10 to 20 m/s during the whole flight envelope. Therefore, for all flight conditions, 
+airspeed is assumed to be 20 m/s. This assumption caused only %3 error in the lift 
+coefficient and 2.5% error in the drag coefficient.  
+An example of the grid domain can be seen in Figure 2.14, which shows the zero-tilt 
+angle, aileron, and elevator deflection geometry. The grid domain has a hemisphere 
+that has a 25 m radius in front of the aircraft and a cylinder having 50 m length. 
+         
+ 
+Figure 2.14. Grid Domain of the study 
+Lift coefficient variation for the whole aircraft shows that there will not be significant 
+𝐶𝐿 change in conversion mode; as expected, the maximum lift coefficient has been 
+observed in forward flight conditions. Note that the CFD analysis is done in wing 
+coordinates, which means that zero 𝛼 means the wing and airspeed are aligned with 
+each other. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.15. 𝐶𝐿 Variation for Different Flight Conditions  
+ 
+It has been observed that for all tilt-wing angles, the minimum drag coefficient is 
+placed at zero 𝛼. The drag coefficient decreases dramatically by the tilt angle 
+𝜹𝑻𝑾= 𝟎° 
+𝜹𝑻𝑾= 𝟏𝟓° 
+𝜹𝑻𝑾= 𝟑𝟎° 
+𝜹𝑻𝑾= 𝟒𝟓° 
+𝜹𝑻𝑾= 𝟔𝟎° 
+𝜹𝑻𝑾= 𝟕𝟓° 
+𝜹𝑻𝑾= 𝟗𝟎° 
+𝐂𝐋 
+𝜹𝑻𝑾=  𝟎° 
+𝜹𝑻𝑾= 𝟏𝟓° 
+𝜹𝑻𝑾= 𝟑𝟎° 
+𝜹𝑻𝑾= 𝟒𝟓° 
+𝜹𝑻𝑾= 𝟔𝟎° 
+𝜹𝑻𝑾= 𝟕𝟓° 
+𝜹𝑻𝑾= 𝟗𝟎° 
+𝜶[𝒅𝒆𝒈] 
+𝜹𝒆[𝒅𝒆𝒈] 
+𝐂𝐋 
+ 
+ 
+50 
+decrease. The drag coefficient changes will affect the control allocation, which will 
+be presented in the next section, directly. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.16. 𝐶𝐷 Variation for Different Flight Conditions  
+C𝑚 variation with respect to the CoM gives us feedback about aircraft stability in the 
+longitudinal axis. Our aircraft is statically stable in every tilt angle except for vertical 
+flight. We observed an adequate increase in pitch moment by increasing the elevator 
+deflection. Pitch non-linearity and pitch up behavior of the aircraft are acceptable. 
+ 
+ 
+ 
+ 
+ 
+Figure 2.17. 𝐶𝑚 Variation for Different Flight Conditions  
+Figure 2.18.a shows the roll moment variation with respect to 𝛼 for 𝛿𝑎= 20°, all tilt 
+angles and 𝛽= 0°and while Figure 2.18.b shows the roll moment variation with 
+respect to 𝛼 for 𝛿𝑇𝑊= 0°, all aileron deflections and 𝛽= −15°. The rolling moment 
+for all tilt angles seems to be constant except for 𝛿𝑇𝑊= 0° with respect to 𝛼. Roll 
+moment is calculated as zero for 𝛿𝑇𝑊= 90° since there is no aileron deflection in 
+that tilt angle. Instead of ailerons, flaps are used at 𝛿𝑇𝑊= 90°. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.18. 𝐶𝑙 Variation for Different Flight Conditions  
+𝜹𝑻𝑾=    𝟎° 
+𝜹𝑻𝑾= 𝟏𝟓° 
+𝜹𝑻𝑾= 𝟑𝟎° 
+𝜹𝑻𝑾= 𝟒𝟓° 
+𝜹𝑻𝑾= 𝟔𝟎° 
+𝜹𝑻𝑾= 𝟕𝟓° 
+𝜹𝑻𝑾= 𝟗𝟎° 
+𝐂𝑫 ሾሿ
+𝜶 [𝐝𝐞𝐠] 
+𝐂𝑫 
+𝜶 [𝐝𝐞𝐠] 
+𝜶 [𝐝𝐞𝐠] 
+𝐂𝒎𝑪𝒐𝑴 
+𝜹𝑻𝑾=    𝟎° 
+𝜹𝑻𝑾= 𝟏𝟓° 
+𝜹𝑻𝑾= 𝟑𝟎° 
+𝜹𝑻𝑾= 𝟒𝟓° 
+𝜹𝑻𝑾= 𝟔𝟎° 
+𝜹𝑻𝑾= 𝟕𝟓° 
+𝜹𝑻𝑾= 𝟗𝟎° 
+𝜹𝒆= −𝟐𝟎° 
+𝜹𝒆=      𝟎° 
+𝜹𝒆=   𝟐𝟎° 
+𝐂𝒎𝑪𝒐𝑴 
+𝜶 [𝐝𝐞𝐠] 
+𝜹𝑻𝑾= 𝟎° 
+𝜹𝑻𝑾= 𝟏𝟓° 
+𝜹𝑻𝑾= 𝟑𝟎° 
+𝜹𝑻𝑾= 𝟒𝟓° 
+𝜹𝑻𝑾= 𝟔𝟎° 
+𝜹𝑻𝑾= 𝟕𝟓° 
+𝜹𝑻𝑾= 𝟗𝟎° 
+𝜶 [𝐝𝐞𝐠] 
+𝜹𝒆= −𝟐𝟎° 
+𝜹𝒆=      𝟎° 
+𝜹𝒆=   𝟐𝟎° 
+𝐂𝒍 
+𝐂𝒍 
+ 
+ 
+51 
+Aircraft is directionally unstable since there is no vertical tail to stabilize the 
+directional axis. It can be inferred from Figure 2.19.a that yaw moment decreases as 
+𝛼 increases for all tilt angles. Figure 2.19.a is calculated for 𝛽= −15°and 
+𝛿𝑎= 20°, while Figure 2.19.b for 𝛿𝑇𝑊= 0°. Directional axis stability will be 
+augmented by employing the differential thrust of front motors. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.19. 𝐶𝑛 Variation for Different Flight Conditions  
+The pressure coefficient and vorticity contours have been gathered using Fluent and 
+CFD Post Features. The pressure coefficient is a dimensionless number that 
+describes the relative pressures throughout a flow field in fluid dynamics. The 
+baseline case is flight condition where TWA, aileron, elevator deflections, 𝛼, and 
+sideslip angles are equal to zero. Each flight condition is compared with respect to 
+baseline case via using pressure and vorticity contours.  
+Figure 2.20 shows that as 𝛼 increases, pressure on the bottom of the wing increases. 
+This condition increases 𝐶𝐿 value, which can be seen in Figure 2.15. From pressure 
+distribution in Figure 2.20, we can also say that the center of pressure goes forward 
+which leads 𝐶𝑚 to decrease. 
+Figure 2.21 shows that there is an asymmetric pressure distribution on aircraft, which 
+results in a decrease in 𝐶𝑛 and an increase in 𝐶𝑙 values. Additionally, it can also 
+clearly be seen from Figure 2.21 that the pressure coefficient is slightly decreasing 
+as sideslip increases. That condition leads 𝐶𝐿 to decrease. Note that, sideslip angle is 
+in a positive direction, which means that airflow is coming from the right side of the 
+aircraft. The stagnation point moves to the right side of the fuselage. 
+ 
+𝜶 [𝐝𝐞𝐠] 
+𝜶 [𝐝𝐞𝐠] 
+𝐂𝒏 
+𝐂𝒏 
+𝜷= −𝟑𝟎° 
+𝜷= −𝟏𝟓° 
+𝜷=       𝟎° 
+𝜷=    𝟏𝟓° 
+𝜷=     𝟑𝟎° 
+𝜹𝑻𝑾= 𝟎° 
+𝜹𝑻𝑾= 𝟏𝟓° 
+𝜹𝑻𝑾= 𝟑𝟎° 
+𝜹𝑻𝑾= 𝟒𝟓° 
+𝜹𝑻𝑾= 𝟔𝟎° 
+𝜹𝑻𝑾= 𝟕𝟓° 
+𝜹𝑻𝑾= 𝟗𝟎° 
+ 
+ 
+52 
+ 
+Figure 2.20. Pressure Contours at Different Angles of Attack 
+ 
+ 
+Figure 2.21. Pressure Contours at Different Sideslip Angles  
+ 
+𝛼= 0° 
+𝛼= 10° 
+𝛽= 0° 
+𝛽= 15° 
+ 
+ 
+53 
+ 
+Figure 2.22. Pressure Contours at Different Elevator Angles  
+It can be readily seen from Figure 2.22 that pressure on the upper side of the 
+horizontal stabilizer is increased as the elevator is negatively deflected. This 
+condition causes the center of pressure to go backward, and a positive moment on 
+aircraft is obtained, as can be seen from Figure 2.17. Pressure increase on the upper 
+side of the elevator has an effect on 𝐶𝐿 as well. Since the pressure on the upper side 
+of the aircraft increases, the total lift decreases accordingly. 
+Roll moment is obtained by aileron deflection in most parts of the mission. There is 
+a pressure distribution difference between aileron deflected and no deflection case. 
+The pressure increase on the bottom side of the right-wing is remarkable 
+(Figure 2.23). This pressure difference generates an additional lift on the right side 
+and creates a roll moment. The left side is also active on roll moment; however, most 
+of the contribution comes from the right-wing. 
+𝛿𝑒= 0° 
+𝛿𝑒= −20° 
+ 
+ 
+54 
+ 
+Figure 2.23. Pressure Contours at Different Aileron Angles 
+ 
+Figure 2.24. Pressure Contours at Different Tilt Angles 
+𝛿𝑎= 0° 
+𝛿𝑎= 20° 
+𝛿𝑇𝑊𝐴= 0° 
+𝛿𝑇𝑊𝐴= 45° 
+𝛿𝑇𝑊𝐴= 90° 
+ 
+ 
+55 
+Figure 2.24 shows the effect of Tilt Wing Angle on pressure distribution. Note that 
+each distribution is obtained at 0o 𝛼 of the wing. Pressure on the wing root is affected 
+from the fuselage at 𝛿𝑇𝑊𝐴= 45°. Force, which is used in longitudinal control, is 
+generated on body x-axis at 𝛿𝑇𝑊𝐴= 90° due to the lift on the wing. Pressure 
+increases at the upper side of the fuselage as the tilt angle increases. This condition 
+decreases the lift generated by the aircraft. 
+The vorticity magnitude increases as the 𝛼 increases as expected. Behind the engine 
+nacelles, there are strong vorticities which could be optimized according to these 
+results. 
+ 
+Figure 2.25. Vorticity Contours at Different Angles of Attack  
+Asymmetric Vorticity contours stand out in Figure 2.26 as expected. It can also be 
+said that vorticity increases as the sideslip angle increases. Note that, the vorticity 
+contours have been plotted in a plane which is 10 centimeters far from wingtip engine 
+nacelles. Different vorticity contours can be obtained when the distance from engine 
+nacelles is changed. 
+ 
+Figure 2.26. Vorticity Contours at Different Sideslip Angles 
+ 
+𝛼= 0° 
+𝛼= 10°
+𝛽= 0° 
+𝛽= 15° 
+ 
+ 
+56 
+Figure 2.27 shows the elevator deflection effect on the vorticity contours. It can be 
+readily said that vorticity contours have almost the same trend in two conditions, 
+with only slight differences. The backside of the root engine nacelles is changed 
+slightly due to wing and elevator interaction. Since the pressure is changed on the 
+elevator, vorticity is affected. 
+ 
+Figure 2.27. Vorticity Contours at Different Elevator Angles 
+ 
+Aileron deflection creates additional singularities on vorticity contours due to the 
+affected flow behind the ailerons. Additionally, vorticity contours around the 
+fuselage are also being affected by the aileron deflection, as can be seen from  
+Figure 2.28. Note that negative aileron deflection creates more vorticity contours 
+than positive aileron deflection, which means that the flow is negatively affected 
+behind left-wing. 
+ 
+ 
+Figure 2.28. Vorticity Contours at Different Aileron Angles 
+ 
+Tilt wing deflection is also influential in vorticity creation. As the tilt angle closes 
+45o, vorticity increases exponentially. Nevertheless, 0o and 90o tilt angles show 
+similar behaviors. 
+𝛿𝑒= 0° 
+𝛿𝑒= −20° 
+𝛿𝑎= 0° 
+𝛿𝑎= 20° 
+ 
+ 
+57 
+ 
+Figure 2.29. Vorticity Contours at Different Tilt Angles 
+ 
+2.4.3 
+Motor and Battery Database Generation  
+Front and rear motors are different from each other. More powerful motors are used 
+for wing, which is the main thrust generator for the aircraft. As airspeed increases, 
+thrust levels of the motors are decreasing. Thrust increases exponentially when the 
+motor RPM increases. Thrust levels for a specific flight condition have been 
+calculated using Neu-Motors e-Calc motor and battery package selection tool. This 
+program takes motor, battery and propeller package, airspeed, and RPM level as 
+input and generates the thrust level at the related condition. The thrust database is 
+embedded into the non-linear Simulink model by using look-up tables. The look-up 
+tables accept RPM and airspeed as inputs and produce thrust as an output, 
+instantaneously. There are separate look-up tables for each motor since their RPMs 
+could be different from each other. 
+  
+Figure 2.30. Front Motors Database 
+𝛿𝑇𝑊𝐴= 0° 
+𝛿𝑇𝑊𝐴= 15° 
+𝛿𝑇𝑊𝐴= 45° 
+𝛿𝑇𝑊𝐴= 90° 
+ 
+ 
+58 
+ 
+Figure 2.31. Rear Motors Database 
+ 
+Since the front motors are powerful than rear motors, their energy consumption is 
+also higher than the rear motors. Therefore, for front and rear batteries, separate 
+lookup tables are used. The non-linear dynamic model calculates the energy 
+consumption for each iteration and counts down the charge level cumulatively. When 
+the battery energy level drops to zero, the non-linear model will not produce a motor 
+thrust for the related motor. Figure 2.32 and 2.33 shows the discharge trends of the 
+front and rear motors. 
+  
+Figure 2.32. Front Batteries Discharge Database 
+ 
+ 
+ 
+59 
+  
+Figure 2.33. Rear Batteries Discharge Database 
+ 
+ 
+ 
+ 
+ 
+61 
+CHAPTER 3

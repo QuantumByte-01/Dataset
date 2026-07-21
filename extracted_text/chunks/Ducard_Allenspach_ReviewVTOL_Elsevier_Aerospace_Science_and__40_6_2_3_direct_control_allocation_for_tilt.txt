@@ -1,0 +1,16 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.2.3. Direct control allocation for tiltrotor UAVs
+# START_PAGE: 19
+
+Besides the mentioned mappings between virtual controller 
+outputs and actual actuator commands, there exist structures 
+which directly combine controller and allocation. These approaches 
+are often encountered when a linearized system model is used for 
+the controller, such as with Divide and Conquer (see Section 5.1.1) 
+19
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+for example. As shown in [227,218,228,241,217,219,114,220,171], 
+the control signals for the tilt angle, the rotors’ speed and the 
+control-surface angles are directly provided by the controller, and 
+no further manipulation is required.

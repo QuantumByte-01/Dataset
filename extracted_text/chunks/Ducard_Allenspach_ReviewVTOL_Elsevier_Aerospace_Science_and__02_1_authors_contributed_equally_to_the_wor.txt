@@ -1,0 +1,58 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 1 Authors contributed equally to the work.
+# START_PAGE: 1
+
+quire runways and have hover capabilities, they usually have a 
+lower range than their FW counterparts and can generally carry 
+smaller payloads. As summarized in Fig. 1, they are fundamen-
+tally different in their dynamics, aerodynamics and actuation, and 
+therefore, different in the way they operate. However, RW and FW 
+vehicles also present similarities, since they are both subject to 
+four forces: gravity F g, drag force F D opposite to the velocity vec-
+tor va, thrust force T , and lift force F L.
+As indicated in the bottom tables in Fig. 1, hybrid ﬂying ma-
+chines were developed with the intention to combine the beneﬁts 
+of both FW and RW vehicles, namely VTOL and hover capacity, 
+superior ﬂight maneuverability, increased payload capability, and 
+larger range of operation. This is done by tilting the rotors, the 
+wings or even the entire airframe (see Fig. 1), to cruise eﬃciently 
+at high speeds and to take off and land like a helicopter. However, 
+the tilting motion results in highly-nonlinear dynamics and com-
+plex aerodynamic effects, which complicates the trajectory gener-
+ation and control of these vehicles. Further challenges come from 
+the fact they have to operate in ﬂight modes, in which the air-
+craft’s behavior and dynamics are drastically different depending 
+on the operating point or mode of operation. The ﬂight control 
+system should be valid over a large ﬂight envelop, and in the pres-
+https://doi.org/10.1016/j.ast.2021.107035
+1270-9638/© 2021 The Author(s). Published by Elsevier Masson SAS. This is an open access article under the CC BY-NC-ND license 
+(http://creativecommons.org/licenses/by-nc-nd/4.0/).
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 1. Fixed-wing aircraft vs. helicopter vs. a possible hybrid-VTOL aircraft: main properties. The respective advantages of ﬁxed-wing aircraft and helicopters are highlighted 
+in red. (For interpretation of the colors in the ﬁgure(s), the reader is referred to the web version of this article.)
+ence of severe external perturbations, model uncertainties, possible 
+actuator/sensor failure, actuator saturation and the possible under-
+actuated nature of such platforms.
+The main goal of this paper is to provide an overview and com-
+parison of the control methods used in hybrid UAV control and 
+show how they are applied to the different platforms. Particular 
+attention is paid to prototypes whose speciﬁcs (control structure, 
+avionics, etc.) are available publicly, thus allowing meaningful com-
+parison and analysis. As such, this work mainly focuses on con-
+vertible UAV designs and control techniques encountered in the 
+scientiﬁc literature over the last twenty years.
+Section 2 overviews and evaluates the major hybrid-VTOL vehi-
+cle designs with respect to mechanical complexity, stability con-
+cerns, eﬃciency and maneuverability. The primary focus is on 
+research platforms. In order to provide some historical perspec-
+tive, a selection of the most-prominent military or commercial 
+projects, together with some prototypes, is also included for com-
+pleteness. Section 3 reviews the physical modeling of the different 
+hybrid-VTOL UAV types and highlights fundamental differences and 
+similarities. Next, a detailed review about feasible state-trajectory 
+generation, vehicle control and control allocation is provided in 
+Sections 4, 5 and 6, respectively. In this context, Section 5.3 in-
+cludes a simulation-based comparison between two representative 
+state-of-the-art control approaches. The paper concludes in Sec-
+tion 7 with an outlook on the still-open challenges in the ﬁeld.

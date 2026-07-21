@@ -1,0 +1,798 @@
+# SOURCE: index
+# SECTION: 4 LINEAR ANALYSIS
+# START_PAGE: 107
+
+In this chapter, the linear analysis process of the system has been discussed. 
+Trimming, linearization, and stability are three aspects that make up the general 
+flight characteristics of an aircraft. Trimming refers to find the equilibrium points 
+about which the linearization of the relevant nonlinear equations is done. The 
+linearization is done to determine the stability characteristics of the system. After the 
+linearization process, controllers are designed by using the stability characteristics 
+of the system, which is found in the linearization process.  
+Stability analysis requires linearization about a trim point and examination of the 
+eigenvalues and eigenvectors of the system. This is useful when examining the 
+system responses to step inputs or finding the frequency response of the system in 
+case of disturbances. The primary assumption underlying in the stability and trim 
+analysis is that the higher-order rotor and inflow dynamics are much faster than the 
+fuselage motions and have time to reach their steady-state well within the typical 
+time constants of the aircraft’s response modes [2]. In this study, linear analysis has 
+been performed based on the body axes since the wind axis or stability axis, losing 
+their importance during hover. Another issue is that the inertial measurement unit 
+gives the output in the body axis. Therefore the body axis will be employed in the 
+linear analysis. 
+Throughout the chapter, trimming methods are explained, and how the trim points 
+of the system are found will be discussed. The trim points that are found in this 
+chapter are used in linear model analysis and controller design in the next chapter.  
+ 
+ 
+86 
+4.1 
+Trimming Methodology 
+Flight can be defined as the movement in the air with the balance of the aerodynamic, 
+inertial, and gravitational forces and moments about three mutually perpendicular 
+axes at all times. The trim condition is satisfied when this balance is achieved. The 
+trim can be defined as the equilibrium point, where the rates of the aerodynamic state 
+variables are zero. 
+The trim problem deals with the determination of control commands 
+𝑢𝑥, 𝑢𝑦, 𝑢𝑧, 𝑢𝑟𝑜𝑙𝑙, 𝑢𝑝𝑖𝑡𝑐ℎ, 𝑢𝑦𝑎𝑤 which 
+map 
+to 
+control 
+elements’ 
+variables 
+𝛿𝑒, 𝛿𝑎, 𝛿𝑡ℎ1, 𝛿𝑡ℎ2, 𝛿𝑡ℎ3, 𝛿𝑡ℎ4 and the states that are required to hold the aircraft in 
+equilibrium. The controller decides how much forces and moments are needed for 
+the desired flight and a scheduler, which knows how much additional force and 
+moment will be provided when control elements are deflected, decides which control 
+elements should be deflected. Since the trim is an aerodynamical equilibrium, the 
+derivatives of the states are set to zero except for 𝜓 since it is used as a variable in 
+turning flight.  
+MATLAB/Simulink-Linear Analysis Toolbox has been used for the trimming. 
+“Gradient Descent Method with elimination” optimization method is used with an 
+“active set algorithm.” Gradient Descent methods involve an iterative moving in the 
+direction of steepest descent as defined by the negative of the gradient. In the gradient 
+descent method, the sum of the squared errors is reduced by updating the parameters 
+in the direction of the greatest reduction of the least-squares objective. The active set 
+algorithm strategy is related to the Karush-Kuhn-Tucker (KKT) equations. The KKT 
+equations are necessary conditions for optimality for a constrained optimization 
+problem. The strategy includes these steps; Updating Hessian Matrix, Quadratic 
+Program Solution, initialization, line search, and merit function. The number of 
+iterations, function evaluations, parameters, and function tolerances are all selectable 
+to reach the required equilibrium states, inputs, and outputs.  
+ 
+ 
+87 
+In trimmed flight, the following rates are defined to be zero, and control elements 
+are defined as constant. The trim methodology may be defined as an optimization 
+problem given below: 
+ 
+ 
+Seven Linear Models are generated for trimming. These models include the aircraft 
+plant model and sensor block (Figure 4.1). In linear models, aerodynamic surfaces 
+and propellers do not have a degree of freedom to have a stick fixed open loop 
+system. Connections of these surfaces are cut from the Aerodynamic and Thrust 
+forces and moments block. Instead of a degree of freedom, an input block has been 
+placed (Figure 4.1). The linear analysis toolbox has the capability to make small 
+adjustments on these input blocks to find the equilibrium points. States are defined 
+as output blocks, which means that in every iteration linear analysis toolbox will give 
+a small increment to the input and look to the outputs if they fit the target values or 
+not. 
+The dynamics of the actuators are not included in the linear models. It is assumed 
+that the position of the aileron and elevator actuators’ and the angular velocity of the 
+propellers at a certain tilt angle is always constant for the linear models. Therefore, 
+there is no need to add a transient response for actuators for linear models. This 
+assumption is valid for stick fixed open-loop system analysis. However, in the non-
+linear model, the actuator transient responses are included. 
+ 
+𝑚𝑖𝑛𝑖𝑚𝑖𝑧𝑒 ‖𝑥̇‖ 
+𝑥, 𝑢           
+ 
+(115) 
+ 
+𝑠𝑢𝑏𝑗𝑒𝑐𝑡 𝑡𝑜 𝑥̇ = 𝑓(𝑥, 𝑢)   
+−1 ≤𝛿𝑒, 𝛿𝑎, ≤1
+0 ≤𝛿𝑡ℎ1, 𝛿𝑡ℎ2 ≤1
+0 ≤𝛿𝑡ℎ3, 𝛿𝑡ℎ4 ≤1
+ 
+(116) 
+ 
+𝑤ℎ𝑒𝑟𝑒 𝑥= [𝑢, 𝑣, 𝑤, 𝑝, 𝑞, 𝑟, 𝜙, 𝜃, 𝜓, 𝑃𝑧𝑉] 𝑓𝑜𝑟 ℎ𝑜𝑣𝑒𝑟, 𝑡𝑟𝑎𝑛𝑠𝑖𝑡𝑖𝑜𝑛 𝑎𝑛𝑑 𝑐𝑟𝑢𝑖𝑠𝑒   
+𝑥= [𝑢, 𝑣, 𝑤, 𝑝, 𝑞, 𝑟, 𝜙, 𝜃, 𝑃𝑧𝑉] 𝑓𝑜𝑟 𝑐𝑜𝑜𝑟𝑑𝑖𝑛𝑎𝑡𝑒𝑑 𝑡𝑢𝑟𝑛              
+𝑢= [𝛿𝑒, 𝛿𝑎, 𝛿𝑡ℎ1, 𝛿𝑡ℎ2, 𝛿𝑡ℎ3, 𝛿𝑡ℎ4]                                                   
+𝑓(𝑥, 𝑢) 𝑖𝑠 𝑡ℎ𝑒 𝑒𝑞𝑢𝑎𝑡𝑖𝑜𝑛𝑠 𝑜𝑓 𝑚𝑜𝑡𝑖𝑜𝑛                                           
+     
+(117)
+ 
+ 
+88 
+ 
+Figure 4.1. Linear Model for Trimming 
+Each linear model has its boundaries and initial conditions. In VTOL flight, aircraft 
+vertical velocity can be changed from -5 to 5 m/s, while horizontal velocity is limited 
+between -0.05 to 0.05 m/s, which means that linear analysis toolbox will try to fit 
+vertical and horizontal velocities in these values. In forward flight horizontal velocity 
+is approximated as between 15-25 m/s, and in vertical flight can be between  
+-1 m/s and 1 m/s. Note that these values are in body coordinates. 
+There may be more than one trim condition for each linear model. However, the 
+linear analysis toolbox will give us the first trim point where it finds a feasible 
+solution that satisfies all constraints.  
+4.1.1 
+Trim Results 
+After the iterative process, the trimming results are obtained with maximum error in 
+the order of 10-6. There are eight trimmed conditions in total, of which one is for 
+hover, five are for transition, one is for level flight, one is for the coordinated turn. 
+For hover, the aircraft has a zero velocity in trim, whereas for forward flight and 
+transition, the trim results are presented for different velocities. The results are shown 
+in Table 4.1.  
+Trim results show that during hover, there is sufficient excess power for throttle 
+inputs; however, there is no excess power of the elevator, which leads us to use flaps 
+as body x-axes control input. During the transition, at high tilt angles, thrust forces 
+Plant Model 
+Sensor Block 
+𝛿𝑒 
+𝛿𝑎 
+𝛿𝑡ℎ1 
+𝛿𝑡ℎ2 
+𝛿𝑡ℎ3 
+𝛿𝑡ℎ4
+⬚
+ 
+States 
+ 
+ 
+89 
+dominate the control authority, while aerodynamic forces are dominating the 
+authority at low tilt angles. 
+Table 4.1 Inputs Variation During Transition 
+Tilt Angle 
+(deg) 
+𝛿𝑡ℎ−𝑓 (%) 
+𝛿𝑡ℎ−𝑟 
+(%) 
+𝛿𝑎𝑙𝑟𝑛  
+(deg) 
+𝛿𝑒𝑙𝑣   
+(deg) 
+𝑢  
+(m/s) 
+𝑣 
+(m/s) 
+𝑤 
+(m/s) 
+𝜃   
+(deg) 
+𝜙   
+(deg) 
+𝑟   
+(deg/s) 
+90 
+0.854 
+0.781 
+-17 -26.47 
+0 
+0 
+0 
+0 
+0 
+0 
+75 
+0.814 
+0.714 
+0 
+-9.56 
+2.17 
+0 
+-0.218 -5.72 
+0 
+0 
+60 
+0.776 
+0.572 
+0 
+-10.88 3.22 
+0 
+0.0007 
+0 
+0 
+0 
+45 
+0.692 
+0.323 
+0 
+-27.73 5.42 
+0 
+-0.008 -0.093 
+0 
+0 
+30 
+0.543 
+0 
+0 
+-25.32 7.82 
+0 
+-0.78 -5.72 
+0 
+0 
+15 
+0.472 
+0 
+0 
+-20.85 9.79 
+0 
+0 
+0 
+0 
+0 
+0 
+0.4265 
+0 
+0 
+-0.47 
+16.1 
+0 
+0 
+0 
+0 
+0 
+0(Turn) 
+0.47/0.467 
+0 
+1.97 
+-30 
+14.8 
+5 
+-0.105 3.52 
+12 
+5.15 
+ 
+ 
+Figure 4.2. Velocity Changes with respect to Tilt-Angle 
+ 
+The trimming results are highly dependent on the target states' values that we have 
+entered the optimization program. For instance, since we have selected yaw rate as 
+5 deg/s during the coordinated turn, trim results converged on a point that can be 
+seen in Table 4.1. However, if another yaw rate had been chosen, roll angle and body 
+velocities would have converged on different values. All trim points aim to have a 
+smooth transition between vertical flight to horizontal flight or vise versa. Therefore, 
+airspeed should have a smooth transition from zero to cruise speed. Pitch angle can 
+be selected whatever optimization gives unless it is in the stall region. It should be 
+noted that actuator inputs should have a smooth transition as well to hinder the 
+transient response while passing from one trim point to another.  NominalMaximumMinimum
+ 
+ 
+90 
+4.2 
+Linearization  
+In general, the equations of motions are nonlinear. Since linear controllers will be 
+designed under this study, non-linear equations of motions should be linearized 
+around trim points. While linearizing the nonlinear model, MATLAB/Simulink 
+Linear Analyses Toolbox has been used. As part of this study, nine models, of which 
+eight are linear, and one is nonlinear, has been prepared in Simulink. 
+The inputs presented in Table 4.1 and the outputs determined as states of the models 
+are used for the analysis. Numerical perturbation has been employed as a 
+linearization algorithm. After defining the algorithm type, ‘linearize’ command is 
+used to linearize the system around the trim points. The classical Taylor series 
+approach has been used by the toolbox. A continuous-time linearized state-space 
+model has been obtained after linearizing the 6 DoF equations of motion.  
+ 
+𝑥̇ = 𝑓(𝑥, 𝑢) 
+(118) 
+ 
+𝑦= 𝑔(𝑥, 𝑢) 
+(119) 
+ 
+𝐴= 𝜕𝑓
+𝜕𝑥|
+(𝑥0,𝑢0)
+=
+[
+ 
+ 
+ 
+ 𝜕𝑓1
+𝜕𝑥1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑓1
+𝜕𝑥𝑛
+|
+(𝑥0,𝑢0)
+…
+…
+…
+𝜕𝑓𝑛
+𝜕𝑥1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑓𝑛
+𝜕𝑥𝑛
+|
+(𝑥0,𝑢0)]
+ 
+ 
+ 
+ 
+ 
+(120) 
+ 
+𝐵= 𝜕𝑓
+𝜕𝑢|
+(𝑥0,𝑢0)
+=
+[
+ 
+ 
+ 
+ 𝜕𝑓1
+𝜕𝑢1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑓1
+𝜕𝑢𝑚
+|
+(𝑥0,𝑢0)
+…
+…
+…
+𝜕𝑓𝑚
+𝜕𝑢1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑓𝑚
+𝜕𝑢𝑚
+|
+(𝑥0,𝑢0)]
+ 
+ 
+ 
+ 
+ 
+(121) 
+ 
+𝐶= 𝜕𝑔
+𝜕𝑥|
+(𝑥0,𝑢0)
+=
+[
+ 
+ 
+ 
+ 𝜕𝑔1
+𝜕𝑥1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑔1
+𝜕𝑥𝑛
+|
+(𝑥0,𝑢0)
+…
+…
+…
+𝜕𝑔𝑛
+𝜕𝑥1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑔𝑛
+𝜕𝑥𝑛
+|
+(𝑥0,𝑢0)]
+ 
+ 
+ 
+ 
+ 
+(122) 
+ 
+ 
+91 
+ 
+State-space matrices of the system obtained from the Simulink Linear Analysis 
+Toolbox can be found in Appendix B. 
+4.3 
+Open Loop Stability  
+In the sense of Lyapunov, stability assessment of the system has been performed. A 
+Lyapunov approach is a general approach that can be employed for linear  
+time-invariant dynamical systems for stability assessment. According to this 
+approach: 
+• 
+The system is stable if and only if all of the eigenvalues of 𝐴 matrix have 
+non-positive real parts, and those with zero real parts are distinct roots of the minimal 
+polynomial of 𝐴. 
+• 
+Asymptotically stable, if and only if all of the eigenvalues of 𝐴 matrix have 
+negative real parts. 
+For each trim condition, eigenvalues are found and represented in Eq. 126. For the 
+hover case, open-loop aircraft is unstable. For level flight aircraft is stable in the 
+longitudinal axis; however, for the lateral-directional axes, aircraft is unstable due to 
+not having a vertical stabilizer. This instability will be tried to overcome with active 
+asymmetric thrust control. 
+ 
+ 
+𝐷= 𝜕𝑔
+𝜕𝑢|
+(𝑥0,𝑢0)
+=
+[
+ 
+ 
+ 
+ 𝜕𝑔1
+𝜕𝑢1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑔1
+𝜕𝑢𝑚
+|
+(𝑥0,𝑢0)
+…
+…
+…
+𝜕𝑔𝑚
+𝜕𝑢1
+|
+(𝑥0,𝑢0)
+…
+𝜕𝑔𝑚
+𝜕𝑢𝑚
+|
+(𝑥0,𝑢0)]
+ 
+ 
+ 
+ 
+ 
+(123) 
+ 
+∆𝒙̇ = 𝑨∆𝒙+ 𝑩∆𝒖 
+(124) 
+ 
+∆𝒚= 𝑪∆𝒙+ 𝑫∆𝒖 
+(125) 
+ 
+ 
+92 
+The impulse response of the system during hover and the forward flight has been 
+illustrated in Figures 4.3 and 4.4. Only, the longitudinal axis in forward flight rejects 
+the disturbance, while others diverge. The lateral-directional axes are always 
+unstable since the aircraft does not have a vertical stabilizer. However, the closed-
+loop system should be stable during the whole flight envelope. 
+ 
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=0°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  −417
+−29.65
+−5.57
+−1.29
+−0.32
+−0.0042 
+−0.0139
+ 1.2278
+ 0.0036
+0
+0
+0
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑢𝑟𝑛) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −379
+−32.03
+−4.98
+−0.92
+−0.4
+−0.01 + 0.04𝑖 
+−0.01 −0.04𝑖
+−0.003
+ 1.29
+0
+0
+0
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=15°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −219.91
+−15.31
+−2.04
+−0.43 + 0.42𝑖
+−0.43 −0.42𝑖
+−0.42 
+−0.05
+0.14
+0
+0
+0
+0 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=30°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −176.09
+−9.44
+−1.83
+−0.71 + 0.80𝑖
+−0.71 −0.80𝑖
+−0.36 
+−0.05
+0.19
+0
+0
+0
+0
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=45°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −133.65
+−9.19
+−0.95 + 0.67𝑖
+−0.95 −0.67𝑖
+−1.09
+−0.27
+−0.13
+0.30
+0
+0
+0
+0 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=60°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+−93.75
+−6.4978
+−0.73 +  1.1𝑖
+−0.73 − 1.1𝑖
+−1.08
+−0.021
+−0.32
+0.64
+0.0007
+0
+0
+0 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=75°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −79.6928
+−4.57 
+−0.65 +  1.48𝑖
+−0.65 − 1.48𝑖
+−0.93
+−0.003 
+−0.35
+0.94
+0.001
+0
+0
+0 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=90°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −67.9
+−1.40
+−0.28
+−0.16
+−0.0035
+−0.035 
+0.108 +  0.22𝑖
+0.108 − 0.22𝑖
+0.0035
+0
+0
+0 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+(126) 
+ 
+ 
+93 
+ 
+Figure 4.3. Impulse Responses of the Aircraft for Forward Flight 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+94 
+ 
+ 
+ 
+Figure 4.4. Impulse Responses of the Aircraft During Hover  
+ 
+ 
+ 
+ 
+95 
+4.4 
+Controllability 
+A system is said to be controllable if any initial state 𝑥(𝑡0) can be transferred or 
+changed to any final state 𝑥(𝑡𝑓), by applying a suitable control 𝑢(𝑡) over this finite 
+interval of time (𝑡0 < 𝑡< 𝑡𝑓). Testing controllability is done by checking if the 
+controllability matrix has full row rank or not. 𝐴 𝑎𝑛𝑑 𝐵 matrices are defined in  
+Eq. 124.  
+Controllability matrix has been found using the MATLAB function “ctrb” which 
+takes the system and input matrices as inputs and gives the controllability matrix as 
+an output. After getting the controllability matrix, the rank of the matrix has been 
+calculated by using the “rank” function, which is also a function of MATLAB. Nine 
+linearized points are calculated as fully controllable by using the “ctrb” and “rank” 
+commands in MATLAB. 
+ 
+ 
+𝑟𝑎𝑛𝑘([𝐵
+𝐴𝐵
+𝐴2𝐵   …
+…
+𝐴𝑛−1𝐵]) = 𝑛 
+(127) 
+ 
+ 
+97 
+CHAPTER 5

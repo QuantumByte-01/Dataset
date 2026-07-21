@@ -1,0 +1,70 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 2.2.2. Tiltrotor aircraft
+# START_PAGE: 5
+
+Tiltrotor vehicles belong to the group of convertiplanes. Unlike 
+tailsitters, the longitudinal body axis of these aircraft does not ro-
+tate much during the whole ﬂight. Instead, a tilting mechanism is 
+added to the rotors for ﬂight-mode transition. This way, the thrust 
+direction can be rotated up for VTOL mode and be rotated forward 
+for horizontal acceleration [176]. A two- and four-rotor design are 
+shown in Fig. 3.
+A major disadvantage of the ﬁrst implementation is the nega-
+tive lift or download due to part of the wing being in the propeller 
+wash. An in-depth analysis of these so-called aerodynamic interfer-
+ence effects and how they inﬂuence ﬂight performance and stability 
+is provided in [177]. On top of that, since this form of propeller 
+mounting requires shorter and thicker wings, cruise ﬂight eﬃ-
+ciency is also reduced.
+At the cost of increased mechanical complexity, four-rotor vari-
+ants balance some of these disadvantages, although cruise ﬂight is 
+Fig. 2. Examples of tailsitter UAVs.
+Fig. 3. Examples of tiltrotor UAVs.
+still ineﬃcient due to the increased number of propellers. At low 
+speeds however, tiltrotor aircraft beneﬁt from their multicopter-
+like construction and demonstrate high maneuverability and agility 
+[178]. For example, large yaw torques can be produced by differ-
+entially tilting the left- and right-propellers [146,147].
+5
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 4. Examples of tiltwing UAVs.
+Table 4
+Performance comparison of different hybrid UAV platforms.
+Tailsitter
+Tiltrotor
+Tiltwing
+Mechanical Complexity
+• Simple mechanical design
+• No dead weight
+• Complex propeller-tilting mechanism
+• Dead weight of tilting actuators
+• Complex wing-tilting mechanism
+• Dead weight of tilting actuators
+Stability Concerns
+• Wind susceptibility during hover
+• High angle-of-attack operation
+• Tilt-actuation delays
+• Aerodynamic interference effects
+• Wind susceptibility during hover
+• High angle-of-attack operation
+• Tilt-actuation delays
+Eﬃciency
+• Power intensive disturbance 
+rejection during hover
+• Eﬃcient cruise through optimizable 
+wing design
+• Download reduces hover lift generation
+• Sturdy wing design reduces cruise 
+eﬃciency
+• Power intensive disturbance 
+rejection during hover
+• Eﬃcient cruise through optimizable 
+wing design
+Maneuverability
+• Agility reduction from large wing 
+drag
+• Agile maneuvering through thrust 
+vectoring
+• Agility reduction from large wing 
+drag

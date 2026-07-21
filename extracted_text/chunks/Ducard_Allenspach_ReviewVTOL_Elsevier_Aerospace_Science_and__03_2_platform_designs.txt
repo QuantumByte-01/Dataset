@@ -1,0 +1,17 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 2. Platform designs
+# START_PAGE: 2
+
+While unmanned ﬂying hybrid vehicles are a topic of modern 
+research, several prototypes have already been developed to meet 
+the needs of speciﬁc real-world applications. Section 2.1 provides 
+a short historical perspective of such vehicles encountered in com-
+mercial, military and general non-research areas, whose speciﬁcs 
+such as the type of avionics and control structures have not been 
+found because of conﬁdentiality.
+Thus, the remainder of this review focuses on convertible UAVs 
+whose development process is documented in scientiﬁc publica-
+tions. The considered vehicles are introduced in Section 2.2.
+2.1. Non academic research applications
+This section introduces a representative but non-exhaustive list 
+of hybrid vehicles in a chronological order.

@@ -1,0 +1,45 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: front_matter
+# START_PAGE: 1
+
+Aerospace Science and Technology 118 (2021) 107035
+Contents lists available at ScienceDirect
+Aerospace Science and Technology
+www.elsevier.com/locate/aescte
+Review
+Review of designs and ﬂight control techniques of hybrid and 
+convertible VTOL UAVs
+Guillaume J.J. Ducard a,∗,1, Mike Allenspach b,1
+a I3S, University Côte d’Azur, CNRS, 06903 Sophia Antipolis, France
+b ETH Zürich, 8092 Zürich, Switzerland
+a r t i c l e 
+i n f o
+a b s t r a c t
+Article history:
+Received 21 April 2021
+Received in revised form 11 July 2021
+Accepted 10 August 2021
+Available online 17 August 2021
+Communicated by Jérôme Morio
+Keywords:
+VTOL-ﬂight transition control
+Hybrid and convertible aircraft
+Unmanned aerial vehicles (UAV)
+Control allocation
+This paper provides a broad perspective and analysis of the work done in control of hybrid and 
+convertible unmanned aerial vehicles (UAVs) for the main existing designs. These ﬂying machines are 
+capable of vertical take off and landing (VTOL) in helicopter mode and able to transition to high-speed 
+forward ﬂight in airplane mode and vice versa. This paper aims at helping engineers and researchers 
+develop ﬂight control systems for VTOL UAVs. To this end, a historical perspective ﬁrst shows the 
+technological advances in VTOL aircraft over the years. The main VTOL concepts and state-of-art ﬂight 
+control methods for VTOL UAVs are presented and discussed. This study shows both the common parts 
+and the fundamental differences in the modeling, guidance, control, and control allocation for each 
+hybrid-VTOL-UAV type. The open challenges and the current trends in the ﬁeld are highlighted. These 
+are namely: 1) augmenting or replacing classical controllers with data-driven methods such as neural 
+networks and machine-learning-based controllers; 2) incorporating as much knowledge of the vehicle as 
+possible into the ﬂight controller, for example through model predictive control or model-based nonlinear 
+controllers; 3) a trend towards ﬁnding a uniﬁed-control approach valid in all ﬂight modes without the 
+need to switch among ﬂight controllers or to perform predeﬁned-gain scheduling, and 4) the need to 
+mitigate control complexity and available computing resources.
+© 2021 The Author(s). Published by Elsevier Masson SAS. This is an open access article under the CC 
+BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).

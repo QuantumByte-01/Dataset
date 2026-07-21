@@ -1,0 +1,341 @@
+# SOURCE: index
+# SECTION: 1 INTRODUCTION
+# START_PAGE: 23
+
+It is crucial to design an air vehicle that is efficient, affordable, reliable, and also 
+capable of serving the needs throughout its lifecycle. In accordance with this target, 
+several air vehicles were designed throughout aviation history in terms of their wing 
+motion. Unmanned air vehicles can be classified into three groups in terms of their 
+wing motion. These are fixed-wing, rotary-wing, and flapping wing[1]. There are 
+advantages and disadvantages to each group. Therefore, one type can become 
+dominant in compliance with the application area with respect to others. While fixed-
+wing airplanes have a disadvantage about take-off and landing distances, rotary-wing 
+and flapping wing airplanes have difficulties in terms of payload capacity and flying 
+to long distances with respect to fixed-wing airplanes. The primary purpose of this 
+study is to combine the advantages of all three types and reveal a more efficient kind 
+of UAV design. 
+1.1 
+Motivation 
+Since field battles have lost their importance and fights are made against smaller 
+groups in narrower places in recent years, the systems which are human-independent 
+as much as possible are getting more and more required. Moreover, the systems 
+which can be carried easily in hand or on vehicles, available for service as soon as 
+possible, take off and land from everywhere needed would be great for the use.  
+If these systems are integrated into our national technology, the operational forces 
+will gain a great ability against spontaneous incidents, which have both 
+reconnaissance and attacking features. The more aforementioned forces utilize 
+ 
+ 
+2 
+technological means and capabilities in steep terrain and climate conditions of the 
+area, the more they prevent loss of expert personnel. Also, the possibility of the 
+success of the ongoing operation will increase. 
+1.2 
+Problem Statement 
+As aviation technology becomes sophisticated, the challenges faced are getting 
+complicated day by day. The development of a robust controller of VTOL systems 
+in the transition phase of the flight has been investigated around the world in recent 
+years[2]. Nevertheless, there are still very few examples in use since there is not a 
+rugged way of designing an optimal controller capable of doing vertical, transitional, 
+and horizontal flights at the same time. 
+Fixed-wing UAVs are the most used platforms which are providing long endurance 
+and long-range, for which researchers [3] show that a mini fixed-wing UAV has at 
+least two times more of flight endurance compared to a mini helicopter. On the other 
+hand, rotary-wing and flapping wing UAVs, such as helicopters, multi-rotors, and 
+flapping-wing micro air vehicles (FWMAVs), can provide hover capability. 
+However, the high-power requirement is limiting flight time and operation radius. 
+Frequent maintenance is required for helicopters. Additionally, they are difficult and 
+expensive platforms to operate due to their mechanical complexity. 
+Different types of control and guidance methods are used in the literature for VTOL 
+UAVs, and these methods are varying through flight characteristics and control 
+elements of that aircraft. The necessity of high fidelity dynamic model construction 
+using aerodynamic principles has been observed. This need led us to investigate 
+different types of dynamic models in the literature. 
+The necessity of the control allocation should not be underestimated. Effective 
+controlled design requires an optimal allocation of the control surfaces. Since we are 
+needed to have high endurance and high range capability aircraft, it is very crucial 
+ 
+ 
+3 
+to use its optimal energy. During the transition phase, a robust controller with a 
+minimum steady-state error should be studied. 
+1.3 
+Literature Survey 
+1.3.1 
+Platforms in the Literature  
+Fixed-wing airplanes are obliged to operate above their stall speeds; thus, they are 
+not able to have the capability of hover, and they have to land on their landing gears 
+or bellies or should land by parachute, which makes it susceptible to mechanical 
+failures and crashes. 
+Multi-rotors have a simple mechanical design; however, they have high power 
+requirements, which limit their payload capacity. Tail-sitters, tilt-rotors, and tilt-
+wings are VTOL capable platforms, and they have similar features with helicopters 
+and multi-rotors. Even though tail-sitters are mechanically more straightforward 
+platforms, they are difficult to control, and they are not very successful in rejecting 
+disturbances.  
+There are quadrotor-fixed wing UAVs, but they have less endurance than tilt-rotor 
+and tilt-wing aircraft since they have vertical rotors in the level flight. Although tilt-
+rotors have reasonable endurance, they lose so much thrust power in vertical flight 
+since rotors are vertical to the wing in that flight. Because of all these reasons, there 
+is a need for an aircraft type that is aerodynamically efficient and has the advantage 
+of vertical and level flight.  
+VTOL, hover, level flight, transition flight, payload capacity, endurance, control 
+system simplicity, maintainability can be expected from a UAV platform, according 
+to mission requirements. Table 1.1 shows the comparison of capabilities of different 
+UAV platforms, which provides an insight into their mission profiles. When vertical 
+takeoff/landing or hover is required for a mission, then rotary-wing aircraft, such as 
+helicopters or multi-rotors are most optimal. However, if endurance or range is a 
+ 
+ 
+4 
+priority, then a fixed-wing type will most likely be preferred. When all of these 
+capabilities are expected from one platform, then a VTOL capable UAVs provides 
+the best solution, as a hybrid platform with some trade-offs in its capabilities. 
+Table 1.1 Platform Types in the Literature 
+Capability 
+Platform Types 
+Multirotor 
+Helicopter 
+Airplane 
+Tilt-Wing, Tilt-Rotor, 
+Quadrotor-FW 
+VTOL Capacity 
++ 
++ 
+- 
++ 
+Aerodynamic Efficiency 
+- 
+- 
++ 
++ 
+Weight 
++ 
+o 
+o 
+o 
+Endurance 
+- 
+- 
++ 
+o 
+Range 
+- 
+- 
++ 
++ 
+Durability 
+- 
+- 
++ 
++ 
+Maintainability 
++ 
+- 
+o 
+o 
+Manufacturability 
++ 
+- 
++ 
+o 
+Payload Capacity 
+- 
+- 
++ 
++ 
+Stability 
+- 
+- 
++ 
++ 
+Control System Complexity 
++ 
+o 
++ 
+- 
+ 
+Demonstrating both fixed and rotary wing capabilities in one platform is one of the 
+main targets in the UAV design process. Having merits of both fixed-wing and 
+rotary-wing, VTOL capable UAVs make missions, which cannot be achieved by 
+either fixed-wing or rotary-wing UAVs alone, achievable. Such UAV types can fly 
+in harsh terrain and effectively take off and land in predetermined regions without a 
+runway, which provides flexibility to us to operate in any theatre. Thanks to level 
+flight, long-range and endurance flight through efficient flight can be achievable. 
+The versatility of the aircraft will be increased by these capabilities. Additionally, 
+there will be less need for human interaction in launch and recovery. It is also 
+allowing for consistent target tracking, guidance in obstacle-filled terrains with 
+extended flight range, and endurance. 
+Lately, the area of research for the scientific community and industry is very 
+interested in VTOL capable UAVs. Configurations of these platforms differentiate 
+ 
+ 
+5 
+by the method they have used in combining the control elements. Even though every 
+type has its advantages and disadvantages, some of them seem more promising for 
+future VTOL capable aircraft.  
+Within the context of scientific researches about VTOL capable platforms, NASA 
+GL-10 [4] is about 30 kg weight, and it has 2 hours of flight endurance. It flies 
+between 15 and 30 m/s, and its service ceiling is about 5000 ft. It has ten motors on 
+it, of which eight are placed on the main wing, and two are placed on the tail. A 
+conceptual aircraft study [5], named as a convertible tail-sitter UAV, with two 
+counter-rotating propellers, is designed. VertiKUL is developed by Researchers at 
+KuLeuven. It is a quadcopter-tail-sitter flying wing [6] with only VTOL control 
+elements that achieves transition through tilting fuselage. SUAVI [7], which is 
+mainly designed for surveillance, has 17 m/s cruise speed. They have mainly studied 
+the controller and avoided the aerodynamical complexity as much as possible. The 
+whole aircraft, which has four rotors and 4.5 kg take-off weight, is manufactured 
+from carbon fiber. It has symmetry in the pitch axis due to using two tandem wings, 
+which are identically the same and placed sequentially. This symmetry provides to 
+design a less complicated flight controller. However, the aerodynamic performance 
+is affected negatively since the backward wing is affected by the front wing. 
+QTW-UAV[8], which has 24 kg take-off weight, is designed as four-motored. The 
+wings generate lift while rotors tilted because of the accelerated air by rotor blades 
+in VTOL mode. This feature helps them to have one more input to maneuver the 
+aircraft during the VTOL and transition modes. The AVIGLE [9], which is capable 
+of performing the mission between 0 and 40 m/s velocity range has 10 kg take-off 
+weight. This aircraft, which has a different design from the others, is designed to 
+have two rotors. The moment is balanced by using a small fan blade; that is, we can 
+say that this UAV has three rotors in total. It is made from carbon fiber. This type is 
+considered riskier than the others since the aircraft will become uncontrollable in 
+case of a rotor loss. Another study by Onen et al. [10] performed hover for a tri-
+copter fixed-wing UAV configuration. Also, another tail-sitter aircraft is developed 
+with a coaxial propulsion system [11], and they have performed hover with this 
+ 
+ 
+6 
+aircraft. The QUX-02A [12], which has two wings and four rotors, has a 4.2 kg take-
+off weight, and it is capable of doing missions between 10 and 25 m/s velocity. In 
+another study [13], a tail-sitter configuration with variable pitch propellers is utilized. 
+Stone [14] developed a T-wing tail-sitter UAV with two counter-rotating propellers 
+in 2005. 
+Another interesting example is TURAÇ [15], which is a flying wing-tiltrotor with a 
+ducted fan configuration. It has a 4.2 m wingspan, 25 m/s cruise speed, and 47 kg 
+maximum take-off weight with 8 kg payload.  
+Korea Aerospace Research Institute has designed and manufactured a Tilt-Rotor 
+Aircraft [16] for the Smart UAV development program. For the sake of the program, 
+they built a scaled model and tested it successfully. The aircraft maximum take-off 
+weight is approximately 210 kg with 250 km/h top speed. It has an endurance of  
+5-6 hours, and its wingspan is about 5 m. 
+The main difference in these experimental VTOL platform studies is the method of 
+transition used in switching the aircraft between flight modes. A tail-sitter platform 
+tilts its fuselage by control surfaces through stalling the aircraft in transition. A tilt-
+rotor tilts its fuselage by changing angular positions of rotors and by operating wings 
+at stall conditions in transition maneuvers. A tilt-wing tilts its wings operating in pre-
+stall conditions, while the fuselage remains parallel to the ground. 
+Apart from the Academic Researches, Industrial examples of VTOL capable 
+platforms are also increasing day by day because of the operational requirements. 
+Among them, Xcraft Company’s X Plus One [17] is a quadrotor flying wing. 
+Additionally, Arcturus UAV Company’s Jump [18] is a quadrotor-fixed wing 
+hybrid, which is a tractor propeller. Comquest Ventures Company’s Vertex VTOL 
+[19] and KrossBlade Company’s Skyprowler [20] are quadrotor-fixed wing types 
+hybrid with tilt-rotors and retractable rotors, respectively.  
+ 
+ 
+ 
+ 
+7 
+Table 1.2 VTOL UAV Types 
+ 
+ 
+ 
+ 
+ 
+Tail-sitter 
+Ducted fun 
+Tilt-wing 
+Tilt-rotor 
+Quadrotor-FW 
+Control 
+2 
+4 
+3 
+3 
+4 
+Transition 
+3 
+4 
+3 
+3 
+4 
+Hovering capability 
+1 
+3 
+4 
+3 
+4 
+Horizontal flight 
+3 
+2 
+4 
+4 
+2 
+Energy efficiency 
+4 
+2 
+5 
+5 
+2 
+Mechanical complexity 
+4 
+2 
+4 
+3 
+5 
+Payload volume 
+2 
+1 
+4 
+3 
+2 
+ 
+Table 1.2 shows that Tilt-Wing Platforms come forward per VTOL UAV types. 
+Therefore, in this study, a Tilt-Wing VTOL capable UAV will be studied. Some 
+examples of Tilt-Wing UAVs can be seen in Table 1.3.  
+Table 1.3 Tilt-Wing UAVs 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SUAVI 
+NASA GL-10 QTW-UAV 
+AVIGLE 
+QUX-02A 
+HARVee 
+QTW-UAS FS4 
+Driven By 
+Electric Driven Hybrid Driven Electric driven Electric driven  Electric driven  Electric driven  Electric driven 
+Concept 
+Quad Tilt Wing Tilt-Wing 
+Quad Tilt Wing Tilt-Wing 
+Quad Tilt wing Tilt-Wing 
+Quad Tilt wing 
+Made of 
+Composite 
+Composite 
+Composite 
+Composite 
+Foam  
+Wood 
+Composite 
+Wing Pos. 
+Mid wing 
+High Wing 
+High Wing 
+High wing 
+High Wing 
+Mid-Wing 
+High wing 
+Max. Weight 
+4.46 kg 
+30 kg 
+24 kg 
+10 kg 
+4.2 kg 
+27 lb 
+30 kg 
+Rotor Num.

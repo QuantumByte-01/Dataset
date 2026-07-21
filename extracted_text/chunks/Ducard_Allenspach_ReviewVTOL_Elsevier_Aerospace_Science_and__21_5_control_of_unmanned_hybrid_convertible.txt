@@ -1,0 +1,47 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5. Control of unmanned hybrid/convertible aerial vehicles
+# START_PAGE: 11
+
+The automatic control of hybrid UAVs is still a challenge to-
+day, mainly due to the highly nonlinear dynamics resulting from 
+the interaction of different aerodynamic effects (see Section 3). The 
+transition maneuvers between helicopter and airplane modes, and 
+vice versa, are particularly challenging as they require the ﬂight 
+controller to be able to handle potentially large changes in AoA (in 
+particular for tailsitter aircraft), in velocity, in attitude and in actu-
+ator control effectiveness depending on airspeed, which all affect 
+the aerodynamic forces and torques acting on the vehicle.
+A major diﬃculty comes from the fact that classical methods 
+to capture these aerodynamic characteristics, such as computa-
+tional ﬂuid dynamics (CFD) or wind tunnel measurements, do not 
+provide analytical expressions. From a control design perspective, 
+these methods are only useful to ﬁnely tune a controller around a 
+given ﬂight velocity. Thus, most control systems used in aeronautic 
+and aerospace applications are based on linearized systems at cer-
+tain operating points [184,224], usually those of quasi-stationary 
+ﬂight for RW or equilibrium trajectories for FW aircraft.
+The idea of having different controllers designed for speciﬁc 
+operating conditions is a common approach in hybrid UAVs but 
+requires the design of controller switching or scheduling policies 
+as discussed in Section 5.1.
+However, these methods are limited to speciﬁc areas of the 
+ﬂight envelope due to a ﬁnite number of linearization points and 
+thus limit the domain of stability. In addition, small hybrid VTOL 
+UAVs are particularly sensitive to wind perturbations, which exist-
+ing autopilots, based on linear control techniques, cannot handle 
+properly [176].
+In order to circumvent these limitations and ensure stable 
+tracking performance, more recent investigations propose the use 
+of uniﬁed control approaches, based on adaptive or nonlinear im-
+plementations. These methodologies, capable of handling the non-
+linear dynamics and covering the entire ﬂight envelope, are dis-
+cussed in Section 5.2. A summary of common scheduled and uni-
+ﬁed control approaches for tailsitter, tiltrotor and tiltwing vehicles 
+is provided towards the end of this article in Tables 5–7, respec-
+tively.
+It should be noted that literature focusing exclusively on hover 
+or FW ﬂight is not discussed in this section, since these works of-
+ten employ standard control approaches from the RW or FW com-
+munity. Instead, control methodologies which can be used across 
+the full ﬂight envelope of hybrid UAVs are introduced and com-
+pared.

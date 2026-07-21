@@ -1,0 +1,79 @@
+[
+  {
+    "batch_name": "00_integration",
+    "subsystem_tag": "_integration",
+    "n_records": 15,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_00_integration.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_00_integration.jsonl"
+  },
+  {
+    "batch_name": "01_airframe_aerostructures",
+    "subsystem_tag": "airframe_aerostructures",
+    "n_records": 23,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_01_airframe_aerostructures.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_01_airframe_aerostructures.jsonl"
+  },
+  {
+    "batch_name": "02_propulsion",
+    "subsystem_tag": "propulsion",
+    "n_records": 23,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_02_propulsion.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_02_propulsion.jsonl"
+  },
+  {
+    "batch_name": "03_tilt_actuation",
+    "subsystem_tag": "tilt_actuation",
+    "n_records": 23,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_03_tilt_actuation.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_03_tilt_actuation.jsonl"
+  },
+  {
+    "batch_name": "04_power_energy",
+    "subsystem_tag": "power_energy",
+    "n_records": 23,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_04_power_energy.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_04_power_energy.jsonl"
+  },
+  {
+    "batch_name": "05_flight_control_system",
+    "subsystem_tag": "flight_control_system",
+    "n_records": 23,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_05_flight_control_system.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_05_flight_control_system.jsonl"
+  },
+  {
+    "batch_name": "06_navigation_sensing",
+    "subsystem_tag": "navigation_sensing",
+    "n_records": 24,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_06_navigation_sensing.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_06_navigation_sensing.jsonl"
+  },
+  {
+    "batch_name": "07_datalink_comms",
+    "subsystem_tag": "datalink_comms",
+    "n_records": 24,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_07_datalink_comms.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_07_datalink_comms.jsonl"
+  },
+  {
+    "batch_name": "08_payload",
+    "subsystem_tag": "payload",
+    "n_records": 24,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_08_payload.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_08_payload.jsonl"
+  },
+  {
+    "batch_name": "09_ground_control_station",
+    "subsystem_tag": "ground_control_station",
+    "n_records": 24,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_09_ground_control_station.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_09_ground_control_station.jsonl"
+  },
+  {
+    "batch_name": "10_safety_flight_termination",
+    "subsystem_tag": "safety_flight_termination",
+    "n_records": 24,
+    "batch_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\batches\\batch_10_safety_flight_termination.json",
+    "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_10_safety_flight_termination.jsonl"
+  }
+]

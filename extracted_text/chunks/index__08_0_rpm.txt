@@ -1,0 +1,79 @@
+# SOURCE: index
+# SECTION: 0 RPM
+# START_PAGE: 104
+
+8842 RPM 
+Aileron 
+-30 deg 
++30 deg 
+Elevator 
+-30 deg 
++30 deg 
+Tilt-Wing 
+0 deg 
+90 deg 
+Tilt-Tail 
+0 deg 
+90 deg 
+ 
+Actuator dynamics is a crucial factor for a non-linear model to be a good 
+representative of the real plant. Therefore, typical actuator transient responses have 
+been implemented for the non-linear model. This response is represented using a 
+transfer function given in Eq. 114, note that the transient response of the actuators is 
+normalized. Normalized transient responses are amplified with the related 
+coefficients before sending them to the sensor model. The step input response of the 
+transfer function can be seen in Figure 3.11.  
+ 
+Figure 3.11. Transient Response of the Actuators 
+ 
+𝐺(𝑠) =
+1
+0.02𝑠+ 1 
+      (114) 
+ 
+ 
+83 
+For tilt-wing and tilt-tail dynamics, non-linear second order actuator models have 
+been employed, which has 10 rad/s natural frequency and 0.3 damping ratio. Step 
+input responses of the tilting mechanisms can be seen in Figure 3.12. 
+ 
+Figure 3.12. Transient Response of the Tilting Mechanisms 
+3.8.4 
+Disturbance Model 
+The disturbance model accepts altitude, airspeed, and direction cosine matrix as 
+inputs and generates random wind gusts in three axes using the Dryden Wind 
+Turbulence Model. The wind gusts generated in this block are sent to the sensor 
+block, and sensor block changes angle of attack and sideslip angle using the gusts. 
+When the angle of attack and sideslip angle changes, related forces and moments 
+which affect the aircraft dynamics are generated in the plant model.  
+ 
+Figure 3.13. Disturbance Model 
+ 
+The disturbance sent by this block can be manipulated by changing the wind speed 
+and wind direction. As the wind speed increases, the gusts’ amplitudes also increase. 
+ 
+ 
+84 
+If the wind direction is changed, the intensity of the gust for different axis will be 
+changed. 
+3.8.5 
+Sensor Model 
+The sensor model accepts the position, velocity, Euler angles, Angular velocities in 
+inertial coordinates, control surface deflections, Motor RPMs in body-fixed 
+coordinates. After that, it converts them into the body coordinates using the 
+transformation matrices then sends the states as outputs. Disturbances cause 
+additional forces and moments on aircraft depending on aerodynamic characteristics 
+of the aircraft. In the sensor block, body velocity, propeller slipstream velocity, and 
+the additional velocity coming from the disturbances in three axes are sum up. The 
+velocity vector formed by body velocity, propeller slipstream velocity, and the 
+disturbances is used to calculate the angle of attack, sideslip angle, and the total 
+velocity in this block. Additional forces and moments are generated on aircraft in 
+each step of the simulation if the disturbances are turned on. Because of this reason, 
+the disturbances are applied to sensor block instead of the plant model itself. We can 
+say that disturbance forces and moments are applied to aircraft indirectly. 
+ 
+ 
+ 
+ 
+85 
+CHAPTER 4

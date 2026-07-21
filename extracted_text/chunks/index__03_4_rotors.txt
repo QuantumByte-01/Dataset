@@ -1,0 +1,299 @@
+# SOURCE: index
+# SECTION: 4 Rotors
+# START_PAGE: 29
+
+Fuselage 
+1 m  
+1.85 m 
+1 m 
+1.85 m 
+1.1 m  
+4.5 ft 
+1.86 m 
+Wing span 
+1 m  
+3.16 m 
+1 m 
+2 m  
+1.38 m  
+5.7 ft 
+1.80 m 
+Chord length 
+0.25 m  
+0.25 
+0.3 m 
+0.35 
+0.132 m 
+N/A 
+0.30 m 
+AR 
+4 
+12.8 
+ 
+5.7 
+5.23 
+N/A 
+6 
+Opt./Max. speed 40/60 km/h 
+22.7/- m/s 
+-/150 km/h 
+15/40 m/s 
+10/25 m/s 
+15/- m/s 
+100/150 km/h 
+Speed Range 
+0-60 km/h  
+0-??? m/s 
+0-150 km/h 
+0-40 m/s 
+10-25 m/s 
+N/A 
+0-150 km/h 
+Payload 
+N/A 
+2 kg 
+5 kg 
+1.5 kg  
+N/A 
+N/A 
+5 kg 
+Endurance 
+60 min 
+120 min 
+15 min 
+60 min  
+N/A 
+N/A 
+60 min 
+ 
+The objective of these studies (Table 1.3) was to make an aircraft that has a less 
+complicated flight controller compared to literature designs, although this reduces 
+the aerodynamic performance. It is clearly seen that most of the studies about the 
+ 
+ 
+8 
+tilt-wing aircraft concept include motors that are symmetrically placed around 
+pitching and rolling axis since it has less control complexity. However, these types 
+do not have that much aerodynamic performance since they use tandem wing instead 
+of pair of the wing and horizontal tail. NASA GL-10 uses a wing and horizontal tail 
+pair, which makes its controller a little bit complex; therefore, it is aerodynamically 
+efficient. The current study aims to investigate a VTOL UAV platform that has both 
+sufficient aerodynamic and controller performance as well.  
+1.3.2 
+Control System Architectures in the Literature  
+Aircrafts, thanks to the flight control system, are able to be stabilized, track guidance 
+commands, reject disturbances, and be robust to the parameter variations and the 
+uncertainties. For the VTOL capable UAVs, the flight control system should perform 
+flight modes switching, which requires switching between different trim conditions 
+[3]. Switching the aircraft from vertical flight mode to forward flight has very 
+complex, highly non-linear dynamics since the trim condition of the aircraft is 
+always changing during the transition. Hence, control system architecture should aim 
+to achieve a successful transition without steady-state error, which means without 
+any altitude change in transition. 
+There are two different domains related to a control strategy. The first one is tracking 
+action ([21],[22]), which takes place around trim states, and means that control 
+around the states involving continuous feedback with small amplitude actions that 
+result in small amplitude state changes. In this type, the aircraft dynamics can be 
+assumed that it is changing linearly. The desired state trajectory is followed in 
+conventional flight by using tracking control. It is common in these design strategies 
+to linearize the system around a trimmed flight condition and to use a basic steady-
+state near trim flight kinematic relationships to simplify control law design. If the 
+altitude and the airspeed are needed to be changed or extended, control techniques 
+such as gain scheduling [23] can be used with no change in the control system design 
+strategy.  
+ 
+ 
+9 
+The second control strategy is maneuvering actions [24], which starts with one trim 
+state and end on another one. This control activity generally involves significant 
+amplitude actions that result in large amplitude state changes. While tracking trim 
+states is a well-known area, maneuvering, which generally has nonlinear dynamics, 
+has many challenges because of highly nonlinear dynamics. For maneuvering 
+actions, gain scheduling has been employed in most of the aircraft. While changing 
+trim states, gain scheduling involves linearization of the system at several operating 
+points and interpolation of the controller gains for the conditions between these 
+operating points. To have a robust closed-loop system and not to affect 
+controllability, this class of controllers typically causes to lean significant limitations 
+on the aircraft’s allowable attitude, velocity, and altitude deviations, and it limits the 
+operation points in the flight envelope, where the aircraft’s flight dynamics change 
+slowly. However, these controllers are widely used in VTOL capable aircrafts.  
+In this study, tracking actions will be used to follow guidance commands in any of 
+the flight modes, and maneuvering actions will be utilized in achieving transitions 
+between flight modes. Although human pilots can perform intricate maneuvers, it 
+still falls short of the aircraft’s capabilities. Therefore, the flight control system will 
+be in use in all flight modes, from vertical take-off to forward flight. The control 
+system for a Tilt-Wing UAV should be able to control the aircraft within large 
+deviations without having lost the agile maneuverability to benefit from the 
+capabilities of the aircraft. 
+There are many studies on different types of UAV platforms, designed for combining 
+the desired features of Fixed Wing and Rotary Wing aircraft. Platforms in this 
+category, like tilt-wing, tiltrotor, and tail-sitter, are capable of level flight and VTOL. 
+In literature, there are several types of controllers to have robust control over the 
+vertical and forward flight. Studies in the literature can be summarized as follows; 
+NASA GL-10 [4] uses an L1 Adaptive Robust control technique to control the 
+aircraft. The flight controller provides closed-loop feedback control utilizing body-
+axis angular rates and attitudes to control the vehicle. It uses separate PID gains 
+ 
+ 
+10 
+assigned during forward flight and hover. The settings to control the feedback gains 
+for Hover and Forward Flight are blended linearly during the transition. During 
+hover, the pilot input is mixed to the assigned motor and servo outputs, which 
+correspond to a “Y-copter” multi-rotor configuration. During forward flight, the pilot 
+input is appointed as per the standard RC airplane configuration (aileron, elevator, 
+throttle, and rudder). The scheduled rotation of the wing and tail are set to a 10 
+second transition period where the mixing is slowly transferred from the Y-copter 
+control (Mode 1) to the wing-borne forward flight control. 
+SUAVI [25] proposes a hierarchical control system architecture, which has the 
+position and attitude subsystems and uses a dynamic inversion method, with anti-
+aliasing filters. A 100-hertz hard real-time control loop gives sufficient closed-loop 
+stability to the aircraft. They implemented a Dryden Wind-Gust Model to 6-DoF 
+model to increase the robustness of the PID controller. They also used the LQR 
+controller for the vertical flight. Aircraft deviated from the desired altitude by only 
+30 cm in vertical flight. Pitch control is made with a thrust difference at VTOL, 
+which means the elevator is not being used during VTOL maneuvers. 
+Hover capability is essential for VTOL maneuvers. Related with the hover 
+capabilities, a convertible tail-sitter UAV [26], which is a conceptual aircraft study, 
+with two counter-rotating propellers, is designed, and PID controllers are employed 
+for hover demonstration. Another study [27] performed hover for a tri-copter, which 
+was a fixed-wing UAV, by using optimal control techniques. Hover condition for 
+tail-sitter has also been investigated by other researchers such that Matsumoto[28] 
+has used PID controllers with quaternions, and Escareno [29] divided the dynamics 
+into three parts as lateral, longitudinal, and axial dynamics. He has developed 
+separate nonlinear controllers for hover. Lyapunov functions are used by Garcia [30] 
+to control the aircraft during the hover maneuver.  
+ 
+ 
+ 
+ 
+ 
+11 
+Table 1.4 Controller Survey of the VTOL UAVs 
+Control 
+Inputs 
+Controller 
+Type 
+System 
+Freq. 
+Gain 
+Scheduling 
+Transition 
+Time 
+Steady State 
+Error 
+Controller 
+Level 
+Filter 
+Disturbance 
+Observer 
+1 
+ 
+4R 
+DI 
+PID 
+LQR 
+100 Hz. No 
+40 s 
+30 cm 
+2 
+Anti-
+aliasing 
+Yes 
+2 
+10R 
+Alrn. 
+Elv. 
+L1 
+PID 
+N/A 
+Yes 
+10 s 
+6.6 m/s 
+2 
+N/A 
+Yes 
+3 
+4R 
+LQI 
+PID 
+N/A 
+Yes 
+N/A 
+N/A 
+2 
+Kalman Yes 
+4 
+ 
+3R 
+Flp. 
+Elv. 
+PID 
+N/A 
+Yes 
+30 s 
+0.5 m/s 
+3 
+No 
+Yes 
+5 
+4R 
+Flp. 
+Elv. 
+PID 
+N/A 
+Yes 
+100 s 
+60 m 
+3 
+No 
+No 
+6 
+ 
+4R 
+𝐻∞ 
+N/A 
+Yes 
+20 s 
+0 
+2 
+Pre-Filter Yes 
+7 
+3R 
+LQR 
+LQT 
+PID 
+50 Hz.
+N/A 
+N/A 
+N/A 
+N/A 
+Washout No 
+8 
+ 
+2R 
+TDC* 
+PSO ** 
+50 Hz.
+Yes 
+600 s 
+Yes 
+2 
+Rate 
+Limiter 
+11 
+4R 
+LADRC 
+PID 
+LQR 
+300 Hz. N/A 
+N/A 
+N/A 
+3 
+N/A 
+N/A 
+12 
+4R 
+DAC*** 
+DI**** 
+𝐻∞, 
+LQR

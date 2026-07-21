@@ -1,0 +1,76 @@
+# =====================================================================
+# requirement_categories.yaml
+# ---------------------------------------------------------------------
+# Requirement categorisation for each record. Per the user's
+# instruction, ONLY Axis 1 (Nature) and Axis 2 (Behavior & Structure)
+# from the handbook screenshots are used. Axis 3 (DSL/MBSE/formalisms)
+# and Axis 4 (lifecycle abstraction) are NOT used as record categories.
+#
+# Each record carries:
+#   axis1_nature   : exactly one id from axis1_nature.values
+#   axis2_behavior : exactly one id from axis2_behavior.values
+# (The separate hierarchy.level field - mission/system/subsystem/
+#  component - is a decomposition position, not a category axis.)
+# =====================================================================
+
+version: 1
+
+axis1_nature:
+  question: "What kind of requirement is it?"
+  values:
+    - id: functional
+      label: Functional
+      note: A behaviour/capability the system must perform.
+    - id: non_functional_reliability_availability
+      label: Non-functional / Quality - Reliability / Availability
+      note: MTBF, availability, redundancy, fault tolerance targets.
+    - id: non_functional_safety
+      label: Non-functional / Quality - Safety
+      note: Hazard avoidance, safe states, geofencing, flight termination.
+    - id: non_functional_security
+      label: Non-functional / Quality - Security
+      note: Datalink encryption, authentication, anti-spoof, tamper.
+    - id: non_functional_usability
+      label: Non-functional / Quality - Usability / Human factors
+      note: Operator workload, GCS ergonomics, alerts, ease of operation.
+    - id: non_functional_maintainability
+      label: Non-functional / Quality - Maintainability / Portability / etc.
+      note: Serviceability, modularity, field replaceability, portability.
+    - id: interface
+      label: Interface
+      note: Data / physical / energy / comms interfaces between elements.
+    - id: constraint
+      label: Constraints
+      note: Imposed design/regulatory/environmental limits (mass, standards).
+
+axis2_behavior:
+  question: 'What "shape" does the requirement have?'
+  values:
+    - id: structural
+      label: Structural / Architectural
+      note: Components, allocations, physical/logical interfaces.
+    - id: state_driven
+      label: State-driven
+      note: Modes, state machines, invariants that hold per mode.
+    - id: event_driven
+      label: Event / Trigger-driven
+      note: Responses to events, sequencing, temporal ordering.
+    - id: quantitative
+      label: Quantitative
+      note: Equations, inequalities, thresholds, numeric bounds.
+    - id: probabilistic
+      label: Probabilistic / Uncertain
+      note: Likelihood, confidence, stochastic constraints.
+    - id: hybrid_continuous
+      label: Hybrid / Continuous dynamics
+      note: CPS, control loops, continuous signals (rates, gains, damping).
+    - id: domain_semantics_heavy
+      label: Domain semantics heavy
+      note: Needs FOL/DL/ontology grounding of domain terms/relations.
+
+# Convenience: flat lists the generators/validators check membership against.
+axis1_ids: [functional, non_functional_reliability_availability, non_functional_safety,
+            non_functional_security, non_functional_usability,
+            non_functional_maintainability, interface, constraint]
+axis2_ids: [structural, state_driven, event_driven, quantitative, probabilistic,
+            hybrid_continuous, domain_semantics_heavy]

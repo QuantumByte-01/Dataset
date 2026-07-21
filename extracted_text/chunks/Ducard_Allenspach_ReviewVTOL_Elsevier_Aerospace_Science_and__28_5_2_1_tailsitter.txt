@@ -1,0 +1,89 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.2.1. Tailsitter
+# START_PAGE: 14
+
+State-of-the-art literature on tailsitter UAV control shows sev-
+eral cases, where Robust Control with constant gains and with-
+out any additional compensation terms has been used successfully 
+across the full ﬂight envelope. Rather than adapting to system 
+changes, aerodynamics and uncertainties, the idea here is to make 
+the controller robust against them [207]. That being said, these 
+works often require additional modiﬁcations in the control struc-
+ture to achieve satisfactory performance. [56] and [76] use an ex-
+ternal maneuver generator to obtain suitable attitude references, 
+while [70] derived a custom mapping to account for the effects of 
+forward and rotational speed on the propeller thrust, as well as us-
+ing a special tuning function to ensure robustness. In [34,78], it is 
+explicitly mentioned that ﬁxed gains in the controller are not opti-
+mal. This issue is addressed in [36] which demonstrates the use of 
+Direct Gain Scheduling, whereby the controller gains are scaled with 
+an airspeed v(t) depending factor k(v(t)), i.e.:
+k(v(t)) =
+vref
+v(t)
+(24)
+where vref is a tuning parameter. The idea is to make the gains 
+smaller, as the control surface become more effective at larger air-
+speed.
+A simple solution to improve performance is to rely on Dynamic 
+Inversion. This methodology allows to transform a nonlinear system 
+such that it can be controlled as if it were linear. Given a nonlinear 
+system of the form
+˙x = f (x) + g(x)u,
+(25)
+the control input is designed as
+u = g(x)−1 (−f (x) + v)
+(26)
+where v is then designed to stabilize ˙x = v. Such feedback lin-
+earization has for example been used in [80,84] to cancel out aero-
+dynamic forces. However, the linearization based on f (x) and g(x)
+is highly model dependent and thus rather sensitive to modeling 
+errors and parametric uncertainties, which can affect the stability 
+of the system dramatically [187]. Using an online model estimator, 
+these effects can be mitigated. Depending on the application, dif-
+ferent parts of the model are considered as adaptive parameters. 
+Possible implementations include aerodynamic parameter estima-
+tion only [53,54], lumping all nonlinear effects into an equivalent 
+disturbance or robust compensator [91,92,95,94,93] and full model 
+Fig. 17. Model-reference adaptive control.
+estimation [59]. A summary of common adaptive parameters and 
+estimation laws is provided in Table 8. Another method to es-
+timate and compensate for model uncertainties in the dynamic 
+inversion approach is to apply machine learning techniques, such 
+as presented for the ducted fan UAV in [45]. The nonlinear model 
+functions f (x) and g(x) from (25) are separated into a known and 
+unknown part, whereby the latter is learned by a NN. Using a Lya-
+punov stability analysis, boundedness of the tracking error during 
+learning is shown.
+A direct extension of observer-based dynamic inversion is pre-
+sented by Model Reference Adaptive Control (MRAC). As shown in 
+Fig. 17, this scheme uses a reference model with desired tracking 
+performance and adapts the controller according to the difference 
+between the real and reference model [230]. A standard MRAC im-
+plementation is presented in [51] to handle nonlinearities in the 
+pitch angle dynamics. Although online estimation allows the con-
+troller to adapt to system changes, high estimation gains might 
+negatively affect stability and robustness. This issue is addressed 
+by a new concept called L1-adaptive control [231–233], which 
+adds a low-pass ﬁlter at a speciﬁc point in the control architecture, 
+thereby decoupling the estimation and control loop. This concept 
+has been successfully applied to a tailsitter UAV in [58].
+The presented adaptive methodologies can be combined with 
+any sort of baseline control law. Tuning examples for P/PD/PID are 
+presented in [84,53] and for LQR in [83,82], respectively. The work 
+in [87] explains in detail the combination of observer-based dy-
+namic inversion with backstepping.
+A completely model-free control approach is presented in [90], 
+using Reinforcement Learning to train a pure NN controller. In this 
+methodology, an agent (hybrid VTOL UAV) takes an action based 
+on its state relative to the environment and a corresponding re-
+ward is calculated. The sequence of optimal actions maximizing 
+the cumulative reward is called the optimal policy which is to be 
+learned. In the presented work, the reward function is a combi-
+nation of velocity tracking error, energy eﬃciency, ﬂight stability, 
+error integral and vehicle orientation. Training is conducted exclu-
+sively in simulation, and no manual tuning of the ﬂight controller 
+was needed between the training simulations and the real-ﬂight 
+tests. The ﬁnal policy not only achieved successful transition be-
+tween hover and cruise ﬂight modes but could also be applied to 
+different platforms as shown in Fig. 18.

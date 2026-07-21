@@ -1,0 +1,534 @@
+{
+  "batch_name": "09_ground_control_station",
+  "subsystem_tag": "ground_control_station",
+  "grounding_chunk_files": [
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__02_1_introduction.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__11_6_simulation_results.txt"
+  ],
+  "shared_config_files": {
+    "schema_and_contract": "C:\\Users\\Swastik R\\Downloads\\dataset\\dataset_schema.md",
+    "ambiguity_taxonomy": "C:\\Users\\Swastik R\\Downloads\\dataset\\ambiguity_taxonomy.yaml",
+    "requirement_categories": "C:\\Users\\Swastik R\\Downloads\\dataset\\requirement_categories.yaml",
+    "grounding_facts": "C:\\Users\\Swastik R\\Downloads\\dataset\\grounding_facts.md"
+  },
+  "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_09_ground_control_station.jsonl",
+  "records_to_generate": [
+    {
+      "id": "REQ-SYS-038",
+      "level": "system",
+      "parent_id": "REQ-ML-009",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "GCS mission planning and monitoring capability",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 3,
+      "axis1_nature": "functional",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-039",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "GCS-to-aircraft command interface",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        },
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-040",
+      "level": "system",
+      "parent_id": "REQ-ML-008",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "GCS operator alerting",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-041",
+      "level": "system",
+      "parent_id": "REQ-ML-001",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "GCS logging of flight data",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 4,
+      "axis1_nature": "functional",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-081",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-038",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "primary functional obligation of ground control station",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-082",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-039",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station performance envelope / quantitative bound",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-083",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-040",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station interface to an adjacent subsystem",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-084",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-041",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station behavior in a specific flight mode/state",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-085",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-038",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station response to a triggering event",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-086",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-039",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station fault/degraded-mode behavior",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-087",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-040",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station design constraint (mass/volume/standard)",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-088",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-041",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station monitoring/reporting obligation",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-089",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-038",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station calibration/initialization obligation",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "state_driven",
+      "context_refs": [
+        "REQ-SUB-084"
+      ]
+    },
+    {
+      "id": "REQ-SUB-090",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-039",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "ground control station redundancy or margin requirement",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-076",
+      "level": "component",
+      "parent_id": "REQ-SUB-081",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's precise obligation within ground control station",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-077",
+      "level": "component",
+      "parent_id": "REQ-SUB-082",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's quantitative parameter within ground control station",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 4,
+      "axis1_nature": "functional",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": [
+        "REQ-SUB-083"
+      ]
+    },
+    {
+      "id": "REQ-CMP-078",
+      "level": "component",
+      "parent_id": "REQ-SUB-083",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's interface to its parent subsystem",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-079",
+      "level": "component",
+      "parent_id": "REQ-SUB-084",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's event-triggered response within ground control station",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "metonymy",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-080",
+      "level": "component",
+      "parent_id": "REQ-SUB-085",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's fault-condition response within ground control station",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-081",
+      "level": "component",
+      "parent_id": "REQ-SUB-086",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's state/mode-dependent behavior within ground control station",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-082",
+      "level": "component",
+      "parent_id": "REQ-SUB-087",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's design constraint within ground control station",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-083",
+      "level": "component",
+      "parent_id": "REQ-SUB-088",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's calibration/init obligation within ground control station",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-084",
+      "level": "component",
+      "parent_id": "REQ-SUB-089",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's monitoring/telemetry obligation within ground control station",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-085",
+      "level": "component",
+      "parent_id": "REQ-SUB-090",
+      "subsystem_tag": "ground_control_station",
+      "topic_hint": "a named component's margin/tolerance requirement within ground control station",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "event_driven",
+      "context_refs": [
+        "REQ-SUB-085"
+      ]
+    }
+  ]
+}

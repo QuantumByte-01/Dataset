@@ -1,0 +1,31 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.2. Uniﬁed control approaches
+# START_PAGE: 13
+
+The scheduled control approaches presented in the previous 
+section exhibit several shortcomings when it comes to hybrid UAV 
+control. Since the number of linearization points considered in the 
+scheduling policies is ﬁnite, the overall control structure is limited 
+13
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+to speciﬁc areas of the ﬂight envelope. Consequently, aerodynamic 
+effects acting on the vehicle during transition can often not be con-
+sidered adequately. Furthermore, the required controller switching 
+might affect the stability, in case the scheduling parameter varies 
+quickly with respect to the controller convergence. Finally, the re-
+striction to use oﬄine computed tilt angles from the trim map 
+only for tiltrotor and tiltwing hybrid UAVs limits the capabilities of 
+these vehicles.
+Thus, a trend towards uniﬁed control approaches can be ob-
+served, whereby a single controller is deployed over the entire 
+ﬂight envelope. This concept is visualized and explained in Fig. 16. 
+As shown, this methodology combines the tilt angle and atti-
+tude reference computation for thrust vector alignment in tiltrotor 
+and tiltwing vehicles, unlike for scheduled control approaches. Al-
+though novel strategies are required to distribute control authority 
+between the two, the combined formulation allows for online op-
+timization to improve ﬂight performance and eﬃciency (see Sec-
+tion 4.2 and 4.3). Often, adaptive control methodologies are em-
+ployed to handle the changing aerodynamic effects and control 
+authorities.

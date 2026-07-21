@@ -1,0 +1,14 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.3. Control allocation for tiltwing aircraft
+# START_PAGE: 20
+
+Similarly to tiltrotor vehicles, tiltwing-UAV actuator commands 
+are a combination of feedback stabilization and feedforward action. 
+Additionally, it is also common to use virtual forces and moments 
+in the controller, which has been demonstrated by [157,162,164,
+168,152,169,170,248]. The main difference is that the control sur-
+faces for tiltwing vehicles are always in the propeller slipstream, 
+meaning that they have control authority in VTOL mode. As a con-
+sequence, the tilt angles are exclusively used in feedforward action. 
+Thus, feedback stabilization can be achieved in all ﬂight conditions 
+using rotor-speed commands only and control-surface deﬂection.

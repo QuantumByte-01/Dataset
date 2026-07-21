@@ -1,0 +1,620 @@
+{
+  "batch_name": "07_datalink_comms",
+  "subsystem_tag": "datalink_comms",
+  "grounding_chunk_files": [
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__02_1_introduction.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__01_1_introduction.txt"
+  ],
+  "shared_config_files": {
+    "schema_and_contract": "C:\\Users\\Swastik R\\Downloads\\dataset\\dataset_schema.md",
+    "ambiguity_taxonomy": "C:\\Users\\Swastik R\\Downloads\\dataset\\ambiguity_taxonomy.yaml",
+    "requirement_categories": "C:\\Users\\Swastik R\\Downloads\\dataset\\requirement_categories.yaml",
+    "grounding_facts": "C:\\Users\\Swastik R\\Downloads\\dataset\\grounding_facts.md"
+  },
+  "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_07_datalink_comms.jsonl",
+  "records_to_generate": [
+    {
+      "id": "REQ-SYS-030",
+      "level": "system",
+      "parent_id": "REQ-ML-009",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "command and telemetry link availability",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-031",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "link interface to GCS",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-032",
+      "level": "system",
+      "parent_id": "REQ-ML-001",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "link security posture",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "coreferential",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-033",
+      "level": "system",
+      "parent_id": "REQ-ML-002",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "link loss contingency behavior",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-061",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-030",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "primary functional obligation of datalink comms",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 5,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-062",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-031",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms performance envelope / quantitative bound",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-063",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-032",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms interface to an adjacent subsystem",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 4,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": [
+        "REQ-SUB-062"
+      ]
+    },
+    {
+      "id": "REQ-SUB-064",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-033",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms behavior in a specific flight mode/state",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-065",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-030",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms response to a triggering event",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-066",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-031",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms fault/degraded-mode behavior",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-067",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-032",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms design constraint (mass/volume/standard)",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": [
+        "REQ-SYS-033"
+      ]
+    },
+    {
+      "id": "REQ-SUB-068",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-033",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms monitoring/reporting obligation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-069",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-030",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms calibration/initialization obligation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-070",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-031",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "datalink comms redundancy or margin requirement",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-056",
+      "level": "component",
+      "parent_id": "REQ-SUB-061",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's precise obligation within datalink comms",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-057",
+      "level": "component",
+      "parent_id": "REQ-SUB-062",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's quantitative parameter within datalink comms",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-058",
+      "level": "component",
+      "parent_id": "REQ-SUB-063",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's interface to its parent subsystem",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-059",
+      "level": "component",
+      "parent_id": "REQ-SUB-064",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's event-triggered response within datalink comms",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-060",
+      "level": "component",
+      "parent_id": "REQ-SUB-065",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's fault-condition response within datalink comms",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-061",
+      "level": "component",
+      "parent_id": "REQ-SUB-066",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's state/mode-dependent behavior within datalink comms",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 5,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-062",
+      "level": "component",
+      "parent_id": "REQ-SUB-067",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's design constraint within datalink comms",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-063",
+      "level": "component",
+      "parent_id": "REQ-SUB-068",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's calibration/init obligation within datalink comms",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": [
+        "REQ-SYS-032"
+      ]
+    },
+    {
+      "id": "REQ-CMP-064",
+      "level": "component",
+      "parent_id": "REQ-SUB-069",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's monitoring/telemetry obligation within datalink comms",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-065",
+      "level": "component",
+      "parent_id": "REQ-SUB-070",
+      "subsystem_tag": "datalink_comms",
+      "topic_hint": "a named component's margin/tolerance requirement within datalink comms",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    }
+  ]
+}

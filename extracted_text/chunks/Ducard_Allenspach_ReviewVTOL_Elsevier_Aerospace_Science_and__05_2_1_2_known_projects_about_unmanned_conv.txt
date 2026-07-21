@@ -1,0 +1,215 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 2.1.2. Known projects about unmanned convertible aircraft
+# START_PAGE: 2
+
+Table 2 highlights developments of UAVs with VTOL capabil-
+ity and meant to transition to forward-cruising ﬂight and vice 
+versa. Only few projects have completed the initial development 
+and testing phase, and even fewer projects have resulted in a fully 
+operational full-scale vehicle. There are very few satisfactory con-
+vertible ﬂying platforms capable of daily routine in the midst of 
+civilian infrastructure with robust and safe operation.
+2
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 1
+A chronological selection of manned hybrid/convertible aircraft developments, each with a different VTOL conﬁguration (non-exhaustive list).
+Aircraft type
+Description
+Comments
+Lockheed XFV-1 [2,3]
+• Oﬃcial ﬁrst ﬂight: 16 June 1954.
+• The aircraft made a total of 32 ﬂights.
+• Number of units produced: 1 ﬂying, 1 incomplete.
+• No vertical takeoffs or landings were performed.
+• The XFV-1 was able to make a few transitions after hover at high altitude.
+• The project was canceled in June 1955.
+• The pilot had very poor or no visibility of 
+the ground during vertical takeoff and 
+landing phases, making these maneuvers 
+extremely diﬃcult and dangerous to perform.
+• Only highly-experienced pilots could ﬂy the 
+aircraft.
+NASA Vertol-Z2 [4,5]
+• Research aircraft built in the US in 1957.
+• Goal: testing wing-tilt approach to vertical take-off and landing.
+• The T-tail incorporated small ducted fans to act as thrusters for greater control 
+at low speeds.
+• Number of units produced: 1.
+• In 8 years of development, only 34 transitions from VTOL to cruise were 
+reported successful for a total of 450 ﬂights.
+• Program stopped in 1965.
+• Range of operation limited to 250 km.
+• Rather slow forward-motion speed of max 
+340 km/h.
+• Convertible capability demonstrated but 
+remained very limited.
+Hawker P1127/Harrier [6,7]
+• Aircraft equipped with a single turbine with several controlled nozzles 
+deﬂecting the airﬂow downwards for the VTOL mode.
+• Aircraft design: Hawker Sideley/ McDonnell Douglas, GB/USA.
+• First combat jet aircraft with VTOL capacity.
+• Maiden ﬂight in 1960. Retired in 2011 from Royal Air Force.
+• Other nations are still using it.
+• Not capable of agile maneuvers, very slow 
+motion at takeoff and landing.
+• The fully-equipped aircraft was too heavy to 
+really perform VTOL. Rather used for short 
+distance take-off and landing (STOL).
+Curtiss-Wright X-19 [1]
+• First ﬂight in November 1963.
+• VTOL capability thanks to four-tilting propellers of 4 m diameter.
+• Program canceled after the crash of the ﬁrst prototype in August 25 1965.
+• Maximum horizontal ﬂight of 730 km/h.
+• Payload of 500 kg.
+Mirage IIIV [8,9]
+• French airplane from Dassault Aviation equipped with 9 engines.
+• First ﬂight in 1965, ﬁrst successful transition from hover to high-speed forward 
+ﬂight on March 24th, 1966. However, the Mirage was never able to take-off 
+vertically and to successfully go supersonic in the same ﬂight.
+• Program stopped in November 1966 after the crash of the second prototype.
+• Expensive development.
+• Reported to be highly complex and 
+dangerous to ﬂy.
+Bell X-22 [10,1]
+• V/STOL experimental aircraft made of four tiltable ducted fans and four ﬁxed 
+forward turbines.
+• First ﬂight in March 17, 1966.
+• Total 272 ﬂights, 130 VTOL starts, 236 VTOL landings.
+• End of service in 1988.
+• Considered at that time to be the best in 
+class VTOL aircraft.
+• A failure in one of the fan-tilting 
+mechanism caused the vehicle to crash.
+Bell-Boeing V-22 [10,11]
+• First ﬂight took place in 1989 with successful transition only six months later.
+• Aircraft approved for serial production in 1997.
+• Highly sensitive to vortex ring state due to construction.
+• Multiple fatal crashes during development 
+process.
+• Reported to be very expensive in support 
+and maintenance.
+• Slow transition maneuver (≈12 s).
+F35-B SVTOL [12,13]
+• US airplane from Lockheed Martin.
+• Compared to the A variant, the F35-B is similar in size but sacriﬁces about a 
+third of fuel volume to accommodate the vertical ﬂight system.
+• VTOL demonstration since 2011.
+• Lockheed Martin Vice President S. O’Bryan said that: “Most F-35B landings will 
+be conventional to reduce stress on vertical lift components”.
+• Lt. Gen. R. Schmidle said that the vertical lift components would only be used “a 
+small percentage of the time” to transfer the aircraft from carriers to land bases.
+• VTOL maneuver is very slow, ineﬃcient and 
+hardly possible with payload.
+• Aircraft is not as reliable as other versions 
+of F35.
+• VTOL capabilities result in very heavy and 
+expensive aircraft.
+3
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 2
+A chronological selection of unmanned hybrid aircraft developments (non-exhaustive list).
+Aircraft type
+Description and comments
+Boeing Heliwing [14]
+• Constructed by Boeing.
+• First ﬂight in 1995.
+• Program canceled after a crash two months later.
+Panther [15]
+• Prototype from Israel where two front propellers can tilt.
+• Propeller at back is used only for VTOL phases.
+• Quite slow transition, sensitive to wind.
+• Not very agile.
+Aurora Excalibur [16]
+• Aurora Excalibur: designed by Aurora Flight Science 2005-2010.
+• Two ﬁxed ducted fan housed in the wing and one tilting turbine.
+• The available reports are not clear about the performance and transition 
+capabilities.
+Boeing Phantom Swift X-Plane Concept [17]
+• VTOL aircraft made of two ﬁxed propellers embedded within the 
+fuselage and two-tiltable ducted propellers located at each wing tip.
+• Selected for DARPA X-Plane competition in 2014.
+• Scale model only.
+AgustaWestland Project Zero [18]
+• Developed by AgustaWestland as an all-electric vehicle.
+• Flight testing performed on small-scale models on June 2011.
+• Low ﬂight duration due to limited battery, investigations currently 
+carried out to increase autonomy.
+• Still under development.
+Aurora XV24 LightningStrike [19]
+• Winner of the DARPA VTOL X-plane competition in 2016.
+• First successful ﬂights in March 2017.
+• First tilt-wing UAV powered by an Electric Distributed Propulsion (EDP) 
+system.
+• Twenty four variable-pitch ducted fans driven by electric motors provide 
+thrust for both hover and cruise.
+Wingcopter [20]
+• Produced by Wingcopter in Germany since 2014.
+• Propellers pivot for VTOL and forward cruise ﬂight.
+• Holds Guinness World Speed record for highest cruise velocity in its 
+category.
+• Successfully completed real-world medicine delivery tasks.
+WingtraOne [21]
+• Produced by Wingtra in Switzerland since 2016.
+• Fully autonomous for take-off, transition and landing.
+• Successfully completed high-precision real-world aerial survey and 
+mapping tasks.
+Airbus Vahana [22]
+• Produced by Airbus Commercial Aircraft. First ﬂight Jan. 31, 2018.
+• Tilting wing technology. Total of eight propellers. Max speed: 220 km/h.
+• Project ended on February 2020.
+4
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 3
+Overview of academic-research hybrid UAV prototypes found in literature.
+Type
+# Rotors
+Remarks
+Sources
+Tailsitter
+1
+wing-fuselage design with primary control surfaces
+[29–38]
+1
+ducted fan with control vanes
+[39–45]
+2
+ﬂying-wing design with elevons
+[46–63]
+2
+wing-fuselage design with primary control surfaces
+[64–71]
+4
+ﬂying-wing design with elevons
+[72–75]
+4
+ﬂying-wing design without control surfaces
+[76–90]
+6
+wing-fuselage design with primary control surfaces
+[91–95]
+Tiltrotor
+2
+rotors mounted on wings
+[96–112]
+3
+two rotors mounted on wings, one ﬁxed tail rotor
+[113–125]
+3
+two rotors mounted on wings, one tiltable tail rotor
+[126–130]
+4
+rotors mounted symmetrically around center of gravity
+[131–150]
+Tiltwing
+3
+two rotors mounted on wings, one tail propeller
+[151–156]
+4
+two sets of wings at front and back
+[157–171]
+5
+four rotors mounted on wings, one tail propeller
+[172–175]

@@ -1,0 +1,22 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 2.2.1. Tailsitter aircraft
+# START_PAGE: 5
+
+As the name suggests, tailsitters take off and land vertically on 
+their tail. Since the rotors are usually rigidly attached to the air-
+craft, the entire airframe tilts forward to achieve horizontal ﬂight. 
+This ﬂight-mode transition is done using aerodynamic-control sur-
+faces or differential-rotor thrust only [77,79]. Hereby, the former 
+methodology is generally more eﬃcient in cruise ﬂight as it re-
+quires fewer propellers but it is also more complex to control 
+compared to pure differential-rotor thrust. In any case, tailsitters 
+are usually mechanically rather simple and light-weight, as they do 
+not need any speciﬁc actuators for ﬂight-mode transitions. How-
+ever, the large exposed surface area of the fuselage and wing 
+makes tailsitter UAVs less maneuverable and more prone to wind 
+disturbances, especially during take off and landing [176]. Thus, 
+hover eﬃciency is reduced, since more power is required to sta-
+bilize the system. Additionally, tailsitters experience high angle of 
+attack (AoA) during low-speed operation, which makes the model-
+ing and control more demanding. Fig. 2 provides examples of some 
+tailsitter aircraft.

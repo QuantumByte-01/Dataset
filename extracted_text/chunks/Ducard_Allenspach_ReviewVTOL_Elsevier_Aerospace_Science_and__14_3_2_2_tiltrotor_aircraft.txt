@@ -1,0 +1,135 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 3.2.2. Tiltrotor aircraft
+# START_PAGE: 8
+
+In the case of a tiltrotor aircraft, such as the one shown in 
+Fig. 6, the total propelling force vector F B
+r
+is not ﬁxed in the body 
+frame like with tailsitters (6) but rather depends on the tilting an-
+gle χ of the propellers:
+F B
+r = −
+
+i
+⎛
+⎝
+cosχi
+0
+−sinχi
+0
+1
+0
+sinχi
+0
+cosχi
+⎞
+⎠
+⎛
+⎝
+0
+0
+cTω2
+i
+⎞
+⎠.
+(10)
+However, since the wing orientation is unaffected by the propeller 
+tilting, aerodynamic forces F B
+a
+are computed in the same fashion 
+as for tailsitters (7):
+F B
+a = ρ
+2 S
+
+
+
+vB
+
+
+
+
+cL(vB)v⊥B −cD(vB)vB
+
+.
+(11)
+Torque generation based on differential thrust is again different 
+from tailsitters, as the orientation of the propeller forces relative 
+to the body frame can change. To reﬂect this dependence on the 
+tilt angle χ, equation (8) is augmented as follows:
+B
+r =
+⎛
+⎝
+cosχ
+0
+−sinχ
+0
+1
+0
++ sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+−cT l
+−cT l
+cTl
+cTl
+−cT l
+cTl
+cTl
+−cTl
+−cQ
+cQ
+−cQ
+cQ
+⎞
+⎠
+⎛
+⎜⎜⎝
+ω2
+1
+ω2
+2
+ω2
+3
+ω2
+4
+⎞
+⎟⎟⎠,
+(12)
+where l is the y-axis distance between G and the propellers’ cen-
+ter, as well as the distance to the rotation axis. Depending on the 
+speciﬁc construction of the tiltrotor vehicle, different types of aero-
+dynamic surfaces are available. For the platform shown in Fig. 6, 
+decoupled ailerons δA, elevators δE and rudders δR are present. As 
+none of them is affected by propeller down-wash, the effectiveness 
+cF is only dependent on the body-frame velocity vB:
+B
+a =
+⎛
+⎝
+cF (vB)
+0
+0
+0
+cF (vB)
+0
+0
+0
+cF (vB)
+⎞
+⎠
+⎛
+⎝
+δA
+δE
+δR
+⎞
+⎠.
+(13)
+Fig. 7. Tiltwing hybrid VTOL concept by Dufour Aerospace [192].

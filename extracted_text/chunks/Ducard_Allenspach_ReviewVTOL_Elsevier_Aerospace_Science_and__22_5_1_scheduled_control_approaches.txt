@@ -1,0 +1,34 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.1. Scheduled control approaches
+# START_PAGE: 11
+
+A promising concept for hybrid UAV control is to linearize the 
+system around a ﬁnite set of trim-points (see Section 4) in the 
+ﬂight envelope and design a speciﬁcally tuned controller for each 
+11
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 13. Scheduled control approach: Given a desired velocity reference vI
+ref , the scheduling policy loads the translational and rotational controller of the corresponding 
+linearization point. The associated trim values for the thrust Ttrim and attitude RBtrim
+I
+are then combined with the controller commands, namely the thrust δT and the thrust 
+vector alignment attitude δRBcmd
+Btrim . Control torques MB
+cmd from the rotational controller are fed into the control allocation, together with the total thrust Tcmd and the trim 
+tilt angle χtrim (only for tiltrotor and tiltwing vehicles) to compute the actuator commands for the hybrid UAV.
+Fig. 14. Common scheduling policies with the velocity v(t) as and exemplary scheduling variable.
+of them. In other words, the ﬂight envelope is discretized into 
+a desired number of operating points and a single independent 
+controller is developed for each one. As the current ﬂight conﬁg-
+uration changes, the appropriate control law needs to be loaded, 
+which is done through so-called controller-scheduling policies. The 
+general structure of scheduled control approaches is visualized and 
+explained in Fig. 13. It should be noted that the tilt angle for tiltro-
+tor and tiltwing hybrid UAVs is not modiﬁed by the controller itself 
+but rather loaded from the trim-point analysis. In that sense, it is 
+only computed oﬄine without the possibility for online adapta-
+tion. While this simpliﬁes the controller synthesis and allows for 
+the use of standard RW and FW control laws and thrust vector 
+alignment methodologies, it is also a major limitation of scheduled 
+control approaches (see Section 5.3).

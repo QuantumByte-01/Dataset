@@ -1,0 +1,133 @@
+# SOURCE: index
+# SECTION: REFERENCES
+# START_PAGE: 155
+
+[1] 
+D. Kurtulus, “Introduction to micro air vehicles: concepts, design and 
+applications,” no. April 2011, pp. 219–255, 2011. 
+[2] 
+K. Nonami, F. Kendoul, S. Suzuki, W. Wang, and D. Nakazawa, 
+“Autonomous flying robots: Unmanned aerial vehicles and micro aerial 
+vehicles,” Auton. Fly. Robot. Unmanned Aer. Veh. Micro Aer. Veh., pp. 1–
+329, 2010, doi: 10.1007/978-4-431-53856-1. 
+[3] 
+F. Cakici, “Control and Guidance of a Multi-Mode Unmanned Aerial Vehicle 
+for Increased Versatility,” 2016. 
+[4] 
+R. G. Mcswain, L. J. Glaab, and C. R. Theodore, “Greased Lightning (GL-10) 
+Performance Flight Research – Flight Data Report NASA STI Program in 
+Profile,” 
+no. 
+November 
+2017, 
+2017, 
+[Online]. 
+Available: 
+https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20180000765.pdf. 
+[5] 
+D. Anh, T. Isabelle, and F. Rogelio, Modeling and Control of a Convertible 
+Mini UAV, vol. 44, no. 1. IFAC, 2011. 
+[6] 
+M. Hochstenbach, C. Notteboom, B. Theys, and J. De Schutter, “Design and 
+control of an unmanned aerial vehicle for autonomous parcel delivery with 
+transition from vertical take-off to forward flight - VertiKUL, a quadcopter 
+tailsitter,” Int. J. Micro Air Veh., vol. 7, no. 4, pp. 395–405, 2015, doi: 
+10.1260/1756-8293.7.4.395. 
+[7] 
+E. Cetinsoy, S. Dikyar, C. Hancer, O.K. Sirimoglu, E. Unel, M. Aksit, 
+“Design and construction of a novel quad tilt-wing UAV,” Mechatronics, vol. 
+22, no. 6, pp. 723–745, 2012, doi: 10.1016/j.mechatronics.2012.03.003. 
+[8] 
+K. Muraoka, N. Okada, D. Kubo, and M. Daisuk, “Transition flight of quad 
+tilt wing VTOL UAV,” 28th Congr. Int. Counc. Aeronaut. Sci. 2012, ICAS 
+2012, vol. 4, pp. 3242–3251, 2012. 
+[9] 
+S. Rohde, N. Goddemeier, C. Wierfeld, F. Steinicke, K. Hinrichs, T. 
+ 
+ 
+134 
+Ostermann, J. Holsten, D. Moormann, “AVIGLE: A system of systems 
+concept for an avionic digital service platform based on micro unmanned 
+aerial vehicles,” in Conference Proceedings - IEEE International Conference 
+on 
+Systems, 
+Man 
+and 
+Cybernetics, 
+2010, 
+pp. 
+459–466, 
+doi: 
+10.1109/ICSMC.2010.5641767. 
+[10] A. S. Onen, L. Cevher, M. Senipek, T. Mutlu, O. Gungor, İ. O. Uzunlar, 
+“Modeling and controller design of a VTOL UAV,” 2015 Int. Conf. 
+Unmanned Aircr. Syst. 
+ICUAS 2015, pp. 329–337, 2015, doi: 
+10.1109/ICUAS.2015.7152307. 
+[11] S. Shkarayev, J.-M. Moschetta, and B. Bataille, “Aerodynamic Design of 
+VTOL Micro Air Vehicles,” 3rd US-European Compet. Work. Micro Air Veh. 
+Syst. Eur. Micro Air Veh. Conf. Flight Compet., no. September, pp. 1–18, 
+2007. 
+[12] K. Muraoka, N. Okada, and D. Kubo, “Quad tilt wing VTOL UAV: 
+Aerodynamic characteristics and prototype flight test,” AIAA Infotech Aerosp. 
+Conf. Exhib. AIAA Unmanned...Unlimited Conf., no. April, pp. 6–13, 2009. 
+[13] K. C. Wong, J. A. Guerrero, D. Lara, and R. Lozano, “Attitude stabilization 
+in hover flight of a mini tail-sitter UAV with variable pitch propeller,” IEEE 
+Int. Conf. Intell. Robot. Syst., no. May 2014, pp. 2642–2647, 2007, doi: 
+10.1109/IROS.2007.4399278. 
+[14] R. H. Stone, “The T-Wing tail-sitter unmanned air vehicle: From design 
+concept to research flight vehicle,” Proc. Inst. Mech. Eng. Part G J. Aerosp. 
+Eng., vol. 218, no. 6, pp. 417–433, 2004, doi: 10.1243/0954410042794920. 
+[15] U. Ozdemir, Y.O. Aktas, A. Vuruskan, Y. Dereli, “Design of a commercial 
+hybrid VTOL UAV system,” J. Intell. Robot. Syst. Theory Appl., vol. 74, no. 
+1–2, pp. 371–393, 2014, doi: 10.1007/s10846-013-9900-0. 
+[16] J. H. Lee, B. M. Min, E. T. Kim, “Autopilot design of tilt-rotor UAV using 
+particle swarm optimization method,” ICCAS 2007 - Int. Conf. Control. 
+ 
+ 
+135 
+Autom. Syst., pp. 1629–1633, 2007, doi: 10.1109/ICCAS.2007.4406594. 
+[17] J.D. Claridge and C. Manning, “X Plus One UAV.” http://www.xcraft.io/ 
+(accessed May 09, 2018). 
+[18] Arcturus UAV, “Jump 20.” http://arcturus-uav.com/ product/JUMP-20 
+(accessed May 09, 2018). 
+[19] Conquest 
+Ventures, 
+“Vertex 
+VTOL 
+Hybrid 
+UAV.” 
+http://www.comquestventures.com/ (accessed May 09, 2018). 
+[20] K. A. S. LLC, “Skyprowler UAV.” http://www.krossblade.com/#skyprowler-
+section (accessed May 09, 2018). 
+[21] E. Feron, "Autonomus Guidance of Agile Small-Scale Rotorcraft", 
+Massachusetts Institue of Technology, Massachusetts, USA, 2004. 
+[22] X. Wu and Y. Liu, “Trajectory tracking control of quadrotor UAV,” Chinese 
+Control Conf. CCC, vol. 2018-July, pp. 10020–10025, 2018, doi: 
+10.23919/ChiCC.2018.8482939. 
+[23] A. B. Milhim, Y. Zhang, and C. A. Rabbath, “Gain scheduling based PID 
+controller for fault tolerant control of a quad-rotor UAV,” AIAA Infotech 
+Aerosp. 2010, no. April, pp. 1–13, 2010. 
+[24] D. P. Boyle and G. E. Chamitoff, “Autonomous maneuver tracking for self-
+piloted vehicles,” J. Guid. Control. Dyn., vol. 22, no. 1, pp. 58–67, 1999, doi: 
+10.2514/2.4371. 
+[25] K. T. Oner, “Modeling and Control of a New ˙ with Unmanned Aerial Vehicle 
+( SUAVI ) Tilt-Wing Mechanism,” 2009. 
+[26] D. A. Ta, I. Fantoni, and R. Lozano, Modeling and control of a convertible 
+mini-UAV, vol. 44, no. 1 PART 1. IFAC, 2011. 
+[27] A.S. Onen, L. Cevher, M. Senipek, T. Mutlu, O. Gungor, İ. O. Uzunlar, 
+“Modeling and controller design of a VTOL UAV,” 2015 Int. Conf. 
+ 
+ 
+136 
+Unmanned Aircr. Syst. ICUAS 2015, no. March, pp. 329–337, 2015, doi: 
+10.1109/ICUAS.2015.7152307. 
+[28] M. U. T. Matsumoto, K. Kita, R. Suzuki, A. Oosedo, Y. Hoshino, “A 
+Hovering Control Strategy for a Tail-Sitter VTOL UAV that Increases 
+Stability Against Large Disturbance,” 2010 IEEE International Conference 
+on Robotics and Automation, 2010. 
+[29] J. Escareño, S. Salazar, and R. Lozano, “Modelling and control of a 
+convertible VTOL aircraft,” Proc. IEEE Conf. Decis. Control, pp. 69–74, 
+2006, doi: 10.1109/cdc.2006.376915. 
+[30] O. Garcia, A. Sanchez, J. Escareño, and R. Lozano, Tail-sitter UAV having 
+one tilting rotor: Modeling, Control and Real-Time Experiments, vol. 41, no.

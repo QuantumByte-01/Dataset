@@ -1,0 +1,536 @@
+{
+  "batch_name": "03_tilt_actuation",
+  "subsystem_tag": "tilt_actuation",
+  "grounding_chunk_files": [
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__08_0_rpm.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__06_3_nonlinear_dynamic_model.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__08_2_2_2_tiltrotor_aircraft.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__09_2_2_3_tiltwing_aircraft.txt"
+  ],
+  "shared_config_files": {
+    "schema_and_contract": "C:\\Users\\Swastik R\\Downloads\\dataset\\dataset_schema.md",
+    "ambiguity_taxonomy": "C:\\Users\\Swastik R\\Downloads\\dataset\\ambiguity_taxonomy.yaml",
+    "requirement_categories": "C:\\Users\\Swastik R\\Downloads\\dataset\\requirement_categories.yaml",
+    "grounding_facts": "C:\\Users\\Swastik R\\Downloads\\dataset\\grounding_facts.md"
+  },
+  "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_03_tilt_actuation.jsonl",
+  "records_to_generate": [
+    {
+      "id": "REQ-SYS-014",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "wing/tail tilt range and rate capability",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "hybrid_continuous",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-015",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt subsystem interface to FCS",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-016",
+      "level": "system",
+      "parent_id": "REQ-ML-005",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuator fault behavior",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "hybrid_continuous",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-017",
+      "level": "system",
+      "parent_id": "REQ-ML-007",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt position sensing accuracy",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "metonymy",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "hybrid_continuous",
+      "context_refs": [
+        "REQ-SYS-015"
+      ]
+    },
+    {
+      "id": "REQ-SUB-021",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-014",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "primary functional obligation of tilt actuation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 5,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-022",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-015",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation performance envelope / quantitative bound",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coreferential",
+          "family": "referential"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-023",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-016",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation interface to an adjacent subsystem",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-024",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-017",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation behavior in a specific flight mode/state",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-025",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-014",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation response to a triggering event",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-026",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-015",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation fault/degraded-mode behavior",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "hybrid_continuous",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-027",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-016",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation design constraint (mass/volume/standard)",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": [
+        "REQ-SUB-022"
+      ]
+    },
+    {
+      "id": "REQ-SUB-028",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-017",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation monitoring/reporting obligation",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "hybrid_continuous",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-029",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-014",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation calibration/initialization obligation",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-030",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-015",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "tilt actuation redundancy or margin requirement",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": [
+        "REQ-SUB-024"
+      ]
+    },
+    {
+      "id": "REQ-CMP-019",
+      "level": "component",
+      "parent_id": "REQ-SUB-021",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's precise obligation within tilt actuation",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": [
+        "REQ-SYS-016"
+      ]
+    },
+    {
+      "id": "REQ-CMP-020",
+      "level": "component",
+      "parent_id": "REQ-SUB-022",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's quantitative parameter within tilt actuation",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-021",
+      "level": "component",
+      "parent_id": "REQ-SUB-023",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's interface to its parent subsystem",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 3,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-022",
+      "level": "component",
+      "parent_id": "REQ-SUB-024",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's event-triggered response within tilt actuation",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-023",
+      "level": "component",
+      "parent_id": "REQ-SUB-025",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's fault-condition response within tilt actuation",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "hybrid_continuous",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-024",
+      "level": "component",
+      "parent_id": "REQ-SUB-026",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's state/mode-dependent behavior within tilt actuation",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-025",
+      "level": "component",
+      "parent_id": "REQ-SUB-027",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's design constraint within tilt actuation",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": [
+        "REQ-SYS-016"
+      ]
+    },
+    {
+      "id": "REQ-CMP-026",
+      "level": "component",
+      "parent_id": "REQ-SUB-028",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's calibration/init obligation within tilt actuation",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": [
+        "REQ-SUB-022"
+      ]
+    },
+    {
+      "id": "REQ-CMP-027",
+      "level": "component",
+      "parent_id": "REQ-SUB-029",
+      "subsystem_tag": "tilt_actuation",
+      "topic_hint": "a named component's monitoring/telemetry obligation within tilt actuation",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    }
+  ]
+}

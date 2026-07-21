@@ -1,0 +1,30 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 4. Analysis of state-trim and state-references for ﬂight-mode
+# START_PAGE: 9
+
+transitions
+As mentioned in Section 1, hybrid UAVs combine VTOL and 
+hover capabilities with eﬃcient forward-cruise ﬂight. In order to 
+fully exploit the advantages of the aircraft, the ﬂight controllers 
+must be able to perform a stable and eﬃcient transition from he-
+licopter mode to airplane mode and back. In both cases, the lift 
+contributions from rotors and wings are combined during the tran-
+sition maneuvers. Potential limitations in this combined lift gen-
+eration (e.g. due to actuation constraints or wing construction) 
+are the core factor that constrains the generation of appropriate 
+transition trajectories. These constraints translate into the vehicle’s 
+state-space limitations in the form of a feasible ﬂight envelope in 
+which system’s stabilization is possible. Thus, the controller devel-
+opment should be proceeded by assessing the steady-state ﬂight 
+envelope, i.e. the set of operating points for which a feasible dy-
+namic equilibrium exists. This so-called trim-point analysis is not 
+only used to generate state references for ﬂight-mode transitions, 
+Fig. 8. Tailsitter UAV ﬂight envelope in the AoA-airspeed domain [208].
+but is also the basis for many common hybrid UAV control ap-
+proaches (see Section 5.1) [207].
+This section describes, how the feasible ﬂight envelope of hy-
+brid UAVs and appropriate operating points within it can be de-
+rived. As tailsitter UAVs change their attitude signiﬁcantly during 
+transition, while convertiplanes almost remain level, the corre-
+sponding analysis is addressed in separate ways for each vehicle 
+type.

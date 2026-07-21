@@ -1,0 +1,170 @@
+# SOURCE: index
+# SECTION: 50 Hz.
+# START_PAGE: 33
+
+Yes 
+10 s 
+No 
+2 
+Kalman Yes 
+13 
+ 
+4R 
+LQR 
+N/A 
+Yes 
+10 s 
+N/A 
+2 
+N/A 
+NNo 
+SUAVI, NASA GL-10, QTW-UAV, AVIGLE, QUX-02A, FS4 QTW-UAS, HARVee, ONEN’s Tricopter, Korean Tilt Rotor, Guclu’s Hybrid Air Vehicle, QTW-UAV, RPAS 
+*Time Delay control 
+**Particle Swarm Optimization 
+***Disturbance Accommodation Control 
+****Dynamic Inversion 
+ 
+ 
+12 
+VTOL aircrafts mainly deal with the transition maneuvers between level flight and 
+hover, which makes the transition maneuver a primary concern in VTOL aircraft. 
+One of the pioneering studies for VTOL-capable UAVs was T-wing tail-sitter UAV 
+with two counter-rotating propellers, which was started in 2005. Stone ([31],[14]) 
+has designed a flight control system, which includes low-level and mid-level 
+guidance controllers. These controllers were a mixture of LQR and PID controllers. 
+Flight tests [32] proved that successful flights could be performed using these 
+controllers.  
+Kubo [33] studied a similar but smaller platform with two tails, and simulations 
+showed that using slats and flaps helped the aircraft to perform transitions between 
+level flight and hover in a shorter time by an optimal controller. Hogge [34] designed 
+a platform that is capable of doing agile maneuvers by performing hover and level 
+flight with manual controls. A quick turn maneuver is realized by [35] and [36], after 
+the transition maneuver. Tumble-stall maneuver [37] was applied for achieving 
+transitions by using the dynamic inversion method, which confines doing continuous 
+transition and leaves aircraft vulnerable to disturbances. Wang [38] studied the back-
+stepping control technique for a coaxial-rotor tail-sitter UAV, and simulations 
+showed that hover, level flight, and transitions could be performed successfully. 
+Knoebel [39] used both back-stepping method and the least-squares based model 
+reference, adaptive controller. In his following research [39], he defined quaternion-
+based attitude control in transitions by proposing an online system identification 
+method. Aksugur ([40] and [41]) used a propeller-ducted fan hybrid propulsion 
+system and determined force and moment conditions for different flight modes.  
+VTOL capable UAV studies generally focus on controlling specialized maneuvers. 
+However, these maneuvers are highly dependent on the aircraft’s dynamics. A 
+control method that is applicable to real-world flight with a more general approach 
+that works well even under model uncertainties, disturbances is desirable for Tilt-
+Wing UAVs. 
+ 
+ 
+13 
+1.4 
+Research Question and Contributions to the Literature 
+The main contributions of this study are to build up an approach to the problem of 
+combining the advantages of Fixed-Wing and Rotary-Wing aircrafts in one platform 
+and establish methods for control to improve its versatility by using mode transitions 
+and multi-modes. The aircraft has been designed with combined VTOL and Fixed 
+Wing control elements that increase aerodynamic efficiency. Having VTOL and 
+Fixed Wing modes together, the aircraft is able to be operated in an extended flight 
+envelope from hover to high speeds of level flight. Therefore, the nonlinear model 
+of the aircraft is developed considering pre-stall conditions as well. Also, the 
+utilization of aerodynamic surfaces provides extra benefits in VTOL mode. 
+MATLAB Simulations proved that the aircraft could be operated at close trim 
+conditions in different modes for smooth transitions. 
+In this study, an aircraft that has no vertical tail or fin has been studied. Active, 
+asymmetric thrust control has been implemented to control the lateral-directional 
+axis of the system. The distributed electric propulsion method has helped to control 
+vertical tailless aircraft since there are much of engine available to have excess power 
+for asymmetric thrust. However, this does not mean that unnecessary motors have 
+been used. In contrast, the distributed propulsion method is beneficial for both VTOL 
+and horizontal flight. In VTOL flight, increasing the number of electric driven 
+engines increases the total efficiency. Additionally, it reduces the risk of failure 
+effects on the control system. In other words, in case one of the engines failed the 
+probability of catastrophic failure is decreasing since there are sufficient numbers of 
+motors to compensate for this failure. In horizontal flight, rear motors with ailerons 
+are employed to control the lateral-directional axis, which means that there are no 
+unused or unnecessary engines on aircraft. 
+Aerodynamic analysis for a Tilt-Wing aircraft for different tilt angles will have 
+significant contributions since it is not easy to find detailed CFD analysis for 
+transition flight. Pressure distribution, vorticity contours, static aerodynamic 
+coefficients for a conventional tilt-wing aircraft can easily be found in this study. 
+ 
+ 
+14 
+Smooth transition methods have been investigated for different tilt angles, and the 
+problem has been defined to prevent a transient response. Desired control inputs have 
+been found by using smooth transition methods, which will optimize the energy 
+consumption during the transition. Additionally, the minimum time problem has 
+been examined to optimize the consumed time during the transition. 
+Standard control methods have been applied to Tilt-Wing UAV to control the aircraft 
+in level flight, hover separately. However, in transition flight, a method has been 
+proposed by exploiting available methods to decrease the deviation from desired 
+states and for a smooth transition. Available control methods have been tailored to 
+suit tilt-wing UAV’s characteristics to obtain non-conflicting results for the same 
+guidance objectives.  
+As a result, the contributions of this research can be summarized as; Designing of 
+Tilt-Wing UAV with integrating VTOL and level flight control elements, developing 
+a non-linear model of Tilt-Wing UAV including pre-stall conditions, Extending 
+conventional aircrafts’ flight envelope and increasing versatility of them, designing 
+a control system structure for Tilt-Wing UAV, designing of different flight mode 
+controllers, implementing a transition control technique between different flight 
+modes, providing multi-modes through the utilization of redundant control elements, 
+designing a vertical tailless aircraft, performing the CFD analysis for the transition 
+period. 
+1.5 
+Major Objectives 
+The system, which will be capable of flying for 60 minutes, electric driven and radio-
+controlled, will have a one km operational radius, 2.5 kg payload capacity, and  
+15-25 m/s cruise speed. The VTOL UAV, which will practice the take-off and 
+landing using thrust supplied by the electric motors fixed in front of the tilting wing, 
+which is placed vertical to XY plane of the body, will perform the level flight by 
+making the wings parallel to the body after take-off. When demanded, it will be able 
+ 
+ 
+15 
+to bring the wings to a vertical place and start to hover again. Aircraft will land using 
+the same operation logic with take-off. There will be six electric motors, of which 
+four will be on the wing, and two will be on the horizontal tail. Especially in the 
+transition phase, during which characteristic of the system will change rapidly, the 
+aircraft will be under the control of the autopilot to prevent losing control. Stability 
+coefficients that will be needed while designing the controller have been obtained 
+using a commercial CFD code (FLUENT [42]). 
+1.6 
+Outline of the Thesis 
+Chapter 1 presents an introduction, puts forward the motivation and problem 
+statement, reviews literature, shows the contributions and significant objectives of 
+this research. 
+Chapter 2 defines design criteria, aerodynamic and mechanical design, and CFD 
+analysis results of the aircraft. 
+Chapter 3 introduces the non-linear model of VTOL Tilt-Wing UAV by defining 
+reference frames, equations of motion, and block models of aircraft’s components. 
+Chapter 4 tells about the linear analysis of the aircraft by providing the methods, 
+trim conditions, linearization results, open-loop stability, and controllability. 
+Chapter 5 defines the control system design methodology and details the structure 
+of the controller. 
+Chapter 6 presents and discusses the results of the flight tests conducted in 
+MATLAB simulation environments. 
+Chapter 7 concludes the thesis by discussing the advantages and disadvantages of 
+the proposed aircraft and control methods. Additionally, future studies of this work 
+are presented in this section. 
+ 
+ 
+ 
+16 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+17 
+ 
+CHAPTER 2

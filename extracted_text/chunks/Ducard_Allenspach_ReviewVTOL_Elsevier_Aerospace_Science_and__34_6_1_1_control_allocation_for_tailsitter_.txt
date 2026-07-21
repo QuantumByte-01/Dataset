@@ -1,0 +1,71 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.1.1. Control allocation for tailsitter with rotors, no elevon
+# START_PAGE: 18
+
+Similar to conventional multicopters, the individual rotor speeds 
+can be statically mapped to virtual body forces and moments, as 
+has been done in [76,77,91,80,95,82,83,92,94,93]. If the rotors are 
+mounted symmetrically such as for the prototype in Fig. 23, this 
+relation can be written as:
+⎛
+⎜⎜⎝
+uF
+uM1
+uM2
+uM3
+⎞
+⎟⎟⎠
+
+
+
+u
+=
+⎛
+⎜⎜⎝
+cF
+cF
+cF
+cF
+cM
+−cM
+cM
+−cM
+lcF
+lcF
+−lcF
+−lcF
+−lcF
+lcF
+lcF
+−lcF
+⎞
+⎟⎟⎠
+
+
+
+M
+⎛
+⎜⎜⎜⎝
+ω2
+1
+ω2
+2
+ω2
+3
+ω2
+4
+⎞
+⎟⎟⎟⎠
+  
+ω
+(28)
+with thrust and drag coeﬃcients cF , cM and moment arm l. Fur-
+ther, the individual rotor speeds are denoted as ωi and u are the 
+virtual control inputs. Hereby, uF denotes the total thrust parallel 
+to the main body axis, while uMi are roll, pitch and yaw moment 
+respectively. Since the matrix M in (28) has full rank, the actuator 
+commands ωc can be easily computed from the controller output 
+uc as:
+ωc = M−1uc
+(29)
+which was used in [88,73].

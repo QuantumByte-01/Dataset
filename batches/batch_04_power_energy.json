@@ -1,0 +1,591 @@
+{
+  "batch_name": "04_power_energy",
+  "subsystem_tag": "power_energy",
+  "grounding_chunk_files": [
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__05_2_aerodynamic_design_and_optimization.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__01_abstract.txt"
+  ],
+  "shared_config_files": {
+    "schema_and_contract": "C:\\Users\\Swastik R\\Downloads\\dataset\\dataset_schema.md",
+    "ambiguity_taxonomy": "C:\\Users\\Swastik R\\Downloads\\dataset\\ambiguity_taxonomy.yaml",
+    "requirement_categories": "C:\\Users\\Swastik R\\Downloads\\dataset\\requirement_categories.yaml",
+    "grounding_facts": "C:\\Users\\Swastik R\\Downloads\\dataset\\grounding_facts.md"
+  },
+  "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_04_power_energy.jsonl",
+  "records_to_generate": [
+    {
+      "id": "REQ-SYS-018",
+      "level": "system",
+      "parent_id": "REQ-ML-008",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "energy budget for full mission profile",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-019",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power distribution to subsystems",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-020",
+      "level": "system",
+      "parent_id": "REQ-ML-003",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "battery health monitoring",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-021",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power subsystem interface to propulsion and payload",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-031",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-018",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "primary functional obligation of power energy",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-032",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-019",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy performance envelope / quantitative bound",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 4,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-033",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-020",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy interface to an adjacent subsystem",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "coreferential",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 2,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-034",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-021",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy behavior in a specific flight mode/state",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-035",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-018",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy response to a triggering event",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": [
+        "REQ-SUB-031"
+      ]
+    },
+    {
+      "id": "REQ-SUB-036",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-019",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy fault/degraded-mode behavior",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 4,
+      "axis1_nature": "functional",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-037",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-020",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy design constraint (mass/volume/standard)",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-038",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-021",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy monitoring/reporting obligation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 4,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-039",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-018",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy calibration/initialization obligation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-040",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-019",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "power energy redundancy or margin requirement",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 3,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-028",
+      "level": "component",
+      "parent_id": "REQ-SUB-031",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's precise obligation within power energy",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-029",
+      "level": "component",
+      "parent_id": "REQ-SUB-032",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's quantitative parameter within power energy",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-030",
+      "level": "component",
+      "parent_id": "REQ-SUB-033",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's interface to its parent subsystem",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "probabilistic",
+      "context_refs": [
+        "REQ-SUB-034"
+      ]
+    },
+    {
+      "id": "REQ-CMP-031",
+      "level": "component",
+      "parent_id": "REQ-SUB-034",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's event-triggered response within power energy",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-032",
+      "level": "component",
+      "parent_id": "REQ-SUB-035",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's fault-condition response within power energy",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-033",
+      "level": "component",
+      "parent_id": "REQ-SUB-036",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's state/mode-dependent behavior within power energy",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-034",
+      "level": "component",
+      "parent_id": "REQ-SUB-037",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's design constraint within power energy",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        },
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 4,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-035",
+      "level": "component",
+      "parent_id": "REQ-SUB-038",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's calibration/init obligation within power energy",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 2,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "probabilistic",
+      "context_refs": [
+        "REQ-SUB-035"
+      ]
+    },
+    {
+      "id": "REQ-CMP-036",
+      "level": "component",
+      "parent_id": "REQ-SUB-039",
+      "subsystem_tag": "power_energy",
+      "topic_hint": "a named component's monitoring/telemetry obligation within power energy",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 4,
+      "axis1_nature": "constraint",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    }
+  ]
+}

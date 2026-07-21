@@ -1,0 +1,73 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.1.2. Tailsitter
+# START_PAGE: 12
+
+The method named as Divide and Conquer is used most of-
+ten in tailsitter control, based on a well-tuned controller for each 
+ﬂight phase, namely hover, transition and cruise phases, respec-
+tively [67]. Sometimes, the transition controller is even omitted 
+and one of the other two is used instead [32,226]. On the other 
+hand, [55] reﬁnes the controller grid, by using a larger number 
+of trim points along the transition trajectory. In all cases, the cor-
+rect controller is chosen depending on airspeed and pitch angle 
+scheduling. Two scheduled controllers for VTOL and cruise modes 
+are designed in [49] for Control Authority Weighting. During tran-
+sition, they run simultaneously and the overall command is com-
+puted as:
+u(t) =
+
+1 −t
+T T
+
+uV T O L(t) + t
+T T
+ucruise(t)
+(18)
+for the example of a transition between hover mode to cruise 
+mode. Hereby, T T is the transition duration parameter and t is 
+the time since the beginning of the transition maneuver.
+Regarding the control laws themselves, the most-commonly 
+used one is P/PD/PID control, since it is intuitive to tune and only 
+requires limited knowledge of the system. Nevertheless, PID con-
+trol often performs very well and it is a great starting point for 
+designing more advanced controllers. The general Proportional In-
+tegral Derivative (PID) control law takes the following form
+uP I D(t) = K P e(t) + K I
+t
+
+0
+e(τ)dτ + K D
+de(t)
+dt
+(19)
+where the error vector is e(t) = xref (t) −x(t) and where the gains 
+K P, K I and K D can be individually tuned to achieve the desired 
+closed-loop system behavior. As an example, the authors in [67,68]
+select the gains to guarantee Lyapunov and input-to-state stability 
+12
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+respectively. Controller augmentation through the use of trim maps 
+is presented in [78].
+Another frequent control law in tailsitter UAVs is Linear Quad-
+ratic Regulator (LQR), which optimizes the controller design for the 
+linearized system of the form ˙x = Ax + Bu. The control input u is 
+chosen as
+u = −K x.
+(20)
+Hereby, the gain matrix K optimizes the closed-loop system per-
+formance wrt. the cost function
+J =
+∞
+
+0
+x(τ)T Q x(τ) + u(τ)T Ru(τ)dτ,
+(21)
+where Q
+and R are the error and input weighting matrix, re-
+spectively. While the LQR controller generally has good robustness 
+properties, optimality is no longer ensured if there are modeling 
+errors and disturbances present in the system. A detailed discus-
+sion of this issue and corresponding comparison between model-
+free PID and model-based LQR control of a tailsitter is provided in 
+[55].

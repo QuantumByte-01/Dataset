@@ -1,0 +1,68 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 3. Modeling of hybrid/convertible aerial vehicles
+# START_PAGE: 6
+
+Proper modeling is essential for simulation and control of hy-
+brid aerial vehicles. As described in Section 2, convertible UAVs 
+combine:
+• an actuation necessary for the vertical take-off and landing 
+maneuvers, inspired by (multi-rotor) helicopters or thrust vec-
+toring in VTOL jets,
+• and an airframe that has some sort of wing, capable of gener-
+ating aerodynamic lift forces at suﬃcient forward speed.
+There is a signiﬁcant body of literature describing the individ-
+ual modeling of single- [179,180] and multi-rotor helicopters [181,
+182], as well as modeling of FW aircraft [183–188], to name just 
+a few. These models are mostly analytical and derived from ﬁrst 
+principles such as Newton’s law, but could also be built from ex-
+perimental data. This is particularly the case for the vehicle’s aero-
+dynamics, which are often studied via wind-tunnel experiments. 
+However, most of the papers and text books present (almost) linear 
+aerodynamical models, or nonlinear models but conﬁned to quite 
+restricted operating conditions (small AoA, low or constant speed). 
+This is insuﬃcient when it comes to modeling hybrid UAVs, which 
+require the consideration of dynamic effects associated with high 
+AoA conditions, as well as tilting propellers and wings.
+In the case of tailsitters and tilt-wing aircraft, the aerodynamic 
+model needs to be valid in the transition phases. This requires the 
+extension of classical FW aerodynamics to high AoA and low speed 
+operation [189]. In this regard, the comprehensive textbook of 
+ﬂight dynamics and aerodynamics by Stengel [185] and the work 
+reported in [189] are helpful as they provide plots and discussions 
+about such ﬂight regimes. Additionally, the effect of propeller wash 
+on the airfoils of the vehicle must be understood and considered in 
+the system model. On the example of a tiltwing UAV, the work in 
+[155] identiﬁes such areas of propeller-wing interaction and clearly 
+separates their force-torque generation from the rest of the airfoil.
+As mentioned in Section 2, propeller-wing interaction is also 
+an important phenomenon in tiltrotor aircraft [177]. Wing down-
+load and similar aerodynamic effects related to propeller-induced 
+airstream for tiltrotor UAVs are well documented and modeled 
+in [190], based on momentum theory. Another approach using 
+a lumped vortex model is shown in [191]. Continuous nonlinear 
+functions to describe the aerodynamic lift and drag coeﬃcients 
+over the whole range of AoA for tiltrotor platforms are derived 
+in [134]. Apart from the aerodynamics, gyroscopic effects due to 
+the rotation of the propellers must also be considered, since they 
+not only affect the thrust generation but also introduce counter 
+torques on the vehicle.
+As summarized in Table 3, there are many possible designs for 
+a hybrid VTOL UAV. Although all models have common structure, 
+there are major differences in the actual formulation of the force 
+and torque terms mentioned above. These depend on the arrange-
+6
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+ment of the thrusters or propellers, the existence of aerodynamic 
+control surfaces or not, and the shape of the vehicle. The detailed 
+derivation of a customized modeling for a speciﬁc platform is out 
+of the scope of this review. However, Section 3.1 shortly summa-
+rizes the equations common to all hybrid VTOL aircraft and then 
+highlights the terms which need to be adapted depending on the 
+ﬂying platform at hand. Simpliﬁed examples for these expressions 
+are then provided in Section 3.2 for tailsitter, tiltrotor and tiltwing 
+UAVs respectively, to highlight fundamental differences and sim-
+ilarities among them. Hereby, the presented equations are pur-
+posely formulated fairly general and abstract to simplify the com-
+parison. For a more detailed study, the interested reader is referred 
+to the works mentioned above.

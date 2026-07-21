@@ -1,0 +1,3322 @@
+
+
+===== PAGE 1 =====
+
+Aerospace Science and Technology 118 (2021) 107035
+Contents lists available at ScienceDirect
+Aerospace Science and Technology
+www.elsevier.com/locate/aescte
+Review
+Review of designs and ﬂight control techniques of hybrid and 
+convertible VTOL UAVs
+Guillaume J.J. Ducard a,∗,1, Mike Allenspach b,1
+a I3S, University Côte d’Azur, CNRS, 06903 Sophia Antipolis, France
+b ETH Zürich, 8092 Zürich, Switzerland
+a r t i c l e 
+i n f o
+a b s t r a c t
+Article history:
+Received 21 April 2021
+Received in revised form 11 July 2021
+Accepted 10 August 2021
+Available online 17 August 2021
+Communicated by Jérôme Morio
+Keywords:
+VTOL-ﬂight transition control
+Hybrid and convertible aircraft
+Unmanned aerial vehicles (UAV)
+Control allocation
+This paper provides a broad perspective and analysis of the work done in control of hybrid and 
+convertible unmanned aerial vehicles (UAVs) for the main existing designs. These ﬂying machines are 
+capable of vertical take off and landing (VTOL) in helicopter mode and able to transition to high-speed 
+forward ﬂight in airplane mode and vice versa. This paper aims at helping engineers and researchers 
+develop ﬂight control systems for VTOL UAVs. To this end, a historical perspective ﬁrst shows the 
+technological advances in VTOL aircraft over the years. The main VTOL concepts and state-of-art ﬂight 
+control methods for VTOL UAVs are presented and discussed. This study shows both the common parts 
+and the fundamental differences in the modeling, guidance, control, and control allocation for each 
+hybrid-VTOL-UAV type. The open challenges and the current trends in the ﬁeld are highlighted. These 
+are namely: 1) augmenting or replacing classical controllers with data-driven methods such as neural 
+networks and machine-learning-based controllers; 2) incorporating as much knowledge of the vehicle as 
+possible into the ﬂight controller, for example through model predictive control or model-based nonlinear 
+controllers; 3) a trend towards ﬁnding a uniﬁed-control approach valid in all ﬂight modes without the 
+need to switch among ﬂight controllers or to perform predeﬁned-gain scheduling, and 4) the need to 
+mitigate control complexity and available computing resources.
+© 2021 The Author(s). Published by Elsevier Masson SAS. This is an open access article under the CC 
+BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+1. Introduction
+About a decade ago, unmanned aerial vehicles (UAV) or ﬂying 
+drones were still mostly curiosities within some laboratories and 
+still at early operational stages in the military and civil domains. 
+In the last few years, there has been an enormous research inter-
+est for these ﬂying vehicles, which have become very accessible 
+to the public domain for a whole lot of commercial and industrial 
+applications. These applications range from mapping, inspection, 
+surveillance, search and rescue, forest-ﬁre detection and monitor-
+ing, to name just a few. Recent advances in electric propulsion sys-
+tems, high-storage batteries and modern control techniques have 
+also opened up new possibilities for autonomous payload trans-
+portation and urban air-taxi mobility [1].
+Aerial platforms can generally be separated into two categories, 
+namely a) vertical take off and landing (VTOL) or rotary-wing 
+(RW), such as helicopters and multirotor platforms, and b) ﬁxed-
+wing (FW) aircraft. Depending on the application, each type has 
+different advantages over the other. While VTOL UAVs do not re-
+* Corresponding author.
+1 Authors contributed equally to the work.
+quire runways and have hover capabilities, they usually have a 
+lower range than their FW counterparts and can generally carry 
+smaller payloads. As summarized in Fig. 1, they are fundamen-
+tally different in their dynamics, aerodynamics and actuation, and 
+therefore, different in the way they operate. However, RW and FW 
+vehicles also present similarities, since they are both subject to 
+four forces: gravity F g, drag force F D opposite to the velocity vec-
+tor va, thrust force T , and lift force F L.
+As indicated in the bottom tables in Fig. 1, hybrid ﬂying ma-
+chines were developed with the intention to combine the beneﬁts 
+of both FW and RW vehicles, namely VTOL and hover capacity, 
+superior ﬂight maneuverability, increased payload capability, and 
+larger range of operation. This is done by tilting the rotors, the 
+wings or even the entire airframe (see Fig. 1), to cruise eﬃciently 
+at high speeds and to take off and land like a helicopter. However, 
+the tilting motion results in highly-nonlinear dynamics and com-
+plex aerodynamic effects, which complicates the trajectory gener-
+ation and control of these vehicles. Further challenges come from 
+the fact they have to operate in ﬂight modes, in which the air-
+craft’s behavior and dynamics are drastically different depending 
+on the operating point or mode of operation. The ﬂight control 
+system should be valid over a large ﬂight envelop, and in the pres-
+https://doi.org/10.1016/j.ast.2021.107035
+1270-9638/© 2021 The Author(s). Published by Elsevier Masson SAS. This is an open access article under the CC BY-NC-ND license 
+(http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+
+===== PAGE 2 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 1. Fixed-wing aircraft vs. helicopter vs. a possible hybrid-VTOL aircraft: main properties. The respective advantages of ﬁxed-wing aircraft and helicopters are highlighted 
+in red. (For interpretation of the colors in the ﬁgure(s), the reader is referred to the web version of this article.)
+ence of severe external perturbations, model uncertainties, possible 
+actuator/sensor failure, actuator saturation and the possible under-
+actuated nature of such platforms.
+The main goal of this paper is to provide an overview and com-
+parison of the control methods used in hybrid UAV control and 
+show how they are applied to the different platforms. Particular 
+attention is paid to prototypes whose speciﬁcs (control structure, 
+avionics, etc.) are available publicly, thus allowing meaningful com-
+parison and analysis. As such, this work mainly focuses on con-
+vertible UAV designs and control techniques encountered in the 
+scientiﬁc literature over the last twenty years.
+Section 2 overviews and evaluates the major hybrid-VTOL vehi-
+cle designs with respect to mechanical complexity, stability con-
+cerns, eﬃciency and maneuverability. The primary focus is on 
+research platforms. In order to provide some historical perspec-
+tive, a selection of the most-prominent military or commercial 
+projects, together with some prototypes, is also included for com-
+pleteness. Section 3 reviews the physical modeling of the different 
+hybrid-VTOL UAV types and highlights fundamental differences and 
+similarities. Next, a detailed review about feasible state-trajectory 
+generation, vehicle control and control allocation is provided in 
+Sections 4, 5 and 6, respectively. In this context, Section 5.3 in-
+cludes a simulation-based comparison between two representative 
+state-of-the-art control approaches. The paper concludes in Sec-
+tion 7 with an outlook on the still-open challenges in the ﬁeld.
+2. Platform designs
+While unmanned ﬂying hybrid vehicles are a topic of modern 
+research, several prototypes have already been developed to meet 
+the needs of speciﬁc real-world applications. Section 2.1 provides 
+a short historical perspective of such vehicles encountered in com-
+mercial, military and general non-research areas, whose speciﬁcs 
+such as the type of avionics and control structures have not been 
+found because of conﬁdentiality.
+Thus, the remainder of this review focuses on convertible UAVs 
+whose development process is documented in scientiﬁc publica-
+tions. The considered vehicles are introduced in Section 2.2.
+2.1. Non academic research applications
+This section introduces a representative but non-exhaustive list 
+of hybrid vehicles in a chronological order.
+2.1.1. Most-known manned convertible aircraft
+Table 1 lists a non-exhaustive collection of manned verti-
+cal/short take off and landing (V/STOL) aircraft since the 1960s’. 
+The interested reader is referred to [23–26] for more complete re-
+views about manned V/STOL design concepts and their handling 
+qualities, which were already deﬁned as far back as the 1970s’ 
+[27]. As can be seen in Table 1, almost all the manned VTOL 
+aircraft developed until recently were for military purposes only. 
+Despite many attempts from the major ﬁghter-aircraft construc-
+tors, only a few aircraft are really VTOL capable. These aircraft 
+all display the same limited performance in agility, fuel-eﬃciency, 
+autonomy and most importantly reliability. As of today, the Boeing-
+Bell V-22 Osprey aircraft is probably the most prominent human-
+piloted hybrid air vehicle, after the many deadly crashes it had 
+during its development phase [10] and some following operations 
+[28].
+2.1.2. Known projects about unmanned convertible aircraft
+Table 2 highlights developments of UAVs with VTOL capabil-
+ity and meant to transition to forward-cruising ﬂight and vice 
+versa. Only few projects have completed the initial development 
+and testing phase, and even fewer projects have resulted in a fully 
+operational full-scale vehicle. There are very few satisfactory con-
+vertible ﬂying platforms capable of daily routine in the midst of 
+civilian infrastructure with robust and safe operation.
+2
+
+
+===== PAGE 3 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 1
+A chronological selection of manned hybrid/convertible aircraft developments, each with a different VTOL conﬁguration (non-exhaustive list).
+Aircraft type
+Description
+Comments
+Lockheed XFV-1 [2,3]
+• Oﬃcial ﬁrst ﬂight: 16 June 1954.
+• The aircraft made a total of 32 ﬂights.
+• Number of units produced: 1 ﬂying, 1 incomplete.
+• No vertical takeoffs or landings were performed.
+• The XFV-1 was able to make a few transitions after hover at high altitude.
+• The project was canceled in June 1955.
+• The pilot had very poor or no visibility of 
+the ground during vertical takeoff and 
+landing phases, making these maneuvers 
+extremely diﬃcult and dangerous to perform.
+• Only highly-experienced pilots could ﬂy the 
+aircraft.
+NASA Vertol-Z2 [4,5]
+• Research aircraft built in the US in 1957.
+• Goal: testing wing-tilt approach to vertical take-off and landing.
+• The T-tail incorporated small ducted fans to act as thrusters for greater control 
+at low speeds.
+• Number of units produced: 1.
+• In 8 years of development, only 34 transitions from VTOL to cruise were 
+reported successful for a total of 450 ﬂights.
+• Program stopped in 1965.
+• Range of operation limited to 250 km.
+• Rather slow forward-motion speed of max 
+340 km/h.
+• Convertible capability demonstrated but 
+remained very limited.
+Hawker P1127/Harrier [6,7]
+• Aircraft equipped with a single turbine with several controlled nozzles 
+deﬂecting the airﬂow downwards for the VTOL mode.
+• Aircraft design: Hawker Sideley/ McDonnell Douglas, GB/USA.
+• First combat jet aircraft with VTOL capacity.
+• Maiden ﬂight in 1960. Retired in 2011 from Royal Air Force.
+• Other nations are still using it.
+• Not capable of agile maneuvers, very slow 
+motion at takeoff and landing.
+• The fully-equipped aircraft was too heavy to 
+really perform VTOL. Rather used for short 
+distance take-off and landing (STOL).
+Curtiss-Wright X-19 [1]
+• First ﬂight in November 1963.
+• VTOL capability thanks to four-tilting propellers of 4 m diameter.
+• Program canceled after the crash of the ﬁrst prototype in August 25 1965.
+• Maximum horizontal ﬂight of 730 km/h.
+• Payload of 500 kg.
+Mirage IIIV [8,9]
+• French airplane from Dassault Aviation equipped with 9 engines.
+• First ﬂight in 1965, ﬁrst successful transition from hover to high-speed forward 
+ﬂight on March 24th, 1966. However, the Mirage was never able to take-off 
+vertically and to successfully go supersonic in the same ﬂight.
+• Program stopped in November 1966 after the crash of the second prototype.
+• Expensive development.
+• Reported to be highly complex and 
+dangerous to ﬂy.
+Bell X-22 [10,1]
+• V/STOL experimental aircraft made of four tiltable ducted fans and four ﬁxed 
+forward turbines.
+• First ﬂight in March 17, 1966.
+• Total 272 ﬂights, 130 VTOL starts, 236 VTOL landings.
+• End of service in 1988.
+• Considered at that time to be the best in 
+class VTOL aircraft.
+• A failure in one of the fan-tilting 
+mechanism caused the vehicle to crash.
+Bell-Boeing V-22 [10,11]
+• First ﬂight took place in 1989 with successful transition only six months later.
+• Aircraft approved for serial production in 1997.
+• Highly sensitive to vortex ring state due to construction.
+• Multiple fatal crashes during development 
+process.
+• Reported to be very expensive in support 
+and maintenance.
+• Slow transition maneuver (≈12 s).
+F35-B SVTOL [12,13]
+• US airplane from Lockheed Martin.
+• Compared to the A variant, the F35-B is similar in size but sacriﬁces about a 
+third of fuel volume to accommodate the vertical ﬂight system.
+• VTOL demonstration since 2011.
+• Lockheed Martin Vice President S. O’Bryan said that: “Most F-35B landings will 
+be conventional to reduce stress on vertical lift components”.
+• Lt. Gen. R. Schmidle said that the vertical lift components would only be used “a 
+small percentage of the time” to transfer the aircraft from carriers to land bases.
+• VTOL maneuver is very slow, ineﬃcient and 
+hardly possible with payload.
+• Aircraft is not as reliable as other versions 
+of F35.
+• VTOL capabilities result in very heavy and 
+expensive aircraft.
+3
+
+
+===== PAGE 4 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 2
+A chronological selection of unmanned hybrid aircraft developments (non-exhaustive list).
+Aircraft type
+Description and comments
+Boeing Heliwing [14]
+• Constructed by Boeing.
+• First ﬂight in 1995.
+• Program canceled after a crash two months later.
+Panther [15]
+• Prototype from Israel where two front propellers can tilt.
+• Propeller at back is used only for VTOL phases.
+• Quite slow transition, sensitive to wind.
+• Not very agile.
+Aurora Excalibur [16]
+• Aurora Excalibur: designed by Aurora Flight Science 2005-2010.
+• Two ﬁxed ducted fan housed in the wing and one tilting turbine.
+• The available reports are not clear about the performance and transition 
+capabilities.
+Boeing Phantom Swift X-Plane Concept [17]
+• VTOL aircraft made of two ﬁxed propellers embedded within the 
+fuselage and two-tiltable ducted propellers located at each wing tip.
+• Selected for DARPA X-Plane competition in 2014.
+• Scale model only.
+AgustaWestland Project Zero [18]
+• Developed by AgustaWestland as an all-electric vehicle.
+• Flight testing performed on small-scale models on June 2011.
+• Low ﬂight duration due to limited battery, investigations currently 
+carried out to increase autonomy.
+• Still under development.
+Aurora XV24 LightningStrike [19]
+• Winner of the DARPA VTOL X-plane competition in 2016.
+• First successful ﬂights in March 2017.
+• First tilt-wing UAV powered by an Electric Distributed Propulsion (EDP) 
+system.
+• Twenty four variable-pitch ducted fans driven by electric motors provide 
+thrust for both hover and cruise.
+Wingcopter [20]
+• Produced by Wingcopter in Germany since 2014.
+• Propellers pivot for VTOL and forward cruise ﬂight.
+• Holds Guinness World Speed record for highest cruise velocity in its 
+category.
+• Successfully completed real-world medicine delivery tasks.
+WingtraOne [21]
+• Produced by Wingtra in Switzerland since 2016.
+• Fully autonomous for take-off, transition and landing.
+• Successfully completed high-precision real-world aerial survey and 
+mapping tasks.
+Airbus Vahana [22]
+• Produced by Airbus Commercial Aircraft. First ﬂight Jan. 31, 2018.
+• Tilting wing technology. Total of eight propellers. Max speed: 220 km/h.
+• Project ended on February 2020.
+4
+
+
+===== PAGE 5 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 3
+Overview of academic-research hybrid UAV prototypes found in literature.
+Type
+# Rotors
+Remarks
+Sources
+Tailsitter
+1
+wing-fuselage design with primary control surfaces
+[29–38]
+1
+ducted fan with control vanes
+[39–45]
+2
+ﬂying-wing design with elevons
+[46–63]
+2
+wing-fuselage design with primary control surfaces
+[64–71]
+4
+ﬂying-wing design with elevons
+[72–75]
+4
+ﬂying-wing design without control surfaces
+[76–90]
+6
+wing-fuselage design with primary control surfaces
+[91–95]
+Tiltrotor
+2
+rotors mounted on wings
+[96–112]
+3
+two rotors mounted on wings, one ﬁxed tail rotor
+[113–125]
+3
+two rotors mounted on wings, one tiltable tail rotor
+[126–130]
+4
+rotors mounted symmetrically around center of gravity
+[131–150]
+Tiltwing
+3
+two rotors mounted on wings, one tail propeller
+[151–156]
+4
+two sets of wings at front and back
+[157–171]
+5
+four rotors mounted on wings, one tail propeller
+[172–175]
+2.2. Academic research-project prototypes
+Table 3 provides an overview of the most common hybrid UAVs 
+found in modern scientiﬁc literature within academic research. 
+Three main types of unmanned VTOL platform are standing out, 
+namely tailsitter-, tiltrotor-, and tiltwing-VTOL aircraft. A general 
+comparison of the three vehicle types regarding mechanical com-
+plexity, stability concerns, eﬃciency and maneuverability is pro-
+vided in Table 4. Additional performance comparisons and evalua-
+tions for hybrid VTOL aircraft can be found in [26].
+2.2.1. Tailsitter aircraft
+As the name suggests, tailsitters take off and land vertically on 
+their tail. Since the rotors are usually rigidly attached to the air-
+craft, the entire airframe tilts forward to achieve horizontal ﬂight. 
+This ﬂight-mode transition is done using aerodynamic-control sur-
+faces or differential-rotor thrust only [77,79]. Hereby, the former 
+methodology is generally more eﬃcient in cruise ﬂight as it re-
+quires fewer propellers but it is also more complex to control 
+compared to pure differential-rotor thrust. In any case, tailsitters 
+are usually mechanically rather simple and light-weight, as they do 
+not need any speciﬁc actuators for ﬂight-mode transitions. How-
+ever, the large exposed surface area of the fuselage and wing 
+makes tailsitter UAVs less maneuverable and more prone to wind 
+disturbances, especially during take off and landing [176]. Thus, 
+hover eﬃciency is reduced, since more power is required to sta-
+bilize the system. Additionally, tailsitters experience high angle of 
+attack (AoA) during low-speed operation, which makes the model-
+ing and control more demanding. Fig. 2 provides examples of some 
+tailsitter aircraft.
+2.2.2. Tiltrotor aircraft
+Tiltrotor vehicles belong to the group of convertiplanes. Unlike 
+tailsitters, the longitudinal body axis of these aircraft does not ro-
+tate much during the whole ﬂight. Instead, a tilting mechanism is 
+added to the rotors for ﬂight-mode transition. This way, the thrust 
+direction can be rotated up for VTOL mode and be rotated forward 
+for horizontal acceleration [176]. A two- and four-rotor design are 
+shown in Fig. 3.
+A major disadvantage of the ﬁrst implementation is the nega-
+tive lift or download due to part of the wing being in the propeller 
+wash. An in-depth analysis of these so-called aerodynamic interfer-
+ence effects and how they inﬂuence ﬂight performance and stability 
+is provided in [177]. On top of that, since this form of propeller 
+mounting requires shorter and thicker wings, cruise ﬂight eﬃ-
+ciency is also reduced.
+At the cost of increased mechanical complexity, four-rotor vari-
+ants balance some of these disadvantages, although cruise ﬂight is 
+Fig. 2. Examples of tailsitter UAVs.
+Fig. 3. Examples of tiltrotor UAVs.
+still ineﬃcient due to the increased number of propellers. At low 
+speeds however, tiltrotor aircraft beneﬁt from their multicopter-
+like construction and demonstrate high maneuverability and agility 
+[178]. For example, large yaw torques can be produced by differ-
+entially tilting the left- and right-propellers [146,147].
+5
+
+
+===== PAGE 6 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 4. Examples of tiltwing UAVs.
+Table 4
+Performance comparison of different hybrid UAV platforms.
+Tailsitter
+Tiltrotor
+Tiltwing
+Mechanical Complexity
+• Simple mechanical design
+• No dead weight
+• Complex propeller-tilting mechanism
+• Dead weight of tilting actuators
+• Complex wing-tilting mechanism
+• Dead weight of tilting actuators
+Stability Concerns
+• Wind susceptibility during hover
+• High angle-of-attack operation
+• Tilt-actuation delays
+• Aerodynamic interference effects
+• Wind susceptibility during hover
+• High angle-of-attack operation
+• Tilt-actuation delays
+Eﬃciency
+• Power intensive disturbance 
+rejection during hover
+• Eﬃcient cruise through optimizable 
+wing design
+• Download reduces hover lift generation
+• Sturdy wing design reduces cruise 
+eﬃciency
+• Power intensive disturbance 
+rejection during hover
+• Eﬃcient cruise through optimizable 
+wing design
+Maneuverability
+• Agility reduction from large wing 
+drag
+• Agile maneuvering through thrust 
+vectoring
+• Agility reduction from large wing 
+drag
+2.2.3. Tiltwing aircraft
+In tiltwing aircraft, the rotors are rigidly attached to the wings 
+and the entire wing rotates, while the fuselage mostly remains 
+horizontal during ﬂight. Similar to tiltrotor UAVs, the wing-tilting 
+capabilities are achieved through the addition of dedicated actu-
+ators, which increases the mechanical complexity of the platform 
+and might introduce actuation delays in the system. Because the 
+propellers and wings move together, control surfaces on the wings 
+(ailerons, ﬂaperons) can still be used during hover due to the air-
+ﬂow generated by the propellers’ downwash. Similarly to tailsitters 
+however, the large exposed surface area of the wing during take 
+off and landing increases the sensitivity to wind [176] and power 
+consumption during hover, as well as limiting maneuverability. Re-
+garding cruise eﬃciency, the ﬁxed position of the propellers with 
+respect to the wing allows to optimize the design of the latter and 
+in turn its aerodynamic performance. Fig. 4 shows examples of de-
+signs with three and four rotors, respectively.
+3. Modeling of hybrid/convertible aerial vehicles
+Proper modeling is essential for simulation and control of hy-
+brid aerial vehicles. As described in Section 2, convertible UAVs 
+combine:
+• an actuation necessary for the vertical take-off and landing 
+maneuvers, inspired by (multi-rotor) helicopters or thrust vec-
+toring in VTOL jets,
+• and an airframe that has some sort of wing, capable of gener-
+ating aerodynamic lift forces at suﬃcient forward speed.
+There is a signiﬁcant body of literature describing the individ-
+ual modeling of single- [179,180] and multi-rotor helicopters [181,
+182], as well as modeling of FW aircraft [183–188], to name just 
+a few. These models are mostly analytical and derived from ﬁrst 
+principles such as Newton’s law, but could also be built from ex-
+perimental data. This is particularly the case for the vehicle’s aero-
+dynamics, which are often studied via wind-tunnel experiments. 
+However, most of the papers and text books present (almost) linear 
+aerodynamical models, or nonlinear models but conﬁned to quite 
+restricted operating conditions (small AoA, low or constant speed). 
+This is insuﬃcient when it comes to modeling hybrid UAVs, which 
+require the consideration of dynamic effects associated with high 
+AoA conditions, as well as tilting propellers and wings.
+In the case of tailsitters and tilt-wing aircraft, the aerodynamic 
+model needs to be valid in the transition phases. This requires the 
+extension of classical FW aerodynamics to high AoA and low speed 
+operation [189]. In this regard, the comprehensive textbook of 
+ﬂight dynamics and aerodynamics by Stengel [185] and the work 
+reported in [189] are helpful as they provide plots and discussions 
+about such ﬂight regimes. Additionally, the effect of propeller wash 
+on the airfoils of the vehicle must be understood and considered in 
+the system model. On the example of a tiltwing UAV, the work in 
+[155] identiﬁes such areas of propeller-wing interaction and clearly 
+separates their force-torque generation from the rest of the airfoil.
+As mentioned in Section 2, propeller-wing interaction is also 
+an important phenomenon in tiltrotor aircraft [177]. Wing down-
+load and similar aerodynamic effects related to propeller-induced 
+airstream for tiltrotor UAVs are well documented and modeled 
+in [190], based on momentum theory. Another approach using 
+a lumped vortex model is shown in [191]. Continuous nonlinear 
+functions to describe the aerodynamic lift and drag coeﬃcients 
+over the whole range of AoA for tiltrotor platforms are derived 
+in [134]. Apart from the aerodynamics, gyroscopic effects due to 
+the rotation of the propellers must also be considered, since they 
+not only affect the thrust generation but also introduce counter 
+torques on the vehicle.
+As summarized in Table 3, there are many possible designs for 
+a hybrid VTOL UAV. Although all models have common structure, 
+there are major differences in the actual formulation of the force 
+and torque terms mentioned above. These depend on the arrange-
+6
+
+
+===== PAGE 7 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+ment of the thrusters or propellers, the existence of aerodynamic 
+control surfaces or not, and the shape of the vehicle. The detailed 
+derivation of a customized modeling for a speciﬁc platform is out 
+of the scope of this review. However, Section 3.1 shortly summa-
+rizes the equations common to all hybrid VTOL aircraft and then 
+highlights the terms which need to be adapted depending on the 
+ﬂying platform at hand. Simpliﬁed examples for these expressions 
+are then provided in Section 3.2 for tailsitter, tiltrotor and tiltwing 
+UAVs respectively, to highlight fundamental differences and sim-
+ilarities among them. Hereby, the presented equations are pur-
+posely formulated fairly general and abstract to simplify the com-
+parison. For a more detailed study, the interested reader is referred 
+to the works mentioned above.
+3.1. Common 6 degree-of-freedom (DoF) translational and rotational 
+dynamics
+Let an inertial frame be denoted by I = {0; xI, yI, zI} with zI
+pointing downward to be consistent with the common use in aero-
+nautics of the North-East-Down (NED) frames. The body frame is 
+denoted B = {G; xb, yb, zb}, with the vehicle’s center of mass G. 
+The orientation and angular rate of the aircraft body-ﬁxed frame B
+with respect to the inertial frame I can be represented by an at-
+titude quaternion qB
+I =
+
+q0
+q⊤
+v
+⊤∈H where H is the Hamilton 
+space and the body-rotation rates vector ω := ωB
+B/I = [p, q, r]⊤∈
+R3. The corresponding rotation matrix RB
+I is obtained using the 
+Rodrigues’ rotation formula:
+RB
+I = I3 + 2q0qv× + 2(qv×)2
+(1)
+with 3 ×3-identity matrix I 3, and the skew-symmetric matrix (·)×
+associated with the cross product, i.e. u × v = u×v, ∀u, v ∈R3. 
+The position and velocity of the vehicle’s center of mass G with re-
+spect to 0 are described by p ∈R3 and v ∈R3, respectively. Based 
+on standard Newton-Euler equations, the general continuous-time 
+6DoF dynamics of hybrid UAVs then take the following form:
+˙pB
+= vB −ω × pB
+(2)
+˙vB
+= −ω × vB + gRB
+I
+⊤zI + 1
+m
+
+F B
+r + F B
+a
+
+(3)
+˙qB
+I
+= 1
+2
+
+0
+−ω⊤
+ω
+−ω×
+
+qB
+I
+(4)
+IB ˙ω = −ω×IBω + B
+r + B
+a ,
+(5)
+with gravitational acceleration g, mass m and moment of iner-
+tia IB. The total force and torque induced by the propellers/ro-
+tors/thrusters systems is denoted as F B
+r
+and B
+r , respectively. 
+Similarly, F B
+a
+and B
+a
+describe the total aerodynamic forces and 
+torques. As mentioned, the speciﬁcs of these four terms depend 
+on the vehicle type. Simple examples to highlight the fundamental 
+differences are shown in the next section.
+3.2. Vehicle-speciﬁc modeling
+In order to customize the generic six DoF model presented in 
+Section 3.1 to a speciﬁc hybrid VTOL UAV, it is necessary to adapt 
+the vehicle’s force and torque terms. Namely, they are:
+• the propelling forces F B
+r
+and the aerodynamic forces F B
+a
+in 
+(3),
+• the torques due to propelling actuators B
+r
+and torques due to 
+aerodynamics effects and control surfaces B
+a in (5).
+The following sections provide exemplary formulations of these 
+expressions for each hybrid-UAV type and offer a high-level com-
+parison amongst them.
+Fig. 5. Tailsitter actuation. Case a): no control surfaces and four propellers. Case b) 
+two propellers and two control surfaces.
+3.2.1. Tailsitter aircraft
+Fig. 5 shows two common conﬁgurations for a tailsitter VTOL 
+aircraft. In case a) there are four propellers and no ﬂap, in case 
+b) there are only two propellers but two ﬂaps are added. In both 
+cases, the total propelling force vector F r has a direction which is 
+only along the longitudinal x−body axis xB:
+case a):
+F B
+r =
+⎛
+⎝
+cT
+ω2
+L1 + ω2
+L2 + ω2
+R1 + ω2
+R2
+
+0
+0
+⎞
+⎠
+case b):
+F B
+r =
+⎛
+⎝
+cT
+ω2
+L + ω2
+R
+
+0
+0
+⎞
+⎠
+(6)
+with propeller-thrust coeﬃcient cT and rotor spinning rates ωi. 
+This means that the direction of F B
+r
+is purely imposed by the ve-
+hicle’s orientation.
+The aerodynamic force F B
+a
+on the other hand depends on the 
+air density ρ, the characteristic surface area S and the vehicle ve-
+locity vB. In the absence of wind, it can be approximated as:
+F B
+a = ρ
+2 S
+
+
+
+vB
+
+
+
+cL(vB)v⊥B −cD(vB)vB
+,
+(7)
+where v⊥B is orthogonal to vB and the airfoil span. Due to the 
+construction of the tailsitter, the AoA and in turn the lift and drag 
+coeﬃcients cL, cD depend only on the body-frame velocity vector 
+vB.
+To change the orientation of the vehicle, an appropriate torque 
+needs to be produced, either through pure differential thrust (case 
+a)) or through the combination of differential thrust and control-
+surface deﬂections (case b)). Hereby, the torque due to propelling 
+actuators takes the form:
+case a):
+B
+r =
+⎛
+⎝
+cQ
+−cQ
+cQ
+−cQ
+cTl
+−cT l
+cTl
+−cT l
++cT l
++cT l
+−cT l
+−cT l
+⎞
+⎠
+⎛
+⎜⎜⎝
+ω2
+L1
+ω2
+L2
+ω2
+R1
+ω2
+R2
+⎞
+⎟⎟⎠
+case b):
+B
+r =
+⎛
+⎝
+cQ
+−cQ
+0
+0
+−cT l
+cTl
+⎞
+⎠
+ω2
+L
+ω2
+R
+
+,
+(8)
+with propeller-torque coeﬃcient cQ and where l is the z- and y-
+axis distance from G to the rotors’ center. Aerodynamic torques 
+originating due to control-surface deﬂections in case b) are ob-
+tained as follows:
+B
+a =
+⎛
+⎝
+cF (ωR)
+−cF (ωL)
+cF (ωR)
+cF (ωL)
+0
+0
+⎞
+⎠
+
+δR
+δL
+
+,
+(9)
+7
+
+
+===== PAGE 8 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 6. Left: tiltrotor in helicopter mode, propellers tilted by χ = 0 [rad]. Right: ﬁxed-wing mode, propellers tilted by χ = π
+2 [rad] [134].
+where the coeﬃcient cF captures the effectiveness of the control 
+surfaces. Since they are located in the propeller down-wash, the 
+effectiveness strongly depends on the corresponding rotor spinning 
+rate. Although this complicates the actuator allocation, non-zero 
+control authority is achieved even at hover.
+3.2.2. Tiltrotor aircraft
+In the case of a tiltrotor aircraft, such as the one shown in 
+Fig. 6, the total propelling force vector F B
+r
+is not ﬁxed in the body 
+frame like with tailsitters (6) but rather depends on the tilting an-
+gle χ of the propellers:
+F B
+r = −
+
+i
+⎛
+⎝
+cosχi
+0
+−sinχi
+0
+1
+0
+sinχi
+0
+cosχi
+⎞
+⎠
+⎛
+⎝
+0
+0
+cTω2
+i
+⎞
+⎠.
+(10)
+However, since the wing orientation is unaffected by the propeller 
+tilting, aerodynamic forces F B
+a
+are computed in the same fashion 
+as for tailsitters (7):
+F B
+a = ρ
+2 S
+
+
+
+vB
+
+
+
+cL(vB)v⊥B −cD(vB)vB
+.
+(11)
+Torque generation based on differential thrust is again different 
+from tailsitters, as the orientation of the propeller forces relative 
+to the body frame can change. To reﬂect this dependence on the 
+tilt angle χ, equation (8) is augmented as follows:
+B
+r =
+⎛
+⎝
+cosχ
+0
+−sinχ
+0
+1
+0
++ sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+−cT l
+−cT l
+cTl
+cTl
+−cT l
+cTl
+cTl
+−cTl
+−cQ
+cQ
+−cQ
+cQ
+⎞
+⎠
+⎛
+⎜⎜⎝
+ω2
+1
+ω2
+2
+ω2
+3
+ω2
+4
+⎞
+⎟⎟⎠,
+(12)
+where l is the y-axis distance between G and the propellers’ cen-
+ter, as well as the distance to the rotation axis. Depending on the 
+speciﬁc construction of the tiltrotor vehicle, different types of aero-
+dynamic surfaces are available. For the platform shown in Fig. 6, 
+decoupled ailerons δA, elevators δE and rudders δR are present. As 
+none of them is affected by propeller down-wash, the effectiveness 
+cF is only dependent on the body-frame velocity vB:
+B
+a =
+⎛
+⎝
+cF (vB)
+0
+0
+0
+cF (vB)
+0
+0
+0
+cF (vB)
+⎞
+⎠
+⎛
+⎝
+δA
+δE
+δR
+⎞
+⎠.
+(13)
+Fig. 7. Tiltwing hybrid VTOL concept by Dufour Aerospace [192].
+3.2.3. Tiltwing aircraft
+For a tiltwing aircraft, such as the one shown in Fig. 7, the pro-
+pelling force F B
+r has a direction which is a function of the wing-tilt 
+angle χ, similar to tiltrotor aircraft (10):
+F B
+r =
+⎛
+⎝
+cosχ
+0
+sinχ
+0
+1
+0
+−sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+cT
+ω2
+R + ω2
+L
+
+0
+0
+⎞
+⎠.
+(14)
+However, the wing-tilting capabilities makes the computation of 
+aerodynamic forces more complex. The lift and drag coeﬃcients 
+no longer solely depend on the body-frame velocity vector vB as 
+for tailsitters (7) and tiltrotors (11) but additionally change based 
+on the current wing-tilt angle:
+F B
+a = ρ
+2 S
+
+
+
+vB
+
+
+
+cL(vB,χ)v⊥B −cD(vB,χ)vB
+.
+(15)
+The current wing-tilt angle also affects differential thrust torque 
+generation, same as for tiltrotor vehicles (12):
+B
+r =
+⎛
+⎝
+cosχ
+0
+sinχ
+0
+1
+0
+−sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+−cQ
+cQ
+0
+0
+−cT l
+cTl
+⎞
+⎠
+ω2
+R
+ω2
+L
+
+,
+(16)
+with l being the y-axis distance between G and the center of the 
+propellers. Aerodynamic surfaces on tiltwing UAV are often pur-
+posely placed in the propeller down-wash to maintain control au-
+thority and improve maneuverability at low velocities. This means 
+that the effectiveness is primarily dependent on the rotor speed, 
+as with tailsitters (9). However, as the propeller-wing assembly ro-
+tates with respect to the body, so does the generated aerodynamic 
+torque:
+8
+
+
+===== PAGE 9 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+B
+a =
+⎛
+⎝
+cosχ
+0
+sinχ
+0
+1
+0
+−sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+cF (ωR)
+−cF (ωL)
+cF (ωR)
+cF (ωL)
+0
+0
+⎞
+⎠
+δR
+δL
+
+(17)
+3.3. Model extension and exploitation
+An accurate vehicle model is necessary for classical model-
+based control designs as shown in the next section, and especially 
+for dynamic inversion or model predictive control approaches 
+[98,129,143,146]. Sometimes the modeling of the hybrid UAV is 
+not accurate enough to enable satisfactory controlled behavior 
+in both ﬂight modes and transitions in between. In this case, 
+online-adaptive control strategies, machine-learning approaches or 
+neural-network-based controllers can be developed, as shown in 
+detail in Section 5.
+The insight gained from the modeling of the hybrid UAV can 
+also be used for optimizing aircraft design as reported in [79,
+193–197]. These works show how the ﬂight performance and en-
+durance are inﬂuenced by several key factors: take-off weight, 
+power consumption, choice of battery, wing aerodynamic drag and 
+lift, location of center of gravity, actuator number and arrange-
+ment [198], choice of propellers [199–201], etc. The authors of 
+[197] conclude that VTOL-FW aircraft concepts which combine a 
+ﬁxed-wing airplane and the four propellers of a multirotor sys-
+tem have much less endurance than that of a FW concept only. 
+While this is to be expected, they show how the design can be 
+optimized to maximize endurance. The work reported in [202] pro-
+poses a modeling of the energy consumption of a class of small 
+convertible UAVs. Propeller and wing modeling and the relative 
+orientation between them during the transitions phases reveal the 
+existence of energy-optimal conﬁguration. The noise level can also 
+be optimized as shown in [201]. This paper studies the aeroacous-
+tic interactions between propellers and a tiltwing VTOL airframe. 
+All the aforementioned key design aspects provide the necessary 
+guidelines for the conception, the guidance and the control of con-
+vertible UAVs.
+Finally, a rather accurate knowledge of the physical model of 
+the UAV can be advantageously used to design actuator and sensor 
+fault-diagnosis systems and fault-tolerant ﬂight controllers (FTC). 
+Fault detection and isolation (FDI) systems compare the true dy-
+namics of the aircraft, measured by sensors, with those predicted 
+by a mathematical model, and thus assert the origin of behav-
+ior discrepancies. The interested reader desiring a comprehensive 
+treatment of FDI systems and applications to FTC for aircraft may 
+refer to [187,203–206]. An example of a fault-tolerant ﬂight con-
+troller for a hybrid tailsitter UAV can be found in [60].
+4. Analysis of state-trim and state-references for ﬂight-mode 
+transitions
+As mentioned in Section 1, hybrid UAVs combine VTOL and 
+hover capabilities with eﬃcient forward-cruise ﬂight. In order to 
+fully exploit the advantages of the aircraft, the ﬂight controllers 
+must be able to perform a stable and eﬃcient transition from he-
+licopter mode to airplane mode and back. In both cases, the lift 
+contributions from rotors and wings are combined during the tran-
+sition maneuvers. Potential limitations in this combined lift gen-
+eration (e.g. due to actuation constraints or wing construction) 
+are the core factor that constrains the generation of appropriate 
+transition trajectories. These constraints translate into the vehicle’s 
+state-space limitations in the form of a feasible ﬂight envelope in 
+which system’s stabilization is possible. Thus, the controller devel-
+opment should be proceeded by assessing the steady-state ﬂight 
+envelope, i.e. the set of operating points for which a feasible dy-
+namic equilibrium exists. This so-called trim-point analysis is not 
+only used to generate state references for ﬂight-mode transitions, 
+Fig. 8. Tailsitter UAV ﬂight envelope in the AoA-airspeed domain [208].
+but is also the basis for many common hybrid UAV control ap-
+proaches (see Section 5.1) [207].
+This section describes, how the feasible ﬂight envelope of hy-
+brid UAVs and appropriate operating points within it can be de-
+rived. As tailsitter UAVs change their attitude signiﬁcantly during 
+transition, while convertiplanes almost remain level, the corre-
+sponding analysis is addressed in separate ways for each vehicle 
+type.
+4.1. Tailsitter aircraft
+The authors of [208] identify a hover E′
+h and level-ﬂight El
+aerodynamic ﬂight envelope within the airspeed (v) - AoA (α) do-
+main, as displayed in Fig. 8. Hereby, E′
+h describes the ﬂight condi-
+tions where the aerodynamic forces are small compared to gravity 
+forces. The level-ﬂight envelope El is constrained by the stall speed 
+of the aircraft ¯vl and an AoA ¯αl, where the relationship between 
+the lift force and the AoA is mostly linear for |α| ≤¯αl. The in-
+tersection between the two areas E′
+h and El deﬁnes the transition 
+region, where both the hover and the level-ﬂight approximations 
+hold. As shown in Fig. 8, this transition region corresponds to a 
+very small part of the possible ﬂight regimes in the v-α domain. 
+Therefore, the transition trajectory needs to be generated carefully. 
+In addition, two low-controllability areas are detected. Speciﬁcally, 
+the area Np corresponds to ﬂight conditions where aerodynamic 
+drag exceeds maximum propeller thrust. The area Na corresponds 
+to ﬂight regimes where the control surfaces have insuﬃcient con-
+trol authority to counteract torque disturbances.
+Once such a feasible ﬂight envelope is found, [68,41] show 
+how a corresponding stable transition trajectory based on continu-
+ous velocity and pitch angle references can be derived. The works 
+reported in [208,50,71] use an optimization algorithm to ﬁnd suit-
+able velocity and pitch angle references, where actuator constraints 
+or low-controllability areas are explicitly taken into account. The 
+evaluation of these reference functions at a desired number of 
+points provides a set of trim ﬂight conditions, which can then be 
+used for trim point-based controller design (see Section 5.1.2). Ex-
+amples of how to directly obtain discrete trim points from the 
+model equations or from ﬂight-test-based velocity-attitude maps 
+are presented in [209] and [78], respectively.
+To reduce the complexity associated with the derivation of the 
+ﬂight envelope and corresponding state references, some works 
+simply command a step input in the pitch-angle reference to 
+achieve ﬂight-mode transition [64,30,31,65,76,36,56]. These meth-
+ods are often combined with constant acceleration or altitude-hold 
+controllers for the translational dynamics as shown in Fig. 9. How-
+ever, the resulting reference trajectories are not always part of the 
+feasible ﬂight envelope. Thus, controllability and stability are not 
+guaranteed with such a simple method. The same issue appears 
+9
+
+
+===== PAGE 10 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 9. Transition maneuver of a tailsitter aircraft at constant altitude.
+when using linear pitch-angle references [44,77,49,87,73,88,70,72,
+69,84] instead of step inputs.
+In most controllers (see Section 5.1), attitude reference val-
+ues from the trim analysis will be treated as feed-forward terms 
+and combined with references from thrust vector alignment. Due 
+to their construction, the thrust direction of tailsitter vehicles is 
+always aligned with the main body x−axis, according to equa-
+tion (6). Therefore, the attitude references need to be chosen, 
+such that the resulting thrust vector is aligned with the desired 
+force vector for translational tracking, just like with regular multi-
+copters [210,71]. In helicopter mode, this thrust vector alignment 
+is often achieved by using a simple proportional guidance law 
+[64,40,41] or by treating the attitude as a virtual input to the trans-
+lational dynamics [62,61,31,211,187,47,81]. During high-velocity 
+cruise, L1 guidance [212,213,71,32] or similar radius-computation 
+laws [64,214,41] are used to achieve a coordinated-turn without 
+sideslip. Alternatively, nonlinear thrust-vector alignment functions 
+are used in [37,53,57,59], which allow for the generation of an at-
+titude reference which is independent of the ﬂight conﬁguration. 
+Similarly, global trajectory generation is achieved through opti-
+mization in [215,80]. Due to the large changes in the pitch angle, 
+a quaternion-based attitude representation is often chosen in the 
+attitude controller, in order to compute a singularity-free and well-
+posed attitude error [66,216].
+4.2. Tiltrotor aircraft
+It is a common method to directly determine the possible op-
+erating range and ﬂight envelope of tiltrotor UAVs based on the 
+trim-point analysis [207]. For tiltrotor UAVs, stable ﬂight conditions 
+can be evaluated at trim-points scheduled in the velocity −rotor-
+tilt angle domain [217,119] such as shown in Fig. 10. The resulting 
+stability corridor is limited by actuator and lift-force generation 
+constraints. Due to uncertainties in aerodynamic and motor pa-
+rameters, operating the vehicle close to edges of the stable ﬂight 
+envelope should be avoided as indicated in [100,120]. To make 
+the transition process as stable as possible, the range of useful 
+equilibrium points is often further restricted, by a constant pitch 
+or ﬂight-path angle constraint as shown in [100,218,131,113,133,
+219,137,220,141]. Regarding the AoA, the work in [219] schedules 
+trim-points over the range of propeller-tilt angles and aims for op-
+timal lift to drag ratio, while the work in [221] ensures that the 
+AoA remains small and far away from the stall region.
+The generation of feasible state references for ﬂight-mode tran-
+sition is usually based on the same trim-point analysis. For exam-
+ple, the transition trajectory can be generated based on rotor-tilt 
+angle patterns apriori speciﬁed by the user. This method uses ei-
+ther a number of rotor-tilt-angle step inputs as in [130,220,122]
+or a linear reference for the rotor-tilt angle as in [104,218] to 
+schedule the trim-points. Depending on the desired rotor-tilt an-
+gle, the corresponding steady-state values are loaded and used as 
+references in the controller. To avoid discontinuities in the refer-
+ences due to the ﬁnite number of trim-points, the authors of [222]
+and [109] ﬁt a higher-order function, thereby creating a contin-
+uous and mostly smooth way to compute the steady-state values 
+Fig. 10. Tiltrotor UAV ﬂight envelope. Rotor-tilt angle as a function of airspeed [58,
+144,147].
+for any rotor-tilt angle. Another trajectory generation method relies 
+on velocity inputs being provided by the user. Using the vehi-
+cle velocity as a scheduling variable, step [223,219,137] or linear 
+[113,140,117,141] references have been investigated. The desired 
+values for the remaining state variables can then be obtained from 
+trim-points, similar to the rotor-tilt-angle based methods.
+Given enough trim-points, [102,106] have shown that trans-
+lational-velocity based methods are not limited to the transition 
+phase but can also be used to generate stable trajectories for heli-
+copter mode and cruise-ﬂight mode as well.
+In general, selection of an appropriate pitch-angle reference 
+during the transition process is not immediately intuitive. As 
+shown in Fig. 11, the common method of initial acceleration 
+through pitch-down in helicopter-to-airplane transition (like a reg-
+ular multicopter aircraft) causes downward wing-lift forces, which 
+is the opposite of the desired aerodynamic effect. To compensate 
+the weight of the vehicle, the aircraft has to pitch up while tilting 
+the propellers forward in a way that lift points upward, so that the 
+propelling thrust progressively gets dedicated to the sole purpose 
+of forward thrust.
+Usually, only a small number of the computed trim-points are 
+used as linearization points for the ﬂight controllers (more details 
+are in Section 5.1.3). Similar to tailsitter vehicles, state references 
+from the trim analysis are then combined with references originat-
+ing from thrust-vector alignment. This alignment can be achieved 
+through both attitude and tilt-angle changes, as shown in equa-
+tion (10). However, it should be noted that the linearization-based 
+control approaches almost never modify the tilt angle given by the 
+trim analysis, i.e. thrust vectoring is purely done by changing the 
+attitude.
+Alternatively, the paper by [142] presents a completely trim-
+point-free approach, where the rotor-tilt angle and attitude ref-
+erence are chosen such that the commanded thrust is minimized 
+for a given position and velocity reference. Another approach is 
+presented in [143,146,147], where an online Model Predictive Con-
+trol (MPC) optimization algorithm, intrinsically taking into account 
+actuator and aerodynamic constraints, also generates feasible atti-
+tude and tilt-angle trajectories without trim points. The transition 
+maneuver is obtained by simultaneously 1) minimizing the altitude 
+change during the transition phase, and 2) optimizing the vehicle 
+pitch angle for wing-lift force generation during transition towards 
+airplane mode or optimizing the wing-drag force for the transi-
+tion towards helicopter mode. Similar ideas are also developed in 
+[128,136,111].
+4.3. Tiltwing aircraft
+Similarly to tiltrotor aircraft, the feasible ﬂight states of tiltwing 
+vehicles are often determined from a trim point analysis. Hereby, 
+10
+
+
+===== PAGE 11 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 11. Tiltrotor transitioning from hover to cruise mode. The airspeed is Va, the wing-lift force is F L, the drag force is F D, the propeller thrust is T .
+Fig. 12. Tiltwing aircraft transitioning from hover to cruise mode. The airspeed is Va, the wing-lift force is F L, the drag force is F D, the propeller thrust is T .
+trim points are either scheduled by gridding the velocity −wing-
+tilt angle domain or the velocity −pitch angle domain [173,151,
+163,171]. Due to the high-dimensional state space, the equilibrium 
+points are not unique and allow the introduction of additional con-
+straints or optimization criteria. For example, the algorithms pre-
+sented in [174,175,153,154] exploit the remaining DoF to enforce 
+symmetric control inputs or to combine complementary control 
+surfaces or to select more eﬃcient steady-state solutions. Quite ef-
+ﬁcient ﬂight conditions have also been obtained in [153,154] by 
+setting the trim pitch angle to zero at small velocities and equal 
+to the ﬂight-path angle at higher speeds. To achieve even better 
+performance, the approach in [174,175] formulates a separate op-
+timization problem to ﬁnd optimal pitch trim values within the 
+ﬂight envelope. In most papers, the transition trajectory is directly 
+generated from the derived trim points, similar to tiltrotor vehi-
+cles.
+Once again, given a desired scheduling velocity and pitch an-
+gle, the corresponding steady-state control inputs, including wing-
+tilt angles, are used as feed-forward terms in trim-point-based 
+control approaches (see Section 5.1.4) [173,163]. The overall atti-
+tude reference is then generated by combining steady-state values 
+with a thrust-vector-alignment command. As for tiltrotor vehicles, 
+the inherent overactuation allows to modify the thrust direction 
+through either changing the vehicle attitude or the wing-tilt an-
+gle, as shown in equation (14) and Fig. 12. That being said, the 
+tilt-angle reference given by the trim analysis is almost never mod-
+iﬁed. Instead, the required attitude references are computed from 
+coordinated-turn requirements as shown in [174,175,151] or from 
+objective optimization as in [154]. Other approaches make use of 
+dynamic inversion and virtual control inputs [161,160,165,166] to 
+compute the necessary rotations.
+Otherwise, trim-point free approaches allow for less restricted 
+distribution between attitude and tilt-angle commands for thrust-
+vector alignment. For example, the work presented in [167] em-
+ploys a simple transition process by manually designing a linear 
+wing-tilt angle reference, combined with dynamic inversion for 
+attitude reference computation. [155] uses a nonlinear MPC im-
+plementation, similar to what was presented in [143,146] for a 
+tiltrotor vehicle, to obtain optimal thrust, attitude and wing-tilt an-
+gle commands.
+5. Control of unmanned hybrid/convertible aerial vehicles
+The automatic control of hybrid UAVs is still a challenge to-
+day, mainly due to the highly nonlinear dynamics resulting from 
+the interaction of different aerodynamic effects (see Section 3). The 
+transition maneuvers between helicopter and airplane modes, and 
+vice versa, are particularly challenging as they require the ﬂight 
+controller to be able to handle potentially large changes in AoA (in 
+particular for tailsitter aircraft), in velocity, in attitude and in actu-
+ator control effectiveness depending on airspeed, which all affect 
+the aerodynamic forces and torques acting on the vehicle.
+A major diﬃculty comes from the fact that classical methods 
+to capture these aerodynamic characteristics, such as computa-
+tional ﬂuid dynamics (CFD) or wind tunnel measurements, do not 
+provide analytical expressions. From a control design perspective, 
+these methods are only useful to ﬁnely tune a controller around a 
+given ﬂight velocity. Thus, most control systems used in aeronautic 
+and aerospace applications are based on linearized systems at cer-
+tain operating points [184,224], usually those of quasi-stationary 
+ﬂight for RW or equilibrium trajectories for FW aircraft.
+The idea of having different controllers designed for speciﬁc 
+operating conditions is a common approach in hybrid UAVs but 
+requires the design of controller switching or scheduling policies 
+as discussed in Section 5.1.
+However, these methods are limited to speciﬁc areas of the 
+ﬂight envelope due to a ﬁnite number of linearization points and 
+thus limit the domain of stability. In addition, small hybrid VTOL 
+UAVs are particularly sensitive to wind perturbations, which exist-
+ing autopilots, based on linear control techniques, cannot handle 
+properly [176].
+In order to circumvent these limitations and ensure stable 
+tracking performance, more recent investigations propose the use 
+of uniﬁed control approaches, based on adaptive or nonlinear im-
+plementations. These methodologies, capable of handling the non-
+linear dynamics and covering the entire ﬂight envelope, are dis-
+cussed in Section 5.2. A summary of common scheduled and uni-
+ﬁed control approaches for tailsitter, tiltrotor and tiltwing vehicles 
+is provided towards the end of this article in Tables 5–7, respec-
+tively.
+It should be noted that literature focusing exclusively on hover 
+or FW ﬂight is not discussed in this section, since these works of-
+ten employ standard control approaches from the RW or FW com-
+munity. Instead, control methodologies which can be used across 
+the full ﬂight envelope of hybrid UAVs are introduced and com-
+pared.
+5.1. Scheduled control approaches
+A promising concept for hybrid UAV control is to linearize the 
+system around a ﬁnite set of trim-points (see Section 4) in the 
+ﬂight envelope and design a speciﬁcally tuned controller for each 
+11
+
+
+===== PAGE 12 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 13. Scheduled control approach: Given a desired velocity reference vI
+ref , the scheduling policy loads the translational and rotational controller of the corresponding 
+linearization point. The associated trim values for the thrust Ttrim and attitude RBtrim
+I
+are then combined with the controller commands, namely the thrust δT and the thrust 
+vector alignment attitude δRBcmd
+Btrim . Control torques MB
+cmd from the rotational controller are fed into the control allocation, together with the total thrust Tcmd and the trim 
+tilt angle χtrim (only for tiltrotor and tiltwing vehicles) to compute the actuator commands for the hybrid UAV.
+Fig. 14. Common scheduling policies with the velocity v(t) as and exemplary scheduling variable.
+of them. In other words, the ﬂight envelope is discretized into 
+a desired number of operating points and a single independent 
+controller is developed for each one. As the current ﬂight conﬁg-
+uration changes, the appropriate control law needs to be loaded, 
+which is done through so-called controller-scheduling policies. The 
+general structure of scheduled control approaches is visualized and 
+explained in Fig. 13. It should be noted that the tilt angle for tiltro-
+tor and tiltwing hybrid UAVs is not modiﬁed by the controller itself 
+but rather loaded from the trim-point analysis. In that sense, it is 
+only computed oﬄine without the possibility for online adapta-
+tion. While this simpliﬁes the controller synthesis and allows for 
+the use of standard RW and FW control laws and thrust vector 
+alignment methodologies, it is also a major limitation of scheduled 
+control approaches (see Section 5.3).
+5.1.1. Controller-scheduling policies
+During ﬂight, the current operating region of the system is cap-
+tured by so-called scheduling variables and the corresponding con-
+trol law, as well as the feed-forward terms of the respective trim 
+point are loaded by the scheduling policy. The two most common 
+implementations are shown in Fig. 14:
+• The Divide and Conquer approach discretely switches between 
+the different control laws, such that only one controller is run-
+ning at a time.
+• Contrarily to Divide and Conquer, Control Authority Weighting
+continuously fuses commands from two scheduled controller, 
+based on a scheduling-variable dependent weight.
+Tuning the individual controllers’ dwell time to be smaller than 
+the parameter-variation time constant generally results in good lo-
+cal performance. However, one needs to be careful regarding the 
+global closed-loop stability and performance, as stated in [225].
+5.1.2. Tailsitter
+The method named as Divide and Conquer is used most of-
+ten in tailsitter control, based on a well-tuned controller for each 
+ﬂight phase, namely hover, transition and cruise phases, respec-
+tively [67]. Sometimes, the transition controller is even omitted 
+and one of the other two is used instead [32,226]. On the other 
+hand, [55] reﬁnes the controller grid, by using a larger number 
+of trim points along the transition trajectory. In all cases, the cor-
+rect controller is chosen depending on airspeed and pitch angle 
+scheduling. Two scheduled controllers for VTOL and cruise modes 
+are designed in [49] for Control Authority Weighting. During tran-
+sition, they run simultaneously and the overall command is com-
+puted as:
+u(t) =
+
+1 −t
+T T
+
+uV T O L(t) + t
+T T
+ucruise(t)
+(18)
+for the example of a transition between hover mode to cruise 
+mode. Hereby, T T is the transition duration parameter and t is 
+the time since the beginning of the transition maneuver.
+Regarding the control laws themselves, the most-commonly 
+used one is P/PD/PID control, since it is intuitive to tune and only 
+requires limited knowledge of the system. Nevertheless, PID con-
+trol often performs very well and it is a great starting point for 
+designing more advanced controllers. The general Proportional In-
+tegral Derivative (PID) control law takes the following form
+uP I D(t) = K P e(t) + K I
+t
+
+0
+e(τ)dτ + K D
+de(t)
+dt
+(19)
+where the error vector is e(t) = xref (t) −x(t) and where the gains 
+K P, K I and K D can be individually tuned to achieve the desired 
+closed-loop system behavior. As an example, the authors in [67,68]
+select the gains to guarantee Lyapunov and input-to-state stability 
+12
+
+
+===== PAGE 13 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+respectively. Controller augmentation through the use of trim maps 
+is presented in [78].
+Another frequent control law in tailsitter UAVs is Linear Quad-
+ratic Regulator (LQR), which optimizes the controller design for the 
+linearized system of the form ˙x = Ax + Bu. The control input u is 
+chosen as
+u = −K x.
+(20)
+Hereby, the gain matrix K optimizes the closed-loop system per-
+formance wrt. the cost function
+J =
+∞
+
+0
+x(τ)T Q x(τ) + u(τ)T Ru(τ)dτ,
+(21)
+where Q
+and R are the error and input weighting matrix, re-
+spectively. While the LQR controller generally has good robustness 
+properties, optimality is no longer ensured if there are modeling 
+errors and disturbances present in the system. A detailed discus-
+sion of this issue and corresponding comparison between model-
+free PID and model-based LQR control of a tailsitter is provided in 
+[55].
+5.1.3. Tiltrotor
+It has been shown in Section 4.2 that the trajectory genera-
+tion of tiltrotor UAVs is strongly based on trim states. Accordingly, 
+most control structures are using the same trim points to employ 
+Divide and Conquer methodologies. Using rotor-tilt angles or air-
+speed as scheduling variables, this approach has for example been 
+investigated in [106,220]. The work in [138] reduces the number of 
+controller switches, by using only one controller per ﬂight stage or 
+even just two controllers for hover and cruise modes. Alternatively, 
+Control Authority Weighting has been successfully applied in mul-
+tiple different occasions. In [140], the controllers are weighted 
+based on their underlying model, by evaluating the quality of the 
+approximation at each iteration. Other applications use the refer-
+ence tilt angles to distribute the control authority between VTOL 
+and cruise controllers [130]. In [144], the airspeed is used to mod-
+ify the relative weight between two velocity controllers running in 
+parallel, one designed for RW and one for FW mode.
+As for tailsitters, the P/PD/PID control law shown in equation 
+(19) is a well established choice for tiltrotor UAV control in com-
+bination with the mentioned scheduling policies. LQR and general 
+state feedback methods are also widely used. Here, the Bryson’s 
+rule is presented for a tiltrotor UAV as an example of a tuning 
+method in [227], where the weights are the inverse of the respec-
+tive maximum state- or input-allowed value squared.
+To reduce the design complexity and computational burden as-
+sociated with having many isolated trim-points, [109,228] used a 
+robust Sliding Mode Control (SMC) that only requires two such lin-
+earization points instead. SMC is known to provide robustness and 
+ﬁnite-time convergence to the controlled system [229]. However, 
+one drawback of this approach is the chattering phenomenon of 
+the control signal, caused by the zig-zag motion of the state along 
+the sliding surface. For a system with state x = ( x⊤
+1 x⊤
+2 )⊤where 
+uncertainties only affect x2, SMC deﬁnes a sliding surface
+σ(x) =
+
+K
+I
+x1
+x2
+
+= Lx.
+(22)
+The gain K is chosen such that it stabilizes the ˙x1 subsystem. Try-
+ing to achieve σ(x) = 0, the control input u is designed to fulﬁll 
+σ(x) ˙σ(x) < 0 by choosing
+u = (LB)−1 (−L Ax) −a sgn(σ(x))
+(23)
+Fig. 15. H∞-control components.
+Fig. 16. Uniﬁed control approach: Given a desired velocity reference vI
+ref , the trans-
+lational controller directly computes the total thrust command Tcmd, as well as tilt 
+angle χcmd (only for tiltrotor and tiltwing vehicles) and attitude values RBcmd
+I
+for 
+thrust vector alignment. Control torques MB
+cmd from the rotational controller are 
+fed into the control allocation, together with the previously obtained total thrust 
+and tilt angle commands to compute the actuator commands for the hybrid UAV.
+where a is a tuning parameter. To avoid the common chattering 
+phenomenon, [228] incorporates fuzzy control into the baseline 
+SMC implementation.
+5.1.4. Tiltwing
+Just like with tiltrotor vehicles, tiltwing controllers rely on a set 
+of trim points (see Section 4.3) in the ﬂight envelope. Example de-
+signs using airspeed and wing-tilt angle as scheduling variables for 
+the Divide and Conquer technique are shown in [154,175]. Rather 
+than using a large number of different controllers, the works in 
+[151] and [165] only switch between three different control laws, 
+namely one for VTOL, cruise and transition ﬂight. In [156], a stan-
+dard RW and FW controller are linearly mixed depending on the 
+reference wing-tilt angle in a form of Control Authority Weight-
+ing. To ensure satisfactory ﬂight performance during the transition 
+despite these few trim points, a model-uncertainty compensation 
+term computed by a Neural Network (NN) is added, somewhat 
+similar to Dynamic Inversion (see Section 5.2).
+P/PD/PID control laws as introduced in equation (19) are fairly 
+common, where standard tuning methods are used to achieve sta-
+ble and accurate tracking performance at each operating point. In 
+addition, the work in [154] mentions how pitch-error dependent 
+controller gains can be used to account for non-symmetric pitch 
+authorities.
+The second control law frequently encountered in scheduled 
+control approaches for tiltwing aircraft is H∞. According to the 
+signals and systems depicted in Fig. 15, the goal is to minimize 
+the effect of the worst possible disturbance w on the performance 
+variable z through a feedback controller of the form u = K(s)y. 
+In other words, K is chosen, such that ||F(P, K)||∞is minimized, 
+where F(P, K) is the transfer function from the disturbance w
+to the error signal z. While [171] uses a so-called μ-synthesis 
+method to obtain the controller gain K , the research group at 
+the Arizona State University [173–175] rely on mixed-sensitivity 
+weighting functions. Compared to the standard μ-synthesis, this 
+method allows to individually weight both the sensitivity and com-
+plementary sensitivity transfer functions.
+5.2. Uniﬁed control approaches
+The scheduled control approaches presented in the previous 
+section exhibit several shortcomings when it comes to hybrid UAV 
+control. Since the number of linearization points considered in the 
+scheduling policies is ﬁnite, the overall control structure is limited 
+13
+
+
+===== PAGE 14 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+to speciﬁc areas of the ﬂight envelope. Consequently, aerodynamic 
+effects acting on the vehicle during transition can often not be con-
+sidered adequately. Furthermore, the required controller switching 
+might affect the stability, in case the scheduling parameter varies 
+quickly with respect to the controller convergence. Finally, the re-
+striction to use oﬄine computed tilt angles from the trim map 
+only for tiltrotor and tiltwing hybrid UAVs limits the capabilities of 
+these vehicles.
+Thus, a trend towards uniﬁed control approaches can be ob-
+served, whereby a single controller is deployed over the entire 
+ﬂight envelope. This concept is visualized and explained in Fig. 16. 
+As shown, this methodology combines the tilt angle and atti-
+tude reference computation for thrust vector alignment in tiltrotor 
+and tiltwing vehicles, unlike for scheduled control approaches. Al-
+though novel strategies are required to distribute control authority 
+between the two, the combined formulation allows for online op-
+timization to improve ﬂight performance and eﬃciency (see Sec-
+tion 4.2 and 4.3). Often, adaptive control methodologies are em-
+ployed to handle the changing aerodynamic effects and control 
+authorities.
+5.2.1. Tailsitter
+State-of-the-art literature on tailsitter UAV control shows sev-
+eral cases, where Robust Control with constant gains and with-
+out any additional compensation terms has been used successfully 
+across the full ﬂight envelope. Rather than adapting to system 
+changes, aerodynamics and uncertainties, the idea here is to make 
+the controller robust against them [207]. That being said, these 
+works often require additional modiﬁcations in the control struc-
+ture to achieve satisfactory performance. [56] and [76] use an ex-
+ternal maneuver generator to obtain suitable attitude references, 
+while [70] derived a custom mapping to account for the effects of 
+forward and rotational speed on the propeller thrust, as well as us-
+ing a special tuning function to ensure robustness. In [34,78], it is 
+explicitly mentioned that ﬁxed gains in the controller are not opti-
+mal. This issue is addressed in [36] which demonstrates the use of 
+Direct Gain Scheduling, whereby the controller gains are scaled with 
+an airspeed v(t) depending factor k(v(t)), i.e.:
+k(v(t)) =
+vref
+v(t)
+(24)
+where vref is a tuning parameter. The idea is to make the gains 
+smaller, as the control surface become more effective at larger air-
+speed.
+A simple solution to improve performance is to rely on Dynamic 
+Inversion. This methodology allows to transform a nonlinear system 
+such that it can be controlled as if it were linear. Given a nonlinear 
+system of the form
+˙x = f (x) + g(x)u,
+(25)
+the control input is designed as
+u = g(x)−1 (−f (x) + v)
+(26)
+where v is then designed to stabilize ˙x = v. Such feedback lin-
+earization has for example been used in [80,84] to cancel out aero-
+dynamic forces. However, the linearization based on f (x) and g(x)
+is highly model dependent and thus rather sensitive to modeling 
+errors and parametric uncertainties, which can affect the stability 
+of the system dramatically [187]. Using an online model estimator, 
+these effects can be mitigated. Depending on the application, dif-
+ferent parts of the model are considered as adaptive parameters. 
+Possible implementations include aerodynamic parameter estima-
+tion only [53,54], lumping all nonlinear effects into an equivalent 
+disturbance or robust compensator [91,92,95,94,93] and full model 
+Fig. 17. Model-reference adaptive control.
+estimation [59]. A summary of common adaptive parameters and 
+estimation laws is provided in Table 8. Another method to es-
+timate and compensate for model uncertainties in the dynamic 
+inversion approach is to apply machine learning techniques, such 
+as presented for the ducted fan UAV in [45]. The nonlinear model 
+functions f (x) and g(x) from (25) are separated into a known and 
+unknown part, whereby the latter is learned by a NN. Using a Lya-
+punov stability analysis, boundedness of the tracking error during 
+learning is shown.
+A direct extension of observer-based dynamic inversion is pre-
+sented by Model Reference Adaptive Control (MRAC). As shown in 
+Fig. 17, this scheme uses a reference model with desired tracking 
+performance and adapts the controller according to the difference 
+between the real and reference model [230]. A standard MRAC im-
+plementation is presented in [51] to handle nonlinearities in the 
+pitch angle dynamics. Although online estimation allows the con-
+troller to adapt to system changes, high estimation gains might 
+negatively affect stability and robustness. This issue is addressed 
+by a new concept called L1-adaptive control [231–233], which 
+adds a low-pass ﬁlter at a speciﬁc point in the control architecture, 
+thereby decoupling the estimation and control loop. This concept 
+has been successfully applied to a tailsitter UAV in [58].
+The presented adaptive methodologies can be combined with 
+any sort of baseline control law. Tuning examples for P/PD/PID are 
+presented in [84,53] and for LQR in [83,82], respectively. The work 
+in [87] explains in detail the combination of observer-based dy-
+namic inversion with backstepping.
+A completely model-free control approach is presented in [90], 
+using Reinforcement Learning to train a pure NN controller. In this 
+methodology, an agent (hybrid VTOL UAV) takes an action based 
+on its state relative to the environment and a corresponding re-
+ward is calculated. The sequence of optimal actions maximizing 
+the cumulative reward is called the optimal policy which is to be 
+learned. In the presented work, the reward function is a combi-
+nation of velocity tracking error, energy eﬃciency, ﬂight stability, 
+error integral and vehicle orientation. Training is conducted exclu-
+sively in simulation, and no manual tuning of the ﬂight controller 
+was needed between the training simulations and the real-ﬂight 
+tests. The ﬁnal policy not only achieved successful transition be-
+tween hover and cruise ﬂight modes but could also be applied to 
+different platforms as shown in Fig. 18.
+5.2.2. Tiltrotor
+An initial approach for tiltrotor UAV control was using conser-
+vatively tuned Robust Control. As a reference, [99] demonstrates a 
+particle swarm optimization approach to tune the controller gains. 
+Since this algorithm allows to include constraints in the gain and 
+phase margin, rising time and maximum overshoot, stability over 
+the entire ﬂight envelope can be ensured. Stability and robustness 
+over the whole ﬂight envelope could also be proven in [219,141], 
+using an H∞control approach together with a Linear Parameter 
+Varying [234] system representation. The corresponding gain ma-
+trix is obtained through μ-synthesis [219] or Lyapunov methods 
+[141]. Further H∞-like controller designs are found in [111,218].
+Tracking performance can be improved through Direct Gain 
+Scheduling implementations, as shown in [113]. Here, a single neu-
+ron NN continuously adapts the gains of a PID controller as shown 
+14
+
+
+===== PAGE 15 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 18. Reinforcement learning has been recently used to train neural networks to control a wide variety of hybrid VTOL aircraft as shown in [90].
+Fig. 19. The pitch angle control architecture used in [113]. The pitch torque θ(k)
+applied to the aircraft is computed from the pitch angle error eθ(k) = θd(k) −θ(k)
+and passed through a PID controller whose gains are adapted on line, as being the 
+weights of one-neuron neural network.
+in Fig. 19. Based on equation (19), the adaptation law takes the 
+form
+K j(t) ←K j(t) + ηe(t)2 ∂uP I D(x(t))
+∂x(t)
+j ∈{P, I, D},
+where η is the learning rate. NN-based Direct Gain Scheduling 
+is also used in [150], where the SMC gains are scaled with the 
+output of a radial-basis function NN to counteract the chattering 
+phenomenon.
+As for tailsitters, the addition of nonlinear Dynamic Inversion 
+terms helps to improve ﬂight performance and simplify controller 
+tuning. While some implementations are purely model based [133,
+121,235], newer publications tend more towards the use of data-
+driven methods. A classical example is the use of extended state 
+observers as shown in [110,107]. On the other hand, [125] de-
+velops an adaptive control strategy, shown in Fig. 20, whereby 
+all model-uncertainty and nonlinearities are lumped into a single 
+compensation term computed by a radial-basis function NN. The 
+results show that modeling errors, CoG-location errors, and inertia-
+term errors are well compensated. Similar NN-based Dynamic In-
+version approaches are presented in [102,236,135,124,112]. An-
+other machine learning technique known as iterative learning is 
+used in [89]. These different formulations for adaptive parameters 
+and corresponding estimation laws in observer-based Dynamic In-
+version are collected in Table 8.
+As a promising alternative to the prevailing Dynamic Inver-
+sion strategy, recent works have started to look at Nonlinear Model 
+Predictive Control (NMPC) for full envelope tiltrotor UAV control 
+[143,146,147]. NMPC is an optimal control scheme, implemented 
+in a receding horizon fashion, meaning that an optimization prob-
+lem of the form:
+min
+ x2,...,xN+1
+u1,...,uN
+
+N
+j=1 h j(x j, u j) + hN+1(xN+1)
+(27a)
+s.t.
+˙x = f (x, u)
+(27b)
+x1 = x(t)
+(27c)
+x j ∈X ∀j ∈{1,..., N + 1}
+(27d)
+u j ∈U ∀j ∈{1,..., N}
+(27e)
+with ﬁnite prediction horizon N is reinitialized (27c) and solved at 
+every iteration [237]. As shown in [143,146,147], the problem for-
+mulation allows the inclusion of the full nonlinear system model 
+(including aerodynamic and coupling effects, as well as potential 
+tilt angle dynamics) together with vehicle speciﬁc state (27d) and 
+actuator (27e) constraints.
+5.2.3. Tiltwing
+Unfortunately, literature on uniﬁed control laws for tiltwing ve-
+hicles is still rather sparse. The few academic works which suc-
+cessfully cover the full ﬂight envelope with a single controller, 
+follow the same patterns as introduced above. For example, [166]
+very well shows the controller synthesis process for a model-based 
+Dynamic Inversion approach with a baseline LQR controller. Adap-
+tive parameter formulations and corresponding estimation laws for 
+observer-based Dynamic Inversion are presented in Table 8.
+Similar to tiltrotor vehicles, a recent work investigates the use 
+of NMPC for autonomous tiltwing control [155]. Herein, the full 
+development process covering system modeling, parameter esti-
+mation and identiﬁcation, trim-map generation for NMPC regular-
+ization and ﬁnally the NMPC design and implementation itself is 
+discussed in detail.
+5.3. Flight performance comparison between a scheduled vs. a uniﬁed 
+control approach
+The scheduled and uniﬁed control approaches presented in Sec-
+tions 5.1 and 5.2 respectively compose two fundamentally different 
+methodologies for hybrid UAV control. To provide some intuition 
+about the ﬂight performance and difference thereof, this section 
+will compare and discuss the simulation results of a representa-
+tive state-of-the-art controller from each section. As a comparison 
+platform, a high-ﬁdelity simulator of the tiltrotor vehicle shown in 
+Fig. 6 has been developed, based on the detailed vehicle model 
+derived in [134]. Amongst other things, the simulation includes 
+precise aerodynamic models of the wing, fuselage, stabilizers and 
+control surfaces, gyroscopic effects and inherent dynamics of the 
+tilting actuation, as well as changes in propeller thrust generation 
+due to airspeed.
+As an exemplary scheduled control approach, the recently de-
+veloped FPID implementation is selected [144]. As sketched and 
+explained in Fig. 21a, the method uses the Control Authority 
+Weighting scheduling policy. Similarly, the latest development in 
+uniﬁed control approaches is given by the novel NMPC algorithm 
+described in [143,146] and portrait in Fig. 21b. Although both con-
+trol approaches have been successfully tested in outdoor experi-
+ments, the simulator mentioned above is used here to ensure a 
+fair comparison. Furthermore, both methods use the same control 
+allocation strategy and are commanded to track the exact same 
+trajectory, namely a constant acceleration for RW-to-FW and con-
+stant deceleration for FW-to-RW transitions. Each controller has 
+been tuned to achieve best performance respectively. The simula-
+tion results of the two approaches are shown in Fig. 22.
+Due to the inherent linearization and statically-determined 
+rotor-tilt angle commands of scheduled control approaches, the
+15
+
+
+===== PAGE 16 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 5
+Tailsitter control methods.
+Control methodology
+Description
+Source
+Scheduled Control Approach
+Divide and Conquer with P/PD/PID
+[32,41,65,71,72,77,78,213,226,238,239]
+Divide and Conquer with LQR
+[32,55,64,67,68]
+Divide and Conquer with Backstepping
+[61]
+Control Authority Weighting with P/PD/PID
+[49]
+Uniﬁed Control Approach
+Robust Control
+[34,52,56,66,70,76]
+Direct Gain Scheduling with P/PD/PID
+[36]
+Dynamic Inversion with P/PD/PID
+[94,95,81,59,48,84,60,74,44,37,88,53,54,62,73,75,80,45,89]
+Dynamic Inversion with LQR
+[93,91,92,82,83]
+Dynamic Inversion with Backstepping
+[31,33,38,87,216]
+Model Reference Adaptive Control
+[58,51,30]
+Reinforcement Learning
+[90]
+Table 6
+Tiltrotor control methods.
+Control methodology
+Description
+Source
+Scheduled Control Approach
+Divide and Conquer with P/PD/PID
+[117,132,138,149,240]
+Divide and Conquer with LQR
+[100,101,105,106,220,222,227,241]
+Divide and Conquer with SMC
+[109,228]
+Control Authority Weighting with P/PD/PID
+[130,131,142,144]
+Control Authority Weighting with LQR
+[140]
+Uniﬁed Control Approach
+Robust Control
+[120,218,242,122,243,223,99,111]
+Linear Parameter Varying with H∞
+[141,219]
+Direct Gain Scheduling with SMC
+[150]
+Direct Gain Scheduling with P/PD/PID
+[113]
+Dynamic Inversion with P/PD/PID
+[133,102,135,236,235,244,104,96,97,125,112]
+Dynamic Inversion with SMC
+[110,121]
+Dynamic Inversion with Backstepping
+[136,137]
+Nonlinear Model Predictive Control
+[147,146]
+Table 7
+Tiltwing control methods.
+Control methodology
+Description
+Source
+Scheduled Control Approach
+Divide and Conquer with P/PD/PID
+[151,153,154,165]
+Divide and Conquer with H∞
+[171–175]
+Control Authority Weighting with P/PD/PID
+[156]
+Uniﬁed Control Approach
+Dynamic Inversion with P/PD/PID
+[160,161]
+Dynamic Inversion with LQR
+[166]
+Model Reference Adaptive Control
+[167]
+Nonlinear Model Predictive Control
+[155]
+Table 8
+Collection of common adaptive parameters and estimation laws in the observer-based Dynamic Inversion
+uniﬁed control approach for hybrid UAV control.
+Type
+Adaptive parameters
+Estimation Law
+Source
+Tailsitter
+Aﬃne Model Parameters
+Inverse Laplace Transform
+[59]
+Aerodynamic Effects
+Filtered Plant Inversion
+[74]
+Equivalent Disturbance
+Filtered Plant Inversion
+[91,92,83,82,95,94,93]
+Aerodynamic Effects
+Extended State Observer
+[87]
+Equivalent Disturbance
+Luenberger/Kalman Observer
+[37]
+Aerodynamic Coeﬃcients
+Luenberger/Kalman Observer
+[53,54]
+Aﬃne Model Parameters
+Recursive Least Squares
+[31,33]
+Aﬃne Model Parameters
+Lyapunov-based Design
+[44,216,58]
+Equivalent Disturbance
+Lyapunov-based Design
+[30,51]
+Tiltrotor
+Equivalent Disturbance
+Neural Networks
+[236,102,135,89,112,124]
+Equivalent Disturbance
+Extended State Observer
+[96,97,104,110]
+Tiltwing
+Equivalent Disturbance
+Filtered Plant Inversion
+[161,160]
+Aﬃne Model Parameters
+Lyapunov-based Design
+[167]
+FPID controller initially accelerates the vehicle by pitching down, 
+as if it were a regular multi-copter (t = 7 s −11 s). However, this 
+maneuver results in undesired downwards lift forces being gener-
+ated by the main wing (see Section 4.2). On the other hand, the 
+combined tilt angle and attitude computation in the NMPC con-
+troller accelerates the vehicle only through increasing tilt angles. 
+In addition, the ﬁxed airspeed-dependent mapping of the rotor-
+tilt angle in the FPID control approach has the main drawback 
+that, as long as the airspeed remains high, the rotors are not com-
+manded to tilt back to the RW conﬁguration. This results in a very 
+slow speed decrease and poor vertical tracking compared to NMPC 
+(t = 24 s −27 s).
+16
+
+
+===== PAGE 17 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 20. Neural network augmentation for nonlinear Dynamic Inversion in [125].
+Fig. 21. Representative state-of-the-art scheduled and uniﬁed control approaches.
+In summary, the uniﬁed NMPC control approach outperforms 
+the scheduled FPID methodology in all ﬂight phases. On the one 
+hand, this is related to the fundamental difference in tilt angle 
+computation between scheduled and uniﬁed controllers. While the 
+former use static mappings (hand-crafted or trim-point based), the 
+latter allow an online adaptive and thus potentially more optimal 
+design. On the other hand, the discretization of the ﬂight envelope 
+in scheduled control approaches means that the knowledge of the 
+model is incomplete. Thus, control performance is affected, espe-
+cially in between the selected operating points. In uniﬁed control 
+approaches and NMPC in particular, the full model is included to 
+optimize the control sequence. For a more detailed discussion, the 
+interested reader is referred to [146].
+This analysis conﬁrms the observable trend in academia, mov-
+ing towards nonlinear, uniﬁed approaches. However, the superior-
+ity of such methods strongly relies on the accuracy of the underly-
+ing model. In case a high-quality system identiﬁcation is not pos-
+sible, machine learning or general data-driven methods are used to 
+mitigate these effects as mentioned in Section 5.2.
+More advanced and optimization-based approaches might also 
+come at the cost of increased computational load. In practice, this 
+might require a powerful on-board companion computer, while 
+the simple scheduled control implementations can run directly on 
+standard-available autopilots.
+6. Control allocation
+The goal of control allocation is to map the virtual commands 
+generated by the ﬂight controller to all the available actuators of 
+the ﬂying vehicle. The redundancies between rotors, tilt angles 
+and aerodynamic control surfaces need to be adequately employed, 
+especially when the control authority depends on the ﬂight condi-
+tions. As an example, the aerodynamic control surfaces have more 
+control authority as the airﬂow speed passing over them increases. 
+Fig. 22. Simulation results comparing NMPC and FPID performance during transition 
+phases with acceleration and deceleration phase highlighted in cyan and yellow, 
+respectively.
+A detailed list of how the different actuators affect the transla-
+tional and rotational dynamics in each ﬂight mode can be found in 
+[245,134] and in the summary provided in Table 9.
+6.1. Control allocation for tailsitter aircraft
+The control allocation process in tailsitter vehicles depends on 
+whether aerodynamic control surfaces are used for maneuvering 
+or not. Table 3 summarizes the designs encountered in literature. 
+Both approaches are considered below.
+17
+
+
+===== PAGE 18 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 9
+Actuation effects on translational and rotational motion.
+Hybrid UAV
+Actuator command
+VTOL mode
+Cruise mode
+transl. motion
+rot. motion
+transl. motion
+rot. motion
+Tailsitter
+Synchronous Rotor Thrust
+vertical
+-
+horizontal
+-
+Differential Rotor Thrust
+lateral
+yaw
+lateral
+yaw
+Synchronous Elevon Deﬂection
+horizontal
+pitch
+vertical
+pitch
+Differential Elevon Deﬂection
+-
+roll
+lateral
+roll
+Tiltrotor
+Synchronous Rotor Thrust
+vertical
+-
+horizontal
+-
+Differential Rotor Thrust
+lateral
+roll
+lateral
+yaw
+Synchronous Elevon Deﬂection
+-
+-
+vertical
+pitch
+Differential Elevon Deﬂection
+-
+-
+lateral
+roll
+Synchronous Tilting
+horizontal
+-
+vertical
+-
+Differential Tilting
+-
+yaw
+lateral
+roll
+Tiltwing
+Synchronous Rotor Thrust
+vertical
+-
+horizontal
+-
+Differential Rotor Thrust
+lateral
+roll
+lateral
+yaw
+Synchronous Elevon Deﬂection
+horizontal
+pitch
+vertical
+pitch
+Differential Elevon Deﬂection
+-
+yaw
+lateral
+roll
+Synchronous Tilting
+horizontal
+-
+vertical
+-
+Differential Tilting
+-
+yaw
+lateral
+roll
+Fig. 23. Tailsitter with four rotors, no elevon [78].
+6.1.1. Control allocation for tailsitter with rotors, no elevon
+Similar to conventional multicopters, the individual rotor speeds 
+can be statically mapped to virtual body forces and moments, as 
+has been done in [76,77,91,80,95,82,83,92,94,93]. If the rotors are 
+mounted symmetrically such as for the prototype in Fig. 23, this 
+relation can be written as:
+⎛
+⎜⎜⎝
+uF
+uM1
+uM2
+uM3
+⎞
+⎟⎟⎠
+
+
+
+u
+=
+⎛
+⎜⎜⎝
+cF
+cF
+cF
+cF
+cM
+−cM
+cM
+−cM
+lcF
+lcF
+−lcF
+−lcF
+−lcF
+lcF
+lcF
+−lcF
+⎞
+⎟⎟⎠
+
+
+
+M
+⎛
+⎜⎜⎜⎝
+ω2
+1
+ω2
+2
+ω2
+3
+ω2
+4
+⎞
+⎟⎟⎟⎠
+  
+ω
+(28)
+with thrust and drag coeﬃcients cF , cM and moment arm l. Fur-
+ther, the individual rotor speeds are denoted as ωi and u are the 
+virtual control inputs. Hereby, uF denotes the total thrust parallel 
+to the main body axis, while uMi are roll, pitch and yaw moment 
+respectively. Since the matrix M in (28) has full rank, the actuator 
+commands ωc can be easily computed from the controller output 
+uc as:
+ωc = M−1uc
+(29)
+which was used in [88,73].
+6.1.2. Control allocation for tailsitter with rotors and elevons
+The works in [226,213,57,59,55] present a matrix-inversion 
+based allocation method. However, the matrix is no longer static, 
+Fig. 24. Tailsitter simultaneous rotor and elevon allocation example [57].
+since the lift and drag coeﬃcients of the elevons are state-
+dependent. As an example, the following set of equations is used 
+in [57] for the prototype shown in Fig. 24:
+⎛
+⎜⎜⎝
+uF
+uM1
+uM2
+uM3
+⎞
+⎟⎟⎠
+
+
+
+u
+=
+⎛
+⎜⎜⎝
+cF,ω
+cF,ω
+0
+0
+0
+0
+−cM1,δ(x)
+cM1,δ(x)
+0
+0
+cM2,δ(x)
+cM2,δ(x)
+lcF,ω
+−lcF,ω
+0
+0
+⎞
+⎟⎟⎠
+
+
+
+M(x)
+⎛
+⎜⎜⎝
+ω2
+1
+ω2
+2
+δ1
+δ2
+⎞
+⎟⎟⎠(30)
+with surface deﬂections δ1 and δ2 and where the elevon coeﬃ-
+cients cM1,δ and cM2,δ are modeled as state x dependent parame-
+ters. As a consequence, the matrix inverse needs to be recomputed 
+at each iteration.
+A slightly modiﬁed approach is shown in [72] for the exam-
+ple of a tailsitter with four propellers and two elevons. In that 
+work, a velocity-dependent scale is used to distribute the required 
+moments between the rotors and the elevons. This way, one can 
+account for the changing control authority and ensure eﬃcient 
+ﬂight.
+An interesting concept is presented in [246], which consists in 
+a morphing tailsitter design, as shown in Fig. 25. The vehicle can 
+take the shape of a large wing for solar-powered cruise ﬂight in 
+FW mode. During VTOL operation on the other hand, the vehicle 
+can reconﬁgure itself into a compact multi-rotor-like airframe. A 
+nonlinear mixer module is used to distribute the control actions 
+between rotor speeds, control surface deﬂections and the hinge-
+actuation servos.
+18
+
+
+===== PAGE 19 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 25. Morphing tailsitter design [246].
+6.1.3. Automatic control allocation for tailsitter aircraft
+In case a vehicle has an entire set of primary control-surfaces 
+available, rather than just a pair of elevons, the attitude dynam-
+ics can be decoupled by directly mapping the required moments 
+to the corresponding control-surfaces. In other words, roll com-
+mands are passed to ailerons, pitch commands to elevators and 
+yaw commands to the rudder. This combination of controller and 
+allocation has been used in ducted-fan or wing-fuselage designs by 
+[31,32,30,33,46,34,35,40,44,68,41,36,42,37,52,38].
+6.2. Control allocation for tiltrotor aircraft
+Numerous works have shown how effects of the rotor-tilt an-
+gles, rotor speeds and control-surface actuators can be lumped 
+into virtual body forces and moments [131,132,127,113,133,136,
+134,138,106,139,140,119,240,149,143,146]. In turn, control alloca-
+tion consists in mapping the desired virtual forces and moments 
+generated by the ﬂight controllers to actual actuator control sig-
+nals. In the case of tiltrotor aircraft, the actuation is provided by 
+rotor speeds, control surfaces and rotor tilting.
+Control allocation for tiltrotor VTOL UAVs can be divided into 
+the two main approaches found in the literature. In the ﬁrst ap-
+proach, if there are enough DoF, the rotor-tilt angles can be ig-
+nored in the allocation procedure, meaning that only rotor thrust 
+and control-surface deﬂections are used for stabilization. The sec-
+ond approach exploits explicitly the rotor-tilt angle as part of the 
+control allocation algorithm. Both approaches are detailed below.
+6.2.1. Approach 1: allocation excluding rotor-tilt angle
+This approach can only be pursued if the rotors provide suﬃ-
+cient thrust to control the vehicle in the VTOL mode. This is the 
+case for a four-rotor vehicle as shown in Fig. 6 or a tri-copter 
+with laterally tiltable-tail propeller as shown in Fig. 26. For these 
+UAVs, the approach reported in [130,135,118] provides an equation 
+similar to (28), allowing actuator command computation through 
+matrix inversion.
+The work in [117] allocates rotor speeds and elevon deﬂections 
+using a model-inversion approach to track the virtual roll-, pitch-
+and yaw-desired moments. A similar approach is found in [107], 
+where model inversion is used to compute actuator commands for 
+all primary control-surfaces. The algorithm employed in [142] dis-
+tributes the torque control actions between differential rotor thrust 
+and control-surface deﬂection, based on an airspeed-dependent 
+gain. The works in [143,145,147,146] use a daisy-chaining ap-
+proach, where energy-cheap actuators, namely aerodynamic con-
+trol surfaces, are prioritized over propeller thrusts. In addition, 
+differential rotor-tilt angle is used to generate a motion around 
+the thrust axis, resulting in an eﬃcient way to produce high-yaw 
+torque without resorting to propeller differential thrusts. To re-
+Fig. 26. Tri-copter with laterally tiltable tail propeller [118].
+Fig. 27. Yaw motion for three-rotor UAV with rigidly mounted tail rotor [116].
+duce complexity, [242,247] simply weight the control-surface com-
+mands with airspeed-dependent gains to account for the changing 
+control authority.
+6.2.2. Approach 2: allocation including rotor-tilt angle
+If the vehicle can not be stabilized in VTOL mode by exclusively 
+changing the rotor speeds, the tilt angles need to be included in 
+the allocation.
+Three-rotor Tilting UAVs with rigidly-mounted tail rotor as shown 
+in Fig. 27 often use the tilt angles to yaw, without inducing a roll 
+moment. This approach is used in [115,116,121]. Additionally, [126,
+129,128] achieve longitudinal force generation by tilting the rotors, 
+rather than pitching the vehicle.
+Two-rotor Tilting Aircraft suffer from the same lack of controlla-
+bility and also require propeller tilt angle allocation, for example 
+via pseudo-inverse matrix as shown in [111].
+In cruise mode, the rotor-tilt angles can be neglected in the al-
+location, since the combination of rotor speed and control-surface 
+deﬂection provides enough control authority to track the stabiliz-
+ing commands.
+During transition maneuvers however, tilt angle, rotor speed 
+and surface deﬂection are often all mixed together, with the in-
+dividual contributions weighted according to the current ﬂight 
+conditions [99,104,105]. The approach in [109] uses a tilt-angle-
+dependent gain to distribute a virtual elevator command be-
+tween tilt angles and control-surfaces. In [120,96,97], the allo-
+cation among actuators is weighted as a function of airspeed. 
+Additionally, a decoupling mechanism, based on the relationship 
+between tilt angles and differential motor thrust, ensures indepen-
+dence between roll and yaw motions.
+Finally, the approach of [141] solves an optimization problem 
+to achieve the most eﬃcient allocation possible.
+6.2.3. Direct control allocation for tiltrotor UAVs
+Besides the mentioned mappings between virtual controller 
+outputs and actual actuator commands, there exist structures 
+which directly combine controller and allocation. These approaches 
+are often encountered when a linearized system model is used for 
+the controller, such as with Divide and Conquer (see Section 5.1.1) 
+19
+
+
+===== PAGE 20 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+for example. As shown in [227,218,228,241,217,219,114,220,171], 
+the control signals for the tilt angle, the rotors’ speed and the 
+control-surface angles are directly provided by the controller, and 
+no further manipulation is required.
+6.3. Control allocation for tiltwing aircraft
+Similarly to tiltrotor vehicles, tiltwing-UAV actuator commands 
+are a combination of feedback stabilization and feedforward action. 
+Additionally, it is also common to use virtual forces and moments 
+in the controller, which has been demonstrated by [157,162,164,
+168,152,169,170,248]. The main difference is that the control sur-
+faces for tiltwing vehicles are always in the propeller slipstream, 
+meaning that they have control authority in VTOL mode. As a con-
+sequence, the tilt angles are exclusively used in feedforward action. 
+Thus, feedback stabilization can be achieved in all ﬂight conditions 
+using rotor-speed commands only and control-surface deﬂection.
+6.3.1. Tilt angle excluding allocation
+The prototype used in [165,167] has no need for aerodynamic-
+control surfaces, since full controllability is provided by the four 
+strategically-placed rotor-wing assemblies (similar to the proto-
+type shown in Fig. 4b). A state-dependent matrix inversion is used 
+to determine the individual rotor speeds from given desired body 
+forces and torques.
+The approach presented in [158,163] distributes the control ac-
+tion between the rotors and aerodynamic-control surfaces depend-
+ing on the tilt angle, in order to improve the eﬃciency of the al-
+location. Along the same lines, [166] uses a model-inversion-based 
+method to obtain rotor speed and ﬂaps commands. Finally, [154]
+employs so-called daisy chaining control allocation method. The ac-
+tuators are sequentially allocated based on a predeﬁned order of 
+priority, whereby higher priority is assigned to the aerodynamic-
+control surfaces, for energy eﬃciency.
+6.3.2. Automatic or direct allocation for tiltwing UAVs
+Similar to the case with tiltrotor vehicles, automatic allocation 
+is commonly used when a linearized model is derived for the con-
+troller synthesis. The respective controller outputs can directly be 
+fed to the actuators, such as demonstrated in [172–175,159,153,
+171,249].
+7. Conclusion
+This paper reviewed the major currently-available designs for 
+hybrid or convertible VTOL UAVs, together with state-of-the-art 
+ﬂight control methodologies encountered in recent literature. The 
+comparative study has been conducted on the three main different 
+types of hybrid VTOL aircraft, namely 1) tailsitters, 2) tilting-rotors, 
+and 3) tiltwing vehicles. Each class displays inherent advantages 
+and drawbacks over the others, regarding mechanical complexity, 
+stability, eﬃciency and maneuverability.
+This study shows that the simplest design is the tailsitter type 
+with either two propellers and two elevons, or four propellers and 
+no elevons. As their name indicates, tailsitters require the fuselage 
+to change orientation during ﬂight mode transition. Although they 
+allow eﬃcient wing design, tailsitters also display high suscepti-
+bility to wind disturbances during the take off, hover, and landing 
+phases, because of a large vertical wing surface exposed to side 
+winds. On the other hand, the tiltrotor and tiltwing conﬁgurations 
+require complex tilting actuation to achieve transition between 
+ﬂight modes. While tiltrotor hybrid UAV are generally less eﬃcient 
+than the other two types, studies also show that it is the most 
+agile and less-wind-susceptible vehicle during the (quasi-)station-
+ary ﬂight phases. In particular, designs with a pair of propellers 
+on each side of the fuselage offer the possibility to produce ex-
+tra yaw torque by differential-tilting propeller pairs on each side 
+of the fuselage.
+This review also focused on the four main components that 
+make up a successful ﬂight control system for an autonomous 
+VTOL aircraft. They are namely: a rigorously-designed 1) physi-
+cal model of the ﬂying system, 2) reference-trajectory generation 
+during ﬂight mode transition, 3) ﬂight controller and 4) actuator-
+control allocation.
+A highly-nonlinear model is required to accurately capture the 
+combined lift generation from the propellers and wings in the 
+different ﬂight phases. During the transitions from RW mode to 
+FW mode and back, hybrid UAVs encounter large AoA and slow-
+translational speed ﬂight conditions, during which there are large 
+aerodynamic-lift force variations. These complex dynamics make 
+the generation of reference signals for hybrid VTOL aircraft more 
+challenging compared to conventional RW or FW vehicles alone. In 
+addition, the following constraints must be taken into account: a) 
+physical vehicles limitations such as the limited power or thrust 
+provided by the motors, b) the under-actuated nature of the ﬂy-
+ing machines, and c) the (strong) nonlinearities and uncertainties 
+in the equations that describe the behavior of the ﬂying machines 
+for the full ﬂight envelope.
+In order to handle the varying ﬂight conditions, this study revealed 
+there are two main families of ﬂight control approaches, namely 1) 
+controller-scheduling policies, and 2) uniﬁed-control policies. In the 
+ﬁrst family of control architectures, separate ﬂight controllers are 
+activated successively or blended depending on the ﬂight operat-
+ing conditions. These controllers are based on a linearized system 
+model at different operating points or trim points within the ﬂight 
+envelope. Those trim points are then scheduled together with the 
+corresponding linear controllers throughout the ﬂight modes. Re-
+cent investigations to augment or replace these controllers with 
+data-driven methods and machine learning promise to increase the 
+robustness with respect to modeling and system identiﬁcation er-
+rors.
+The second main family of control architecture involves uniﬁed-
+control policies without the need to switch among ﬂight con-
+trollers. It consists in a continuous single control approach a) valid 
+in all ﬂight modes (VTOL, cruising) despite the fundamental behav-
+ior differences between them, b) able to transition between these 
+modes in a controlled, smooth and safe manner, c) robust against 
+model uncertainties and unpredictable external perturbations. To 
+this end, the current trend is to incorporate as much knowledge 
+of the vehicle as possible into the ﬂight controller, for example 
+through highly-nonlinear control laws, model predictive control, 
+neural networks or machine learning approaches. These methods 
+remove the need to schedule oﬄine-precomputed controllers, but 
+rather they are able to capture and exploit the nonlinearities of the 
+system and compute control signals that can take into account the 
+vehicle’s physical limitations simultaneously, in realtime.
+To conclude, control system design for hybrid UAVs is still a 
+very active ﬁeld in modern research. Only a few projects have 
+successfully completed their development phase and are ready to 
+be used in real-world applications. Current and future develop-
+ment concentrate on elaborated more sophisticated approaches, 
+both to improve model ﬁdelity and control performance. This is 
+done through combination of data-driven, model-based, optimiza-
+tion and self-learning ﬂight control approaches. However, such ap-
+proaches often require more computing power aboard the vehicle. 
+Although processors keeps increasing in speed and memory, it is 
+still required to mitigate control complexity and available comput-
+ing resources.
+20
+
+
+===== PAGE 21 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Declaration of competing interest
+The authors declare that they have no known competing ﬁnan-
+cial interests or personal relationships that could have appeared to 
+inﬂuence the work reported in this paper.
+References
+[1] A. Reinhard, Door to Door 4D Mobilität vom Fliegenden Auto zum Air-taxi, AS 
+Verlag, ISBN 978-3-906055-99-2, 2019.
+[2] Military History Matters, Back to the drawing board: the Lockheed XFV-1 
+Salmon, accessed 2021, https://www.military-history.org /articles /back-to -the -
+drawing -board -the -lockheed -xfv-1 -salmon .htm, 2012.
+[3] Wikipedia contributors, Lockheed XFV, accessed 2021, https://en .wikipedia .
+org /wiki /Lockheed _XFV, 2019.
+[4] M. Taylor, Jane’s Encyclopedia of Aviation, Studio Editions, London, 1989.
+[5] Wikipedia contributors, Vertol VZ-2, accessed 2021, https://en .wikipedia .org /
+wiki /Vertol _VZ -2, 2021.
+[6] RAF Historical Society, The RAF Harrier Story, Advanced Book Printing, 2006.
+[7] Wikipedia contributors, Harrier jump jet, accessed, https://en .wikipedia .org /
+wiki /Harrier _Jump _Jet, 2021.
+[8] Dassault, Dassault aviation, Mirage III V, origins and prototypes, accessed, 
+https://www.dassault -aviation .com /fr /passion /avions /dassault -militaires /
+mirage -iii -v/, 2021.
+[9] Wikipedia contributors, Dassault Mirage IIIV, https://en .wikipedia .org /wiki /
+Dassault _Mirage _IIIV, 2021.
+[10] S. Markman, B. Holder, Bell/Boeing V-22 Osprey Tilt-Engine VTOL Transport 
+(U.S.A.). Straight up: A History of Vertical Flight, Schiffer Publishing, Atglen, 
+ISBN 0-7643-1204-9, 2000.
+[11] Wikipedia contributors, Bell-Boeing V-22, 2021, https://de .wikipedia .org /wiki /
+Bell -Boeing _V -22.
+[12] J. Hamstra, The F-35 Lightning II: From Concept to Cockpit., American Institute 
+of Aeronautics and Astronautics (AIAA), 2019.
+[13] Wikipedia contributors, Lockheed Martin F-35 Lightning II, https://en .
+wikipedia .org /wiki /Lockheed _Martin _F-35 _Lightning _II, 2021.
+[14] Aviation Week Network, Sikorsky’s rotor blown wing – look familiar?, https://
+aviationweek.com /sikorskys -rotor-blown -wing -look-familiar, 2013.
+[15] Darren Quick, Israel Aerospace Industries unveils tilt-rotor Panther UAV plat-
+form, https://newatlas .com /tilt -rotor-panther-uav /16619/, 2010.
+[16] Matthew Monaghan, Aurora wins DARPA VTOL X-Plane program contract, 
+https://www.sae .org /news /2014 /02 /aurora -wins -darpa -vtol -x -plane -program -
+contract, 2014.
+[17] Boeing, Boeing Phantom Swift selected for DARPA X-Plane competition, 
+https://boeing .mediaroom .com /Boeing -Phantom -Swift -Selected -for-DARPA-X-
+Plane -Competition, 2014.
+[18] Vertiﬂite, Project Zero: the exclusive story of AgustaWestland’s ’all-electric 
+technology incubator, vol. 59 (3), June 2013, https://en .wikipedia .org /wiki /
+AgustaWestland _Project _Zero.
+[19] Aurora Flight Sciences, LightningStrike XV-24A Demonstrator Successfully 
+Completes Subscale Flight Test Program, 4 April 2017.
+[20] Wingcopter, 
+Wingcopter 
+specsheet, 
+https://wingcopter.com /wp -content /
+uploads /2020 /03 /Specsheet _Wingcopter _178HL-2 .pdf, 2010.
+[21] Wingtra, WingtraOne - mapping drone for high-accuracy aerial surveys, ac-
+cessed 2021, https://wingtra .com /mapping -drone -wingtraone /#intro, 2020.
+[22] Airbus, Airbus commercial aviation: Vahana, our single-seat eVTOL demon-
+strator, accessed 2021 https://www.airbus .com /innovation /zero -emission /
+urban -air-mobility /vahana .html.
+[23] P. Poisson-Quiton, Introduction to V/STOL aircraft concepts and categories, 
+AGARDograph 126 (May 1968).
+[24] S. Anderson, Historical Overview of V/STOL Aircraft Technology, NASA Ames 
+Research Center: NASA Technical Memorandum, March 1981.
+[25] M.J. Hirshcherg, V/STOL: the ﬁrst half-century, vertiﬂite, accessed 2021 
+(March/April 1997), https://studylib .net /doc /8542802 /v-stol --the -ﬁrst -half -
+century-by-michael -j .-hirschberg -f.
+[26] Y. Zhou, H. Zhao, Y. Liu, An evaluative review of the VTOL technolo-
+gies for unmanned and manned aerial vehicles, Comput. Commun. 149 
+(2020) 356–369, https://doi .org /10 .1016 /j .comcom .2019 .10 .016, https://www.
+sciencedirect .com /science /article /pii /S014036641930996X.
+[27] Advisory Group for Aerospace Research & Development (AGARD), Agard Re-
+port No. 577 on v/Stol Handling, i-Criteria and Discussion, 1970.
+[28] Wikipedia contributors, Accidents and Incidents Involving the V22 Os-
+prey, https://en .wikipedia .org /wiki /Accidents _and _incidents _involving _the _V -
+22 _Osprey. (Accessed January 2021).
+[29] W.E. Green, P.Y. Oh, A MAV that ﬂies like an airplane and hovers like a 
+helicopter, in: Proceedings, 2005 IEEE/ASME International Conference on Ad-
+vanced Intelligent Mechatronics, 2005, pp. 693–698.
+[30] S.R. Osborne, Transitions between hover and level ﬂight for a tailsitter UAV, 
+Master’s thesis, Brigham Young University, 2007.
+[31] N.B. Knoebel, Adaptive quaternion control of a miniature tailsitter UAV, Mas-
+ter’s thesis, Brigham Young University, August 2007.
+[32] A. Frank, J. Mcgrew, M. Valenti, D. Levine, J. How, Hover, transition, and level 
+ﬂight control design for a single-propeller indoor airplane, American Insti-
+tute of Aeronautics and Astronautics, 08 2007, https://doi .org /10 .2514 /6 .2007 -
+6318.
+[33] N.B. Knoebel, T.W. McLain, Adaptive quaternion control of a miniature tailsit-
+ter UAV, in: 2008 American Control Conference, 2008, pp. 2340–2345.
+[34] W.E. Green, P.Y. Oh, A hybrid MAV for ingress and egress of urban environ-
+ments, IEEE Trans. Robot. 25 (2) (2009) 253–263, https://doi .org /10 .1109 /TRO .
+2009 .2014501.
+[35] T. Matsumoto, K. Kita, R. Suzuki, A. Oosedo, K. Go, Y. Hoshino, A. Konno, 
+M. Uchiyama, A hovering control strategy for a tail-sitter VTOL UAV that 
+increases stability against large disturbance, in: 2010 IEEE International Con-
+ference on Robotics and Automation, 2010, pp. 54–59.
+[36] B.D. Marchini, Adaptive control techniques for transition-to-hover ﬂight of 
+ﬁxed-wing UAVs, Master’s thesis, California Polytechnic State University, 2013.
+[37] S. Kohno, K. Uchiyama, Design of robust controller of ﬁxed-wing UAV for tran-
+sition ﬂight, in: 2014 International Conference on Unmanned Aircraft Systems, 
+ICUAS, 2014, pp. 1111–1116.
+[38] W. Wang, J. Zhu, M. Kuang, Design, modelling and hovering control of a tail-
+sitter with single thrust-vectored propeller, in: 2017 IEEE/RSJ International 
+Conference on Intelligent Robots and Systems, IROS, 2017, pp. 5971–5976.
+[39] Z. Omar, C. Bil, R. Hill, The application of fuzzy logic on transition manoeuvre 
+control of a new ducted-fan VTOL UAV conﬁguration, in: Second International 
+Conference on Innovative Computing, Information and Control, ICICIC 2007, 
+2007, p. 434.
+[40] A. Manouchehri, H. Hajkarami, M.S. Ahmadi, Hovering control of a ducted fan 
+VTOL unmanned aerial vehicle (UAV) based on PID control, in: 2011 Interna-
+tional Conference on Electrical and Control Engineering, 2011, pp. 5962–5965.
+[41] M.E. Argyle, R.W. Beard, S. Morris, The vertical bat tail-sitter: dynamic 
+model and control architecture, in: 2013 American Control Conference, 2013, 
+pp. 806–811.
+[42] J.M. Beach, M.E. Argyle, T.W. McLain, R.W. Beard, S. Morris, Tailsitter atti-
+tude control using resolved tilt-twist, in: 2014 International Conference on 
+Unmanned Aircraft Systems, ICUAS, 2014, pp. 768–779.
+[43] S. Deng, S. Wang, Z. Zhang, Aerodynamic performance assessment of a 
+ducted fan UAV for VTOL applications, Aerosp. Sci. Technol. 103 (2020) 
+105895, https://doi .org /10 .1016 /j .ast .2020 .105895, https://www.sciencedirect .
+com /science /article /pii /S1270963820305770.
+[44] Y. Jung, D. Shim, Development and application of controller for transition 
+ﬂight of tail-sitter UAV, J. Intell. Robot. Syst. 65 (1–4) (2012) 137–152.
+[45] Z. Cheng, H. Pei, S. Li, Neural-networks control for hover to high-speed-level-
+ﬂight transition of ducted fan UAV with provable stability, IEEE Access 8 
+(2020) 100135–100151, https://doi .org /10 .1109 /ACCESS .2020 .2997877.
+[46] J.A. Guerrero, R. Lozano, G. Romero, D. Lara-Alabazares, K.C. Wong, Robust 
+control design based on sliding mode control for hover ﬂight of a mini tail-
+sitter unmanned aerial vehicle, in: 2009 35th Annual Conference of IEEE In-
+dustrial Electronics, 2009, pp. 2342–2347.
+[47] J. Escareno, S. Salazar, E. Rondon, Unmanned Aerial Vehicles: Embedded Con-
+trol, Wiley, 2010, pp. 41–58, Ch. 3.
+[48] S. Verling, B. Weibel, M. Boosfeld, K. Alexis, M. Burri, R. Siegwart, Full attitude 
+control of a VTOL tailsitter UAV, in: 2016 IEEE International Conference on 
+Robotics and Automation, ICRA, 2016, pp. 3006–3012.
+[49] J. Liang, Q. Fei, B. Wang, Q. Geng, Tailsitter VTOL ﬂying wing aircraft attitude 
+control, in: 2016 31st Youth Academic Annual Conference of Chinese Associ-
+ation of Automation, YAC, 2016, pp. 439–443.
+[50] S. Verling, T. Stastny, G. Bättig, K. Alexis, R. Siegwart, Model-based transition 
+optimization for a VTOL tailsitter, in: 2017 IEEE International Conference on 
+Robotics and Automation, ICRA, 2017, pp. 3939–3944.
+[51] S. Zhang, Q. Fei, J. Liang, Q. Geng, Modeling and control for longitudinal at-
+titude of a twin-rotor tail-sitter unmanned aerial vehicle, in: 2017 13th IEEE 
+International Conference on Control Automation, ICCA, 2017, pp. 816–821.
+[52] L. Zhang, Z. Li, H. Liu, C. Wang, Robust attitude control for a tail-sitter aircraft, 
+in: 2017 36th Chinese Control Conference, CCC, 2017, pp. 4900–4905.
+[53] R. Ritz, R. D’Andrea, A global controller for ﬂying wing tailsitter vehicles, in: 
+2017 IEEE International Conference on Robotics and Automation, ICRA, 2017, 
+pp. 2731–2738.
+[54] R. Ritz, Enhancing the capabilities of ﬂying machines: cooperative payload 
+carrying, onboard learning, and tailsitter control, Ph.D. thesis, Swiss Federal 
+Institute of Technology (ETH), Zurich, 2017.
+[55] J.M.O. Barth, J. Condomines, M. Bronz, L.R. Lustosa, J. Moschetta, C. Join, M. 
+Fliess, Fixed-wing UAV with transitioning ﬂight capabilities: model-based or 
+model-free control approach? A preliminary study, in: 2018 International 
+Conference on Unmanned Aircraft Systems, ICUAS, 2018, pp. 1157–1164.
+[56] R. Chiappinelli, M. Nahon, Modeling and control of a tailsitter UAV, in: 
+2018 International Conference on Unmanned Aircraft Systems, ICUAS, 2018, 
+pp. 400–409.
+[57] Y. Yang, J. Zhu, X. Zhang, X. Wang, Active disturbance rejection control of a 
+ﬂying-wing tailsitter in hover ﬂight, in: 2018 IEEE/RSJ International Confer-
+ence on Intelligent Robots and Systems, IROS, 2018, pp. 6390–6396.
+21
+
+
+===== PAGE 22 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+[58] J. Zhong, B. Song, Y. Li, J. Xuan, L1 adaptive control of a dual-rotor tail-sitter 
+unmanned aerial vehicle with input constraints during hover ﬂight, IEEE Ac-
+cess 7 (2019) 51312–51328, https://doi .org /10 .1109 /ACCESS .2019 .2911897.
+[59] J.M.O. Barth, J. Condomines, J. Moschetta, A. Cabarbaye, C. Join, Full model-free 
+control architecture for hybrid UAVs, in: 2019 American Control Conference, 
+ACC, 2019, pp. 71–78.
+[60] S. Fuhrer, S. Verling, T. Stastny, R. Siegwart, Fault-tolerant ﬂight control of a 
+VTOL tailsitter UAV, in: 2019 International Conference on Robotics and Au-
+tomation, ICRA, 2019, pp. 4134–4140.
+[61] J. Escareño, R.H. Stone, A. Sanchez, R. Lozano, Modeling and control strategy 
+for the transition of a convertible tail-sitter UAV, in: 2007 European Control 
+Conference, ECC, 2007, pp. 3385–3390.
+[62] J. Escareno, S. Salazar, R. Lozano, Modelling and control of a convertible VTOL 
+aircraft, in: Proceedings of the 45th IEEE Conference on Decision and Control, 
+2006, pp. 69–74.
+[63] J. Escareño, S. Salazar-Cruz, R. Lozano, Attitude stabilization of a convertible 
+mini birotor, in: 2006 IEEE Conference on Computer Aided Control System 
+Design, 2006 IEEE International Conference on Control Applications, 2006 IEEE 
+International Symposium on Intelligent Control, 2006, pp. 2202–2206.
+[64] R.H. Stone, Control architecture for a tail-sitter unmanned air vehicle, in: 
+2004 5th Asian Control Conference (IEEE Cat. No. 04EX904), vol. 2, 2004, 
+pp. 736–744.
+[65] O. Garcia, J. Escareno, V. Rosas, Unmanned Aerial Vehicles: Embedded Control, 
+Wiley, 2010, pp. 79–114, Ch. 5.
+[66] D.A. Ta, I. Fantoni, R. Lozano, Modeling and control of a convertible mini-UAV, 
+IFAC Proc. Vol. 44 (1) (2011) 1492–1497, https://doi .org /10 .3182 /20110828 -
+6 -IT-1002 .01066, 18th IFAC World Congress, http://www.sciencedirect .com /
+science /article /pii /S1474667016438206.
+[67] P. Casau, D. Cabecinhas, C. Silvestre, Autonomous transition ﬂight for a vertical 
+take-off and landing aircraft, in: 2011 50th IEEE Conference on Decision and 
+Control and European Control Conference, 2011, pp. 3974–3979.
+[68] P. Casau, D. Cabecinhas, C. Silvestre, Hybrid control strategy for the au-
+tonomous transition ﬂight of a ﬁxed-wing aircraft, IEEE Trans. Control Syst. 
+Technol. 21 (6) (2013) 2194–2211, https://doi .org /10 .1109 /TCST.2012 .2221091.
+[69] Y. Ke, B.M. Chen, Full envelope dynamics modeling and simulation for tail-
+sitter hybrid UAVs, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 2242–2247.
+[70] Y. Ke, K. Wang, K. Gong, S. Lai, B.M. Chen, Model based robust forward transi-
+tion control for tail-sitter hybrid unmanned aerial vehicles, in: 2017 13th IEEE 
+International Conference on Control Automation, ICCA, 2017, pp. 828–833.
+[71] Y. Ke, K. Wang, B.M. Chen, Design and implementation of a hybrid UAV with 
+model-based ﬂight capabilities, IEEE/ASME Trans. Mechatron. 23 (3) (2018) 
+1114–1125, https://doi .org /10 .1109 /TMECH .2018 .2820222.
+[72] X. Lyu, H. Gu, J. Zhou, Z. Li, S. Shen, F. Zhang, A hierarchical control approach 
+for a quadrotor tail-sitter VTOL UAV and experimental veriﬁcation, in: 2017 
+IEEE/RSJ International Conference on Intelligent Robots and Systems, IROS, 
+2017, pp. 5135–5141.
+[73] X. Lyu, H. Gu, Y. Wang, Z. Li, S. Shen, F. Zhang, Design and implementation of 
+a quadrotor tail-sitter VTOL UAV, in: 2017 IEEE International Conference on 
+Robotics and Automation, ICRA, 2017, pp. 3924–3930.
+[74] X. Lyu, J. Zhou, H. Gu, Z. Li, S. Shen, F. Zhang, Disturbance observer based 
+hovering control of quadrotor tail-sitter VTOL UAVs using H∞synthesis, IEEE 
+Robot. Autom. Lett. 3 (4) (2018) 2910–2917, https://doi .org /10 .1109 /LRA.2018 .
+2847405.
+[75] A. Flores, A.M. de Oca, G. Flores, A simple controller for the transition maneu-
+ver of a tail-sitter drone, CoRR, arXiv:1810 .11534 [abs], 2018.
+[76] A. Oosedo, S. Abiko, A. Konno, T. Koizumi, T. Furui, M. Uchiyama, Development 
+of a quad rotor tail-sitter VTOL UAV without control surfaces and experi-
+mental veriﬁcation, in: 2013 IEEE International Conference on Robotics and 
+Automation, 2013, pp. 317–322.
+[77] M. Hochstenbach, C. Notteboom, B. Theys, J.D. Schutter, Design and control of 
+an unmanned aerial vehicle for autonomous parcel delivery with transition 
+from vertical take-off to forward ﬂight – VertiKUL, a quadcopter tailsitter, Int. 
+J. Micro Air Veh. 7 (4) (2015) 395–405, https://doi .org /10 .1260 /1756 -8293 .7.4 .
+395.
+[78] B. Theys, G. De Vos, J. De Schutter, A control approach for transitioning VTOL 
+UAVs with continuously varying transition angle and controlled by differen-
+tial thrust, in: 2016 International Conference on Unmanned Aircraft Systems, 
+ICUAS, 2016, pp. 118–125.
+[79] B. Theys, Design methodology and control strategy for transitioning vertical 
+takeoff and landing unmanned aerial vehicles for improved speed, range and 
+payload capacity, Ph.D. thesis, 2016, https://lirias .kuleuven .be /retrieve /416508.
+[80] J. Zhou, X. Lyu, Z. Li, S. Shen, F. Zhang, A uniﬁed control method for quadrotor 
+tail-sitter UAVs in all ﬂight modes: hover, transition, and level ﬂight, in: 2017 
+IEEE/RSJ International Conference on Intelligent Robots and Systems, IROS, 
+2017, pp. 4835–4841.
+[81] X. Zhao, H. Zhao, X. Wang, J. Yin, Modeling and hover attitude control of tail-
+sitter aircraft, in: 2018 33rd Youth Academic Annual Conference of Chinese 
+Association of Automation, YAC, 2018, pp. 1017–1022.
+[82] Z. Li, W. Zhou, H. Liu, L. Zhang, Z. Zuo, Nonlinear robust ﬂight mode transition 
+control for tail-sitter aircraft, IEEE Access 6 (2018) 65909–65921, https://doi .
+org /10 .1109 /ACCESS .2018 .2878722.
+[83] Z. Li, W. Zhou, H. Liu, Robust controller design for a tail-sitter UAV in ﬂight 
+mode transitions, in: 2018 IEEE 14th International Conference on Control and 
+Automation, ICCA, 2018, pp. 763–768.
+[84] W. Xu, H. Gu, Y. Qing, J. Lin, F. Zhang, Full attitude control of an eﬃcient 
+quadrotor tail-sitter VTOL UAV with ﬂexible modes, CoRR, arXiv:1903 .06393
+[abs], 2019.
+[85] R. Gill, R. D’Andrea, An annular wing VTOL UAV: ﬂight dynamics and control, 
+Drones 4 (2020) 14, https://doi .org /10 .3390 /drones4020014.
+[86] B. Li, J. Sun, W. Zhou, C.Y. Wen, K.H. Low, C.K. Chen, Transition optimiza-
+tion for a VTOL tail-sitter UAV, IEEE/ASME Trans. Mechatron. 25 (5) (2020) 
+2534–2545, https://doi .org /10 .1109 /TMECH .2020 .2983255.
+[87] Y. Wang, J. Yu, Q. Li, Z. Ren, Control strategy for the transition ﬂight of 
+a tail-sitter UAV, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 3504–3509.
+[88] Y. Wang, X. Lyu, H. Gu, S. Shen, Z. Li, F. Zhang, Design, implementation and 
+veriﬁcation of a quadrotor tail-sitter VTOL UAV, in: 2017 International Confer-
+ence on Unmanned Aircraft Systems, ICUAS, 2017, pp. 462–471.
+[89] N. Raj, A. Simha, M. Kothari Abhishek, R.N. Banavar, Iterative learning based 
+feedforward control for transition of a biplane-quadrotor tailsitter UAS, in: 
+2020 IEEE International Conference on Robotics and Automation, ICRA, 2020, 
+pp. 321–327.
+[90] J. Xu, T. Du, M. Foshey, B. Li, B. Zhu, A. Schulz, W. Matusik, Learning to ﬂy: 
+computational controller design for hybrid UAVs with reinforcement learning, 
+ACM Trans. Graph. 38 (2019) 1–12, https://doi .org /10 .1145 /3306346 .3322940.
+[91] L. Deyuan, L. Hao, L. Zhaoying, Robust mode transition attitude control of tail-
+sitter unmanned aerial vehicles, in: 2017 36th Chinese Control Conference, 
+CCC, 2017, pp. 3198–3202.
+[92] D. Liu, H. Liu, C. Liu, B. Zhu, Z. Li, Robust optimal attitude controller de-
+sign for tail-sitters, in: 2018 Annual American Control Conference, ACC, 2018, 
+pp. 4233–4237.
+[93] D. Liu, H. Liu, F.L. Lewis, K.P. Valavanis, Robust time-varying formation control 
+for tail-sitters in ﬂight mode transitions, IEEE Trans. Syst. Man Cybern. Syst. 
+(2019) 1–10, https://doi .org /10 .1109 /TSMC .2019 .2931482.
+[94] H. Liu, F. Peng, F.L. Lewis, Y. Wan, Robust tracking control for tail-sitters 
+in ﬂight mode transitions, IEEE Trans. Aerosp. Electron. Syst. 55 (4) (2019) 
+2023–2035, https://doi .org /10 .1109 /TAES .2018 .2880888.
+[95] L. Deyuan, L. Hao, L. Zhaoying, Z. Wanbing, Robust trajectory tracking con-
+trol for tail-sitter UAVs, in: 2018 37th Chinese Control Conference, CCC, 2018, 
+pp. 2538–2542.
+[96] R.T. Rysdyk, A.J. Calise, Adaptive model inversion ﬂight control for tilt-rotor 
+aircraft, J. Guid. Control Dyn. 22 (3) (1999) 402–407, https://doi .org /10 .2514 /
+2 .4411.
+[97] R.T. Rysdyk, A.J. Calise, Adaptive nonlinear control for tiltrotor aircraft, in: Pro-
+ceedings of the 1998 IEEE International Conference on Control Applications 
+(Cat. No. 98CH36104), vol. 2, 1998, pp. 980–984.
+[98] R.K. Mehra, R.K. Prasanth, S. Gopalaswamy, XV-15 tiltrotor ﬂight control sys-
+tem design using model predictive control, in: 1998 IEEE Aerospace Confer-
+ence Proceedings (Cat. No. 98TH8339), vol. 2, 1998, pp. 139–148.
+[99] Jang-Ho Lee, Byoung-Mun Min, Eung-Tai Kim, Autopilot design of tilt-rotor 
+UAV using particle swarm optimization method, in: 2007 International Con-
+ference on Control, Automation and Systems, 2007, pp. 1629–1633.
+[100] S. Yanguo, W. Huanjin, Design of ﬂight control system for a small unmanned 
+tilt rotor aircraft, Chin. J. Aeronaut. 22 (3) (2009) 250–256, https://doi .org /10 .
+1016 /S1000 -9361(08 )60095 -3, http://www.sciencedirect .com /science /article /
+pii /S1000936108600953.
+[101] Chih-Cheng Peng, Thong-Shing Hwang, Shiaw-Wu Chen, Ching-Yi Chang, Yi-
+Ciao Lin, Yao-Ting Wu, Yi-Jing Lin, Wei-Ren Lai, ZPETC path-tracking gain-
+scheduling design and real-time multi-task ﬂight simulation for the automatic 
+transition of tilt-rotor aircraft, in: 2010 IEEE Conference on Robotics, Automa-
+tion and Mechatronics, 2010, pp. 118–123.
+[102] B.-M. Kim, B. Kim, N. Kim, Trajectory tracking controller design using neural 
+networks for a tiltrotor unmanned aerial vehicle, Proc. Inst. Mech. Eng., G J. 
+Aerosp. Eng. 224 (2010) 881–896, https://doi .org /10 .1243 /09544100JAERO710.
+[103] J.T. VanderMey, A tilt rotor UAV for long endurance operations in remote 
+environments, Master’s thesis, Massachusetts Institute of Technology, 2011, 
+https://dspace .mit .edu /handle /1721.1 /67196.
+[104] X. Fang, Q. Lin, Y. Wang, L. Zheng, Control strategy design for the transitional 
+mode of tiltrotor UAV, in: IEEE 10th International Conference on Industrial 
+Informatics, 2012, pp. 248–253.
+[105] S. Park, J. Bae, Y. Kim, S. Kim, Fault tolerant ﬂight control system for the 
+tilt-rotor UAV, J. Franklin Inst. 350 (9) (2013) 2535–2559, https://doi .org /10 .
+1016 /j .jfranklin .2013 .01.014, http://www.sciencedirect .com /science /article /pii /
+S0016003213000318.
+[106] R.G. Hernández-García, H. Rodríguez-Cortés, Transition ﬂight control of a 
+cyclic tiltrotor UAV based on the gain-scheduling strategy, in: 2015 Interna-
+tional Conference on Unmanned Aircraft Systems, ICUAS, 2015, pp. 951–956.
+22
+
+
+===== PAGE 23 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+[107] S. Song, W. Wang, K. Lu, L. Sun, Nonlinear attitude control using extended 
+state observer for tilt-rotor aircraft, in: The 27th Chinese Control and Decision 
+Conference, 2015 CCDC, 2015, pp. 852–857.
+[108] K. Lu, C. Liu, Z. Wang, W. Wang, Modeling and control of tilt-rotor aircraft, in: 
+2016 Chinese Control and Decision Conference, CCDC, 2016, pp. 550–553.
+[109] H. Lin, R. Fu, J. Zeng, Extended state observer based sliding mode control 
+for a tilt rotor UAV, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 3771–3775.
+[110] Z. Pan, C. Chi, J. Zhang, Nonlinear attitude control of tiltrotor aircraft in heli-
+copter mode based on ADRSM theory, in: 2018 37th Chinese Control Confer-
+ence, CCC, 2018, pp. 9962–9967.
+[111] D.N. Cardoso, S. Esteban, G.V. Raffo, A nonlinear W∞controller of a tilt-rotor 
+UAV for trajectory tracking, in: 2019 18th European Control Conference, ECC, 
+2019, pp. 928–934.
+[112] Y. Kang, N. Kim, B. Kim, M.-J. Tahk, Autopilot design for tilt-rotor unmanned 
+aerial vehicle with nacelle mounted wing extension using single hidden layer 
+perceptron neural network, Proc. Inst. Mech. Eng., G J. Aerosp. Eng. 231 (08 
+2016), https://doi .org /10 .1177 /0954410016664926.
+[113] D.A. Ta, I. Fantoni, R. Lozano, Modeling and control of a tilt tri-rotor airplane, 
+in: 2012 American Control Conference, ACC, 2012, pp. 131–136.
+[114] A.S. Onen, L. Cevher, M. Senipek, T. Mutlu, O. Gungor, I.O. Uzunlar, D.F. 
+Kurtulus, O. Tekinalp, Modeling and controller design of a VTOL UAV, in: 
+2015 International Conference on Unmanned Aircraft Systems, ICUAS, 2015, 
+pp. 329–337.
+[115] C. Chao, S. Lincheng, Z. Daibing, Z. Jiyang, Mathematical modeling and control 
+of a tiltrotor UAV, in: 2016 IEEE International Conference on Information and 
+Automation, ICIA, 2016, pp. 2016–2021.
+[116] L. Yu, D. Zhang, J. Zhang, C. Pan, Modeling and attitude control of a 
+tilt tri-rotor UAV, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 1103–1108.
+[117] L. Yu, D. Zhang, J. Zhang, Transition ﬂight modeling and control of a novel 
+tilt tri-rotor UAV, in: 2017 IEEE International Conference on Information and 
+Automation, ICIA, 2017, pp. 983–988.
+[118] J.A. Bautista, A. Osorio, R. Lozano, Modeling and analysis of a tricopter/ﬂying-
+wing convertible UAV with tilt-rotors, in: 2017 International Conference on 
+Unmanned Aircraft Systems, ICUAS, 2017, pp. 672–681.
+[119] M. Umer, S.M.A. Kazmi, S.M.H. Askari, D.I.A. Rana, Design and modeling of 
+VTOL tri tilt-rotor aircraft, in: 2018 15th International Conference on Smart 
+Cities: Improving Quality of Life Using ICT IoT, HONET-ICT, 2018, pp. 1–5.
+[120] D. Yangping, G. Honggang, Transition ﬂight control and test of a new kind tilt 
+prop box-wing VTOL UAV, in: 2018 9th International Conference on Mechan-
+ical and Aerospace Engineering, ICMAE, 2018, pp. 90–94.
+[121] L. Yu, G. He, S. Zhao, X. Wang, Dynamic inversion-based sliding mode control 
+of a tilt tri-rotor UAV, in: 2019 12th Asian Control Conference, ASCC, 2019, 
+pp. 1637–1642.
+[122] N.T. Hegde, V.I. George, C.G. Nayak, Modelling and transition ﬂight control 
+of vertical take-off and landing unmanned tri-tilting rotor aerial vehicle, 
+in: 2019 3rd International Conference on Electronics, Communication and 
+Aerospace Technology, ICECA, 2019, pp. 590–594.
+[123] S. Chang, A. Cho, S. Choi, Y. Kang, Y. Kim, M. Kim, Flight testing full conver-
+sion of a 40-kg-class tilt-duct unmanned aerial vehicle, Aerosp. Sci. Technol. 
+112 (2021) 106611, https://doi .org /10 .1016 /j .ast .2021.106611, https://www.
+sciencedirect .com /science /article /pii /S1270963821001218.
+[124] J. Tavoosi, Hybrid intelligent adaptive controller for tiltrotor UAV, Int. J. Intell. 
+Unamnned Syst. (August 2020).
+[125] E. D’Amato, G. Francesco, I. Notaro, G. Tartaglione, M. Mattei, Nonlin-
+ear dynamic inversion and neural networks for a tilt tri-rotor UAV, IFAC-
+PapersOnLine 48 (2015) 162–167, https://doi .org /10 .1016 /j .ifacol .2015 .08 .077.
+[126] C. Papachristos, K. Alexis, A. Tzes, Towards a high-end unmanned tri-tiltrotor: 
+design, modeling and hover control, in: 2012 20th Mediterranean Conference 
+on Control Automation, MED, 2012, pp. 1579–1584.
+[127] C. Papachristos, A. Tzes, Modeling and control simulation of an unmanned tilt 
+tri-rotor aerial vehicle, in: 2012 IEEE International Conference on Industrial 
+Technology, 2012, pp. 840–845.
+[128] C. Papachristos, K. Alexis, A. Tzes, Linear quadratic optimal position control 
+for an unmanned tri-tiltrotor, in: 2013 International Conference on Control, 
+Decision and Information Technologies, CoDIT, 2013, pp. 708–713.
+[129] C. Papachristos, K. Alexis, A. Tzes, Model predictive hovering-translation con-
+trol of an unmanned tri-tiltrotor, in: 2013 IEEE International Conference on 
+Robotics and Automation, 2013, pp. 5425–5432.
+[130] S. Verling, J. Zilly, Modeling and control of a VTOL glider, Master’s the-
+sis, Swiss Federal Institute of Technology, Zurich, 2013, https://docplayer.net /
+23088463 -Modeling -and -control -of -a -vtol -glider.html.
+[131] G.R. Flores Colunga, J.A. Escareño, R. Lozano, S. Salazar, Four tilting rotor con-
+vertible MAV: modeling and real-time hover ﬂight control, J. Intell. Robot. 
+Syst. 65 (1–4) (2012) 457–471, https://doi .org /10 .1007 /s10846 -011 -9589 -x, 
+https://hal .archives -ouvertes .fr /hal -00923129.
+[132] G. Flores, J. Escareno, R. Lozano, S. Salazar, Quad-tilting rotor convertible MAV: 
+modeling and real-time hover ﬂight control, J. Intell. Robot. Syst. 65 (2012) 
+457–471, https://doi .org /10 .1007 /s10846 -011 -9589 -x.
+[133] G. Flores, R. Lozano, Transition ﬂight control of the quad-tilting rotor convert-
+ible MAV, in: 2013 International Conference on Unmanned Aircraft Systems, 
+ICUAS, 2013, pp. 789–794.
+[134] G. Ducard, M. Hua, Modeling of an unmanned hybrid aerial vehicle, in: Pro-
+ceedings of the IEEE Multi-Conference on Systems and Control, Invited Ses-
+sion on UAVs, Antibes, France, 2014.
+[135] Q. Lin, Z. Cai, J. Yang, Y. Sang, Y. Wang, Trajectory tracking control for hovering 
+and acceleration maneuver of quad tilt rotor UAV, in: Proceedings of the 33rd 
+Chinese Control Conference, 2014, pp. 2052–2057.
+[136] G. Flores, I. Lugo, R. Lozano, 6-DOF hovering controller design of the quad 
+tiltrotor aircraft: simulations and experiments, in: 53rd IEEE Conference on 
+Decision and Control, 2014, pp. 6123–6128.
+[137] G.R. Flores-Colunga, R. Lozano-Leal, A nonlinear control law for hover 
+to level ﬂight for the quad tilt-rotor UAV, IFAC Proc. Vol. 47 (3) (2014) 
+11055–11059, 
+https://doi .org /10 .3182 /20140824 -6 -ZA-1003 .02708, 
+19th 
+IFAC 
+World 
+Congress, 
+http://www.sciencedirect .com /science /article /pii /
+S1474667016433720.
+[138] E. Cetinsoy, Design and control of a gas-electric hybrid quad tilt-rotor UAV 
+with morphing wing, in: 2015 International Conference on Unmanned Aircraft 
+Systems, ICUAS, 2015, pp. 82–91.
+[139] C. Chen, L. Shen, D. Zhang, J. Zhang, Identiﬁcation and control of a hovering 
+tiltrotor UAV, in: 2016 12th World Congress on Intelligent Control and Au-
+tomation, WCICA, 2016, pp. 2226–2231.
+[140] Z. Liu, D. Theilliol, L. Yang, Y. He, J. Han, Transition control of tilt ro-
+tor unmanned aerial vehicle based on multi-model adaptive method, in: 
+2017 International Conference on Unmanned Aircraft Systems, ICUAS, 2017, 
+pp. 560–566.
+[141] Z. Liu, D. Theilliol, L. Yang, Y. He, J. Han, Observer-based linear param-
+eter varying control design with unmeasurable varying parameters un-
+der sensor faults for quad-tilt rotor unmanned aerial vehicle, Aerosp. Sci. 
+Technol. 92 (2019) 696–713, https://doi .org /10 .1016 /j .ast .2019 .06 .028, http://
+www.sciencedirect .com /science /article /pii /S1270963818321722.
+[142] A. Anglade, J.-M. Kai, T. Hamel, C. Samson, Automatic control of convertible 
+ﬁxed-wing drones with vectorized thrust, Research report, INRIA Sophia An-
+tipolis - I3S, Apr. 2019, https://hal .archives -ouvertes .fr /hal -02111045.
+[143] M. Allenspach, G.J.J. Ducard, Model predictive control of a convertible tiltrotor 
+unmanned aerial vehicle, in: 2020 28th Mediterranean Conference on Control 
+and Automation, MED, 2020, pp. 715–720.
+[144] L. Bauersfeld, G. Ducard, Fused-pid control for tilt-rotor VTOL aircraft, in: 
+2020 28th Mediterranean Conference on Control and Automation, MED, 2020, 
+pp. 703–708.
+[145] L. Spannagl, G. Ducard, Control allocation for an unmanned hybrid aerial ve-
+hicle, in: 2020 28th Mediterranean Conference on Control and Automation, 
+MED, 2020, pp. 709–714.
+[146] M. Allenspach, G.J.J. Ducard, Nonlinear model predictive control and guid-
+ance for a propeller-tilting hybrid unmanned air vehicle, Automatica 
+132 (2021) 109790, https://doi .org /10 .1016 /j .automatica .2021.109790, https://
+www.sciencedirect .com /science /article /pii /S0005109821003101.
+[147] L. Bauersfeld, L. Spannagl, G. Ducard, C. Onder, MPC ﬂight control for a tilt-
+rotor VTOL aircraft, IEEE Trans. Aerosp. Electron. Syst. (2021), https://doi .org /
+10 .1109 /TAES .2021.3061819.
+[148] B. Li, W. Zhou, J. Sun, C.-Y. Wen, C.-K. Chen, Development of model predictive 
+controller for a tail-sitter VTOL UAV in hover ﬂight, Sensors 18 (9) (2018) 
+2859, https://doi .org /10 .3390 /s18092859.
+[149] D. Shen, Q. Lu, M. Hu, Z. Kong, Mathematical modeling and control of the 
+quad tilt-rotor UAV, in: 2018 IEEE 8th Annual International Conference on CY-
+BER Technology in Automation, Control, and Intelligent Systems, CYBER, 2018, 
+pp. 1220–1225.
+[150] Y. Yin, H. Niu, X. Liu, Adaptive neural network sliding mode control for quad 
+tilt rotor aircraft, Complexity 2017 (2017) 1–13, https://doi .org /10 .1155 /2017 /
+7104708.
+[151] T. Ostermann, J. Holsten, Y. Dobrev, D. Moormann, Control concept of a 
+tiltwing UAV during low speed manoeuvring, in: 28th International Congress 
+of the Aeronautical Sciences, ICAS2012, Brisbane, Australia, 23-28 Sept. 2012, 
+Optimage Ltd., Edinburgh, UK, 2012, 1 CD-ROM, http://publications .rwth -
+aachen .de /record /97342.
+[152] E. Small, E. Fresk, G. Andrikopoulos, G. Nikolakopoulos, Modelling and control 
+of a tilt-wing unmanned aerial vehicle, in: 2016 24th Mediterranean Confer-
+ence on Control and Automation, MED, 2016, pp. 1254–1259.
+[153] P. Hartmann, Predictive ﬂight path control for tilt-wing aircraft, Ph.D. disser-
+tation, Rheinisch-Westfällische Technische Hochschule Aachen, Nov. 2017.
+[154] D. Rohr, T. Stastny, S. Verling, R. Siegwart, Attitude- and cruise control of a 
+VTOL tiltwing UAV, IEEE Robot. Autom. Lett. 4 (3) (2019) 2683–2690, https://
+doi .org /10 .1109 /LRA.2019 .2914340, arXiv:1903 .10623v2.
+[155] D. Rohr, M. Studiger, T. Stastny, N.R.J. Lawrance, R. Siegwart, Nonlinear model 
+predictive velocity control of a VTOL tiltwing UAV, IEEE Robot. Autom. Lett. 
+6 (3) (2021) 5776–5783, https://doi .org /10 .1109 /LRA.2021.3084888.
+[156] J. Autenrieb, H.-S. Shin, M. Bacic, Development of a Neural Network-Based 
+Adaptive Nonlinear Dynamic Inversion Controller for a Tilt-Wing VTOL Air-
+craft, 2019, pp. 44–52.
+23
+
+
+===== PAGE 24 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+[157] K.T. Oner, E. Cetinsoy, M. Unel, M.F. Aksit, I. Kandemir, K. Gulez, Dynamic 
+model and control of a new quadrotor unmanned aerial vehicle with tilt-
+wing mechanism, Int. J. Aerosp. Mech. Eng. 2 (9) (2008) 1008–1013, https://
+publications .waset .org /vol /21.
+[158] K. Muraoka, N. Okada, D. Kubo, Quad tilt wing VTOL UAV: aerodynamic char-
+acteristics and prototype ﬂight test, in: AIAA Infotech@Aerospace Conference, 
+2009.
+[159] S. Suzuki, R. Zhijia, Y. Horita, K. Nonami, G. Kimura, T. Bando, D. Hirabayashi, 
+M. Furuya, K. Yasuda, Attitude control of quad rotors QTW-UAV with tilt wing 
+mechanism, J. Syst. Des. Dyn. 4 (3) (2010) 416–428, https://doi .org /10 .1299 /
+jsdd .4 .416.
+[160] C. Hancer, K.T. Oner, E. Sirimoglu, E. Cetinsoy, M. Unel, Robust hovering con-
+trol of a quad tilt-wing UAV, in: IECON 2010 - 36th Annual Conference on, 
+IEEE Industrial Electronics Society, 2010, pp. 1615–1620.
+[161] C. Hancer, K.T. Oner, E. Sirimoglu, E. Cetinsoy, M. Unel, Robust position control 
+of a tilt-wing quadrotor, in: 49th IEEE Conference on Decision and Control, 
+CDC, 2010, pp. 4908–4913.
+[162] K.T. Oner, E. Cetinsoy, E. Sirimoglu, C. Hancer, T. Ayken, M. Unel, LQR and 
+SMC stabilization of a new unmanned aerial vehicle, Int. J. Aerosp. Mech. Eng. 
+3 (10) (2009) 1190–1195, https://publications .waset .org /vol /34.
+[163] K. Muraoka, N. Okada, D. Kubo, M. Sato, Transition ﬂight of quad tilt wing 
+VTOL UAV, in: 28th International Congress of the Aeronautical Sciences, 2012.
+[164] K. Oner, E. Cetinsoy, E. Cetinsoy, E. Sirimoglu, E. Sirimoglu, C. Hanc˛er, C. 
+Hancer, M. Ünel, M. Unel, M. Aks˛it, M. Aksit, K. Gülez, K. Gulez, I. Kandemir, 
+Mathematical modeling and vertical ﬂight control of a tilt-wing UAV, Turk. J. 
+Electr. Eng. Comput. Sci. 20 (2012) 149–157, https://doi .org /10 .3906 /elk-1007 -
+624.
+[165] E. Cetinsoy, S. Dikyar, C. Hancer, K. Oner, E. Sirimoglu, M. Unel, M. Aksit, De-
+sign and construction of a novel quad tilt-wing UAV, Mechatronics 22 (2012) 
+723–745, https://doi .org /10 .1016 /j .mechatronics .2012 .03 .003.
+[166] T. Mikami, K. Uchiyama, Design of ﬂight control system for quad tilt-wing 
+UAV, in: 2015 International Conference on Unmanned Aircraft Systems, ICUAS, 
+2015, pp. 801–805.
+[167] Y. Yildiz, M. Unel, A.E. Demirel, Adaptive nonlinear hierarchical control of 
+a quad tilt-wing UAV, in: 2015 European Control Conference, ECC, 2015, 
+pp. 3623–3628.
+[168] K. Benkhoud, S. Bouallègue, Model predictive control design for a convertible 
+quad tilt-wing UAV, in: 2016 4th International Conference on Control Engi-
+neering Information Technology, CEIT, 2016, pp. 1–6.
+[169] K. Benkhoud, S. Bouallègue, Modeling and LQG controller design for a quad 
+tilt-wing UAV, in: 3rd International Conference on Automation, Control, Engi-
+neering and Computer Science, 2016.
+[170] K. Benkhoud, S. Bouallègue, M. Ayadi, Rapid control prototyping of a quad-tilt-
+wing unmanned aerial vehicle, in: 2017 International Conference on Control, 
+Automation and Diagnosis, ICCAD, 2017, pp. 423–428.
+[171] S. Panza, M. Sato, M. Lovera, K. Muraoka, Robust attitude control design of 
+quad-tilt-wing UAV: a structured μ-synthesis approach, in: IEEE Conference 
+on Control Technology and Applications, 2018.
+[172] D. Mix, J. Koenig, K. Linda, O. Cifdaloz, V. Wells, A. Rodriguez, Towards gain-
+scheduled H∞control design for a tilt-wing aircraft, in: Proceedings of the 
+IEEE Conference on Decision and Control, vol. 2, 2004, pp. 1222–1227.
+[173] J.J. Dickeson, D.R. Mix, J.S. Koenig, K.M. Linda, O. Cifdaloz, V.L. Wells, A.A. 
+Rodriguez, H∞
+hover-to-cruise conversion for a tilt-wing rotorcraft, in: 
+Proceedings of the 44th IEEE Conference on Decision and Control, 2005, 
+pp. 6486–6491.
+[174] J.J. Dickeson, O. Cifdaloz, D.W. Miles, P.M. Koziol, V.L. Wells, A.A. Ro-
+driguez, Robust H∞gain-scheduled conversion for a tilt-wing rotorcraft, in: 
+Proceedings of the 45th IEEE Conference on Decision and Control, 2006, 
+pp. 5882–5887.
+[175] J. Dickeson, D. Miles, O. Cifdaloz, V. Wells, A. Rodriguez, Robust LPV H∞gain-
+scheduled hover-to-cruise conversion for a tilt-wing rotorcraft in the presence 
+of CG variations, in: Proceedings of the 46th IEEE Conference on Decision and 
+Control, 2007, pp. 2773–2778.
+[176] A.S. Saeed, A.B. Younes, S. Islam, J. Dias, L. Seneviratne, G. Cai, A review 
+on the platform design, dynamic modeling and control of hybrid UAVs, in: 
+2015 International Conference on Unmanned Aircraft Systems, ICUAS, 2015, 
+pp. 806–815.
+[177] H. Yeo, W. Johnson, Performance and design investigation of heavy lift tilt-
+rotor with aerodynamic interference effects, J. Aircr. 46 (4) (2009) 1231–1239, 
+https://doi .org /10 .2514 /1.40102.
+[178] L. Kingston, J. DeTore, Tilt rotor V/STOL aircraft technology, in: Second Euro-
+pean Rotorcraft and Powered Lift Aircraft Forum, 36, Deutsche Gesellschaft für 
+Luft- und Raumfahrt e.V, Köln, Germany, Bückeburg, Germany, 1976, pp. 1–13, 
+Postfach 510645 D-5000, https://dspace -erf .nlr.nl /xmlui /handle /20 .500 .11881 /
+2041 ?show =full.
+[179] R.W. Prouty, Helicopter Performance, Stability, and Control, PWS Engineering, 
+1986.
+[180] S. Newman, The Foundations of Helicopter Flight, Halsted Press, 2001.
+[181] T. Hamel, R. Mahony, R. Lozano, J. Ostrowski, Dynamic modelling and 
+conﬁguration stabilization for an X4-ﬂyer, in: IFAC World Congress, 2002, 
+pp. 200–212.
+[182] S. Bouabdallah, Design and Control of Quadrotors with Application to Au-
+tonomous Flying, Ph.D. thesis, EPF Lausanne, 2007.
+[183] John H. Blakelock, Automatic Control of Aircraft and Missiles, 2nd edition, 
+Wiley, 1991.
+[184] B. Stevens, F. Lewis, Aircraft Control and Simulation, second edition, Wiley, 
+New York, NY, 2003.
+[185] R.F. Stengel, Flight Dynamics, Princeton University Press, Princeton, New Jer-
+sey, 2004.
+[186] M. Möckli, Guidance and Control for Aerobatic Maneuvers of an Unmanned 
+Airplane, Ph.D. thesis, ETH Zürich, diss No. 16586, 2006.
+[187] G. Ducard, Fault-Tolerant Flight Control and Guidance Systems: Practical 
+Methods for Small Unmanned Aerial Vehicles, Advances in Industrial Con-
+trol, Springer-Verlag, London, ISBN 978-1-84882-560-4, 2009, https://www.
+springer.com /gp /book /9781848825604.
+[188] R.W. Beard, T.W. McLain, Small Unmanned Aircraft: Theory and Practice, 
+Princeton University Press, Princeton and Oxford, 2012.
+[189] B. gang Mi, H. Zhan, S. si Lu, An extended unsteady aerodynamic model at 
+high angles of attack, Aerosp. Sci. Technol. 77 (2018) 788–801, https://doi .
+org /10 .1016 /j .ast .2018 .03 .035, https://www.sciencedirect .com /science /article /
+pii /S1270963817323933.
+[190] B. Yuksek, A. Vuruskan, U. Vuruskan, M.A. Yukselen, G. Inalhan, Transition 
+ﬂight modeling of a ﬁxed-wing VTOL UAV, J. Intell. Robot. Syst. 84 (2016) 
+83–105, https://doi .org /10 .1007 /s10846 -015 -0325 -9.
+[191] Y. Govdeli, M.B.M. Sheikh, R. Raj, B. Elhadidi, E. Kayacan, Unsteady aero-
+dynamic modeling and control of pusher and tilt-rotor quadplane conﬁgu-
+rations, Aerosp. Sci. Technol. 94 (2019) 105421, https://doi .org /10 .1016 /j .ast .
+2019 .105421.
+[192] Dufour Aerospace, Tiltwing concept, https://dufour.aero/, 2021.
+[193] M. Tyan, N.V. Nguyen, S. Kim, J.-W. Lee, Comprehensive preliminary siz-
+ing/resizing method for a ﬁxed wing – VTOL electric UAV, Aerosp. Sci. Tech-
+nol. 71 (2017) 30–41, https://doi .org /10 .1016 /j .ast .2017.09 .008, https://www.
+sciencedirect .com /science /article /pii /S1270963817300871.
+[194] S. Darvishpoor, J. Roshanian, M. Tayeﬁ, A novel concept of VTOL bi-rotor 
+UAV based on moving mass control, Aerosp. Sci. Technol. 107 (2020) 
+106238, https://doi .org /10 .1016 /j .ast .2020 .106238, https://www.sciencedirect .
+com /science /article /pii /S1270963820309202.
+[195] C. Zeng, R. Abnous, K. Gabani, S. Chowdhury, V. Maldonado, A new 
+tilt-arm transitioning unmanned aerial vehicle: introduction and con-
+ceptual design, Aerosp. Sci. Technol. 99 (2020) 105755, https://doi .org /
+10 .1016 /j .ast .2020 .105755, https://www.sciencedirect .com /science /article /pii /
+S1270963819317961.
+[196] Y. Zhou, G. Huang, C. Xia, Analysis of ﬁxed-wing VTOL aircraft with gas-driven 
+fan propulsion system, Aerosp. Sci. Technol. 104 (2020) 105984, https://doi .
+org /10 .1016 /j .ast .2020 .105984, https://www.sciencedirect .com /science /article /
+pii /S1270963820306660.
+[197] Özgür Dündar, M. Bilici, T. Ünler, Design and performance analyses of a ﬁxed 
+wing battery VTOL UAV, Int. J. Eng. Sci. Technol. 23 (2020) 1182–1193, https://
+doi .org /10 .1016 /j .jestch .2020 .02 .002.
+[198] H. Zhang, B. Song, F. Li, J. Xuan, Multidisciplinary design optimization of an 
+electric propulsion system of a hybrid UAV considering wind disturbance re-
+jection capability in the quadrotor mode, Aerosp. Sci. Technol. 110 (2021) 
+106372, https://doi .org /10 .1016 /j .ast .2020 .106372, https://www.sciencedirect .
+com /science /article /pii /S1270963820310543.
+[199] B. Theys, G. Dimitriadis, P. Hendrick, Experimental and numerical study of 
+micro-aerial-vehicle propeller performance in oblique ﬂow, J. Aircr. 54 (2016) 
+1–9, https://doi .org /10 .2514 /1.C033618.
+[200] B. Theys, G. Dimitriadis, P. Hendrick, Inﬂuence of propeller conﬁguration on 
+propulsion system eﬃciency of multi-rotor unmanned aerial vehicles, 2016, 
+pp. 195–201.
+[201] R.J. Higgins, G.N. Barakos, S. Shahpar, I. Tristanto, A computational ﬂuid dy-
+namic acoustic investigation of a tiltwing eVTOL concept aircraft, Aerosp. 
+Sci. Technol. 111 (2021) 106571, https://doi .org /10 .1016 /j .ast .2021.106571, 
+https://www.sciencedirect .com /science /article /pii /S1270963821000821.
+[202] D. Phung, P. Morin, Modeling and energy evaluation of small convertible UAVs, 
+in: 2nd Workshop on Research, Education and Development of Unmanned 
+Aerial Systems, 2013.
+[203] M. Blanke, M. Kinnaert, J. Lunze, M. Staroswiecki, Diagnosis and Fault Tolerant 
+Control, Springer Verlag, London, 2006.
+[204] B. Benini, P. Castaldi, S. Simani, Fault Diagnosis for Aircraft System Models: An 
+Introduction from Fault Detection to Fault Tolerance, VDM Verlag Dr. Muller, 
+Saarbrucken, 2009.
+[205] H. Alwi, C. Edwards, C.P. Tan, Fault Detection and Fault Tolerant Control Using 
+Sliding Modes, Springer-Verlag, ISBN 978-0-85729-649-8, 2011.
+[206] G. Ducard, Actuator Fault Detection in UAVs, Springer-Verlag, London, 2014, 
+48 pages.
+[207] Z. Liu, Y. He, L. Yang, J. Han, Control techniques of tilt rotor un-
+manned aerial vehicle systems: a review, Chin. J. Aeronaut. 30 (1) (2017) 
+135–148, https://doi .org /10 .1016 /j .cja .2016 .11.001, http://www.sciencedirect .
+com /science /article /pii /S1000936116302199.
+[208] R. Naldi, L. Marconi, Optimal transition maneuvers for a class of 
+V/STOL aircraft, Automatica 47
+(5) (2011) 870–879, https://doi .org /10 .
+24
+
+
+===== PAGE 25 =====
+
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+1016 /j .automatica .2011.01.027, http://www.sciencedirect .com /science /article /
+pii /S0005109811000422.
+[209] D. Kubo, S. Suzuki, Tail-sitter vertical takeoff and landing unmanned aerial 
+vehicle: transitional ﬂight analysis, J. Aircr. 45 (1) (2008) 292–297, https://
+doi .org /10 .2514 /1.30122.
+[210] S. Omari, M.-D. Hua, G. Ducard, T. Hamel, Hardware and software architecture 
+for nonlinear control of multirotor helicopters, IEEE/ASME Trans. Mechatron. 
+18 (6) (2013) 1724–1736, https://doi .org /10 .1109 /TMECH .2013 .2274558.
+[211] J. Escareño, A. Sanchez, O. Garcia, R. Lozano, Modeling and global control of 
+the longitudinal dynamics of a coaxial convertible mini-UAV in hover mode, 
+J. Intell. Robot. Syst. 54 (1–3) (2008) 261–273.
+[212] S. Park, J. Deyst, J.P. How, Performance and Lyapunov stability of a nonlin-
+ear path-following guidance method, AIAI J. Guid. Control, Dyn. 30 (6) (2007) 
+1718–1728.
+[213] K. Wang, Y. Ke, B.M. Chen, Development of autonomous hybrid UAV U-Lion 
+with VTOL and cruise ﬂying capabilities, in: 2016 IEEE International Confer-
+ence on Advanced Intelligent Mechatronics, AIM, 2016, pp. 1053–1060.
+[214] G. Ducard, K.C. Kulling, H.P. Geering, A simple and adaptive on-line path 
+planning system for a UAV, in: Proceedings of the IEEE 15th Mediterranean 
+Conference on Control and Automation, Athens, Greece, 2007, pp. 1–6, t34-
+009.
+[215] A. Banazadeh, N. Assadian, F. Saghaﬁ, Minimum time trajectory optimization 
+of a tail-sitter aerial vehicle using nonlinear programming, in: The 2012 Inter-
+national Conference on Advanced Mechatronic Systems, 2012, pp. 275–280.
+[216] V. Martinez, O. Garcia, A. Sanchez, V. Parra, A. Escobar, Adaptive backstepping 
+control for a convertible UAV, in: 2015 Workshop on Research, Education and 
+Development of Unmanned Aerial Systems, RED-UAS, 2015, pp. 298–307.
+[217] P. Huangzhong, Z. Ziyang, G. Chen, Tiltrotor aircraft attitude control in con-
+version mode based on optimal preview control, in: Proceedings of 2014 IEEE 
+Chinese Guidance, Navigation and Control Conference, 2014, pp. 1544–1548.
+[218] J. Sun, J. Yang, X. Zhu, Robust ﬂight control law development for tiltrotor 
+conversion, in: 2009 International Conference on Intelligent Human-Machine 
+Systems and Cybernetics, vol. 2, 2009, pp. 481–484.
+[219] W. Zhao, C. Underwood, Robust transition control of a martian coax-
+ial tiltrotor aerobot, Acta Astronaut. 99 (2014) 111–129, https://
+doi .org /10 .1016 /j .actaastro .2014 .02 .020, 
+http://www.sciencedirect .com /
+science /article /pii /S0094576514000770.
+[220] Z. Sun, R. Wang, W. Zhou, Finite-time stabilization control for the ﬂight mode 
+transition of tiltrotors based on switching method, in: 2017 29th Chinese 
+Control and Decision Conference, CCDC, 2017, pp. 2049–2053.
+[221] D. Pucci, Towards a Uniﬁed Approach for the Control of Aerial Vehicles, Ph.D. 
+thesis, University of Nice Sophia Antipolis, and of Roma, 2013.
+[222] Dai Chao, Bai Huihui, Zeng Jianping, Nonlinear stabilization control of tilt 
+rotor UAV during transition ﬂight based on HOSVD, in: 2016 IEEE Chinese 
+Guidance, Navigation and Control Conference, CGNCC, 2016, pp. 154–159.
+[223] Youngshin Kang, Bumjin Park, Changsun Yoo, Yushin Kim, Samok Koo, Flight 
+test results of automatic tilt control for small scaled tilt rotor aircraft, in: 
+2008 International Conference on Control, Automation and Systems, 2008, 
+pp. 47–51.
+[224] B. Etkin, Dynamics of Flight, John Wiley and Sons, 1996.
+[225] G. Naus, Gain scheduling robust design and automated tuning of automotive 
+controllers, Tech. rep., University of Technology Eindhoven, 2009, http://www.
+mate .tue .nl /mate /pdfs /11022 .pdf.
+[226] M. Kuang, J. Zhu, W. Wang, Y. Tang, Flight controller design and demonstra-
+tion of a thrust-vectored tailsitter, in: 2017 IEEE International Conference on 
+Robotics and Automation, ICRA, 2017, pp. 5169–5174.
+[227] F. Cakici, Modeling, stability analysis and control system design of a 
+small-sized tiltrotor UAV, Master’s thesis, Middle East Technical Uni-
+versity, 2009, http://citeseerx .ist .psu .edu /viewdoc /download ?doi =10 .1.1.461.
+7922 &rep =rep1 &type =pdf.
+[228] X.P. Zhu, Y.H. Fan, J. Yang, Design of tiltrotor ﬂight control system using fuzzy 
+sliding mode control, in: 2010 International Conference on Measuring Tech-
+nology and Mechatronics Automation, vol. 1, 2010, pp. 1060–1063.
+[229] Y. Shtessel, C. Edwards, L. Fridman, A. Levant, Sliding Mode Control and Ob-
+servation, 2014, pp. 291–320.
+[230] P. Ioannou, J. Sun, Robust Adaptive Control, Dover Books on Electrical Engi-
+neering, 1995.
+[231] N. Hovakimyan, C. Cao, E. Kharisov, E. Xargay, I.M. Gregory, L1 adaptive con-
+trol for safety-critical systems, IEEE Control Syst. Mag. 31 (5) (2011) 54–104, 
+https://doi .org /10 .1109 /MCS .2011.941961.
+[232] C. Cao, N. Hovakimyan, Design and analysis of a novel L1 adaptive controller, 
+part I: control signal and asymptotic stability, in: American Control Confer-
+ence, Minneapolis, MN, 2006, pp. 3397–3402.
+[233] C. Cao, N. Hovakimyan, Design and analysis of a novel L1 adaptive control 
+architecture, part ii: guaranteed transient performance, in: American Control 
+Conference, Minneapolis, MN, 2006, pp. 3403–3408.
+[234] S. Snyder, P. Zhao, N. Hovakimyan, Adaptive control for linear parameter-
+varying systems with application to a VTOL aircraft, Aerosp. Sci. Technol. 
+112 (2021) 106621, https://doi .org /10 .1016 /j .ast .2021.106621, https://www.
+sciencedirect .com /science /article /pii /S1270963821001310.
+[235] A. Yatsun, B. Lushnikov, O. Emelyanova, Motion control automation in the 
+quadcopter convertiplane in a transient mode, in: 2018 International Russian 
+Automation Conference, RusAutoCon, 2018, pp. 1–6.
+[236] Changjie Yu, Jihong Zhu, Zengqi Sun, Nonlinear adaptive internal model con-
+trol using neural networks for tilt rotor aircraft platform, in: Proceedings of 
+the 2005 IEEE Midnight-Summer Workshop on Soft Computing in Industrial 
+Applications, SMCia/05, 2005, 2005, pp. 12–16.
+[237] M. Zeilinger, Model predictive control, Class Lecture, lecture Notes (2019).
+[238] X. Yang, L. Dong, W. Liaoni, S. Yangyang, Design and implementation of twin-
+rotor tail-sitter UAV, in: 2015 IEEE Advanced Information Technology, Elec-
+tronic and Automation Control Conference, IAEAC, 2015, pp. 406–410.
+[239] R. Naldi, L. Marconi, On robust transition maneuvers for a class of tail-
+sitter vehicles, in: 49th IEEE Conference on Decision and Control, CDC, 2010, 
+pp. 358–363.
+[240] Y. Nakamura, A. Arakawa, K. Watanabe, I. Nagai, Transitional ﬂight simulations 
+for a tilted quadrotor with a ﬁxed-wing, in: 2018 IEEE International Confer-
+ence on Mechatronics and Automation, ICMA, 2018, pp. 1829–1836.
+[241] F. Cakici, K. Leblebicioglu, Modeling and simulation of a small-sized tiltrotor 
+UAV, J. Defense Model. Simul., Appl. Methodol. Technol. 9 (2012) 335–345, 
+https://doi .org /10 .1177 /1548512911414951.
+[242] J. Apkarian, Pitch-decoupled VTOL/FW aircraft: ﬁrst ﬂights, in: 2017 Work-
+shop on Research, Education and Development of Unmanned Aerial Systems, 
+RED-UAS, 2017, pp. 258–263.
+[243] R. Chiappinelli, M. Cohen, M. Doff-Sotta, M. Nahon, J.R. Forbes, J. Apkarian, 
+Modeling and control of a passively-coupled tilt-rotor vertical takeoff and 
+landing aircraft, in: 2019 International Conference on Robotics and Automa-
+tion, ICRA, 2019, pp. 4141–4147.
+[244] G. Francesco, E. D’Amato, M. Mattei, INDI control with direct lift for a tilt 
+rotor UAV, IFAC-PapersOnLine 48 (2015) 156–161, https://doi .org /10 .1016 /j .
+ifacol .2015 .08 .076.
+[245] T.A. Johansen, T.I. Fossen, Control allocation-a survey, Automatica 49 (5) 
+(2013) 1087–1103, https://doi .org /10 .1016 /j .automatica .2013 .01.035, http://
+www.sciencedirect .com /science /article /pii /S0005109813000368.
+[246] R. D’Sa, N. Papanikolopoulos, Design and experiments for MultI-Section-
+Transformable (MIST)-UAV, in: 2019 International Conference on Robotics and 
+Automation, ICRA, 2019, pp. 1878–1883.
+[247] J. Apkarian, Attitude control of pitch-decoupled VTOL ﬁxed wing tiltrotor, in: 
+2018 International Conference on Unmanned Aircraft Systems, ICUAS, 2018, 
+pp. 195–201.
+[248] R. Takeuchi, K. Watanabe, I. Nagai, Development and control of tilt-wings for 
+a tilt-type quadrotor, in: 2017 IEEE International Conference on Mechatronics 
+and Automation, ICMA, 2017, pp. 501–506.
+[249] L.M. Sánchez-Rivera, R. Lozano, A. Arias-Montano, Pitching moment analysis 
+and adjustment for tilt-wing UAV in VTOL mode, in: 2019 International Con-
+ference on Unmanned Aircraft Systems, ICUAS, 2019, pp. 1445–1450.
+25

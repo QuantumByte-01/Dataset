@@ -1,0 +1,25 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.3.1. Tilt angle excluding allocation
+# START_PAGE: 20
+
+The prototype used in [165,167] has no need for aerodynamic-
+control surfaces, since full controllability is provided by the four 
+strategically-placed rotor-wing assemblies (similar to the proto-
+type shown in Fig. 4b). A state-dependent matrix inversion is used 
+to determine the individual rotor speeds from given desired body 
+forces and torques.
+The approach presented in [158,163] distributes the control ac-
+tion between the rotors and aerodynamic-control surfaces depend-
+ing on the tilt angle, in order to improve the eﬃciency of the al-
+location. Along the same lines, [166] uses a model-inversion-based 
+method to obtain rotor speed and ﬂaps commands. Finally, [154]
+employs so-called daisy chaining control allocation method. The ac-
+tuators are sequentially allocated based on a predeﬁned order of 
+priority, whereby higher priority is assigned to the aerodynamic-
+control surfaces, for energy eﬃciency.
+6.3.2. Automatic or direct allocation for tiltwing UAVs
+Similar to the case with tiltrotor vehicles, automatic allocation 
+is commonly used when a linearized model is derived for the con-
+troller synthesis. The respective controller outputs can directly be 
+fed to the actuators, such as demonstrated in [172–175,159,153,
+171,249].

@@ -1,0 +1,396 @@
+# SOURCE: index
+# SECTION: 6 SIMULATION RESULTS
+# START_PAGE: 135
+
+Non-linear Simscape model of the aircraft is used to assess the designed LQR and 
+PID controller. This section describes the response of the system to given commands 
+by pilot and response of the system to the external force conditions.  
+6.1 
+Mission Definition 
+The simulation starts on the ground. The aircraft is on VTOL mode when the 
+simulation is started. Under pilot commands, the controller tries to keep the trim 
+conditions. After a while, vertical climb command is given. When the aircraft 
+climbed at the desired altitude, the transition command is given. The pilot can 
+monitor all the critical indicators in the pilot cockpit, instantaneously. The transition 
+takes about 28 seconds. After the transition, the aircraft is automatically beginning 
+to level flight. When the pilot gives the roll command, the aircraft will start a 
+coordinated turn. The command will be given with a rate limiter in order to prevent 
+high overshoots. 
+Variable step size is chosen as the simulation step size. The ODEs are solved using 
+the 4th order Runge Kutta Method. Simulation results are presented in two parts; with 
+disturbances, effects are included and without any disturbances effect.  
+6.2 
+Linear and Non-Linear Closed-Loop Response  
+6.2.1 
+VTOL Simulation Results 
+VTOL simulation results have shown that Linear and Non-Linear Models have 
+complied with each other. Roll stability has sufficient dynamic response, while the 
+ 
+ 
+114 
+pitch angle settles down too late. Pitch angle and altitude are crossed coupled. 
+Altitude weight was chosen as the most important one while determining the 
+weighting matrix in LQR design. So, the controller is always giving priority to 
+altitude. Therefore, the pitch angle settling takes too much time. This condition does 
+not affect the success of the mission. So it is assumed that the roll and pitch angle 
+response of the aircraft is acceptable. 
+ 
+ 
+Figure 6.1. Roll Angle Response of the Aircraft in VTOL mode  
+ 
+Figure 6.2. Pitch Angle Response of the Aircraft in VTOL mode  
+Altitude error is quickly compensated by the aircraft in both linear and non-linear 
+models. As aircraft have diverged from the trim point, aircraft dynamics are 
+changing. The difference between linear and non-linear models stem from the 
+aircraft dynamics change. While the linear model assumes that aircraft dynamics are 
+not changing during compensation, the non-linear model takes into consideration the 
+aircraft dynamics change. The altitude error penalty creates a small difference 
+between linear and non-linear responses. Since the penalty given to altitude error is 
+a very high, non-linear model diverges from the trim point to compensate for the 
+error quickly. However, a rate limiter has been used to prevent possible unstable 
+ 
+ 
+115 
+behavior. This condition creates a difference between linear and non-linear 
+responses. 
+ 
+Figure 6.3. Altitude Response of the Aircraft in VTOL mode  
+ 
+Altitude change command is given in third seconds, and the aircraft is climbed at 10 
+m altitude within four seconds. It can be inferred from Figure 6.4 that the aircraft is 
+able to reject the disturbances.  
+ 
+Figure 6.4. Altitude Command and Altitude Response of the Aircraft in VTOL 
+Mode  
+6.2.2 
+Level Flight Simulation Results 
+Level Flight Simulation has shown that aircraft have reasonable dynamics in forward 
+flight. The roll angle command is given with a rate limiter to decrease the risk of 
+roll-yaw coupling. The system has overshoot at a reasonable level. Even if there is 
+strong gust during the roll change, the aircraft is able to obey the given commands 
+within acceptable levels. 
+ 
+ 
+116 
+ 
+Figure 6.5. Roll Command and Roll Angle Response of the Aircraft in Forward 
+Flight Mode  
+ 
+When there is no external force applied, the system is having a good correlation with 
+the linear model response. Even if strong gust is applied, there are small deviations 
+while converging to the trim conditions. 
+ 
+Figure 6.6. Roll Angle Response of the Aircraft in Forward Flight Mode  
+ 
+Although the linear model has a high time constant, the non-linear model shows a 
+sluggish response since the weighting matrix used in LQR design is giving less 
+importance to the theta while increasing the importance of the altitude. 
+ 
+ 
+Figure 6.7. Pitch Angle Response of the Aircraft in Forward Flight Mode 
+ 
+ 
+117 
+The yaw response of the aircraft to the given yaw command seems to be acceptable. 
+When the gust is applied, there is a small deviation from the desired angles. 
+However, after a while, the aircraft is stabilized. Since yaw command is given as a 
+step command, the pilot should give small commands when the yaw command is 
+used. If there is a need for high yaw angle changes, roll command should be used to 
+turn into the desired yaw angle. 
+ 
+Figure 6.8. Yaw Command and Yaw Angle Response of the Aircraft in Forward 
+Flight Mode 
+ 
+Non-linear and linear models have almost the same dynamics while converging to 
+the trim condition. The disturbance rejection level of the aircraft is acceptable. Yaw 
+angle is settling down in about 5 seconds, which shows the system has good 
+directional stability. 
+ 
+Figure 6.9. Yaw Angle Response of the Aircraft in Forward Flight Mode 
+ 
+Altitude command is given with a rate limiter. The altitude weight is very high, 
+which means that LQR is giving a high penalty to the altitude error. This condition 
+results in a rapid response in altitude dynamics. However, when the difference 
+between desired altitude and current altitude is high, the controller gives a very high 
+ 
+ 
+118 
+altitude change command, which can cause an unstable movement. When the rate 
+limiter is used in altitude command, the aircraft shows a good response to the altitude 
+command. 
+ 
+Figure 6.10. Altitude Command and Altitude Response of the Aircraft in Forward 
+Flight Mode 
+ 
+The non-linear and linear model shows a good correlation for no external force case 
+of the altitude response. Aircraft is settled down in six seconds. Although there is a 
+strong gust, altitude dynamics did not change so much from the no disturbance case. 
+The altitude error penalty creates a small difference between linear and non-linear 
+responses. Since the penalty given to altitude error is a very high, non-linear model 
+diverges from the trim point to compensate for the error quickly. However, a rate 
+limiter has been used to prevent possible unstable behavior. This condition creates a 
+difference between linear and non-linear responses. 
+ 
+ 
+Figure 6.11. Altitude Response of the Aircraft in Forward Flight Mode 
+ 
+ 
+119 
+6.3 
+Controller Methods’ Comparison Results 
+Three methods have been compared by looking at energy consumption and tracking 
+errors. The first method is PID with a mixer, the second method is LQR with a mixer, 
+and the last one is the LQR without the mixer. Figure 6.12 shows the time history of 
+the tilt-wing angle during the transition.  
+ 
+ 
+Figure 6.12. Tilt-Wing Angle and Battery Consumption Time History during 
+Transition  
+Figure 6.12 shows that LQR with a mixer consumes the least battery, while LQR 
+without mixer consumes the most. Two controller shows adequate performance in 
+altitude and axial velocity while there is a 15 cm deviation in LQR without mixer 
+method. 
+ 
+ 
+Figure 6.13. Altitude and Axial Velocity Change during Transition  
+ 
+ 
+120 
+All of the methods show excellent performance while tracking the desired states. 
+However, fluctuations should be in minimum during the transition, since aircraft 
+dynamics are changing very much during the transition. 
+ 
+ 
+ 
+ 
+Figure 6.14. Euler Angles and Vertical Body Velocity Time History during 
+Transition  
+ 
+ 
+ 
+Figure 6.15. Propeller Angular Velocity Changes during Transition 
+ 
+First Motor 
+Second Motor 
+Third Motor 
+Fourth Motor 
+Fifth Motor 
+Sixth Motor 
+ 
+ 
+121 
+ 
+Figure 6.16. Elevator and Aileron Deflection during Transition  
+Control input changes should track the target input values, and there should not be a 
+transient response of these control values. LQR without mixer shows good behavior 
+while tracking the input values. Considering the three method comparison, LQR with 
+a mixer is chosen as the base method for this study. 
+6.4 
+The Effect of Using Separate Signals for Each Motor 
+After choosing the control method, the effect of using separate signals for outer and 
+inner motors for roll control has been investigated. Three nonlinear models have 
+been compared using performance indexes. In the first model, ailerons have been 
+used for roll control. The second model assumes that front motors have been used 
+for roll control during the transition with the same weight of inner and outer motors. 
+The third model is also using front motors for roll control; however, it assumes that 
+front inner motors are not being used for roll control. The performance index to 
+compare each method can be seen in Eq. 150.  
+The performance index calculates the error level of each method in every step and 
+sums up the absolute value of them, cumulatively. The performance of altitude and 
+roll control has been assessed in Table 6.1 for both under disturbance and no 
+disturbance condition. In accordance with these results, the 3rd method has been 
+implemented in the non-linear model. Separate signals will be sent for outer and 
+inner motors during the transition. 
+ 
+ 
+𝐽= ∫|𝑥|𝑑𝑡
+∞
+0
+ 
+(150) 
+ 
+ 
+122 
+Table 6.1 Performance Results of Each Method 
+ 
+1st Method 
+(no dist.) 
+1st Method 
+(with dist.) 
+2nd Method 
+(no dist.) 
+2nd Method 
+(with dist.) 
+3rd Method 
+(no dist.) 
+3rd Method 
+(with dist.) 
+Altitude 
+0.6542 
+0.8785 
+0.595 
+0.697 
+0.5939 
+0.6958 
+Roll 
+0.3298 
+3.985 
+0.22 
+4.232 
+0.1957 
+4.113 
+6.5 
+CFD Resolution Effect on Model Accuracy  
+As discussed in Chapter 2, 5670 CFD runs have been performed during the CFD 
+analysis. CFD resolution effect on the non-linear model has been investigated to 
+contribute further studies about transition flight. We have decreased the number of 
+CFD runs by employing five tilt angles (0o, 30o, 45o, 60o, 90o) instead of seven. A 
+new lookup table that has five tilt angle positions have been used for the new 
+simulation. Performance indexes for roll and yaw angles have been defined as given 
+in Eq. 150 and altitude errors have been plotted to see the effect of decreasing the 
+resolution of the CFD analysis. Roll and Yaw performances of the original and the 
+low-resolution models can be seen in Table 6.2.  
+Table 6.2 Performance Results of Each Method 
+ 
+5670 CFD 
+Runs 
+4050 CFD 
+Runs 
+Roll 
+0.1957 
+0.3505 
+Yaw 
+0.9621 
+1.187 
+ 
+Figure 6.17. Altitude Change during Transition 
+ 
+ 
+ 
+123 
+Figure 6.17 shows the altitude hold performance of the two models. The analysis 
+shows that decreasing 5670 runs to 4050 runs slightly effected the simulation results. 
+Therefore, it is concluded that instead of performing 5670 runs, 4050 runs could be 
+performed. 
+6.6 
+Full Mission Simulation Results 
+The simulation results cover the whole flight envelope of the aircraft for a given 
+trajectory by the pilot. Aircraft will start from the hover position on the ground and 
+will complete the mission when it is come back and starts to hover on the ground.  
+Figure 6.18 shows the trajectory of the aircraft during the simulation. It can be clearly 
+seen that aircraft are capable of doing the mission, which is proposed in Chapter 2. 
+ 
+Figure 6.18. The trajectory of the Aircraft during the Mission  
+ 
+Figure 6.19 shows the wind gusts in 3-axis, which are given in the body-fixed 
+coordinates. The prevailing wind is selected as coming from 0o head angle. 
+Therefore, as aircraft change the head angle, the wind effect on aircraft is also 
+changing. However, the disturbance block accepts the Direction Cosine Matrix as an 
+input and converts the wind airspeeds into the body coordinates. 
+ 
+ 
+124 
+ 
+Figure 6.19. Random Gust Generated by the Disturbance Block  
+ 
+It can be clearly seen from Figure 6.20 that VTOL mode energy consumption is very 
+high. Therefore, in mission planning, spent time in VTOL mode should be decreased 
+as much as possible. The desired altitude should be achieved in Forward Flight mode. 
+Energy consumption in Forward Flight is acceptable. Aircraft is capable of flying at 
+forward flight for more than one hour. 
+Since there are two transition periods during the mission, the TWA angle is changing 
+two times, from 90o to 0o and vice versa, during that period. There is a separate 
+controller to hold the wing at the desired angle. The transition takes 28 seconds. In 
+the transition mode, the main aim is to hold the desired altitude. 
+ 
+ 
+Figure 6.20. Tilt-Wing Angle and Battery Level Time Histories during the Mission  
+ 
+ 
+ 
+125 
+ 
+Figure 6.21. Desired and Actual Body Velocities During the Mission  
+ 
+Figure 6.21 shows that the desired and actual velocities are in good correlation. There 
+can be small differences due to disturbances; however, aircraft are capable of 
+rejecting the disturbance within an acceptable level. Body velocity in the “y” 
+direction is increasing when the aircraft starts the turn maneuvering. 
+ 
+Figure 6.22. Roll Command and Roll Angle Histories During the Mission  
+Roll command is given when a coordinated turn is required. If the difference between 
+the actual yaw angle and the desired yaw angle is higher than 10o, the pilot gives a 
+roll command instead of giving yaw command. When the desired yaw angle is 
+achieved, the pilot cancels the roll command.   
+ 
+Figure 6.23. Yaw Angle History During the Mission  
+ 
+ 
+126 
+Figure 6.24 shows the aerodynamic surface deflections time histories. Almost 
+maximum elevator deflection is given during the coordinated turn. Note that the 
+disturbances cause the elevator deflection to fluctuate. In VTOL mode, aileron and 
+elevators are almost fully deflected, since ailerons are used as flaperons in VTOL 
+mode.  
+ 
+Figure 6.24. Control Surface Deflection History During the Mission  
+ 
+Front and rear motor angular velocities are given in Figure 6.25 and 6.26, 
+respectively. Left and right motors angular velocities are differentiating from each 
+other when yaw moment is needed in forward flight mode and when yaw and roll 
+moment is needed in forward flight, transition, and VTOL mode. In forward flight, 
+rear motors are shut down.  
+ 
+Figure 6.25. Front Motor Angular Velocity Time History During the Mission  
+ 
+ 
+ 
+127 
+ 
+Figure 6.26. Rear Motor Angular Velocity Time History During the Mission  
+6.7 
+Vulnerability Analysis Against Parameter Variations  
+Non-linear six DoF model is good as how much it is close to the real plant. However, 
+in real life, there will always be a deviation from the simulation world since there 
+are several assumptions made while developing the six DoF model. Even if no 
+assumption has been made while developing the model, there would be some 
+differences from real-world applications. 
+Therefore, the controller should be robust against the uncertainties. Vulnerability 
+analysis has been done to see how the system will behave when some parameters are 
+changed. Figure 6.27 shows the pitch response of the aircraft in several parameter 
+change conditions. Figure 6.27.a assumes that no error has been made when the static 
+coefficients are obtained from CFD analysis. While Figure 6.27.b assumes that there 
+is a 5% error, Figure 6.27.b assumes a 10% error. 
+System behavior against uncertainties seems good, according to Figure 6.27. Static 
+coefficient errors change the behavior slightly while the damping derivative 
+uncertainties are highly effective on-pitch response. If damping derivative changes, 
+more than 10%, the system is starting to be unstable. Note that damping derivative 
+is effecting the system behaves very much because the system is linearized around 
+no error condition, and the system is getting far away from the trim point when these 
+errors are made. 
+ 
+ 
+128 
+ 
+ 
+Figure 6.27. Pitch Angle Response of the Aircraft with respect to Several 
+Parameter Changes  
+ 
+ 
+ 
+(a) 
+(b) 
+(c) 
+𝑪𝒎𝒒= 𝟎% 
+𝑪𝒎𝒒= 𝟓% 
+𝑪𝒎𝒒= 𝟏𝟎% 
+𝑪𝒎𝒒= 𝟎%     
+𝑪𝒎𝒒= 𝟓%     
+𝑪𝒎𝒒= 𝟏𝟎%  
+𝑪𝒎𝒒= 𝟎%     
+𝑪𝒎𝒒= 𝟓%     
+𝑪𝒎𝒒= 𝟏𝟎%  
+ 
+ 
+129 
+CHAPTER 7

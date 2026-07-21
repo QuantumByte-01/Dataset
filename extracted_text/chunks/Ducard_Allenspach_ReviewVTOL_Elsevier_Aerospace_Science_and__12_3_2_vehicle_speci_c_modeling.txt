@@ -1,0 +1,23 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 3.2. Vehicle-speciﬁc modeling
+# START_PAGE: 7
+
+In order to customize the generic six DoF model presented in 
+Section 3.1 to a speciﬁc hybrid VTOL UAV, it is necessary to adapt 
+the vehicle’s force and torque terms. Namely, they are:
+• the propelling forces F B
+r
+and the aerodynamic forces F B
+a
+in 
+(3),
+• the torques due to propelling actuators B
+r
+and torques due to 
+aerodynamics effects and control surfaces B
+a in (5).
+The following sections provide exemplary formulations of these 
+expressions for each hybrid-UAV type and offer a high-level com-
+parison amongst them.
+Fig. 5. Tailsitter actuation. Case a): no control surfaces and four propellers. Case b) 
+two propellers and two control surfaces.

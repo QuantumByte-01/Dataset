@@ -1,0 +1,132 @@
+# SOURCE: index
+# SECTION: front_matter
+# START_PAGE: 1
+
+DESIGN AND ANALYSIS OF A VTOL TILT-WING UAV 
+ 
+ 
+ 
+ 
+ 
+A THESIS SUBMITTED TO 
+THE GRADUATE SCHOOL OF NATURAL AND APPLIED SCIENCES 
+OF 
+MIDDLE EAST TECHNICAL UNIVERSITY 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BY 
+ 
+HASAN ÇAKIR 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+IN PARTIAL FULFILLMENT OF THE REQUIREMENTS 
+FOR 
+THE DEGREE OF DOCTOR OF PHILOSOPHY 
+IN 
+AEROSPACE ENGINEERING 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+JULY 2020
+ 
+ 
+ 
+Approval of the thesis: 
+ 
+DESIGN AND ANALYSIS OF A VTOL TILT-WING UAV 
+ 
+submitted by HASAN ÇAKIR in partial fulfillment of the requirements for the 
+degree of Doctor of Philosophy in Aerospace Engineering, Middle East 
+Technical University by, 
+ 
+Prof. Dr. Halil Kalıpçılar  
+Dean, Graduate School of Natural and Applied Sciences 
+ 
+Prof. Dr. İsmail Hakkı Tuncer 
+Head of the Department, Aerospace Engineering 
+ 
+Prof. Dr. Dilek Funda Kurtuluş  
+Supervisor, Aerospace Engineering, METU 
+ 
+ 
+ 
+Examining Committee Members: 
+ 
+Prof. Dr. Ozan Tekinalp 
+Aerospace Eng., METU 
+ 
+Prof. Dr. Dilek Funda Kurtuluş 
+Aerospace Eng., METU 
+ 
+Assoc. Prof. Dr. Munir Elfarra 
+Aerospace Eng., Ankara Yıldırım Beyazıt University 
+ 
+Assist. Prof. Dr. Ali Türker Kutay 
+Aerospace Eng., METU 
+ 
+Assist. Prof. Dr. Kutluk Bilge Arıkan 
+Mechanical Eng., TED University 
+ 
+ 
+Date: 14.07.2020 
+ 
+ 
+ 
+iv 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+I hereby declare that all information in this document has been obtained and 
+presented in accordance with academic rules and ethical conduct. I also declare 
+that, as required by these rules and conduct, I have fully cited and referenced 
+all material and results that are not original to this work. 
+ 
+  
+Name, Last name: Hasan Çakır 
+Signature: 
+ 
+ 
+ 
+ 
+v

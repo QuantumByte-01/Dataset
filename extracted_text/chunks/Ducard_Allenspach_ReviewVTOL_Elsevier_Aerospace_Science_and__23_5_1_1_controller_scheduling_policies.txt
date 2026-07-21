@@ -1,0 +1,19 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.1.1. Controller-scheduling policies
+# START_PAGE: 12
+
+During ﬂight, the current operating region of the system is cap-
+tured by so-called scheduling variables and the corresponding con-
+trol law, as well as the feed-forward terms of the respective trim 
+point are loaded by the scheduling policy. The two most common 
+implementations are shown in Fig. 14:
+• The Divide and Conquer approach discretely switches between 
+the different control laws, such that only one controller is run-
+ning at a time.
+• Contrarily to Divide and Conquer, Control Authority Weighting
+continuously fuses commands from two scheduled controller, 
+based on a scheduling-variable dependent weight.
+Tuning the individual controllers’ dwell time to be smaller than 
+the parameter-variation time constant generally results in good lo-
+cal performance. However, one needs to be careful regarding the 
+global closed-loop stability and performance, as stated in [225].

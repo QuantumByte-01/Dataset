@@ -1,0 +1,73 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 4.1. Tailsitter aircraft
+# START_PAGE: 9
+
+The authors of [208] identify a hover E′
+h and level-ﬂight El
+aerodynamic ﬂight envelope within the airspeed (v) - AoA (α) do-
+main, as displayed in Fig. 8. Hereby, E′
+h describes the ﬂight condi-
+tions where the aerodynamic forces are small compared to gravity 
+forces. The level-ﬂight envelope El is constrained by the stall speed 
+of the aircraft ¯vl and an AoA ¯αl, where the relationship between 
+the lift force and the AoA is mostly linear for |α| ≤¯αl. The in-
+tersection between the two areas E′
+h and El deﬁnes the transition 
+region, where both the hover and the level-ﬂight approximations 
+hold. As shown in Fig. 8, this transition region corresponds to a 
+very small part of the possible ﬂight regimes in the v-α domain. 
+Therefore, the transition trajectory needs to be generated carefully. 
+In addition, two low-controllability areas are detected. Speciﬁcally, 
+the area Np corresponds to ﬂight conditions where aerodynamic 
+drag exceeds maximum propeller thrust. The area Na corresponds 
+to ﬂight regimes where the control surfaces have insuﬃcient con-
+trol authority to counteract torque disturbances.
+Once such a feasible ﬂight envelope is found, [68,41] show 
+how a corresponding stable transition trajectory based on continu-
+ous velocity and pitch angle references can be derived. The works 
+reported in [208,50,71] use an optimization algorithm to ﬁnd suit-
+able velocity and pitch angle references, where actuator constraints 
+or low-controllability areas are explicitly taken into account. The 
+evaluation of these reference functions at a desired number of 
+points provides a set of trim ﬂight conditions, which can then be 
+used for trim point-based controller design (see Section 5.1.2). Ex-
+amples of how to directly obtain discrete trim points from the 
+model equations or from ﬂight-test-based velocity-attitude maps 
+are presented in [209] and [78], respectively.
+To reduce the complexity associated with the derivation of the 
+ﬂight envelope and corresponding state references, some works 
+simply command a step input in the pitch-angle reference to 
+achieve ﬂight-mode transition [64,30,31,65,76,36,56]. These meth-
+ods are often combined with constant acceleration or altitude-hold 
+controllers for the translational dynamics as shown in Fig. 9. How-
+ever, the resulting reference trajectories are not always part of the 
+feasible ﬂight envelope. Thus, controllability and stability are not 
+guaranteed with such a simple method. The same issue appears 
+9
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 9. Transition maneuver of a tailsitter aircraft at constant altitude.
+when using linear pitch-angle references [44,77,49,87,73,88,70,72,
+69,84] instead of step inputs.
+In most controllers (see Section 5.1), attitude reference val-
+ues from the trim analysis will be treated as feed-forward terms 
+and combined with references from thrust vector alignment. Due 
+to their construction, the thrust direction of tailsitter vehicles is 
+always aligned with the main body x−axis, according to equa-
+tion (6). Therefore, the attitude references need to be chosen, 
+such that the resulting thrust vector is aligned with the desired 
+force vector for translational tracking, just like with regular multi-
+copters [210,71]. In helicopter mode, this thrust vector alignment 
+is often achieved by using a simple proportional guidance law 
+[64,40,41] or by treating the attitude as a virtual input to the trans-
+lational dynamics [62,61,31,211,187,47,81]. During high-velocity 
+cruise, L1 guidance [212,213,71,32] or similar radius-computation 
+laws [64,214,41] are used to achieve a coordinated-turn without 
+sideslip. Alternatively, nonlinear thrust-vector alignment functions 
+are used in [37,53,57,59], which allow for the generation of an at-
+titude reference which is independent of the ﬂight conﬁguration. 
+Similarly, global trajectory generation is achieved through opti-
+mization in [215,80]. Due to the large changes in the pitch angle, 
+a quaternion-based attitude representation is often chosen in the 
+attitude controller, in order to compute a singularity-free and well-
+posed attitude error [66,216].

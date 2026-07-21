@@ -1,0 +1,93 @@
+# SOURCE: index
+# SECTION: 7 CONCLUSION
+# START_PAGE: 151
+
+In this thesis, the platform and controller design of a Tilt-Wing UAV, which is 
+capable of doing hover, VTOL, level flight, and mode switching, is considered. In 
+this regard, a solution approach is studied with the aim of combining the benefits of 
+rotary and fixed-wing aircraft in one platform. Additionally, the methods for 
+generating a non-linear model, designing controllers, are studied from existing 
+methods for both conventional aircraft and multi-rotors. 
+No vertical tail has been employed for this study. 5% of weight reduction and 4% 
+drag reduction has been achieved due to not using the vertical tail as part of this 
+study. 
+In this study, the transition phase of the flight is mainly considered. The transition 
+phase is divided into seven parts, and for each of them, a separate controller is 
+designed. A gain scheduling algorithm is developed using look-up tables in 
+Simulink. The air vehicle has a multi-copter configuration and is capable of taking 
+off and landing vertically in VTOL mode. After taking off, it is starting a forward 
+flight by tilting the wings forward. The nonlinear simulation model of the air vehicle 
+that 
+describes 
+the 
+physical 
+properties 
+in 
+detail 
+is 
+created 
+in 
+the 
+MATLAB/Simulink/Simscape environment, which consists of a propulsion model, 
+aerodynamics model, gravity model, and the translational and rotational equations 
+of motion. While developing the model, numerical analyses are carried out. Several 
+linear models of the aircraft are also obtained. For this purpose, appropriate trim 
+conditions are specified for hover, transition, and forward flight phases, separately. 
+Linear Quadratic Regulator (LQR) and PID, controllers are designed for related 
+linear models. The performance of the controllers against pilot commands is 
+analyzed through nonlinear simulations, and the results are compared. The 
+ 
+ 
+130 
+simulation results show that the controllers developed successfully keeps its 
+commanded states.  
+The platform is designed with physically integrated VTOL, transition, and Forward 
+Flight control elements via using control allocation that enables multi-mode 
+capability. Combining VTOL and Forward Flight modes, the aircraft is required to 
+be operated in an extended flight envelope from hover to high-speed level flight. 
+Therefore, the nonlinear model of the aircraft is constructed considering high 𝛼 
+conditions, which arise from low speed over aerodynamical surfaces. A trimming 
+algorithm in Simulink is utilized when finding trim conditions for all of the flight 
+modes. The flight characteristics of VTOL Tilt-Wing UAV is compatible with the 
+conventional platform types, which means that the aircraft demonstrates Rotary 
+Wing and Fixed Wing characteristics when the corresponding mode is engaged. The 
+analysis showed that the aircraft could be operated at close trim conditions in 
+different modes for smooth transitions. Therefore, mode switching has been 
+employed without stalling the wings, which is different from other platform’s 
+transition methods. Available control methods have been tailored to the aircraft 
+characteristics to obtain a combined control structure for VTOL Tilt-Wing UAV that 
+is capable of controlling a VTOL and Fixed Wing aircraft. They have performed well 
+in controlling the aircraft in the whole flight envelope. Flight tests and analysis 
+performed in the simulation environment proved that the VTOL Tilt-Wing UAV 
+represents both VTOL and Fixed Wing capabilities in one platform. The proposed 
+architecture of the controller system performed well in controlling the aircraft in 
+VTOL, Forward Flight modes where switching between modes is handled by the 
+pilot manually.  
+An analysis that shows the effect of CFD analysis resolution on the model accuracy 
+has been carried out. One of the main contributions of this study is that studies 
+showed that transition flight could be divided into five trim points instead of seven, 
+which means that 28% of CFD runs would be decreased. It is a significant result for 
+the literature to determine the number of CFD runs to establish an accurate nonlinear 
+model. 
+ 
+ 
+131 
+The results obtained from this study reveals new objectives for future studies. The 
+future study should include real-world flight tests of the VTOL Tilt-Wing UAV. 
+Nonlinear controllers shall also be developed in the future, and the performance of 
+the non-linear controllers shall be compared against the linear controllers presented 
+in this study. More flight tests, both in simulation and real-world environments, 
+should be conducted, including extended flight conditions for establishing more 
+detailed implementation criteria. In order to reveal more functionalities of the 
+platform, optimal flight maneuvers should be calculated through the utilization of 
+redundant control elements. Several control techniques, such as linear quadratic 
+tracking and sliding mode controller, and fault-tolerant control methods, must be 
+applied for VTOL-Tilt-Wing in order to compare flight performance and robustness. 
+Different mode tasking schemes should be tried in managing transition mode for 
+optimum mission success like minimization of energy consumption, control effort, 
+or time. 
+[1]–[4], [4]–[12], [12]–[44], [46]–[51], [51]–[78], [78]–[103], [103]–[144] 
+ 
+ 
+ 
+133

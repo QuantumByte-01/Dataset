@@ -1,0 +1,582 @@
+{
+  "batch_name": "06_navigation_sensing",
+  "subsystem_tag": "navigation_sensing",
+  "grounding_chunk_files": [
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__06_3_nonlinear_dynamic_model.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__09_4_linear_analysis.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__11_3_1_common_6_degree_of_freedom_dof_trans.txt"
+  ],
+  "shared_config_files": {
+    "schema_and_contract": "C:\\Users\\Swastik R\\Downloads\\dataset\\dataset_schema.md",
+    "ambiguity_taxonomy": "C:\\Users\\Swastik R\\Downloads\\dataset\\ambiguity_taxonomy.yaml",
+    "requirement_categories": "C:\\Users\\Swastik R\\Downloads\\dataset\\requirement_categories.yaml",
+    "grounding_facts": "C:\\Users\\Swastik R\\Downloads\\dataset\\grounding_facts.md"
+  },
+  "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_06_navigation_sensing.jsonl",
+  "records_to_generate": [
+    {
+      "id": "REQ-SYS-026",
+      "level": "system",
+      "parent_id": "REQ-ML-006",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "state estimation accuracy across flight regimes",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-027",
+      "level": "system",
+      "parent_id": "REQ-ML-010",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "sensor suite redundancy",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-028",
+      "level": "system",
+      "parent_id": "REQ-ML-001",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation interface to FCS",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "coordination",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "underspecification_common_noun",
+          "family": "referential"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 4,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-029",
+      "level": "system",
+      "parent_id": "REQ-ML-003",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "sensor fault detection",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-051",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-026",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "primary functional obligation of navigation sensing",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "idiomatic",
+          "family": "pragmatic"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-052",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-027",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing performance envelope / quantitative bound",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "sequence_syntactic",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 3,
+      "axis1_nature": "functional",
+      "axis2_behavior": "probabilistic",
+      "context_refs": [
+        "REQ-SYS-028"
+      ]
+    },
+    {
+      "id": "REQ-SUB-053",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-028",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing interface to an adjacent subsystem",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-054",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-029",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing behavior in a specific flight mode/state",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-055",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-026",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing response to a triggering event",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-056",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-027",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing fault/degraded-mode behavior",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "coreferential",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-057",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-028",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing design constraint (mass/volume/standard)",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-058",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-029",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing monitoring/reporting obligation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        },
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": [
+        "REQ-SUB-057"
+      ]
+    },
+    {
+      "id": "REQ-SUB-059",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-026",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing calibration/initialization obligation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SUB-060",
+      "level": "subsystem",
+      "parent_id": "REQ-SYS-027",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "navigation sensing redundancy or margin requirement",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-046",
+      "level": "component",
+      "parent_id": "REQ-SUB-051",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's precise obligation within navigation sensing",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-047",
+      "level": "component",
+      "parent_id": "REQ-SUB-052",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's quantitative parameter within navigation sensing",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-048",
+      "level": "component",
+      "parent_id": "REQ-SUB-053",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's interface to its parent subsystem",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "coreferential",
+          "family": "referential"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 4,
+      "axis1_nature": "interface",
+      "axis2_behavior": "probabilistic",
+      "context_refs": [
+        "REQ-SUB-054"
+      ]
+    },
+    {
+      "id": "REQ-CMP-049",
+      "level": "component",
+      "parent_id": "REQ-SUB-054",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's event-triggered response within navigation sensing",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-050",
+      "level": "component",
+      "parent_id": "REQ-SUB-055",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's fault-condition response within navigation sensing",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        },
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-051",
+      "level": "component",
+      "parent_id": "REQ-SUB-056",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's state/mode-dependent behavior within navigation sensing",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-052",
+      "level": "component",
+      "parent_id": "REQ-SUB-057",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's design constraint within navigation sensing",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "probabilistic",
+      "context_refs": [
+        "REQ-SUB-056"
+      ]
+    },
+    {
+      "id": "REQ-CMP-053",
+      "level": "component",
+      "parent_id": "REQ-SUB-058",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's calibration/init obligation within navigation sensing",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-054",
+      "level": "component",
+      "parent_id": "REQ-SUB-059",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's monitoring/telemetry obligation within navigation sensing",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-CMP-055",
+      "level": "component",
+      "parent_id": "REQ-SUB-060",
+      "subsystem_tag": "navigation_sensing",
+      "topic_hint": "a named component's margin/tolerance requirement within navigation sensing",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "subjectivity",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "quantitative",
+      "context_refs": [
+        "REQ-CMP-048"
+      ]
+    }
+  ]
+}

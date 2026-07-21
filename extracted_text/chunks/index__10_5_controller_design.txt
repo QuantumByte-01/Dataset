@@ -1,0 +1,1214 @@
+# SOURCE: index
+# SECTION: 5 CONTROLLER DESIGN
+# START_PAGE: 119
+
+A controller should augment the stability of the system, reject disturbances, reduce 
+the sensitivity to parameter variations, track reference, be robust to uncertainties. A 
+VTOL UAV should be able to fly in different flight modes; therefore, the controller 
+should be designed for different flight modes and the transition between them. The 
+controller should eliminate the transient response of the aircraft, which means that 
+transition between two flight modes should be smooth. Additionally, when the 
+aircraft is commanded to increase the horizontal and vertical velocity at the same 
+time, the controller should decide on how to fulfill that objective. Available control 
+methods are tailored to suit VTOL-UAV’s characteristics to obtain non-conflicting 
+results for the same objectives. 
+  
+Figure 5.1. Controller Architecture without Mixer  
+ 
+ 
+ 
+98 
+  
+Figure 5.2. Controller Architectures with Mixer 
+ 
+Figure 5.1 and 5.2 illustrate the controller architectures. The only difference between 
+the two architectures is that one has a mixer while the other one has not. In the first 
+method, the input is the state vector, and the output of the controller is the elevator 
+and aileron deflections, and the six motor angular velocities. However, for the second 
+one, control outputs are desired forces in three axes and the desired moments in three 
+axes. The desired forces and moments go directly to the mixer, which determines 
+how much deflection or angular velocity is needed from the actuators. 
+The pilot has four command buttons in the pilot block. These are mode, roll, yaw, 
+and altitude commands. The mode command determines in which mode aircraft will 
+fly, which can be VTOL, transition, or forward flight. If the pilot gives roll 
+command, aircraft will automatically start a coordinated turn maneuver. Aircraft will 
+track a circle until roll command turns into zero. Before giving zero roll command, 
+the pilot should determine which yaw command should aircraft should track. 
+Otherwise, the aircraft will start turn maneuver opposite direction till the old yaw 
+command is achieved. Small yaw command should be given directly by yaw 
+command, while high yaw commands should be performed by roll command. If there 
+will be any difference between altitude command and the current altitude, the aircraft 
+will start to descent or climb until the desired altitude is achieved. However, the 
+ 
+ 
+99 
+altitude command will be given with a rate limiter since huge altitude differences 
+will result in an unstable climb or descent. Tilt wing angle command will not go to 
+the controller will directly go to the actuator, since it has a small controller itself. 
+However, the sensor will be fed back with Tilt-Wing angle, since controller gains 
+and reference states will change by Tilt-Angle feedback and roll command feedback. 
+Mission profile given in Chapter 2 dictates that aircraft should provide performance 
+vertical climb, transition to forward flight, climb, a coordinated turn, a descent, and 
+a vertical descent. Different controllers and schedulers are designed in accordance 
+with the mission profile. Tilt-wing angle changes with a schedule given by guidance 
+commands. Coordinated turn has a unique controller gain set. The transition phase 
+has five gain sets, while each VTOL and forward flight have one gain set. For the 
+first architecture, actuator movements determined by the controller directly, however 
+in the second one controller determines the force and moment needed in each axis, 
+then the mixer decides the actuator movement by using the control allocation 
+strategy. 
+5.1 
+Transition Mode Problem Statement  
+Transition mode is a finite time period, in which system and input matrices are 
+changing as the wing is tilted. We have specified seven trim conditions for transition, 
+which is enough to cover the region where linearized points are valid. However, in 
+transition mode, while the system is being transferred from one state set to another 
+state set, the wing tilt angle and instantaneous state values should be compatible with 
+each other. For instance, if wing tilts very fast from 15o to 0o, x-axis body velocity 
+will not have time to go from 11.6 m/s to 18.6 m/s, since the desired input value for 
+corresponding trim points will increase linearly. This problem may cause the aircraft 
+to become unstable since the aircraft will be far away from the trim point when the 
+wing tilt angle reaches 0o. Therefore, two approaches named minimum time and 
+minimum energy problems are introduced to overcome this problem. 
+ 
+ 
+100 
+In Minimum Time Problem, the task is to transfer the system from an arbitrary initial 
+state to a specified “target set” in minimum time. The target set can be constant states, 
+a set of relations between final states, or free states.  
+ 
+subject to a typical set of control constraints in the form of; 
+where 𝑡 𝜖 [𝑡𝑖, 𝑡𝑓]. If the desired input values are calculated with a minimum time 
+algorithm, the controller will try to pass through transition mode as fast as possible. 
+It will not take into account the battery charge level. Nevertheless, there could be an 
+optimization technique that prioritizes energy instead of time. Then we can introduce 
+time minimum energy problem as; 
+where 𝛽𝑖 represents the weighting factors of each input variable. 
+For both of the problems, we should determine the prioritized states and input 
+variables. In transition mode, the critical state is the body x-axis velocity, and the 
+critical input variables are front rotor angular velocities. By changing front rotors' 
+desired values in transition, we will try to minimize the performance index. 
+However, as we discussed previous chapters, we have already determined the trim 
+conditions, which include front rotors values as well. We should try to focus on 
+between trim conditions. Since we have two transition types during the flight, we 
+should analyze both transitions from 90o to 0o and 0o to 90o.  
+ 
+𝑥̇ = 𝑓(𝑥, 𝑢, 𝑡) 
+(128) 
+ 
+𝑃. 𝐼= ∫𝑑𝑡
+𝑡𝑓
+𝑡𝑖
+= 𝑡𝑓−𝑡𝑖 
+(129) 
+ 
+|𝑢| = 𝕌 
+(130) 
+ 
+𝑃. 𝐼= ∫[𝛽𝑖𝑢𝑖
+2(𝑡)]𝑑𝑡
+𝑡𝑓
+𝑡𝑖
+ 
+(131)
+ 
+ 
+101 
+ 
+Figure 5.3. Possible Ways of Going from One State to Another  
+ 
+There are infinite ways of going from 90o to 0o as you can see from Figure 5.3. 
+Optimal control input will let us go from one state to another state in minimum time 
+or by using minimum energy without stability loss. Figure 6.120 showed us that 
+energy consumptions during the transition from 0o to 90o or from 90o to 0o are 
+incredibly high since we did not optimize the control strategy. We had to wait until 
+aircraft slows down; however, in VTOL and transition mode, each second has 
+importance due to high energy consumption. 
+In transition mode, the main target has a stable transition without altitude loss. 
+However, if the throttle level changes linearly, horizontal velocity might not track 
+the target velocity as the wing is tilted. Therefore, a set of equations of motion has 
+been introduced, which sets a schedule for engine throttle level, 𝑤, and tilt angle. 
+Equations of motion for altitude and body velocity 𝑢 can be written in a reduced 
+form as; 
+𝑢𝑖= 0 𝑚/𝑠 
+𝑢𝑓= 18.6 𝑚/𝑠 
+𝑡𝑓 
+𝑡𝑖 
+𝑡𝑓 
+𝑡𝑖 
+Ω𝑓=  %42.7 
+Ω𝑖=  %85.3 
+𝑡𝑓 
+𝑡𝑖 
+𝑇𝑊𝐴𝑓= 0° 
+𝑇𝑊𝐴𝑖= 90° 
+ 
+ 
+102 
+We can represent this set of equations in state-space representation; 
+We can arrange Eq. 133 as; 
+Eq. 134 can be linearized around trim conditions; 
+ 
+Linearized system and input matrices are; 
+𝑢3(𝑡) can be assumed as a second-order polynomial and can be represented as; 
+We know the initial and final values of the throttle levels from the trim conditions, 
+We should find 𝑎 and 𝑏 constants which minimize total time with constraints 
+0 ≤𝑢3 ≤1; 
+ 
+ℎ̇ = −
+1
+2 𝜌𝑉2𝑆𝐶𝐿
+𝑚
++ 9.81 −26𝑢𝑡ℎsin(𝛿𝑇𝑊𝐴)
+𝑚
+ 
+𝑢̇ = −
+1
+2 𝜌𝑉2𝑆𝐶𝐷
+𝑚
++ 26𝑢𝑡ℎcos(𝛿𝑇𝑊𝐴)
+𝑚
+ 
+(132)
+ 
+𝑥̇1 = −0.0372𝑥2
+2(0.76 + 4.97𝛼) + 9.81 −6.34𝑢3
+2𝑢2 
+𝑥̇2 = −0.0033𝑥2
+2 + 6.34𝑢3
+2 
+(133)
+ 
+𝑥̇1 = −0.0282𝑥2
+2 −0.184𝑥2𝑢1 + 9.81 −6.34𝑢3
+2𝑢2 
+𝑥̇2 = −0.0033𝑥2
+2 + 6.34𝑢3
+2 
+(134)
+ 
+𝑥̇1 = −1.049𝑥2 −3.42𝑢1 −1.155𝑢2 −0.66𝑢3 
+𝑥̇2 = −0.122𝑥2 + 5.41𝑢3 
+(135)
+ 
+𝐴= [0
+−1.049
+0
+−0.122] 
+𝐵= [−3.42
+−1.155
+−0.66
+0
+0
+5.41 ] 
+(136)
+ 
+𝑢3(𝑡) = 𝑎𝑡2 + 𝑏𝑡+ 𝑐 
+(137)
+ 
+𝑢3(𝑡𝑖) = 0.47 
+𝑢3(𝑡𝑓) = 0.427 
+𝑢3(𝑡) = 𝑎𝑡2 + 𝑏𝑡+ 0.47 
+(138)
+ 
+𝑇= −𝑏∓√𝑏2 −1.88𝑎
+2𝑎
+ 
+ 
+(139)
+ 
+ 
+103 
+MATLAB fmesh(T) function has been used to see the 𝑎 and 𝑏 constants, which 
+minimizes the total time.  
+ 
+Figure 5.4. Total Time change with respect to 𝑎 and 𝑏 constants  
+The throttle level schedule is selected from Figure 5.4. Note that this selection 
+directly affects the change of 𝑢 during the transition from 15o to 0o, which is 
+represented in Figure 5.5. Having selected the throttle level schedule, now we can 
+calculate the change of 𝑢; 
+ 
+Figure 5.5. Body Velocity 𝑢 change during transition from 15o to 0o  
+It should be kept in mind that the main target in transition is altitude hold; therefore, 
+we should make sure that altitude is not changing during the transition. 
+In Equation 141, 𝑥2 and 𝑢3 are known, and 𝑢2, which represents tilt angle changes, 
+is assumed to change linearly. With this assumption 𝑢1 which represents 𝛼, can be 
+calculated. Note that this scheduling is not directly related to the controller. Instead, 
+ 
+𝑥̇2 = −0.122𝑥2 + 5.41(𝑎𝑡2 + 𝑏𝑡+ 0.47) 
+𝑥2 = 1872.2𝑒−0.122𝑡−11.97𝑡2 + 229.53𝑡+ −1860.6 
+(140)
+ 
+𝑥̇1 = −1.049𝑥2 −3.42𝑢1 −1.155𝑢2 −0.66𝑢3 = 0 
+(141)
+ 
+ 
+104 
+it decides the desired states and input values, which will be used by the controller. 
+The desired states and control inputs are calculated using the above flowchart for 
+each transition period.  
+5.2 
+Control Allocation 
+Control Allocation has been done to accomplish a balance between performance and 
+energy consumption. Control allocation logic has been constructed in the light of 
+CFD Analysis and Thrust database interpretation. For each potential trim condition, 
+the effectiveness of each control input has been investigated.  
+Table 5.1 Control Allocation Chart 
+𝜹𝑻𝑾
+= 𝟗𝟎° 
+Elevator Flap First 
+Motor 
+Second 
+Motor 
+Third 
+Motor 
+Fourth 
+Motor 
+ 
+0% 
+100% 0% 
+0% 
+0% 
+0% 
+ 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+ 
+0% 
+0% 
+50% 
+50% 
+0% 
+0% 
+ 
+0% 
+0% 
+50% 
+50% 
+0% 
+0% 
+ 
+0% 
+0% 
+0% 
+0% 
+50% 
+50% 
+ 
+0% 
+0% 
+0% 
+0% 
+50% 
+50% 
+𝜹𝑻𝑾=
+𝟕𝟓° 
+Elevator Aileron First 
+Motor 
+Second 
+Motor 
+Third 
+Motor 
+Fourth 
+Motor 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+𝜹𝑻𝑾
+= 𝟔𝟎° 
+ElevatorAileron First 
+Motor 
+Second 
+Motor 
+Third 
+Motor 
+Fourth 
+Motor 
+0% 
+0% 
+50% 
+50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 
+50% 
+0% 
+0% 
+0% 
+0% 
+50% 
+50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+𝜹𝑻𝑾
+= 𝟒𝟓° 
+Elevator Aileron First 
+Motor 
+Second 
+Motor 
+Third 
+Motor 
+Fourth 
+Motor 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+50% 
+25% 25% 
+0% 
+0% 
+50% 
+0% 
+0% 
+0% 
+25% 
+25% 
+0% 
+0% 
+0% 
+0% 
+50% 
+50% 
+𝜹𝑻𝑾=
+𝟑𝟎° 
+Elevator Aileron First 
+Motor 
+Second 
+Motor 
+Third 
+Motor 
+Fourth 
+Motor 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+100% 
+0% 
+0% 
+0% 
+0% 
+100% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 50% 
+𝜹𝑻𝑾
+= 𝟏𝟓° 
+Elevator Aileron First 
+Motor 
+Second 
+Motor 
+Third 
+Motor 
+Fourth 
+Motor 
+0% 
+0% 
+50% 50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 
+0% 
+25% 25% 
+0% 
+0% 
+0% 
+100% 
+0% 
+0% 
+0% 
+0% 
+100% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 
+50% 
+𝜹𝑻𝑾= 𝟎° Elevator AileronFirst 
+Motor 
+Second 
+Motor 
+Third 
+Motor 
+Fourth 
+Motor 
+0% 
+0% 
+50% 
+50% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+100% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+100% 0% 
+0% 
+0% 
+0% 
+100% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+0% 
+50% 
+50% 
+ 
+For the vertical flight, candidate control inputs for X-axis were flaps and elevators. 
+Y-axis is not directly controlled in this study. Furthermore, for the Z-axis, roll, pitch, 
+𝛿𝑋 
+𝛿𝑌 
+𝛿𝑍 
+𝛿𝐿 
+𝛿𝑁 
+𝛿𝑀 
+𝛿𝑋 
+𝛿𝑌 
+𝛿𝑍 
+𝛿𝐿 
+𝛿𝑁 
+𝛿𝑀 
+𝛿𝑋 
+𝛿𝑌 
+𝛿𝑍 
+𝛿𝐿 
+𝛿𝑁 
+𝛿𝑀 
+𝛿𝑋 
+𝛿𝑌 
+𝛿𝑍 
+𝛿𝐿 
+𝛿𝑁 
+𝛿𝑀 
+𝛿𝑋 
+𝛿𝑌 
+𝛿𝑍 
+𝛿𝐿 
+𝛿𝑁 
+𝛿𝑀 
+𝛿𝑋 
+𝛿𝑌 
+𝛿𝑍 
+𝛿𝐿 
+𝛿𝑁 
+𝛿𝑀 
+𝛿𝑋 
+𝛿𝑌 
+𝛿𝑍 
+𝛿𝐿 
+𝛿𝑁 
+𝛿𝑀 
+ 
+ 
+105 
+and yaw control, we were doomed to use thrust forces. Therefore, only X-axes 
+candidates have been assessed using the CFD analysis for vertical flight. There were 
+three options to be selected. The first one was purely flaps, the second one was purely 
+elevators, and the third one was mixed of them. Using purely one actuator was not 
+possible since 20° deflection of the elevator has compensated 18% percent of 
+available X-force, which is caused by the lift generated on the wing, while 20° 
+deflection of flaps have compensated 65% of it. Therefore, both of the surfaces have 
+been deflected to compensate generated X-force in trim conditions. The elevator has 
+been almost fully deflected, which means there is not adequate power on it to use as 
+a control effector. 50% of the flaps are deflected, and the rest of the flaps are reserved 
+for the control power. In other words, only flaps are used as the X-axis control 
+effector. Since only 50% of the flaps are reserved for control power, asymmetric 
+aileron deflection could not be used for yaw axis control. There is not enough power 
+on ailerons to control the yaw axis. Excessive X-axis force generated by the lift on 
+the wing and horizontal tail forces us to use most of the flaps and elevator power to 
+compensate for the X-axis force. 
+In VTOL mode, the aircraft will be controlled by thrust forces and moments, while 
+aerodynamic forces will be used with secondary importance. In transition mode, the 
+control allocation will depend mainly on thrust. While we get close to the forward 
+flight, the aerodynamic forces and moments will come forward. Table 5.1 shows the 
+control allocation strategy of the study. 
+In vertical flight as expected, most of the control power comes from thrust forces 
+and moments. In transition flight, since we are almost in the post-stall conditions, we 
+are using thrust forces and moments as primary control power. However, while we 
+are getting closer to the forward flight, aerodynamic forces usage becomes dominant.  
+During hover and vertical flight, the wing generates aerodynamic force along with 
+body x-axes, we have employed negative flap deflection to compensate for this force. 
+Y-axes forces have not been directly controlled. Thrust forces and moments are 
+stabilizing the roll, pitch, and yaw axis. The differential thrust of forward and rear 
+ 
+ 
+106 
+propellers controls the pitch axis, while left and right controls the roll axis. During 
+hover, although we do not have a thrust based moment in the yaw axis, we use the 
+torque generated by angular velocities of the propellers. If throttle levels of the left 
+and right propellers are different from each other, torque is generated on the yaw 
+axes. So we change the angular velocities of left and right propellers to control the 
+yaw axis during hover. Cross-coupling of the roll and yaw axes shall be considered 
+in this case, since as we change the angular velocity of the propellers, moment in roll 
+axes will be inevitable. 
+In the first phase of transition mode, mostly the thrust forces and moments will be in 
+charge. Control allocation logic will be like the one in vertical flight with some small 
+differences, by the way. Between 𝛿𝑇𝑊= 90°  and 𝛿𝑇𝑊= 45°, none of the 
+aerodynamic inputs were used since there was enough power on motors to control 
+the aircraft in 6 DoF. Additionally, since the 𝛼 is estimated at about 20°, which means 
+that the aircraft is about the stall region, using aerodynamic surfaces to control the 
+aircraft may result in catastrophic conditions. On the other hand, the wing has been 
+chosen due to its high lift characteristics. If additional flaps are used, the wing might 
+enter the stall region. Note that this does not mean that we do not exploit 
+aerodynamic forces. We use aerodynamic forces to trim the aircraft. However, after 
+having trimmed the aircraft, aerodynamic control surfaces like ailerons and elevators 
+are not being used to control it. For roll control, tip rotors are used only to exploit 
+from the long moment arm advantages.  
+After getting the 30° tilt-angle, 𝛼 decreases dramatically, which means that 
+aerodynamic surfaces may be used to control the aircraft. 50% of pitch moment can 
+be eliminated by 20° elevator deflection, which gives us enough power to control the 
+pitch axis. Nevertheless, the aircraft should be trimmed by thrust forces in the pitch 
+axis to have excess power in elevators to control the pitch axis. Ailerons give 
+sufficient roll moment to control roll-axes at 30° tilt-angle. Besides the roll and pitch 
+axis, thrust forces and moments should be used. 
+ 
+ 
+107 
+15° and 0° tilt angle conditions are very similar to each other, except that to trim the 
+aircraft in pitch axis in forward flight, we are deflecting the horizontal stabilizer by 
+-3°, which gives us sufficient excess power to control pitch axis by elevators. At 15° 
+tilt-angle, elevators are compensating 90% of pitch moment, so there is enough 
+power on elevators to purely control the pitch axis. Based on the CFD results and 
+interpretations of the aerodynamic surface control power, the following control 
+allocation logic has been adopted. 
+Between 𝛿𝑇𝑊= 30°  and 𝛿𝑇𝑊= 0°, rear motors will be shut down since we get 
+enough aerodynamic pitch control power after that point. The yaw axis is controlled 
+by the differential thrust of the rear propellers. Pitch axis is purely controlled by 
+elevators, and roll is purely controlled by ailerons. The velocity of the aircraft is 
+controlled by throttle and altitude is controlled by elevators. Almost the same logic 
+will be employed during forward flight. 
+A high-level controller determines the force and moment effectors, and a low-level 
+mixer allocates the needs to related actuators by using the operation logic given in 
+Table 5.1. The control allocation logic given in Table 5.1 has been decided by 
+interpreting CFD results and thrust database. 
+Control allocation logic has been implemented into the non-linear model via using a 
+mixer, which is a MATLAB function embedded into the Simulink model. This 
+MATLAB function accepts the tilt-wing angle, dynamic pressure, and the desired 
+forces and moments in the body axis as inputs. The output of the mixer is a vector 
+that contains an elevator and aileron deflections, and six propeller angular velocities. 
+This function, which has a flowchart given in Figure 5.6, calculates the related 
+actuator deflections using the linearized relation between forces, moments, actuator 
+positions, and propeller angular velocities by using the engine and aerodynamic 
+database that are embedded into the nonlinear model. The relation between desired 
+forces and moments and the control inputs are generally nonlinear. However, for 
+each trim condition, this relation has been linearized. The linearized relation between 
+forces, moments, actuator positions, and propeller velocities are embedded into the 
+ 
+ 
+108 
+MATLAB function. For instance, the thrust generated by each rotor is directly 
+proportional to the square of the propeller angular velocity. However, during hover, 
+we can linearize it around trim conditions and assume that it is changing linearly. 
+Note that embedded functions in the mixer are linearized versions of each trim 
+condition. For the no mixer method, the linearized input matrices are created, 
+considering that there is no mixer, and the controller gain matrix is obtained 
+accordingly. Therefore when the state error vector is multiplied by gain matrix, we 
+obtain the desired actuator positions and propeller angular velocities directly. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5.6. The Flowchart of the Mixer  
+5.3 
+Linear Quadratic Problem 
+In control theory, the Linear Quadratic Problem is one of the most fundamental 
+optimal control problems. Optimal control concerns with operating a dynamic 
+system at minimum cost. The case where the system dynamics are described by a set 
+𝑇𝑊𝐴= 90° 
+Check the 
+Tilt-Wing 
+Angle 
+𝑇𝑊𝐴= 75°, 60° 
+𝑇𝑊𝐴= 45° 
+𝑇𝑊𝐴= 15° 
+𝑇𝑊𝐴= 0° 
+𝛿𝑒𝑙𝑣= 0  
+𝛿𝑎𝑙𝑟𝑛= 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω1 = 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(4)) 
+Ω2 = 𝑓(𝐶𝑚𝑛𝑑(3)) 
+Ω3 = 𝑓(𝐶𝑚𝑛𝑑(3)) 
+Ω4 = 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(4)) 
+Ω5 = 𝑓(𝐶𝑚𝑛𝑑(5),𝐶𝑚𝑛𝑑(6)) 
+Ω6 = 𝑓(𝐶𝑚𝑛𝑑(5),𝐶𝑚𝑛𝑑(6)) 
+𝛿𝑒𝑙𝑣= 0  
+𝛿𝑎𝑙𝑟𝑛= 0 
+Ω1 = 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(4)) 
+Ω2 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω3 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω4 = 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(4)) 
+Ω5 = 𝑓(𝐶𝑚𝑛𝑑(5),𝐶𝑚𝑛𝑑(6)) 
+Ω6 = 𝑓(𝐶𝑚𝑛𝑑(5),𝐶𝑚𝑛𝑑(6)) 
+𝛿𝑒𝑙𝑣= 𝑓(𝐶𝑚𝑛𝑑(5))  
+𝛿𝑎𝑙𝑟𝑛= 𝑓(𝐶𝑚𝑛𝑑(4)) 
+Ω1 = 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(4)) 
+Ω2 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω3 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω4 = 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(4)) 
+Ω5 = 𝑓(𝐶𝑚𝑛𝑑(5),𝐶𝑚𝑛𝑑(6)) 
+Ω6 = 𝑓(𝐶𝑚𝑛𝑑(5),𝐶𝑚𝑛𝑑(6)) 
+𝛿𝑒𝑙𝑣= 𝑓(𝐶𝑚𝑛𝑑(5))  
+𝛿𝑎𝑙𝑟𝑛= 𝑓(𝐶𝑚𝑛𝑑(4)) 
+Ω1 = 𝑓(𝐶𝑚𝑛𝑑(3)) 
+Ω2 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω3 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω4 = 𝑓(𝐶𝑚𝑛𝑑(3)) 
+Ω5 = 𝑓(𝐶𝑚𝑛𝑑(6)) 
+Ω6 = 𝑓(𝐶𝑚𝑛𝑑(6)) 
+𝛿𝑒𝑙𝑣= 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(5))  
+𝛿𝑎𝑙𝑟𝑛= 𝑓(𝐶𝑚𝑛𝑑(4)) 
+Ω1 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω2 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω3 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω4 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω5 = 𝑓(𝐶𝑚𝑛𝑑(6)) 
+Ω6 = 𝑓(𝐶𝑚𝑛𝑑(6)) 
+𝛿𝑒𝑙𝑣= 𝑓(𝐶𝑚𝑛𝑑(3),𝐶𝑚𝑛𝑑(5))  
+𝛿𝑎𝑙𝑟𝑛= 𝑓(𝐶𝑚𝑛𝑑(4)) 
+Ω1 = 𝑓(𝐶𝑚𝑛𝑑(3)) 
+Ω2 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω3 = 𝑓(𝐶𝑚𝑛𝑑(1)) 
+Ω4 = 𝑓(𝐶𝑚𝑛𝑑(3)) 
+Ω5 = 𝑓(𝐶𝑚𝑛𝑑(6)) 
+Ω6 = 𝑓(𝐶𝑚𝑛𝑑(6)) 
+𝑇𝑊𝐴= 30° 
+Create Control Input Vector 
+ 
+ 
+109 
+of linear differential equations, and the cost is described by a quadratic function is 
+called the “LQ problem” [37]. The solution to this problem can be the state feedback 
+controller or output feedback controller with a state observer. One of the main 
+results, in theory, is that the solution is provided by the linear-quadratic regulator 
+(LQR), a feedback controller, which is an essential part of the solution to the LQG 
+(Linear-Quadratic-Gaussian) problem. 
+For a dynamic system represented in state-space with or without constraints, let the 
+best control strategy be; 
+such that the performance index (cost function); 
+is minimized, where 𝑄 is at least a positive semi-definite state, and 𝑅 is a positive 
+definite control weighting matrix. By using the solution, Algebraic Riccati equation 
+(Eq. 144) optimal state feedback gain matrix can be calculated as given in Eq. 145. 
+Weighting matrices 𝑄 and 𝑅 should be determined according to acceptable error 
+levels of the states and inputs, respectively. Bryson’s approach is used to select the 
+weighting matrices. 
+For LTI systems, it should be kept in mind that states refer to the error between 
+reference states and real states. Therefore, while determining the weighting, matrices 
+error levels should be considered. Selected weighting matrices can be found in  
+Appendix B. With the gain matrices given in Appendix B, the system has closed-
+loop eigenvalues as; 
+ 
+𝑢0 = −𝐾0𝑥 
+(142)
+ 
+𝐽= ∫(𝑥𝑇𝑄𝑥+ 𝑢𝑇𝑅𝑢)𝑑𝑡
+∞
+0
+ 
+(143)
+ 
+−𝑄= 𝐴𝑇𝑃+ 𝑃𝐴−𝑃𝐵𝑅−1𝐵𝑇𝑃 
+(144) 
+ 
+𝐾0 = 𝑅−1𝐵𝑇𝑃 
+(145) 
+ 
+𝑄𝑖𝑖=
+1
+𝑚𝑎𝑥𝑖𝑚𝑢𝑚 𝑎𝑐𝑐𝑒𝑝𝑡𝑎𝑏𝑙𝑒 𝑣𝑎𝑙𝑢𝑒 𝑜𝑓 𝑥𝑖
+2 
+(146) 
+ 
+𝑅𝑖𝑖=
+1
+𝑚𝑎𝑥𝑖𝑚𝑢𝑚 𝑎𝑐𝑐𝑒𝑝𝑡𝑎𝑏𝑙𝑒 𝑣𝑎𝑙𝑢𝑒 𝑜𝑓 𝑢𝑖
+2 
+(147) 
+ 
+ 
+110 
+ 
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=0°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −418.15
+−33.47
+−7.28
+−4.72
+−2.70
+−1.82 
+−0.83 +  0.88𝑖
+−0.83 − 0.88𝑖
+−1.00
+−0.44
+−0.03
+−0.03 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑢𝑟𝑛) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −380.27
+−33.41
+−17.71
+−4.25 +  2.68𝑖
+−4.25 − 2.68𝑖
+−2.98 
+−1.2
+−0.56 +  0.04𝑖
+−0.56 − 0.04𝑖
+−0.23
+−0.03
+−0.03 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=15°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −220.04
+−15.95
+−5.57
+−2.58 + 2.14𝑖
+−2.58 −2.14𝑖
+−1.09 + 0.97𝑖 
+−1.09 −0.97𝑖
+−1.22
+−0.68
+−0.24
+−0.03
+−0.03 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=30°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −176.14
+−89 + 3.14𝑖
+−89 −3.14𝑖
+−2.13 + 2.26𝑖
+−2.13 −2.26𝑖
+−1.67 
+−1.29 + 0.79𝑖
+−1.29 −0.79𝑖
+−0.57
+−0.17
+−0.02
+−0.03 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=45°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −133.67
+−8.36 + 1.62𝑖
+−8.36 −1.62𝑖
+−2.32 + 2.31𝑖
+−2.32 −2.31𝑖
+−1.3 + 1.23𝑖 
+−1.3 −1.23𝑖
+−0.38
+−0.46
+−0.13
+−0.02
+−0.03 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=60°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −93.7789
+−6.3403 +  0.6365𝑖
+−6.3403 − 0.6365𝑖
+−2.5962 +  2.5146𝑖
+−2.5962 − 2.5146𝑖
+−1.2654 +  1.2703𝑖 
+−1.2654 − 1.2703𝑖
+−1.2479
+−0.6431
+−0.1161
+−0.022
+−0.031 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=75°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −79.6928
+−6.8532 
+−4.7
+−2.56 + 2.5𝑖
+−2.56 −2.5𝑖
+−1.26 +  1.33𝑖 
+−1.26 − 1.33𝑖
+−1.167
+−0.8856
+−0.0759
+−0.0214
+−0.0306 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  𝑒𝑖𝑔(𝐴𝑇𝑊𝐴=90°) =
+[
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ −67.9153
+−4.2693
+−2.4209 + 2.3456𝑖
+−2.4209 −2.3456𝑖
+−1.819
+−1.5805 + 1.6782𝑖 
+−1.5805 −1.6782
+−0.0606 +  0.0597𝑖
+−0.0606 − 0.0597𝑖
+−0.0263
+−0.0331
+−0.0311 
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+(148)
+ 
+ 
+111 
+5.4 
+PID Controller Design 
+The second controller type is the PID method, which calculates an error value as the 
+difference between the desired setpoint and a variable. The controller adjusts the 
+control variables and tries to minimize the error over time. 
+where 𝑒(𝑡) = 𝑥𝑑(𝑡) −𝑥(𝑡), 𝑥𝑑 is desired state variable value and 𝑘𝑝, 𝑘𝑖, 𝑘𝑑 are non-
+negative coefficients. 
+𝑘𝑝 produces an output that is proportional to the instantaneous error value. A high 
+gain may result in the system becoming unstable. If the gain is too small, then the 
+response will be sluggish. 
+𝑘𝑖 produces an output that depends on accumulated error for a time interval, which 
+means that the output will be affected by both previous and present errors. This term 
+can be used to eliminate steady-state error since it accelerates the movement towards 
+the desired value. However, as time goes to infinity, there can be an integral windup 
+issue due to error accumulation. Therefore, there should be an integral limit to 
+prevent windup. 
+𝑘𝑑 produces an output proportional to the derivative of the error over time. This term 
+improves the settling time and stability of the system. Nevertheless, high-frequency 
+noise’s adverse effects should be considered when this term is used. There will be a 
+low pass filter in derivative terms to prevent high-frequency noise. 
+PID Controllers are generally used for SISO Systems. As Tilt-Wing UAV is a non-
+linear MIMO system, a sequential loop closure technique should be used for PID 
+implementation. Two sequential loops are used for loop closure. The inner loop is 
+responsible for angular rates and axial accelerations (𝑢, 𝑤, 𝑝, 𝑞, 𝑟), while the outer 
+loop is tracking (𝑣, 𝜙, 𝜃, 𝜓, ℎ). There is a separate block that decides the desired 
+states’ values and sends them to the controller. 
+ 
+𝑢(𝑡) = 𝑘𝑝𝑒(𝑡) + 𝑘𝑖∫𝑒(𝜏)𝑑𝜏
+𝑡
+0
++ 𝑘𝑑
+𝑑𝑒(𝑡)
+𝑑𝑡 
+(149) 
+ 
+ 
+112 
+PID Tuning should be done to have a good response to the system. Controller gains 
+are adjusted in this method to have an optimum response of the system. Having a 
+stable system is the first essential requirement. The performance specification of the 
+system can be defined in the frequency domain or time domain. In the frequency 
+domain, typical specifications are damping ratio, natural frequency, damping factor, 
+damped frequency, resonant peak, resonant frequency, bandwidth, phase margin, 
+and gain margin. In the time domain, delay time, rise time, settling time, peak 
+overshoot, percent overshoot, and steady-state error could be used as a performance 
+specification. 
+Table 5.2 Controller Gains Determination  
+ 
+Controller Type 
+𝑲𝒑 
+𝑲𝒊 
+𝑲𝒅 
+𝑷 
+0.50𝐾𝑢 
+ 
+ 
+𝑷𝑰 
+0.45𝐾𝑢 
+0.54𝐾𝑢/𝑇𝑢 
+ 
+𝑷𝑰𝑫 
+0.60𝐾𝑢 
+1.2𝐾𝑢/𝑇𝑢 
+3𝐾𝑢𝑇𝑢/40 
+ 
+Ziegler-Nichols Method is employed for PID Tuning. In this method, integral and 
+derivative terms of the gains are set to zero. After that, the proportional term is 
+increased until the system oscillates continuously. The gain at which system 
+oscillates called as ultimate gain (𝐾𝑢) and the oscillation period is called as 𝑇𝑢. 
+Having determined the ultimate gain and oscillation period, controller gains can be 
+set using the algorithm given in Table 5.2. 
+ 
+ 
+ 
+ 
+113 
+CHAPTER 6

@@ -1,0 +1,12 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.1.3. Automatic control allocation for tailsitter aircraft
+# START_PAGE: 19
+
+In case a vehicle has an entire set of primary control-surfaces 
+available, rather than just a pair of elevons, the attitude dynam-
+ics can be decoupled by directly mapping the required moments 
+to the corresponding control-surfaces. In other words, roll com-
+mands are passed to ailerons, pitch commands to elevators and 
+yaw commands to the rudder. This combination of controller and 
+allocation has been used in ducted-fan or wing-fuselage designs by 
+[31,32,30,33,46,34,35,40,44,68,41,36,42,37,52,38].

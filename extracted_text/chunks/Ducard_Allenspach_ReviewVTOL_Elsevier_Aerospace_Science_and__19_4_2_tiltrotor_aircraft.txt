@@ -1,0 +1,78 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 4.2. Tiltrotor aircraft
+# START_PAGE: 10
+
+It is a common method to directly determine the possible op-
+erating range and ﬂight envelope of tiltrotor UAVs based on the 
+trim-point analysis [207]. For tiltrotor UAVs, stable ﬂight conditions 
+can be evaluated at trim-points scheduled in the velocity −rotor-
+tilt angle domain [217,119] such as shown in Fig. 10. The resulting 
+stability corridor is limited by actuator and lift-force generation 
+constraints. Due to uncertainties in aerodynamic and motor pa-
+rameters, operating the vehicle close to edges of the stable ﬂight 
+envelope should be avoided as indicated in [100,120]. To make 
+the transition process as stable as possible, the range of useful 
+equilibrium points is often further restricted, by a constant pitch 
+or ﬂight-path angle constraint as shown in [100,218,131,113,133,
+219,137,220,141]. Regarding the AoA, the work in [219] schedules 
+trim-points over the range of propeller-tilt angles and aims for op-
+timal lift to drag ratio, while the work in [221] ensures that the 
+AoA remains small and far away from the stall region.
+The generation of feasible state references for ﬂight-mode tran-
+sition is usually based on the same trim-point analysis. For exam-
+ple, the transition trajectory can be generated based on rotor-tilt 
+angle patterns apriori speciﬁed by the user. This method uses ei-
+ther a number of rotor-tilt-angle step inputs as in [130,220,122]
+or a linear reference for the rotor-tilt angle as in [104,218] to 
+schedule the trim-points. Depending on the desired rotor-tilt an-
+gle, the corresponding steady-state values are loaded and used as 
+references in the controller. To avoid discontinuities in the refer-
+ences due to the ﬁnite number of trim-points, the authors of [222]
+and [109] ﬁt a higher-order function, thereby creating a contin-
+uous and mostly smooth way to compute the steady-state values 
+Fig. 10. Tiltrotor UAV ﬂight envelope. Rotor-tilt angle as a function of airspeed [58,
+144,147].
+for any rotor-tilt angle. Another trajectory generation method relies 
+on velocity inputs being provided by the user. Using the vehi-
+cle velocity as a scheduling variable, step [223,219,137] or linear 
+[113,140,117,141] references have been investigated. The desired 
+values for the remaining state variables can then be obtained from 
+trim-points, similar to the rotor-tilt-angle based methods.
+Given enough trim-points, [102,106] have shown that trans-
+lational-velocity based methods are not limited to the transition 
+phase but can also be used to generate stable trajectories for heli-
+copter mode and cruise-ﬂight mode as well.
+In general, selection of an appropriate pitch-angle reference 
+during the transition process is not immediately intuitive. As 
+shown in Fig. 11, the common method of initial acceleration 
+through pitch-down in helicopter-to-airplane transition (like a reg-
+ular multicopter aircraft) causes downward wing-lift forces, which 
+is the opposite of the desired aerodynamic effect. To compensate 
+the weight of the vehicle, the aircraft has to pitch up while tilting 
+the propellers forward in a way that lift points upward, so that the 
+propelling thrust progressively gets dedicated to the sole purpose 
+of forward thrust.
+Usually, only a small number of the computed trim-points are 
+used as linearization points for the ﬂight controllers (more details 
+are in Section 5.1.3). Similar to tailsitter vehicles, state references 
+from the trim analysis are then combined with references originat-
+ing from thrust-vector alignment. This alignment can be achieved 
+through both attitude and tilt-angle changes, as shown in equa-
+tion (10). However, it should be noted that the linearization-based 
+control approaches almost never modify the tilt angle given by the 
+trim analysis, i.e. thrust vectoring is purely done by changing the 
+attitude.
+Alternatively, the paper by [142] presents a completely trim-
+point-free approach, where the rotor-tilt angle and attitude ref-
+erence are chosen such that the commanded thrust is minimized 
+for a given position and velocity reference. Another approach is 
+presented in [143,146,147], where an online Model Predictive Con-
+trol (MPC) optimization algorithm, intrinsically taking into account 
+actuator and aerodynamic constraints, also generates feasible atti-
+tude and tilt-angle trajectories without trim points. The transition 
+maneuver is obtained by simultaneously 1) minimizing the altitude 
+change during the transition phase, and 2) optimizing the vehicle 
+pitch angle for wing-lift force generation during transition towards 
+airplane mode or optimizing the wing-drag force for the transi-
+tion towards helicopter mode. Similar ideas are also developed in 
+[128,136,111].

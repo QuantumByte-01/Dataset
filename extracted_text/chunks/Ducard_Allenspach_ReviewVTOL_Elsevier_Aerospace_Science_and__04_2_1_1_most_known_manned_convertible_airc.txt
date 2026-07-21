@@ -1,0 +1,19 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 2.1.1. Most-known manned convertible aircraft
+# START_PAGE: 2
+
+Table 1 lists a non-exhaustive collection of manned verti-
+cal/short take off and landing (V/STOL) aircraft since the 1960s’. 
+The interested reader is referred to [23–26] for more complete re-
+views about manned V/STOL design concepts and their handling 
+qualities, which were already deﬁned as far back as the 1970s’ 
+[27]. As can be seen in Table 1, almost all the manned VTOL 
+aircraft developed until recently were for military purposes only. 
+Despite many attempts from the major ﬁghter-aircraft construc-
+tors, only a few aircraft are really VTOL capable. These aircraft 
+all display the same limited performance in agility, fuel-eﬃciency, 
+autonomy and most importantly reliability. As of today, the Boeing-
+Bell V-22 Osprey aircraft is probably the most prominent human-
+piloted hybrid air vehicle, after the many deadly crashes it had 
+during its development phase [10] and some following operations 
+[28].

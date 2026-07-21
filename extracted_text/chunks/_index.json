@@ -1,0 +1,422 @@
+[
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__00_front_matter.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "front_matter",
+    "start_page": 1,
+    "chars": 2382
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__01_1_introduction.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "1. Introduction",
+    "start_page": 1,
+    "chars": 1115
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__02_1_authors_contributed_equally_to_the_wor.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "1 Authors contributed equally to the work.",
+    "start_page": 1,
+    "chars": 3635
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__03_2_platform_designs.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "2. Platform designs",
+    "start_page": 2,
+    "chars": 766
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__04_2_1_1_most_known_manned_convertible_airc.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "2.1.1. Most-known manned convertible aircraft",
+    "start_page": 2,
+    "chars": 916
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__05_2_1_2_known_projects_about_unmanned_conv.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "2.1.2. Known projects about unmanned convertible aircraft",
+    "start_page": 2,
+    "chars": 7889
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__06_2_2_academic_research_project_prototypes.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "2.2. Academic research-project prototypes",
+    "start_page": 5,
+    "chars": 505
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__07_2_2_1_tailsitter_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "2.2.1. Tailsitter aircraft",
+    "start_page": 5,
+    "chars": 1153
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__08_2_2_2_tiltrotor_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "2.2.2. Tiltrotor aircraft",
+    "start_page": 5,
+    "chars": 2487
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__09_2_2_3_tiltwing_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "2.2.3. Tiltwing aircraft",
+    "start_page": 6,
+    "chars": 1051
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__10_3_modeling_of_hybrid_convertible_aerial_.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "3. Modeling of hybrid/convertible aerial vehicles",
+    "start_page": 6,
+    "chars": 3912
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__11_3_1_common_6_degree_of_freedom_dof_trans.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "3.1. Common 6 degree-of-freedom (DoF) translational and rotational",
+    "start_page": 7,
+    "chars": 1636
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__12_3_2_vehicle_speci_c_modeling.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "3.2. Vehicle-speciﬁc modeling",
+    "start_page": 7,
+    "chars": 660
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__13_3_2_1_tailsitter_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "3.2.1. Tailsitter aircraft",
+    "start_page": 7,
+    "chars": 2325
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__14_3_2_2_tiltrotor_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "3.2.2. Tiltrotor aircraft",
+    "start_page": 8,
+    "chars": 1525
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__15_3_2_3_tiltwing_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "3.2.3. Tiltwing aircraft",
+    "start_page": 8,
+    "chars": 1496
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__16_3_3_model_extension_and_exploitation.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "3.3. Model extension and exploitation",
+    "start_page": 9,
+    "chars": 2488
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__17_4_analysis_of_state_trim_and_state_refer.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "4. Analysis of state-trim and state-references for ﬂight-mode",
+    "start_page": 9,
+    "chars": 1582
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__18_4_1_tailsitter_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "4.1. Tailsitter aircraft",
+    "start_page": 9,
+    "chars": 4179
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__19_4_2_tiltrotor_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "4.2. Tiltrotor aircraft",
+    "start_page": 10,
+    "chars": 4700
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__20_4_3_tiltwing_aircraft.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "4.3. Tiltwing aircraft",
+    "start_page": 10,
+    "chars": 3052
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__21_5_control_of_unmanned_hybrid_convertible.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5. Control of unmanned hybrid/convertible aerial vehicles",
+    "start_page": 11,
+    "chars": 2614
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__22_5_1_scheduled_control_approaches.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.1. Scheduled control approaches",
+    "start_page": 11,
+    "chars": 1935
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__23_5_1_1_controller_scheduling_policies.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.1.1. Controller-scheduling policies",
+    "start_page": 12,
+    "chars": 884
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__24_5_1_2_tailsitter.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.1.2. Tailsitter",
+    "start_page": 12,
+    "chars": 2638
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__25_5_1_3_tiltrotor.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.1.3. Tiltrotor",
+    "start_page": 13,
+    "chars": 3016
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__26_5_1_4_tiltwing.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.1.4. Tiltwing",
+    "start_page": 13,
+    "chars": 2002
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__27_5_2_uni_ed_control_approaches.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.2. Uniﬁed control approaches",
+    "start_page": 13,
+    "chars": 1576
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__28_5_2_1_tailsitter.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.2.1. Tailsitter",
+    "start_page": 14,
+    "chars": 4889
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__29_5_2_2_tiltrotor.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.2.2. Tiltrotor",
+    "start_page": 14,
+    "chars": 3657
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__30_5_2_3_tiltwing.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.2.3. Tiltwing",
+    "start_page": 15,
+    "chars": 865
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__31_5_3_flight_performance_comparison_betwee.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "5.3. Flight performance comparison between a scheduled vs. a uniﬁed",
+    "start_page": 15,
+    "chars": 7239
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__32_6_control_allocation.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6. Control allocation",
+    "start_page": 17,
+    "chars": 824
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__33_6_1_control_allocation_for_tailsitter_ai.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.1. Control allocation for tailsitter aircraft",
+    "start_page": 17,
+    "chars": 1356
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__34_6_1_1_control_allocation_for_tailsitter_.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.1.1. Control allocation for tailsitter with rotors, no elevon",
+    "start_page": 18,
+    "chars": 911
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__35_6_1_2_control_allocation_for_tailsitter_.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.1.2. Control allocation for tailsitter with rotors and elevons",
+    "start_page": 18,
+    "chars": 1687
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__36_6_1_3_automatic_control_allocation_for_t.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.1.3. Automatic control allocation for tailsitter aircraft",
+    "start_page": 19,
+    "chars": 505
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__37_6_2_control_allocation_for_tiltrotor_air.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.2. Control allocation for tiltrotor aircraft",
+    "start_page": 19,
+    "chars": 972
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__38_6_2_1_approach_1_allocation_excluding_ro.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.2.1. Approach 1: allocation excluding rotor-tilt angle",
+    "start_page": 19,
+    "chars": 1562
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__39_6_2_2_approach_2_allocation_including_ro.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.2.2. Approach 2: allocation including rotor-tilt angle",
+    "start_page": 19,
+    "chars": 1582
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__40_6_2_3_direct_control_allocation_for_tilt.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.2.3. Direct control allocation for tiltrotor UAVs",
+    "start_page": 19,
+    "chars": 647
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__41_6_3_control_allocation_for_tiltwing_airc.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.3. Control allocation for tiltwing aircraft",
+    "start_page": 20,
+    "chars": 669
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__42_6_3_1_tilt_angle_excluding_allocation.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "6.3.1. Tilt angle excluding allocation",
+    "start_page": 20,
+    "chars": 1248
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__43_7_conclusion.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "7. Conclusion",
+    "start_page": 20,
+    "chars": 5572
+  },
+  {
+    "file": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__44_references.txt",
+    "source": "Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and",
+    "section": "References",
+    "start_page": 21,
+    "chars": 51839
+  },
+  {
+    "file": "index__00_front_matter.txt",
+    "source": "index",
+    "section": "front_matter",
+    "start_page": 1,
+    "chars": 1658
+  },
+  {
+    "file": "index__01_abstract.txt",
+    "source": "index",
+    "section": "ABSTRACT",
+    "start_page": 5,
+    "chars": 26347
+  },
+  {
+    "file": "index__02_1_introduction.txt",
+    "source": "index",
+    "section": "1 INTRODUCTION",
+    "start_page": 23,
+    "chars": 12786
+  },
+  {
+    "file": "index__03_4_rotors.txt",
+    "source": "index",
+    "section": "4 Rotors",
+    "start_page": 29,
+    "chars": 8274
+  },
+  {
+    "file": "index__04_50_hz.txt",
+    "source": "index",
+    "section": "50 Hz.",
+    "start_page": 33,
+    "chars": 8612
+  },
+  {
+    "file": "index__05_2_aerodynamic_design_and_optimization.txt",
+    "source": "index",
+    "section": "2 AERODYNAMIC DESIGN AND OPTIMIZATION",
+    "start_page": 39,
+    "chars": 61707
+  },
+  {
+    "file": "index__06_3_nonlinear_dynamic_model.txt",
+    "source": "index",
+    "section": "3 NONLINEAR DYNAMIC MODEL",
+    "start_page": 83,
+    "chars": 26749
+  },
+  {
+    "file": "index__07_6_dof_joint_which_is_also_a_function_of_.txt",
+    "source": "index",
+    "section": "6 DoF Joint, which is also a function of the Simscape. The 3D CAD model has its",
+    "start_page": 103,
+    "chars": 1418
+  },
+  {
+    "file": "index__08_0_rpm.txt",
+    "source": "index",
+    "section": "0 RPM",
+    "start_page": 104,
+    "chars": 2989
+  },
+  {
+    "file": "index__09_4_linear_analysis.txt",
+    "source": "index",
+    "section": "4 LINEAR ANALYSIS",
+    "start_page": 107,
+    "chars": 14040
+  },
+  {
+    "file": "index__10_5_controller_design.txt",
+    "source": "index",
+    "section": "5 CONTROLLER DESIGN",
+    "start_page": 119,
+    "chars": 27254
+  },
+  {
+    "file": "index__11_6_simulation_results.txt",
+    "source": "index",
+    "section": "6 SIMULATION RESULTS",
+    "start_page": 135,
+    "chars": 16121
+  },
+  {
+    "file": "index__12_7_conclusion.txt",
+    "source": "index",
+    "section": "7 CONCLUSION",
+    "start_page": 151,
+    "chars": 5322
+  },
+  {
+    "file": "index__13_references.txt",
+    "source": "index",
+    "section": "REFERENCES",
+    "start_page": 155,
+    "chars": 5850
+  },
+  {
+    "file": "index__14_2_ifac_2008.txt",
+    "source": "index",
+    "section": "2. IFAC, 2008.",
+    "start_page": 158,
+    "chars": 55964
+  }
+]

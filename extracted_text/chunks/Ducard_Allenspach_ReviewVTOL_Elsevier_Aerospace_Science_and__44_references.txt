@@ -1,0 +1,784 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: References
+# START_PAGE: 21
+
+[1] A. Reinhard, Door to Door 4D Mobilität vom Fliegenden Auto zum Air-taxi, AS 
+Verlag, ISBN 978-3-906055-99-2, 2019.
+[2] Military History Matters, Back to the drawing board: the Lockheed XFV-1 
+Salmon, accessed 2021, https://www.military-history.org /articles /back-to -the -
+drawing -board -the -lockheed -xfv-1 -salmon .htm, 2012.
+[3] Wikipedia contributors, Lockheed XFV, accessed 2021, https://en .wikipedia .
+org /wiki /Lockheed _XFV, 2019.
+[4] M. Taylor, Jane’s Encyclopedia of Aviation, Studio Editions, London, 1989.
+[5] Wikipedia contributors, Vertol VZ-2, accessed 2021, https://en .wikipedia .org /
+wiki /Vertol _VZ -2, 2021.
+[6] RAF Historical Society, The RAF Harrier Story, Advanced Book Printing, 2006.
+[7] Wikipedia contributors, Harrier jump jet, accessed, https://en .wikipedia .org /
+wiki /Harrier _Jump _Jet, 2021.
+[8] Dassault, Dassault aviation, Mirage III V, origins and prototypes, accessed, 
+https://www.dassault -aviation .com /fr /passion /avions /dassault -militaires /
+mirage -iii -v/, 2021.
+[9] Wikipedia contributors, Dassault Mirage IIIV, https://en .wikipedia .org /wiki /
+Dassault _Mirage _IIIV, 2021.
+[10] S. Markman, B. Holder, Bell/Boeing V-22 Osprey Tilt-Engine VTOL Transport 
+(U.S.A.). Straight up: A History of Vertical Flight, Schiffer Publishing, Atglen, 
+ISBN 0-7643-1204-9, 2000.
+[11] Wikipedia contributors, Bell-Boeing V-22, 2021, https://de .wikipedia .org /wiki /
+Bell -Boeing _V -22.
+[12] J. Hamstra, The F-35 Lightning II: From Concept to Cockpit., American Institute 
+of Aeronautics and Astronautics (AIAA), 2019.
+[13] Wikipedia contributors, Lockheed Martin F-35 Lightning II, https://en .
+wikipedia .org /wiki /Lockheed _Martin _F-35 _Lightning _II, 2021.
+[14] Aviation Week Network, Sikorsky’s rotor blown wing – look familiar?, https://
+aviationweek.com /sikorskys -rotor-blown -wing -look-familiar, 2013.
+[15] Darren Quick, Israel Aerospace Industries unveils tilt-rotor Panther UAV plat-
+form, https://newatlas .com /tilt -rotor-panther-uav /16619/, 2010.
+[16] Matthew Monaghan, Aurora wins DARPA VTOL X-Plane program contract, 
+https://www.sae .org /news /2014 /02 /aurora -wins -darpa -vtol -x -plane -program -
+contract, 2014.
+[17] Boeing, Boeing Phantom Swift selected for DARPA X-Plane competition, 
+https://boeing .mediaroom .com /Boeing -Phantom -Swift -Selected -for-DARPA-X-
+Plane -Competition, 2014.
+[18] Vertiﬂite, Project Zero: the exclusive story of AgustaWestland’s ’all-electric 
+technology incubator, vol. 59 (3), June 2013, https://en .wikipedia .org /wiki /
+AgustaWestland _Project _Zero.
+[19] Aurora Flight Sciences, LightningStrike XV-24A Demonstrator Successfully 
+Completes Subscale Flight Test Program, 4 April 2017.
+[20] Wingcopter, 
+Wingcopter 
+specsheet, 
+https://wingcopter.com /wp -content /
+uploads /2020 /03 /Specsheet _Wingcopter _178HL-2 .pdf, 2010.
+[21] Wingtra, WingtraOne - mapping drone for high-accuracy aerial surveys, ac-
+cessed 2021, https://wingtra .com /mapping -drone -wingtraone /#intro, 2020.
+[22] Airbus, Airbus commercial aviation: Vahana, our single-seat eVTOL demon-
+strator, accessed 2021 https://www.airbus .com /innovation /zero -emission /
+urban -air-mobility /vahana .html.
+[23] P. Poisson-Quiton, Introduction to V/STOL aircraft concepts and categories, 
+AGARDograph 126 (May 1968).
+[24] S. Anderson, Historical Overview of V/STOL Aircraft Technology, NASA Ames 
+Research Center: NASA Technical Memorandum, March 1981.
+[25] M.J. Hirshcherg, V/STOL: the ﬁrst half-century, vertiﬂite, accessed 2021 
+(March/April 1997), https://studylib .net /doc /8542802 /v-stol --the -ﬁrst -half -
+century-by-michael -j .-hirschberg -f.
+[26] Y. Zhou, H. Zhao, Y. Liu, An evaluative review of the VTOL technolo-
+gies for unmanned and manned aerial vehicles, Comput. Commun. 149 
+(2020) 356–369, https://doi .org /10 .1016 /j .comcom .2019 .10 .016, https://www.
+sciencedirect .com /science /article /pii /S014036641930996X.
+[27] Advisory Group for Aerospace Research & Development (AGARD), Agard Re-
+port No. 577 on v/Stol Handling, i-Criteria and Discussion, 1970.
+[28] Wikipedia contributors, Accidents and Incidents Involving the V22 Os-
+prey, https://en .wikipedia .org /wiki /Accidents _and _incidents _involving _the _V -
+22 _Osprey. (Accessed January 2021).
+[29] W.E. Green, P.Y. Oh, A MAV that ﬂies like an airplane and hovers like a 
+helicopter, in: Proceedings, 2005 IEEE/ASME International Conference on Ad-
+vanced Intelligent Mechatronics, 2005, pp. 693–698.
+[30] S.R. Osborne, Transitions between hover and level ﬂight for a tailsitter UAV, 
+Master’s thesis, Brigham Young University, 2007.
+[31] N.B. Knoebel, Adaptive quaternion control of a miniature tailsitter UAV, Mas-
+ter’s thesis, Brigham Young University, August 2007.
+[32] A. Frank, J. Mcgrew, M. Valenti, D. Levine, J. How, Hover, transition, and level 
+ﬂight control design for a single-propeller indoor airplane, American Insti-
+tute of Aeronautics and Astronautics, 08 2007, https://doi .org /10 .2514 /6 .2007 -
+6318.
+[33] N.B. Knoebel, T.W. McLain, Adaptive quaternion control of a miniature tailsit-
+ter UAV, in: 2008 American Control Conference, 2008, pp. 2340–2345.
+[34] W.E. Green, P.Y. Oh, A hybrid MAV for ingress and egress of urban environ-
+ments, IEEE Trans. Robot. 25 (2) (2009) 253–263, https://doi .org /10 .1109 /TRO .
+2009 .2014501.
+[35] T. Matsumoto, K. Kita, R. Suzuki, A. Oosedo, K. Go, Y. Hoshino, A. Konno, 
+M. Uchiyama, A hovering control strategy for a tail-sitter VTOL UAV that 
+increases stability against large disturbance, in: 2010 IEEE International Con-
+ference on Robotics and Automation, 2010, pp. 54–59.
+[36] B.D. Marchini, Adaptive control techniques for transition-to-hover ﬂight of 
+ﬁxed-wing UAVs, Master’s thesis, California Polytechnic State University, 2013.
+[37] S. Kohno, K. Uchiyama, Design of robust controller of ﬁxed-wing UAV for tran-
+sition ﬂight, in: 2014 International Conference on Unmanned Aircraft Systems, 
+ICUAS, 2014, pp. 1111–1116.
+[38] W. Wang, J. Zhu, M. Kuang, Design, modelling and hovering control of a tail-
+sitter with single thrust-vectored propeller, in: 2017 IEEE/RSJ International 
+Conference on Intelligent Robots and Systems, IROS, 2017, pp. 5971–5976.
+[39] Z. Omar, C. Bil, R. Hill, The application of fuzzy logic on transition manoeuvre 
+control of a new ducted-fan VTOL UAV conﬁguration, in: Second International 
+Conference on Innovative Computing, Information and Control, ICICIC 2007, 
+2007, p. 434.
+[40] A. Manouchehri, H. Hajkarami, M.S. Ahmadi, Hovering control of a ducted fan 
+VTOL unmanned aerial vehicle (UAV) based on PID control, in: 2011 Interna-
+tional Conference on Electrical and Control Engineering, 2011, pp. 5962–5965.
+[41] M.E. Argyle, R.W. Beard, S. Morris, The vertical bat tail-sitter: dynamic 
+model and control architecture, in: 2013 American Control Conference, 2013, 
+pp. 806–811.
+[42] J.M. Beach, M.E. Argyle, T.W. McLain, R.W. Beard, S. Morris, Tailsitter atti-
+tude control using resolved tilt-twist, in: 2014 International Conference on 
+Unmanned Aircraft Systems, ICUAS, 2014, pp. 768–779.
+[43] S. Deng, S. Wang, Z. Zhang, Aerodynamic performance assessment of a 
+ducted fan UAV for VTOL applications, Aerosp. Sci. Technol. 103 (2020) 
+105895, https://doi .org /10 .1016 /j .ast .2020 .105895, https://www.sciencedirect .
+com /science /article /pii /S1270963820305770.
+[44] Y. Jung, D. Shim, Development and application of controller for transition 
+ﬂight of tail-sitter UAV, J. Intell. Robot. Syst. 65 (1–4) (2012) 137–152.
+[45] Z. Cheng, H. Pei, S. Li, Neural-networks control for hover to high-speed-level-
+ﬂight transition of ducted fan UAV with provable stability, IEEE Access 8 
+(2020) 100135–100151, https://doi .org /10 .1109 /ACCESS .2020 .2997877.
+[46] J.A. Guerrero, R. Lozano, G. Romero, D. Lara-Alabazares, K.C. Wong, Robust 
+control design based on sliding mode control for hover ﬂight of a mini tail-
+sitter unmanned aerial vehicle, in: 2009 35th Annual Conference of IEEE In-
+dustrial Electronics, 2009, pp. 2342–2347.
+[47] J. Escareno, S. Salazar, E. Rondon, Unmanned Aerial Vehicles: Embedded Con-
+trol, Wiley, 2010, pp. 41–58, Ch. 3.
+[48] S. Verling, B. Weibel, M. Boosfeld, K. Alexis, M. Burri, R. Siegwart, Full attitude 
+control of a VTOL tailsitter UAV, in: 2016 IEEE International Conference on 
+Robotics and Automation, ICRA, 2016, pp. 3006–3012.
+[49] J. Liang, Q. Fei, B. Wang, Q. Geng, Tailsitter VTOL ﬂying wing aircraft attitude 
+control, in: 2016 31st Youth Academic Annual Conference of Chinese Associ-
+ation of Automation, YAC, 2016, pp. 439–443.
+[50] S. Verling, T. Stastny, G. Bättig, K. Alexis, R. Siegwart, Model-based transition 
+optimization for a VTOL tailsitter, in: 2017 IEEE International Conference on 
+Robotics and Automation, ICRA, 2017, pp. 3939–3944.
+[51] S. Zhang, Q. Fei, J. Liang, Q. Geng, Modeling and control for longitudinal at-
+titude of a twin-rotor tail-sitter unmanned aerial vehicle, in: 2017 13th IEEE 
+International Conference on Control Automation, ICCA, 2017, pp. 816–821.
+[52] L. Zhang, Z. Li, H. Liu, C. Wang, Robust attitude control for a tail-sitter aircraft, 
+in: 2017 36th Chinese Control Conference, CCC, 2017, pp. 4900–4905.
+[53] R. Ritz, R. D’Andrea, A global controller for ﬂying wing tailsitter vehicles, in: 
+2017 IEEE International Conference on Robotics and Automation, ICRA, 2017, 
+pp. 2731–2738.
+[54] R. Ritz, Enhancing the capabilities of ﬂying machines: cooperative payload 
+carrying, onboard learning, and tailsitter control, Ph.D. thesis, Swiss Federal 
+Institute of Technology (ETH), Zurich, 2017.
+[55] J.M.O. Barth, J. Condomines, M. Bronz, L.R. Lustosa, J. Moschetta, C. Join, M. 
+Fliess, Fixed-wing UAV with transitioning ﬂight capabilities: model-based or 
+model-free control approach? A preliminary study, in: 2018 International 
+Conference on Unmanned Aircraft Systems, ICUAS, 2018, pp. 1157–1164.
+[56] R. Chiappinelli, M. Nahon, Modeling and control of a tailsitter UAV, in: 
+2018 International Conference on Unmanned Aircraft Systems, ICUAS, 2018, 
+pp. 400–409.
+[57] Y. Yang, J. Zhu, X. Zhang, X. Wang, Active disturbance rejection control of a 
+ﬂying-wing tailsitter in hover ﬂight, in: 2018 IEEE/RSJ International Confer-
+ence on Intelligent Robots and Systems, IROS, 2018, pp. 6390–6396.
+21
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+[58] J. Zhong, B. Song, Y. Li, J. Xuan, L1 adaptive control of a dual-rotor tail-sitter 
+unmanned aerial vehicle with input constraints during hover ﬂight, IEEE Ac-
+cess 7 (2019) 51312–51328, https://doi .org /10 .1109 /ACCESS .2019 .2911897.
+[59] J.M.O. Barth, J. Condomines, J. Moschetta, A. Cabarbaye, C. Join, Full model-free 
+control architecture for hybrid UAVs, in: 2019 American Control Conference, 
+ACC, 2019, pp. 71–78.
+[60] S. Fuhrer, S. Verling, T. Stastny, R. Siegwart, Fault-tolerant ﬂight control of a 
+VTOL tailsitter UAV, in: 2019 International Conference on Robotics and Au-
+tomation, ICRA, 2019, pp. 4134–4140.
+[61] J. Escareño, R.H. Stone, A. Sanchez, R. Lozano, Modeling and control strategy 
+for the transition of a convertible tail-sitter UAV, in: 2007 European Control 
+Conference, ECC, 2007, pp. 3385–3390.
+[62] J. Escareno, S. Salazar, R. Lozano, Modelling and control of a convertible VTOL 
+aircraft, in: Proceedings of the 45th IEEE Conference on Decision and Control, 
+2006, pp. 69–74.
+[63] J. Escareño, S. Salazar-Cruz, R. Lozano, Attitude stabilization of a convertible 
+mini birotor, in: 2006 IEEE Conference on Computer Aided Control System 
+Design, 2006 IEEE International Conference on Control Applications, 2006 IEEE 
+International Symposium on Intelligent Control, 2006, pp. 2202–2206.
+[64] R.H. Stone, Control architecture for a tail-sitter unmanned air vehicle, in: 
+2004 5th Asian Control Conference (IEEE Cat. No. 04EX904), vol. 2, 2004, 
+pp. 736–744.
+[65] O. Garcia, J. Escareno, V. Rosas, Unmanned Aerial Vehicles: Embedded Control, 
+Wiley, 2010, pp. 79–114, Ch. 5.
+[66] D.A. Ta, I. Fantoni, R. Lozano, Modeling and control of a convertible mini-UAV, 
+IFAC Proc. Vol. 44 (1) (2011) 1492–1497, https://doi .org /10 .3182 /20110828 -
+6 -IT-1002 .01066, 18th IFAC World Congress, http://www.sciencedirect .com /
+science /article /pii /S1474667016438206.
+[67] P. Casau, D. Cabecinhas, C. Silvestre, Autonomous transition ﬂight for a vertical 
+take-off and landing aircraft, in: 2011 50th IEEE Conference on Decision and 
+Control and European Control Conference, 2011, pp. 3974–3979.
+[68] P. Casau, D. Cabecinhas, C. Silvestre, Hybrid control strategy for the au-
+tonomous transition ﬂight of a ﬁxed-wing aircraft, IEEE Trans. Control Syst. 
+Technol. 21 (6) (2013) 2194–2211, https://doi .org /10 .1109 /TCST.2012 .2221091.
+[69] Y. Ke, B.M. Chen, Full envelope dynamics modeling and simulation for tail-
+sitter hybrid UAVs, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 2242–2247.
+[70] Y. Ke, K. Wang, K. Gong, S. Lai, B.M. Chen, Model based robust forward transi-
+tion control for tail-sitter hybrid unmanned aerial vehicles, in: 2017 13th IEEE 
+International Conference on Control Automation, ICCA, 2017, pp. 828–833.
+[71] Y. Ke, K. Wang, B.M. Chen, Design and implementation of a hybrid UAV with 
+model-based ﬂight capabilities, IEEE/ASME Trans. Mechatron. 23 (3) (2018) 
+1114–1125, https://doi .org /10 .1109 /TMECH .2018 .2820222.
+[72] X. Lyu, H. Gu, J. Zhou, Z. Li, S. Shen, F. Zhang, A hierarchical control approach 
+for a quadrotor tail-sitter VTOL UAV and experimental veriﬁcation, in: 2017 
+IEEE/RSJ International Conference on Intelligent Robots and Systems, IROS, 
+2017, pp. 5135–5141.
+[73] X. Lyu, H. Gu, Y. Wang, Z. Li, S. Shen, F. Zhang, Design and implementation of 
+a quadrotor tail-sitter VTOL UAV, in: 2017 IEEE International Conference on 
+Robotics and Automation, ICRA, 2017, pp. 3924–3930.
+[74] X. Lyu, J. Zhou, H. Gu, Z. Li, S. Shen, F. Zhang, Disturbance observer based 
+hovering control of quadrotor tail-sitter VTOL UAVs using H∞synthesis, IEEE 
+Robot. Autom. Lett. 3 (4) (2018) 2910–2917, https://doi .org /10 .1109 /LRA.2018 .
+2847405.
+[75] A. Flores, A.M. de Oca, G. Flores, A simple controller for the transition maneu-
+ver of a tail-sitter drone, CoRR, arXiv:1810 .11534 [abs], 2018.
+[76] A. Oosedo, S. Abiko, A. Konno, T. Koizumi, T. Furui, M. Uchiyama, Development 
+of a quad rotor tail-sitter VTOL UAV without control surfaces and experi-
+mental veriﬁcation, in: 2013 IEEE International Conference on Robotics and 
+Automation, 2013, pp. 317–322.
+[77] M. Hochstenbach, C. Notteboom, B. Theys, J.D. Schutter, Design and control of 
+an unmanned aerial vehicle for autonomous parcel delivery with transition 
+from vertical take-off to forward ﬂight – VertiKUL, a quadcopter tailsitter, Int. 
+J. Micro Air Veh. 7 (4) (2015) 395–405, https://doi .org /10 .1260 /1756 -8293 .7.4 .
+395.
+[78] B. Theys, G. De Vos, J. De Schutter, A control approach for transitioning VTOL 
+UAVs with continuously varying transition angle and controlled by differen-
+tial thrust, in: 2016 International Conference on Unmanned Aircraft Systems, 
+ICUAS, 2016, pp. 118–125.
+[79] B. Theys, Design methodology and control strategy for transitioning vertical 
+takeoff and landing unmanned aerial vehicles for improved speed, range and 
+payload capacity, Ph.D. thesis, 2016, https://lirias .kuleuven .be /retrieve /416508.
+[80] J. Zhou, X. Lyu, Z. Li, S. Shen, F. Zhang, A uniﬁed control method for quadrotor 
+tail-sitter UAVs in all ﬂight modes: hover, transition, and level ﬂight, in: 2017 
+IEEE/RSJ International Conference on Intelligent Robots and Systems, IROS, 
+2017, pp. 4835–4841.
+[81] X. Zhao, H. Zhao, X. Wang, J. Yin, Modeling and hover attitude control of tail-
+sitter aircraft, in: 2018 33rd Youth Academic Annual Conference of Chinese 
+Association of Automation, YAC, 2018, pp. 1017–1022.
+[82] Z. Li, W. Zhou, H. Liu, L. Zhang, Z. Zuo, Nonlinear robust ﬂight mode transition 
+control for tail-sitter aircraft, IEEE Access 6 (2018) 65909–65921, https://doi .
+org /10 .1109 /ACCESS .2018 .2878722.
+[83] Z. Li, W. Zhou, H. Liu, Robust controller design for a tail-sitter UAV in ﬂight 
+mode transitions, in: 2018 IEEE 14th International Conference on Control and 
+Automation, ICCA, 2018, pp. 763–768.
+[84] W. Xu, H. Gu, Y. Qing, J. Lin, F. Zhang, Full attitude control of an eﬃcient 
+quadrotor tail-sitter VTOL UAV with ﬂexible modes, CoRR, arXiv:1903 .06393
+[abs], 2019.
+[85] R. Gill, R. D’Andrea, An annular wing VTOL UAV: ﬂight dynamics and control, 
+Drones 4 (2020) 14, https://doi .org /10 .3390 /drones4020014.
+[86] B. Li, J. Sun, W. Zhou, C.Y. Wen, K.H. Low, C.K. Chen, Transition optimiza-
+tion for a VTOL tail-sitter UAV, IEEE/ASME Trans. Mechatron. 25 (5) (2020) 
+2534–2545, https://doi .org /10 .1109 /TMECH .2020 .2983255.
+[87] Y. Wang, J. Yu, Q. Li, Z. Ren, Control strategy for the transition ﬂight of 
+a tail-sitter UAV, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 3504–3509.
+[88] Y. Wang, X. Lyu, H. Gu, S. Shen, Z. Li, F. Zhang, Design, implementation and 
+veriﬁcation of a quadrotor tail-sitter VTOL UAV, in: 2017 International Confer-
+ence on Unmanned Aircraft Systems, ICUAS, 2017, pp. 462–471.
+[89] N. Raj, A. Simha, M. Kothari Abhishek, R.N. Banavar, Iterative learning based 
+feedforward control for transition of a biplane-quadrotor tailsitter UAS, in: 
+2020 IEEE International Conference on Robotics and Automation, ICRA, 2020, 
+pp. 321–327.
+[90] J. Xu, T. Du, M. Foshey, B. Li, B. Zhu, A. Schulz, W. Matusik, Learning to ﬂy: 
+computational controller design for hybrid UAVs with reinforcement learning, 
+ACM Trans. Graph. 38 (2019) 1–12, https://doi .org /10 .1145 /3306346 .3322940.
+[91] L. Deyuan, L. Hao, L. Zhaoying, Robust mode transition attitude control of tail-
+sitter unmanned aerial vehicles, in: 2017 36th Chinese Control Conference, 
+CCC, 2017, pp. 3198–3202.
+[92] D. Liu, H. Liu, C. Liu, B. Zhu, Z. Li, Robust optimal attitude controller de-
+sign for tail-sitters, in: 2018 Annual American Control Conference, ACC, 2018, 
+pp. 4233–4237.
+[93] D. Liu, H. Liu, F.L. Lewis, K.P. Valavanis, Robust time-varying formation control 
+for tail-sitters in ﬂight mode transitions, IEEE Trans. Syst. Man Cybern. Syst. 
+(2019) 1–10, https://doi .org /10 .1109 /TSMC .2019 .2931482.
+[94] H. Liu, F. Peng, F.L. Lewis, Y. Wan, Robust tracking control for tail-sitters 
+in ﬂight mode transitions, IEEE Trans. Aerosp. Electron. Syst. 55 (4) (2019) 
+2023–2035, https://doi .org /10 .1109 /TAES .2018 .2880888.
+[95] L. Deyuan, L. Hao, L. Zhaoying, Z. Wanbing, Robust trajectory tracking con-
+trol for tail-sitter UAVs, in: 2018 37th Chinese Control Conference, CCC, 2018, 
+pp. 2538–2542.
+[96] R.T. Rysdyk, A.J. Calise, Adaptive model inversion ﬂight control for tilt-rotor 
+aircraft, J. Guid. Control Dyn. 22 (3) (1999) 402–407, https://doi .org /10 .2514 /
+2 .4411.
+[97] R.T. Rysdyk, A.J. Calise, Adaptive nonlinear control for tiltrotor aircraft, in: Pro-
+ceedings of the 1998 IEEE International Conference on Control Applications 
+(Cat. No. 98CH36104), vol. 2, 1998, pp. 980–984.
+[98] R.K. Mehra, R.K. Prasanth, S. Gopalaswamy, XV-15 tiltrotor ﬂight control sys-
+tem design using model predictive control, in: 1998 IEEE Aerospace Confer-
+ence Proceedings (Cat. No. 98TH8339), vol. 2, 1998, pp. 139–148.
+[99] Jang-Ho Lee, Byoung-Mun Min, Eung-Tai Kim, Autopilot design of tilt-rotor 
+UAV using particle swarm optimization method, in: 2007 International Con-
+ference on Control, Automation and Systems, 2007, pp. 1629–1633.
+[100] S. Yanguo, W. Huanjin, Design of ﬂight control system for a small unmanned 
+tilt rotor aircraft, Chin. J. Aeronaut. 22 (3) (2009) 250–256, https://doi .org /10 .
+1016 /S1000 -9361(08 )60095 -3, http://www.sciencedirect .com /science /article /
+pii /S1000936108600953.
+[101] Chih-Cheng Peng, Thong-Shing Hwang, Shiaw-Wu Chen, Ching-Yi Chang, Yi-
+Ciao Lin, Yao-Ting Wu, Yi-Jing Lin, Wei-Ren Lai, ZPETC path-tracking gain-
+scheduling design and real-time multi-task ﬂight simulation for the automatic 
+transition of tilt-rotor aircraft, in: 2010 IEEE Conference on Robotics, Automa-
+tion and Mechatronics, 2010, pp. 118–123.
+[102] B.-M. Kim, B. Kim, N. Kim, Trajectory tracking controller design using neural 
+networks for a tiltrotor unmanned aerial vehicle, Proc. Inst. Mech. Eng., G J. 
+Aerosp. Eng. 224 (2010) 881–896, https://doi .org /10 .1243 /09544100JAERO710.
+[103] J.T. VanderMey, A tilt rotor UAV for long endurance operations in remote 
+environments, Master’s thesis, Massachusetts Institute of Technology, 2011, 
+https://dspace .mit .edu /handle /1721.1 /67196.
+[104] X. Fang, Q. Lin, Y. Wang, L. Zheng, Control strategy design for the transitional 
+mode of tiltrotor UAV, in: IEEE 10th International Conference on Industrial 
+Informatics, 2012, pp. 248–253.
+[105] S. Park, J. Bae, Y. Kim, S. Kim, Fault tolerant ﬂight control system for the 
+tilt-rotor UAV, J. Franklin Inst. 350 (9) (2013) 2535–2559, https://doi .org /10 .
+1016 /j .jfranklin .2013 .01.014, http://www.sciencedirect .com /science /article /pii /
+S0016003213000318.
+[106] R.G. Hernández-García, H. Rodríguez-Cortés, Transition ﬂight control of a 
+cyclic tiltrotor UAV based on the gain-scheduling strategy, in: 2015 Interna-
+tional Conference on Unmanned Aircraft Systems, ICUAS, 2015, pp. 951–956.
+22
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+[107] S. Song, W. Wang, K. Lu, L. Sun, Nonlinear attitude control using extended 
+state observer for tilt-rotor aircraft, in: The 27th Chinese Control and Decision 
+Conference, 2015 CCDC, 2015, pp. 852–857.
+[108] K. Lu, C. Liu, Z. Wang, W. Wang, Modeling and control of tilt-rotor aircraft, in: 
+2016 Chinese Control and Decision Conference, CCDC, 2016, pp. 550–553.
+[109] H. Lin, R. Fu, J. Zeng, Extended state observer based sliding mode control 
+for a tilt rotor UAV, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 3771–3775.
+[110] Z. Pan, C. Chi, J. Zhang, Nonlinear attitude control of tiltrotor aircraft in heli-
+copter mode based on ADRSM theory, in: 2018 37th Chinese Control Confer-
+ence, CCC, 2018, pp. 9962–9967.
+[111] D.N. Cardoso, S. Esteban, G.V. Raffo, A nonlinear W∞controller of a tilt-rotor 
+UAV for trajectory tracking, in: 2019 18th European Control Conference, ECC, 
+2019, pp. 928–934.
+[112] Y. Kang, N. Kim, B. Kim, M.-J. Tahk, Autopilot design for tilt-rotor unmanned 
+aerial vehicle with nacelle mounted wing extension using single hidden layer 
+perceptron neural network, Proc. Inst. Mech. Eng., G J. Aerosp. Eng. 231 (08 
+2016), https://doi .org /10 .1177 /0954410016664926.
+[113] D.A. Ta, I. Fantoni, R. Lozano, Modeling and control of a tilt tri-rotor airplane, 
+in: 2012 American Control Conference, ACC, 2012, pp. 131–136.
+[114] A.S. Onen, L. Cevher, M. Senipek, T. Mutlu, O. Gungor, I.O. Uzunlar, D.F. 
+Kurtulus, O. Tekinalp, Modeling and controller design of a VTOL UAV, in: 
+2015 International Conference on Unmanned Aircraft Systems, ICUAS, 2015, 
+pp. 329–337.
+[115] C. Chao, S. Lincheng, Z. Daibing, Z. Jiyang, Mathematical modeling and control 
+of a tiltrotor UAV, in: 2016 IEEE International Conference on Information and 
+Automation, ICIA, 2016, pp. 2016–2021.
+[116] L. Yu, D. Zhang, J. Zhang, C. Pan, Modeling and attitude control of a 
+tilt tri-rotor UAV, in: 2017 36th Chinese Control Conference, CCC, 2017, 
+pp. 1103–1108.
+[117] L. Yu, D. Zhang, J. Zhang, Transition ﬂight modeling and control of a novel 
+tilt tri-rotor UAV, in: 2017 IEEE International Conference on Information and 
+Automation, ICIA, 2017, pp. 983–988.
+[118] J.A. Bautista, A. Osorio, R. Lozano, Modeling and analysis of a tricopter/ﬂying-
+wing convertible UAV with tilt-rotors, in: 2017 International Conference on 
+Unmanned Aircraft Systems, ICUAS, 2017, pp. 672–681.
+[119] M. Umer, S.M.A. Kazmi, S.M.H. Askari, D.I.A. Rana, Design and modeling of 
+VTOL tri tilt-rotor aircraft, in: 2018 15th International Conference on Smart 
+Cities: Improving Quality of Life Using ICT IoT, HONET-ICT, 2018, pp. 1–5.
+[120] D. Yangping, G. Honggang, Transition ﬂight control and test of a new kind tilt 
+prop box-wing VTOL UAV, in: 2018 9th International Conference on Mechan-
+ical and Aerospace Engineering, ICMAE, 2018, pp. 90–94.
+[121] L. Yu, G. He, S. Zhao, X. Wang, Dynamic inversion-based sliding mode control 
+of a tilt tri-rotor UAV, in: 2019 12th Asian Control Conference, ASCC, 2019, 
+pp. 1637–1642.
+[122] N.T. Hegde, V.I. George, C.G. Nayak, Modelling and transition ﬂight control 
+of vertical take-off and landing unmanned tri-tilting rotor aerial vehicle, 
+in: 2019 3rd International Conference on Electronics, Communication and 
+Aerospace Technology, ICECA, 2019, pp. 590–594.
+[123] S. Chang, A. Cho, S. Choi, Y. Kang, Y. Kim, M. Kim, Flight testing full conver-
+sion of a 40-kg-class tilt-duct unmanned aerial vehicle, Aerosp. Sci. Technol. 
+112 (2021) 106611, https://doi .org /10 .1016 /j .ast .2021.106611, https://www.
+sciencedirect .com /science /article /pii /S1270963821001218.
+[124] J. Tavoosi, Hybrid intelligent adaptive controller for tiltrotor UAV, Int. J. Intell. 
+Unamnned Syst. (August 2020).
+[125] E. D’Amato, G. Francesco, I. Notaro, G. Tartaglione, M. Mattei, Nonlin-
+ear dynamic inversion and neural networks for a tilt tri-rotor UAV, IFAC-
+PapersOnLine 48 (2015) 162–167, https://doi .org /10 .1016 /j .ifacol .2015 .08 .077.
+[126] C. Papachristos, K. Alexis, A. Tzes, Towards a high-end unmanned tri-tiltrotor: 
+design, modeling and hover control, in: 2012 20th Mediterranean Conference 
+on Control Automation, MED, 2012, pp. 1579–1584.
+[127] C. Papachristos, A. Tzes, Modeling and control simulation of an unmanned tilt 
+tri-rotor aerial vehicle, in: 2012 IEEE International Conference on Industrial 
+Technology, 2012, pp. 840–845.
+[128] C. Papachristos, K. Alexis, A. Tzes, Linear quadratic optimal position control 
+for an unmanned tri-tiltrotor, in: 2013 International Conference on Control, 
+Decision and Information Technologies, CoDIT, 2013, pp. 708–713.
+[129] C. Papachristos, K. Alexis, A. Tzes, Model predictive hovering-translation con-
+trol of an unmanned tri-tiltrotor, in: 2013 IEEE International Conference on 
+Robotics and Automation, 2013, pp. 5425–5432.
+[130] S. Verling, J. Zilly, Modeling and control of a VTOL glider, Master’s the-
+sis, Swiss Federal Institute of Technology, Zurich, 2013, https://docplayer.net /
+23088463 -Modeling -and -control -of -a -vtol -glider.html.
+[131] G.R. Flores Colunga, J.A. Escareño, R. Lozano, S. Salazar, Four tilting rotor con-
+vertible MAV: modeling and real-time hover ﬂight control, J. Intell. Robot. 
+Syst. 65 (1–4) (2012) 457–471, https://doi .org /10 .1007 /s10846 -011 -9589 -x, 
+https://hal .archives -ouvertes .fr /hal -00923129.
+[132] G. Flores, J. Escareno, R. Lozano, S. Salazar, Quad-tilting rotor convertible MAV: 
+modeling and real-time hover ﬂight control, J. Intell. Robot. Syst. 65 (2012) 
+457–471, https://doi .org /10 .1007 /s10846 -011 -9589 -x.
+[133] G. Flores, R. Lozano, Transition ﬂight control of the quad-tilting rotor convert-
+ible MAV, in: 2013 International Conference on Unmanned Aircraft Systems, 
+ICUAS, 2013, pp. 789–794.
+[134] G. Ducard, M. Hua, Modeling of an unmanned hybrid aerial vehicle, in: Pro-
+ceedings of the IEEE Multi-Conference on Systems and Control, Invited Ses-
+sion on UAVs, Antibes, France, 2014.
+[135] Q. Lin, Z. Cai, J. Yang, Y. Sang, Y. Wang, Trajectory tracking control for hovering 
+and acceleration maneuver of quad tilt rotor UAV, in: Proceedings of the 33rd 
+Chinese Control Conference, 2014, pp. 2052–2057.
+[136] G. Flores, I. Lugo, R. Lozano, 6-DOF hovering controller design of the quad 
+tiltrotor aircraft: simulations and experiments, in: 53rd IEEE Conference on 
+Decision and Control, 2014, pp. 6123–6128.
+[137] G.R. Flores-Colunga, R. Lozano-Leal, A nonlinear control law for hover 
+to level ﬂight for the quad tilt-rotor UAV, IFAC Proc. Vol. 47 (3) (2014) 
+11055–11059, 
+https://doi .org /10 .3182 /20140824 -6 -ZA-1003 .02708, 
+19th 
+IFAC 
+World 
+Congress, 
+http://www.sciencedirect .com /science /article /pii /
+S1474667016433720.
+[138] E. Cetinsoy, Design and control of a gas-electric hybrid quad tilt-rotor UAV 
+with morphing wing, in: 2015 International Conference on Unmanned Aircraft 
+Systems, ICUAS, 2015, pp. 82–91.
+[139] C. Chen, L. Shen, D. Zhang, J. Zhang, Identiﬁcation and control of a hovering 
+tiltrotor UAV, in: 2016 12th World Congress on Intelligent Control and Au-
+tomation, WCICA, 2016, pp. 2226–2231.
+[140] Z. Liu, D. Theilliol, L. Yang, Y. He, J. Han, Transition control of tilt ro-
+tor unmanned aerial vehicle based on multi-model adaptive method, in: 
+2017 International Conference on Unmanned Aircraft Systems, ICUAS, 2017, 
+pp. 560–566.
+[141] Z. Liu, D. Theilliol, L. Yang, Y. He, J. Han, Observer-based linear param-
+eter varying control design with unmeasurable varying parameters un-
+der sensor faults for quad-tilt rotor unmanned aerial vehicle, Aerosp. Sci. 
+Technol. 92 (2019) 696–713, https://doi .org /10 .1016 /j .ast .2019 .06 .028, http://
+www.sciencedirect .com /science /article /pii /S1270963818321722.
+[142] A. Anglade, J.-M. Kai, T. Hamel, C. Samson, Automatic control of convertible 
+ﬁxed-wing drones with vectorized thrust, Research report, INRIA Sophia An-
+tipolis - I3S, Apr. 2019, https://hal .archives -ouvertes .fr /hal -02111045.
+[143] M. Allenspach, G.J.J. Ducard, Model predictive control of a convertible tiltrotor 
+unmanned aerial vehicle, in: 2020 28th Mediterranean Conference on Control 
+and Automation, MED, 2020, pp. 715–720.
+[144] L. Bauersfeld, G. Ducard, Fused-pid control for tilt-rotor VTOL aircraft, in: 
+2020 28th Mediterranean Conference on Control and Automation, MED, 2020, 
+pp. 703–708.
+[145] L. Spannagl, G. Ducard, Control allocation for an unmanned hybrid aerial ve-
+hicle, in: 2020 28th Mediterranean Conference on Control and Automation, 
+MED, 2020, pp. 709–714.
+[146] M. Allenspach, G.J.J. Ducard, Nonlinear model predictive control and guid-
+ance for a propeller-tilting hybrid unmanned air vehicle, Automatica 
+132 (2021) 109790, https://doi .org /10 .1016 /j .automatica .2021.109790, https://
+www.sciencedirect .com /science /article /pii /S0005109821003101.
+[147] L. Bauersfeld, L. Spannagl, G. Ducard, C. Onder, MPC ﬂight control for a tilt-
+rotor VTOL aircraft, IEEE Trans. Aerosp. Electron. Syst. (2021), https://doi .org /
+10 .1109 /TAES .2021.3061819.
+[148] B. Li, W. Zhou, J. Sun, C.-Y. Wen, C.-K. Chen, Development of model predictive 
+controller for a tail-sitter VTOL UAV in hover ﬂight, Sensors 18 (9) (2018) 
+2859, https://doi .org /10 .3390 /s18092859.
+[149] D. Shen, Q. Lu, M. Hu, Z. Kong, Mathematical modeling and control of the 
+quad tilt-rotor UAV, in: 2018 IEEE 8th Annual International Conference on CY-
+BER Technology in Automation, Control, and Intelligent Systems, CYBER, 2018, 
+pp. 1220–1225.
+[150] Y. Yin, H. Niu, X. Liu, Adaptive neural network sliding mode control for quad 
+tilt rotor aircraft, Complexity 2017 (2017) 1–13, https://doi .org /10 .1155 /2017 /
+7104708.
+[151] T. Ostermann, J. Holsten, Y. Dobrev, D. Moormann, Control concept of a 
+tiltwing UAV during low speed manoeuvring, in: 28th International Congress 
+of the Aeronautical Sciences, ICAS2012, Brisbane, Australia, 23-28 Sept. 2012, 
+Optimage Ltd., Edinburgh, UK, 2012, 1 CD-ROM, http://publications .rwth -
+aachen .de /record /97342.
+[152] E. Small, E. Fresk, G. Andrikopoulos, G. Nikolakopoulos, Modelling and control 
+of a tilt-wing unmanned aerial vehicle, in: 2016 24th Mediterranean Confer-
+ence on Control and Automation, MED, 2016, pp. 1254–1259.
+[153] P. Hartmann, Predictive ﬂight path control for tilt-wing aircraft, Ph.D. disser-
+tation, Rheinisch-Westfällische Technische Hochschule Aachen, Nov. 2017.
+[154] D. Rohr, T. Stastny, S. Verling, R. Siegwart, Attitude- and cruise control of a 
+VTOL tiltwing UAV, IEEE Robot. Autom. Lett. 4 (3) (2019) 2683–2690, https://
+doi .org /10 .1109 /LRA.2019 .2914340, arXiv:1903 .10623v2.
+[155] D. Rohr, M. Studiger, T. Stastny, N.R.J. Lawrance, R. Siegwart, Nonlinear model 
+predictive velocity control of a VTOL tiltwing UAV, IEEE Robot. Autom. Lett. 
+6 (3) (2021) 5776–5783, https://doi .org /10 .1109 /LRA.2021.3084888.
+[156] J. Autenrieb, H.-S. Shin, M. Bacic, Development of a Neural Network-Based 
+Adaptive Nonlinear Dynamic Inversion Controller for a Tilt-Wing VTOL Air-
+craft, 2019, pp. 44–52.
+23
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+[157] K.T. Oner, E. Cetinsoy, M. Unel, M.F. Aksit, I. Kandemir, K. Gulez, Dynamic 
+model and control of a new quadrotor unmanned aerial vehicle with tilt-
+wing mechanism, Int. J. Aerosp. Mech. Eng. 2 (9) (2008) 1008–1013, https://
+publications .waset .org /vol /21.
+[158] K. Muraoka, N. Okada, D. Kubo, Quad tilt wing VTOL UAV: aerodynamic char-
+acteristics and prototype ﬂight test, in: AIAA Infotech@Aerospace Conference, 
+2009.
+[159] S. Suzuki, R. Zhijia, Y. Horita, K. Nonami, G. Kimura, T. Bando, D. Hirabayashi, 
+M. Furuya, K. Yasuda, Attitude control of quad rotors QTW-UAV with tilt wing 
+mechanism, J. Syst. Des. Dyn. 4 (3) (2010) 416–428, https://doi .org /10 .1299 /
+jsdd .4 .416.
+[160] C. Hancer, K.T. Oner, E. Sirimoglu, E. Cetinsoy, M. Unel, Robust hovering con-
+trol of a quad tilt-wing UAV, in: IECON 2010 - 36th Annual Conference on, 
+IEEE Industrial Electronics Society, 2010, pp. 1615–1620.
+[161] C. Hancer, K.T. Oner, E. Sirimoglu, E. Cetinsoy, M. Unel, Robust position control 
+of a tilt-wing quadrotor, in: 49th IEEE Conference on Decision and Control, 
+CDC, 2010, pp. 4908–4913.
+[162] K.T. Oner, E. Cetinsoy, E. Sirimoglu, C. Hancer, T. Ayken, M. Unel, LQR and 
+SMC stabilization of a new unmanned aerial vehicle, Int. J. Aerosp. Mech. Eng. 
+3 (10) (2009) 1190–1195, https://publications .waset .org /vol /34.
+[163] K. Muraoka, N. Okada, D. Kubo, M. Sato, Transition ﬂight of quad tilt wing 
+VTOL UAV, in: 28th International Congress of the Aeronautical Sciences, 2012.
+[164] K. Oner, E. Cetinsoy, E. Cetinsoy, E. Sirimoglu, E. Sirimoglu, C. Hanc˛er, C. 
+Hancer, M. Ünel, M. Unel, M. Aks˛it, M. Aksit, K. Gülez, K. Gulez, I. Kandemir, 
+Mathematical modeling and vertical ﬂight control of a tilt-wing UAV, Turk. J. 
+Electr. Eng. Comput. Sci. 20 (2012) 149–157, https://doi .org /10 .3906 /elk-1007 -
+624.
+[165] E. Cetinsoy, S. Dikyar, C. Hancer, K. Oner, E. Sirimoglu, M. Unel, M. Aksit, De-
+sign and construction of a novel quad tilt-wing UAV, Mechatronics 22 (2012) 
+723–745, https://doi .org /10 .1016 /j .mechatronics .2012 .03 .003.
+[166] T. Mikami, K. Uchiyama, Design of ﬂight control system for quad tilt-wing 
+UAV, in: 2015 International Conference on Unmanned Aircraft Systems, ICUAS, 
+2015, pp. 801–805.
+[167] Y. Yildiz, M. Unel, A.E. Demirel, Adaptive nonlinear hierarchical control of 
+a quad tilt-wing UAV, in: 2015 European Control Conference, ECC, 2015, 
+pp. 3623–3628.
+[168] K. Benkhoud, S. Bouallègue, Model predictive control design for a convertible 
+quad tilt-wing UAV, in: 2016 4th International Conference on Control Engi-
+neering Information Technology, CEIT, 2016, pp. 1–6.
+[169] K. Benkhoud, S. Bouallègue, Modeling and LQG controller design for a quad 
+tilt-wing UAV, in: 3rd International Conference on Automation, Control, Engi-
+neering and Computer Science, 2016.
+[170] K. Benkhoud, S. Bouallègue, M. Ayadi, Rapid control prototyping of a quad-tilt-
+wing unmanned aerial vehicle, in: 2017 International Conference on Control, 
+Automation and Diagnosis, ICCAD, 2017, pp. 423–428.
+[171] S. Panza, M. Sato, M. Lovera, K. Muraoka, Robust attitude control design of 
+quad-tilt-wing UAV: a structured μ-synthesis approach, in: IEEE Conference 
+on Control Technology and Applications, 2018.
+[172] D. Mix, J. Koenig, K. Linda, O. Cifdaloz, V. Wells, A. Rodriguez, Towards gain-
+scheduled H∞control design for a tilt-wing aircraft, in: Proceedings of the 
+IEEE Conference on Decision and Control, vol. 2, 2004, pp. 1222–1227.
+[173] J.J. Dickeson, D.R. Mix, J.S. Koenig, K.M. Linda, O. Cifdaloz, V.L. Wells, A.A. 
+Rodriguez, H∞
+hover-to-cruise conversion for a tilt-wing rotorcraft, in: 
+Proceedings of the 44th IEEE Conference on Decision and Control, 2005, 
+pp. 6486–6491.
+[174] J.J. Dickeson, O. Cifdaloz, D.W. Miles, P.M. Koziol, V.L. Wells, A.A. Ro-
+driguez, Robust H∞gain-scheduled conversion for a tilt-wing rotorcraft, in: 
+Proceedings of the 45th IEEE Conference on Decision and Control, 2006, 
+pp. 5882–5887.
+[175] J. Dickeson, D. Miles, O. Cifdaloz, V. Wells, A. Rodriguez, Robust LPV H∞gain-
+scheduled hover-to-cruise conversion for a tilt-wing rotorcraft in the presence 
+of CG variations, in: Proceedings of the 46th IEEE Conference on Decision and 
+Control, 2007, pp. 2773–2778.
+[176] A.S. Saeed, A.B. Younes, S. Islam, J. Dias, L. Seneviratne, G. Cai, A review 
+on the platform design, dynamic modeling and control of hybrid UAVs, in: 
+2015 International Conference on Unmanned Aircraft Systems, ICUAS, 2015, 
+pp. 806–815.
+[177] H. Yeo, W. Johnson, Performance and design investigation of heavy lift tilt-
+rotor with aerodynamic interference effects, J. Aircr. 46 (4) (2009) 1231–1239, 
+https://doi .org /10 .2514 /1.40102.
+[178] L. Kingston, J. DeTore, Tilt rotor V/STOL aircraft technology, in: Second Euro-
+pean Rotorcraft and Powered Lift Aircraft Forum, 36, Deutsche Gesellschaft für 
+Luft- und Raumfahrt e.V, Köln, Germany, Bückeburg, Germany, 1976, pp. 1–13, 
+Postfach 510645 D-5000, https://dspace -erf .nlr.nl /xmlui /handle /20 .500 .11881 /
+2041 ?show =full.
+[179] R.W. Prouty, Helicopter Performance, Stability, and Control, PWS Engineering, 
+1986.
+[180] S. Newman, The Foundations of Helicopter Flight, Halsted Press, 2001.
+[181] T. Hamel, R. Mahony, R. Lozano, J. Ostrowski, Dynamic modelling and 
+conﬁguration stabilization for an X4-ﬂyer, in: IFAC World Congress, 2002, 
+pp. 200–212.
+[182] S. Bouabdallah, Design and Control of Quadrotors with Application to Au-
+tonomous Flying, Ph.D. thesis, EPF Lausanne, 2007.
+[183] John H. Blakelock, Automatic Control of Aircraft and Missiles, 2nd edition, 
+Wiley, 1991.
+[184] B. Stevens, F. Lewis, Aircraft Control and Simulation, second edition, Wiley, 
+New York, NY, 2003.
+[185] R.F. Stengel, Flight Dynamics, Princeton University Press, Princeton, New Jer-
+sey, 2004.
+[186] M. Möckli, Guidance and Control for Aerobatic Maneuvers of an Unmanned 
+Airplane, Ph.D. thesis, ETH Zürich, diss No. 16586, 2006.
+[187] G. Ducard, Fault-Tolerant Flight Control and Guidance Systems: Practical 
+Methods for Small Unmanned Aerial Vehicles, Advances in Industrial Con-
+trol, Springer-Verlag, London, ISBN 978-1-84882-560-4, 2009, https://www.
+springer.com /gp /book /9781848825604.
+[188] R.W. Beard, T.W. McLain, Small Unmanned Aircraft: Theory and Practice, 
+Princeton University Press, Princeton and Oxford, 2012.
+[189] B. gang Mi, H. Zhan, S. si Lu, An extended unsteady aerodynamic model at 
+high angles of attack, Aerosp. Sci. Technol. 77 (2018) 788–801, https://doi .
+org /10 .1016 /j .ast .2018 .03 .035, https://www.sciencedirect .com /science /article /
+pii /S1270963817323933.
+[190] B. Yuksek, A. Vuruskan, U. Vuruskan, M.A. Yukselen, G. Inalhan, Transition 
+ﬂight modeling of a ﬁxed-wing VTOL UAV, J. Intell. Robot. Syst. 84 (2016) 
+83–105, https://doi .org /10 .1007 /s10846 -015 -0325 -9.
+[191] Y. Govdeli, M.B.M. Sheikh, R. Raj, B. Elhadidi, E. Kayacan, Unsteady aero-
+dynamic modeling and control of pusher and tilt-rotor quadplane conﬁgu-
+rations, Aerosp. Sci. Technol. 94 (2019) 105421, https://doi .org /10 .1016 /j .ast .
+2019 .105421.
+[192] Dufour Aerospace, Tiltwing concept, https://dufour.aero/, 2021.
+[193] M. Tyan, N.V. Nguyen, S. Kim, J.-W. Lee, Comprehensive preliminary siz-
+ing/resizing method for a ﬁxed wing – VTOL electric UAV, Aerosp. Sci. Tech-
+nol. 71 (2017) 30–41, https://doi .org /10 .1016 /j .ast .2017.09 .008, https://www.
+sciencedirect .com /science /article /pii /S1270963817300871.
+[194] S. Darvishpoor, J. Roshanian, M. Tayeﬁ, A novel concept of VTOL bi-rotor 
+UAV based on moving mass control, Aerosp. Sci. Technol. 107 (2020) 
+106238, https://doi .org /10 .1016 /j .ast .2020 .106238, https://www.sciencedirect .
+com /science /article /pii /S1270963820309202.
+[195] C. Zeng, R. Abnous, K. Gabani, S. Chowdhury, V. Maldonado, A new 
+tilt-arm transitioning unmanned aerial vehicle: introduction and con-
+ceptual design, Aerosp. Sci. Technol. 99 (2020) 105755, https://doi .org /
+10 .1016 /j .ast .2020 .105755, https://www.sciencedirect .com /science /article /pii /
+S1270963819317961.
+[196] Y. Zhou, G. Huang, C. Xia, Analysis of ﬁxed-wing VTOL aircraft with gas-driven 
+fan propulsion system, Aerosp. Sci. Technol. 104 (2020) 105984, https://doi .
+org /10 .1016 /j .ast .2020 .105984, https://www.sciencedirect .com /science /article /
+pii /S1270963820306660.
+[197] Özgür Dündar, M. Bilici, T. Ünler, Design and performance analyses of a ﬁxed 
+wing battery VTOL UAV, Int. J. Eng. Sci. Technol. 23 (2020) 1182–1193, https://
+doi .org /10 .1016 /j .jestch .2020 .02 .002.
+[198] H. Zhang, B. Song, F. Li, J. Xuan, Multidisciplinary design optimization of an 
+electric propulsion system of a hybrid UAV considering wind disturbance re-
+jection capability in the quadrotor mode, Aerosp. Sci. Technol. 110 (2021) 
+106372, https://doi .org /10 .1016 /j .ast .2020 .106372, https://www.sciencedirect .
+com /science /article /pii /S1270963820310543.
+[199] B. Theys, G. Dimitriadis, P. Hendrick, Experimental and numerical study of 
+micro-aerial-vehicle propeller performance in oblique ﬂow, J. Aircr. 54 (2016) 
+1–9, https://doi .org /10 .2514 /1.C033618.
+[200] B. Theys, G. Dimitriadis, P. Hendrick, Inﬂuence of propeller conﬁguration on 
+propulsion system eﬃciency of multi-rotor unmanned aerial vehicles, 2016, 
+pp. 195–201.
+[201] R.J. Higgins, G.N. Barakos, S. Shahpar, I. Tristanto, A computational ﬂuid dy-
+namic acoustic investigation of a tiltwing eVTOL concept aircraft, Aerosp. 
+Sci. Technol. 111 (2021) 106571, https://doi .org /10 .1016 /j .ast .2021.106571, 
+https://www.sciencedirect .com /science /article /pii /S1270963821000821.
+[202] D. Phung, P. Morin, Modeling and energy evaluation of small convertible UAVs, 
+in: 2nd Workshop on Research, Education and Development of Unmanned 
+Aerial Systems, 2013.
+[203] M. Blanke, M. Kinnaert, J. Lunze, M. Staroswiecki, Diagnosis and Fault Tolerant 
+Control, Springer Verlag, London, 2006.
+[204] B. Benini, P. Castaldi, S. Simani, Fault Diagnosis for Aircraft System Models: An 
+Introduction from Fault Detection to Fault Tolerance, VDM Verlag Dr. Muller, 
+Saarbrucken, 2009.
+[205] H. Alwi, C. Edwards, C.P. Tan, Fault Detection and Fault Tolerant Control Using 
+Sliding Modes, Springer-Verlag, ISBN 978-0-85729-649-8, 2011.
+[206] G. Ducard, Actuator Fault Detection in UAVs, Springer-Verlag, London, 2014, 
+48 pages.
+[207] Z. Liu, Y. He, L. Yang, J. Han, Control techniques of tilt rotor un-
+manned aerial vehicle systems: a review, Chin. J. Aeronaut. 30 (1) (2017) 
+135–148, https://doi .org /10 .1016 /j .cja .2016 .11.001, http://www.sciencedirect .
+com /science /article /pii /S1000936116302199.
+[208] R. Naldi, L. Marconi, Optimal transition maneuvers for a class of 
+V/STOL aircraft, Automatica 47
+(5) (2011) 870–879, https://doi .org /10 .
+24
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+1016 /j .automatica .2011.01.027, http://www.sciencedirect .com /science /article /
+pii /S0005109811000422.
+[209] D. Kubo, S. Suzuki, Tail-sitter vertical takeoff and landing unmanned aerial 
+vehicle: transitional ﬂight analysis, J. Aircr. 45 (1) (2008) 292–297, https://
+doi .org /10 .2514 /1.30122.
+[210] S. Omari, M.-D. Hua, G. Ducard, T. Hamel, Hardware and software architecture 
+for nonlinear control of multirotor helicopters, IEEE/ASME Trans. Mechatron. 
+18 (6) (2013) 1724–1736, https://doi .org /10 .1109 /TMECH .2013 .2274558.
+[211] J. Escareño, A. Sanchez, O. Garcia, R. Lozano, Modeling and global control of 
+the longitudinal dynamics of a coaxial convertible mini-UAV in hover mode, 
+J. Intell. Robot. Syst. 54 (1–3) (2008) 261–273.
+[212] S. Park, J. Deyst, J.P. How, Performance and Lyapunov stability of a nonlin-
+ear path-following guidance method, AIAI J. Guid. Control, Dyn. 30 (6) (2007) 
+1718–1728.
+[213] K. Wang, Y. Ke, B.M. Chen, Development of autonomous hybrid UAV U-Lion 
+with VTOL and cruise ﬂying capabilities, in: 2016 IEEE International Confer-
+ence on Advanced Intelligent Mechatronics, AIM, 2016, pp. 1053–1060.
+[214] G. Ducard, K.C. Kulling, H.P. Geering, A simple and adaptive on-line path 
+planning system for a UAV, in: Proceedings of the IEEE 15th Mediterranean 
+Conference on Control and Automation, Athens, Greece, 2007, pp. 1–6, t34-
+009.
+[215] A. Banazadeh, N. Assadian, F. Saghaﬁ, Minimum time trajectory optimization 
+of a tail-sitter aerial vehicle using nonlinear programming, in: The 2012 Inter-
+national Conference on Advanced Mechatronic Systems, 2012, pp. 275–280.
+[216] V. Martinez, O. Garcia, A. Sanchez, V. Parra, A. Escobar, Adaptive backstepping 
+control for a convertible UAV, in: 2015 Workshop on Research, Education and 
+Development of Unmanned Aerial Systems, RED-UAS, 2015, pp. 298–307.
+[217] P. Huangzhong, Z. Ziyang, G. Chen, Tiltrotor aircraft attitude control in con-
+version mode based on optimal preview control, in: Proceedings of 2014 IEEE 
+Chinese Guidance, Navigation and Control Conference, 2014, pp. 1544–1548.
+[218] J. Sun, J. Yang, X. Zhu, Robust ﬂight control law development for tiltrotor 
+conversion, in: 2009 International Conference on Intelligent Human-Machine 
+Systems and Cybernetics, vol. 2, 2009, pp. 481–484.
+[219] W. Zhao, C. Underwood, Robust transition control of a martian coax-
+ial tiltrotor aerobot, Acta Astronaut. 99 (2014) 111–129, https://
+doi .org /10 .1016 /j .actaastro .2014 .02 .020, 
+http://www.sciencedirect .com /
+science /article /pii /S0094576514000770.
+[220] Z. Sun, R. Wang, W. Zhou, Finite-time stabilization control for the ﬂight mode 
+transition of tiltrotors based on switching method, in: 2017 29th Chinese 
+Control and Decision Conference, CCDC, 2017, pp. 2049–2053.
+[221] D. Pucci, Towards a Uniﬁed Approach for the Control of Aerial Vehicles, Ph.D. 
+thesis, University of Nice Sophia Antipolis, and of Roma, 2013.
+[222] Dai Chao, Bai Huihui, Zeng Jianping, Nonlinear stabilization control of tilt 
+rotor UAV during transition ﬂight based on HOSVD, in: 2016 IEEE Chinese 
+Guidance, Navigation and Control Conference, CGNCC, 2016, pp. 154–159.
+[223] Youngshin Kang, Bumjin Park, Changsun Yoo, Yushin Kim, Samok Koo, Flight 
+test results of automatic tilt control for small scaled tilt rotor aircraft, in: 
+2008 International Conference on Control, Automation and Systems, 2008, 
+pp. 47–51.
+[224] B. Etkin, Dynamics of Flight, John Wiley and Sons, 1996.
+[225] G. Naus, Gain scheduling robust design and automated tuning of automotive 
+controllers, Tech. rep., University of Technology Eindhoven, 2009, http://www.
+mate .tue .nl /mate /pdfs /11022 .pdf.
+[226] M. Kuang, J. Zhu, W. Wang, Y. Tang, Flight controller design and demonstra-
+tion of a thrust-vectored tailsitter, in: 2017 IEEE International Conference on 
+Robotics and Automation, ICRA, 2017, pp. 5169–5174.
+[227] F. Cakici, Modeling, stability analysis and control system design of a 
+small-sized tiltrotor UAV, Master’s thesis, Middle East Technical Uni-
+versity, 2009, http://citeseerx .ist .psu .edu /viewdoc /download ?doi =10 .1.1.461.
+7922 &rep =rep1 &type =pdf.
+[228] X.P. Zhu, Y.H. Fan, J. Yang, Design of tiltrotor ﬂight control system using fuzzy 
+sliding mode control, in: 2010 International Conference on Measuring Tech-
+nology and Mechatronics Automation, vol. 1, 2010, pp. 1060–1063.
+[229] Y. Shtessel, C. Edwards, L. Fridman, A. Levant, Sliding Mode Control and Ob-
+servation, 2014, pp. 291–320.
+[230] P. Ioannou, J. Sun, Robust Adaptive Control, Dover Books on Electrical Engi-
+neering, 1995.
+[231] N. Hovakimyan, C. Cao, E. Kharisov, E. Xargay, I.M. Gregory, L1 adaptive con-
+trol for safety-critical systems, IEEE Control Syst. Mag. 31 (5) (2011) 54–104, 
+https://doi .org /10 .1109 /MCS .2011.941961.
+[232] C. Cao, N. Hovakimyan, Design and analysis of a novel L1 adaptive controller, 
+part I: control signal and asymptotic stability, in: American Control Confer-
+ence, Minneapolis, MN, 2006, pp. 3397–3402.
+[233] C. Cao, N. Hovakimyan, Design and analysis of a novel L1 adaptive control 
+architecture, part ii: guaranteed transient performance, in: American Control 
+Conference, Minneapolis, MN, 2006, pp. 3403–3408.
+[234] S. Snyder, P. Zhao, N. Hovakimyan, Adaptive control for linear parameter-
+varying systems with application to a VTOL aircraft, Aerosp. Sci. Technol. 
+112 (2021) 106621, https://doi .org /10 .1016 /j .ast .2021.106621, https://www.
+sciencedirect .com /science /article /pii /S1270963821001310.
+[235] A. Yatsun, B. Lushnikov, O. Emelyanova, Motion control automation in the 
+quadcopter convertiplane in a transient mode, in: 2018 International Russian 
+Automation Conference, RusAutoCon, 2018, pp. 1–6.
+[236] Changjie Yu, Jihong Zhu, Zengqi Sun, Nonlinear adaptive internal model con-
+trol using neural networks for tilt rotor aircraft platform, in: Proceedings of 
+the 2005 IEEE Midnight-Summer Workshop on Soft Computing in Industrial 
+Applications, SMCia/05, 2005, 2005, pp. 12–16.
+[237] M. Zeilinger, Model predictive control, Class Lecture, lecture Notes (2019).
+[238] X. Yang, L. Dong, W. Liaoni, S. Yangyang, Design and implementation of twin-
+rotor tail-sitter UAV, in: 2015 IEEE Advanced Information Technology, Elec-
+tronic and Automation Control Conference, IAEAC, 2015, pp. 406–410.
+[239] R. Naldi, L. Marconi, On robust transition maneuvers for a class of tail-
+sitter vehicles, in: 49th IEEE Conference on Decision and Control, CDC, 2010, 
+pp. 358–363.
+[240] Y. Nakamura, A. Arakawa, K. Watanabe, I. Nagai, Transitional ﬂight simulations 
+for a tilted quadrotor with a ﬁxed-wing, in: 2018 IEEE International Confer-
+ence on Mechatronics and Automation, ICMA, 2018, pp. 1829–1836.
+[241] F. Cakici, K. Leblebicioglu, Modeling and simulation of a small-sized tiltrotor 
+UAV, J. Defense Model. Simul., Appl. Methodol. Technol. 9 (2012) 335–345, 
+https://doi .org /10 .1177 /1548512911414951.
+[242] J. Apkarian, Pitch-decoupled VTOL/FW aircraft: ﬁrst ﬂights, in: 2017 Work-
+shop on Research, Education and Development of Unmanned Aerial Systems, 
+RED-UAS, 2017, pp. 258–263.
+[243] R. Chiappinelli, M. Cohen, M. Doff-Sotta, M. Nahon, J.R. Forbes, J. Apkarian, 
+Modeling and control of a passively-coupled tilt-rotor vertical takeoff and 
+landing aircraft, in: 2019 International Conference on Robotics and Automa-
+tion, ICRA, 2019, pp. 4141–4147.
+[244] G. Francesco, E. D’Amato, M. Mattei, INDI control with direct lift for a tilt 
+rotor UAV, IFAC-PapersOnLine 48 (2015) 156–161, https://doi .org /10 .1016 /j .
+ifacol .2015 .08 .076.
+[245] T.A. Johansen, T.I. Fossen, Control allocation-a survey, Automatica 49 (5) 
+(2013) 1087–1103, https://doi .org /10 .1016 /j .automatica .2013 .01.035, http://
+www.sciencedirect .com /science /article /pii /S0005109813000368.
+[246] R. D’Sa, N. Papanikolopoulos, Design and experiments for MultI-Section-
+Transformable (MIST)-UAV, in: 2019 International Conference on Robotics and 
+Automation, ICRA, 2019, pp. 1878–1883.
+[247] J. Apkarian, Attitude control of pitch-decoupled VTOL ﬁxed wing tiltrotor, in: 
+2018 International Conference on Unmanned Aircraft Systems, ICUAS, 2018, 
+pp. 195–201.
+[248] R. Takeuchi, K. Watanabe, I. Nagai, Development and control of tilt-wings for 
+a tilt-type quadrotor, in: 2017 IEEE International Conference on Mechatronics 
+and Automation, ICMA, 2017, pp. 501–506.
+[249] L.M. Sánchez-Rivera, R. Lozano, A. Arias-Montano, Pitching moment analysis 
+and adjustment for tilt-wing UAV in VTOL mode, in: 2019 International Con-
+ference on Unmanned Aircraft Systems, ICUAS, 2019, pp. 1445–1450.
+25

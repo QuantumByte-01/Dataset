@@ -1,0 +1,36 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.1.4. Tiltwing
+# START_PAGE: 13
+
+Just like with tiltrotor vehicles, tiltwing controllers rely on a set 
+of trim points (see Section 4.3) in the ﬂight envelope. Example de-
+signs using airspeed and wing-tilt angle as scheduling variables for 
+the Divide and Conquer technique are shown in [154,175]. Rather 
+than using a large number of different controllers, the works in 
+[151] and [165] only switch between three different control laws, 
+namely one for VTOL, cruise and transition ﬂight. In [156], a stan-
+dard RW and FW controller are linearly mixed depending on the 
+reference wing-tilt angle in a form of Control Authority Weight-
+ing. To ensure satisfactory ﬂight performance during the transition 
+despite these few trim points, a model-uncertainty compensation 
+term computed by a Neural Network (NN) is added, somewhat 
+similar to Dynamic Inversion (see Section 5.2).
+P/PD/PID control laws as introduced in equation (19) are fairly 
+common, where standard tuning methods are used to achieve sta-
+ble and accurate tracking performance at each operating point. In 
+addition, the work in [154] mentions how pitch-error dependent 
+controller gains can be used to account for non-symmetric pitch 
+authorities.
+The second control law frequently encountered in scheduled 
+control approaches for tiltwing aircraft is H∞. According to the 
+signals and systems depicted in Fig. 15, the goal is to minimize 
+the effect of the worst possible disturbance w on the performance 
+variable z through a feedback controller of the form u = K(s)y. 
+In other words, K is chosen, such that ||F(P, K)||∞is minimized, 
+where F(P, K) is the transfer function from the disturbance w
+to the error signal z. While [171] uses a so-called μ-synthesis 
+method to obtain the controller gain K , the research group at 
+the Arizona State University [173–175] rely on mixed-sensitivity 
+weighting functions. Compared to the standard μ-synthesis, this 
+method allows to individually weight both the sensitivity and com-
+plementary sensitivity transfer functions.

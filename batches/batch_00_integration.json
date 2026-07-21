@@ -1,0 +1,395 @@
+{
+  "batch_name": "00_integration",
+  "subsystem_tag": "_integration",
+  "grounding_chunk_files": [
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__01_abstract.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\index__02_1_introduction.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__01_1_introduction.txt",
+    "C:\\Users\\Swastik R\\Downloads\\dataset\\extracted_text\\chunks\\Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and__02_1_authors_contributed_equally_to_the_wor.txt"
+  ],
+  "shared_config_files": {
+    "schema_and_contract": "C:\\Users\\Swastik R\\Downloads\\dataset\\dataset_schema.md",
+    "ambiguity_taxonomy": "C:\\Users\\Swastik R\\Downloads\\dataset\\ambiguity_taxonomy.yaml",
+    "requirement_categories": "C:\\Users\\Swastik R\\Downloads\\dataset\\requirement_categories.yaml",
+    "grounding_facts": "C:\\Users\\Swastik R\\Downloads\\dataset\\grounding_facts.md"
+  },
+  "output_shard_file": "C:\\Users\\Swastik R\\Downloads\\dataset\\shards\\shard_00_integration.jsonl",
+  "records_to_generate": [
+    {
+      "id": "REQ-ML-001",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "overall FW-VTOL mission capability (VTOL + cruise + payload delivery)",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "interface",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-002",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "operational endurance and range envelope",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-003",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "payload carriage capability",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_numbers",
+          "family": "scopal"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "interface",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-004",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "autonomous mission execution and waypoint navigation",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        },
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        },
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 5,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-005",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "operator command and monitoring capability",
+      "bucket": "precise",
+      "ambiguity_class": "precise",
+      "ambiguity_sites": [],
+      "num_sites": 0,
+      "num_obligations": 1,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-006",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "environmental operating envelope for the mission",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        },
+        {
+          "type": "presuppositional",
+          "family": "pragmatic"
+        },
+        {
+          "type": "type_ambiguity",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 2,
+      "axis1_nature": "functional",
+      "axis2_behavior": "quantitative",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-007",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "safety-of-flight and contingency-return capability",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 3,
+      "axis1_nature": "interface",
+      "axis2_behavior": "state_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-008",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "airworthiness / regulatory compliance posture",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "polysemy",
+          "family": "lexical"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "threshold_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "scope_negation",
+          "family": "scopal"
+        }
+      ],
+      "num_sites": 4,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-009",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "transportability and field deployability",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "homonymy",
+          "family": "lexical"
+        },
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "subject_vagueness",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 4,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "hybrid_continuous",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-ML-010",
+      "level": "mission",
+      "parent_id": null,
+      "subsystem_tag": "_integration",
+      "topic_hint": "data/imagery return-to-operator capability",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_security",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-001",
+      "level": "system",
+      "parent_id": "REQ-ML-001",
+      "subsystem_tag": "_integration",
+      "topic_hint": "cross-subsystem mode transition (vertical <-> forward flight) coordination",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "scope_quantification",
+          "family": "scopal"
+        },
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "pp_attachment",
+          "family": "syntactic_structural"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 3,
+      "axis1_nature": "non_functional_usability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": [
+        "REQ-ML-003"
+      ]
+    },
+    {
+      "id": "REQ-SYS-002",
+      "level": "system",
+      "parent_id": "REQ-ML-002",
+      "subsystem_tag": "_integration",
+      "topic_hint": "system-level health monitoring and fault reporting",
+      "bucket": "amb12",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "underspecification",
+          "family": "incompleteness"
+        },
+        {
+          "type": "missing_units",
+          "family": "incompleteness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "domain_semantics_heavy",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-003",
+      "level": "system",
+      "parent_id": "REQ-ML-003",
+      "subsystem_tag": "_integration",
+      "topic_hint": "system-level interface control between airframe, propulsion and FCS",
+      "bucket": "amb12",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "generic_nongeneric",
+          "family": "pragmatic"
+        }
+      ],
+      "num_sites": 1,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-004",
+      "level": "system",
+      "parent_id": "REQ-ML-004",
+      "subsystem_tag": "_integration",
+      "topic_hint": "system-level mass/power budget allocation across subsystems",
+      "bucket": "amb3plus",
+      "ambiguity_class": "vague",
+      "ambiguity_sites": [
+        {
+          "type": "temporal_vagueness",
+          "family": "vagueness"
+        },
+        {
+          "type": "comparative_superlative",
+          "family": "vagueness"
+        }
+      ],
+      "num_sites": 2,
+      "num_obligations": 2,
+      "axis1_nature": "non_functional_reliability_availability",
+      "axis2_behavior": "probabilistic",
+      "context_refs": []
+    },
+    {
+      "id": "REQ-SYS-005",
+      "level": "system",
+      "parent_id": "REQ-ML-005",
+      "subsystem_tag": "_integration",
+      "topic_hint": "system-level compliance with a named airworthiness standard",
+      "bucket": "amb3plus",
+      "ambiguity_class": "ambiguous",
+      "ambiguity_sites": [
+        {
+          "type": "metonymy",
+          "family": "referential"
+        },
+        {
+          "type": "optionality_vague_modals",
+          "family": "vagueness"
+        },
+        {
+          "type": "elliptical",
+          "family": "referential"
+        }
+      ],
+      "num_sites": 3,
+      "num_obligations": 1,
+      "axis1_nature": "functional",
+      "axis2_behavior": "event_driven",
+      "context_refs": []
+    }
+  ]
+}

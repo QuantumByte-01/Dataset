@@ -1,0 +1,31 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.2.2. Approach 2: allocation including rotor-tilt angle
+# START_PAGE: 19
+
+If the vehicle can not be stabilized in VTOL mode by exclusively 
+changing the rotor speeds, the tilt angles need to be included in 
+the allocation.
+Three-rotor Tilting UAVs with rigidly-mounted tail rotor as shown 
+in Fig. 27 often use the tilt angles to yaw, without inducing a roll 
+moment. This approach is used in [115,116,121]. Additionally, [126,
+129,128] achieve longitudinal force generation by tilting the rotors, 
+rather than pitching the vehicle.
+Two-rotor Tilting Aircraft suffer from the same lack of controlla-
+bility and also require propeller tilt angle allocation, for example 
+via pseudo-inverse matrix as shown in [111].
+In cruise mode, the rotor-tilt angles can be neglected in the al-
+location, since the combination of rotor speed and control-surface 
+deﬂection provides enough control authority to track the stabiliz-
+ing commands.
+During transition maneuvers however, tilt angle, rotor speed 
+and surface deﬂection are often all mixed together, with the in-
+dividual contributions weighted according to the current ﬂight 
+conditions [99,104,105]. The approach in [109] uses a tilt-angle-
+dependent gain to distribute a virtual elevator command be-
+tween tilt angles and control-surfaces. In [120,96,97], the allo-
+cation among actuators is weighted as a function of airspeed. 
+Additionally, a decoupling mechanism, based on the relationship 
+between tilt angles and differential motor thrust, ensures indepen-
+dence between roll and yaw motions.
+Finally, the approach of [141] solves an optimization problem 
+to achieve the most eﬃcient allocation possible.

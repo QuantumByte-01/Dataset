@@ -1,0 +1,105 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.1. Control allocation for tailsitter aircraft
+# START_PAGE: 17
+
+The control allocation process in tailsitter vehicles depends on 
+whether aerodynamic control surfaces are used for maneuvering 
+or not. Table 3 summarizes the designs encountered in literature. 
+Both approaches are considered below.
+17
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 9
+Actuation effects on translational and rotational motion.
+Hybrid UAV
+Actuator command
+VTOL mode
+Cruise mode
+transl. motion
+rot. motion
+transl. motion
+rot. motion
+Tailsitter
+Synchronous Rotor Thrust
+vertical
+-
+horizontal
+-
+Differential Rotor Thrust
+lateral
+yaw
+lateral
+yaw
+Synchronous Elevon Deﬂection
+horizontal
+pitch
+vertical
+pitch
+Differential Elevon Deﬂection
+-
+roll
+lateral
+roll
+Tiltrotor
+Synchronous Rotor Thrust
+vertical
+-
+horizontal
+-
+Differential Rotor Thrust
+lateral
+roll
+lateral
+yaw
+Synchronous Elevon Deﬂection
+-
+-
+vertical
+pitch
+Differential Elevon Deﬂection
+-
+-
+lateral
+roll
+Synchronous Tilting
+horizontal
+-
+vertical
+-
+Differential Tilting
+-
+yaw
+lateral
+roll
+Tiltwing
+Synchronous Rotor Thrust
+vertical
+-
+horizontal
+-
+Differential Rotor Thrust
+lateral
+roll
+lateral
+yaw
+Synchronous Elevon Deﬂection
+horizontal
+pitch
+vertical
+pitch
+Differential Elevon Deﬂection
+-
+yaw
+lateral
+roll
+Synchronous Tilting
+horizontal
+-
+vertical
+-
+Differential Tilting
+-
+yaw
+lateral
+roll
+Fig. 23. Tailsitter with four rotors, no elevon [78].

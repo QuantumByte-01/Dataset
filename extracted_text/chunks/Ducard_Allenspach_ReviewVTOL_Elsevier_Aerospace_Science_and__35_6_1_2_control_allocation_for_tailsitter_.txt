@@ -1,0 +1,79 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 6.1.2. Control allocation for tailsitter with rotors and elevons
+# START_PAGE: 18
+
+The works in [226,213,57,59,55] present a matrix-inversion 
+based allocation method. However, the matrix is no longer static, 
+Fig. 24. Tailsitter simultaneous rotor and elevon allocation example [57].
+since the lift and drag coeﬃcients of the elevons are state-
+dependent. As an example, the following set of equations is used 
+in [57] for the prototype shown in Fig. 24:
+⎛
+⎜⎜⎝
+uF
+uM1
+uM2
+uM3
+⎞
+⎟⎟⎠
+
+
+
+u
+=
+⎛
+⎜⎜⎝
+cF,ω
+cF,ω
+0
+0
+0
+0
+−cM1,δ(x)
+cM1,δ(x)
+0
+0
+cM2,δ(x)
+cM2,δ(x)
+lcF,ω
+−lcF,ω
+0
+0
+⎞
+⎟⎟⎠
+
+
+
+M(x)
+⎛
+⎜⎜⎝
+ω2
+1
+ω2
+2
+δ1
+δ2
+⎞
+⎟⎟⎠(30)
+with surface deﬂections δ1 and δ2 and where the elevon coeﬃ-
+cients cM1,δ and cM2,δ are modeled as state x dependent parame-
+ters. As a consequence, the matrix inverse needs to be recomputed 
+at each iteration.
+A slightly modiﬁed approach is shown in [72] for the exam-
+ple of a tailsitter with four propellers and two elevons. In that 
+work, a velocity-dependent scale is used to distribute the required 
+moments between the rotors and the elevons. This way, one can 
+account for the changing control authority and ensure eﬃcient 
+ﬂight.
+An interesting concept is presented in [246], which consists in 
+a morphing tailsitter design, as shown in Fig. 25. The vehicle can 
+take the shape of a large wing for solar-powered cruise ﬂight in 
+FW mode. During VTOL operation on the other hand, the vehicle 
+can reconﬁgure itself into a compact multi-rotor-like airframe. A 
+nonlinear mixer module is used to distribute the control actions 
+between rotor speeds, control surface deﬂections and the hinge-
+actuation servos.
+18
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 25. Morphing tailsitter design [246].

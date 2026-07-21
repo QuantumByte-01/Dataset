@@ -1,0 +1,129 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 3.2.3. Tiltwing aircraft
+# START_PAGE: 8
+
+For a tiltwing aircraft, such as the one shown in Fig. 7, the pro-
+pelling force F B
+r has a direction which is a function of the wing-tilt 
+angle χ, similar to tiltrotor aircraft (10):
+F B
+r =
+⎛
+⎝
+cosχ
+0
+sinχ
+0
+1
+0
+−sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+cT
+ω2
+R + ω2
+L
+
+0
+0
+⎞
+⎠.
+(14)
+However, the wing-tilting capabilities makes the computation of 
+aerodynamic forces more complex. The lift and drag coeﬃcients 
+no longer solely depend on the body-frame velocity vector vB as 
+for tailsitters (7) and tiltrotors (11) but additionally change based 
+on the current wing-tilt angle:
+F B
+a = ρ
+2 S
+
+
+
+vB
+
+
+
+
+cL(vB,χ)v⊥B −cD(vB,χ)vB
+
+.
+(15)
+The current wing-tilt angle also affects differential thrust torque 
+generation, same as for tiltrotor vehicles (12):
+B
+r =
+⎛
+⎝
+cosχ
+0
+sinχ
+0
+1
+0
+−sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+−cQ
+cQ
+0
+0
+−cT l
+cTl
+⎞
+⎠
+ω2
+R
+ω2
+L
+
+,
+(16)
+with l being the y-axis distance between G and the center of the 
+propellers. Aerodynamic surfaces on tiltwing UAV are often pur-
+posely placed in the propeller down-wash to maintain control au-
+thority and improve maneuverability at low velocities. This means 
+that the effectiveness is primarily dependent on the rotor speed, 
+as with tailsitters (9). However, as the propeller-wing assembly ro-
+tates with respect to the body, so does the generated aerodynamic 
+torque:
+8
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+B
+a =
+⎛
+⎝
+cosχ
+0
+sinχ
+0
+1
+0
+−sinχ
+0
+cosχ
+⎞
+⎠
+⎛
+⎝
+cF (ωR)
+−cF (ωL)
+cF (ωR)
+cF (ωL)
+0
+0
+⎞
+⎠
+δR
+δL
+
+(17)

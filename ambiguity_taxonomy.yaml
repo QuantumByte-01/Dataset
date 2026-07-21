@@ -1,0 +1,194 @@
+# =====================================================================
+# ambiguity_taxonomy.yaml
+# ---------------------------------------------------------------------
+# SINGLE SOURCE OF TRUTH for ambiguity/vagueness labels used in
+# ambiguity.instances[].type.  Transcribed verbatim from the handbook
+# screenshots supplied by the user (MIT / Chantree-Nuseibeh + QuARS +
+# ClarifySTL + ISO/IEC/IEEE 29148:2018).  DO NOT add categories that are
+# not in the images; edit HERE only if a fuller taxonomy is provided.
+#
+# class mapping:
+#   ambiguous  -> multiple discrete competing readings
+#   vague      -> no discrete readings, an underspecified threshold/modal
+#                 (vagueness + incompleteness families)
+# 'severity: low' marks the items the handbook tagged "(not severe)".
+# =====================================================================
+
+version: 1
+source_note: >-
+  Transcribed from user-provided "Handbook of ..." ambiguity slides
+  (three screenshots). Tags in parentheses are the originating framework:
+  MIT = MIT/Berry-Kamsties style, QuARS = Quality Analyzer of Requirement
+  Specifications, ClarifySTL, ISO/IEC/IEEE 29148:2018.
+
+families:
+
+  # ------------------------------------------------------------------
+  # 1. SYNTACTIC / STRUCTURAL
+  # ------------------------------------------------------------------
+  syntactic_structural:
+    class: ambiguous
+    description: Structural attachment / coordination / compound-boundary ambiguity.
+    types:
+      - id: coordination
+        label: Coordination conjunction ambiguity
+        note: >-
+          "and"/"or" over a list of clauses or words; unclear which group the
+          conjunction binds. e.g. "A and B or C".
+        example_triggers: ["and", "or", "and/or"]
+      - id: pp_attachment
+        label: Prepositional phrase / modifier attachment
+        note: PP or modifier can attach to a noun or to a verb.
+        example_triggers: ["with", "on", "using", "for"]
+      - id: sequence_syntactic
+        label: (MIT) Sequence syntactic ambiguity / compound / multi-word entity
+        note: >-
+          Adjective/noun stacking ("superfluous hair remover"); ambiguity within
+          a compound or multi-word entity ("the user interface" - interface as
+          verb or noun; anchor, hammer, design, answer).
+        example_triggers: ["multi-word compounds", "noun-noun stacks"]
+
+  # ------------------------------------------------------------------
+  # 2. LEXICAL
+  # ------------------------------------------------------------------
+  lexical:
+    class: ambiguous
+    description: (MIT) A single word carries more than one meaning.
+    types:
+      - id: homonymy
+        label: (MIT) Homonymy
+        note: Word with multiple UNRELATED meanings (e.g. "bank").
+        example_triggers: ["bank", "trim", "yaw (dog vs axis)"]
+      - id: polysemy
+        label: (MIT) Polysemy
+        note: Word with related multiple meanings (e.g. "head", "mode", "position").
+        example_triggers: ["head", "mode", "position", "range"]
+
+  # ------------------------------------------------------------------
+  # 3. REFERENTIAL / ANAPHORA / CROSS-REFERENCE
+  # ------------------------------------------------------------------
+  referential:
+    class: ambiguous
+    description: Unclear antecedent for a pronoun or definite/common noun.
+    types:
+      - id: coreferential
+        label: (MIT) Coreferential ambiguity (pronoun)
+        note: Pronoun (it/they/this/which) with more than one candidate antecedent.
+        example_triggers: ["it", "they", "this", "which", "the latter"]
+      - id: underspecification_common_noun
+        label: (QuARS) Under-specification / common-noun ambiguity
+        note: >-
+          Bare common noun without which-one binding (controller, power, load);
+          includes hypernym/hyponym generality & taxonomy vagueness.
+        example_triggers: ["the controller", "power", "the load", "the sensor"]
+      - id: metonymy
+        label: Metonymy
+        note: A stand-in name refers to something associated ("The White House").
+        example_triggers: ["ground station", "the flight deck", "the ground"]
+      - id: elliptical
+        label: (MIT) Elliptical ambiguity
+        note: >-
+          Omitted-but-recoverable constituent recoverable more than one way
+          ("Sam loves Jess more than Jason").
+        example_triggers: ["more than", "as ... as", "than", "does too"]
+
+  # ------------------------------------------------------------------
+  # 4. SCOPAL
+  # ------------------------------------------------------------------
+  scopal:
+    class: ambiguous
+    description: (MIT) Ambiguous scope of quantifiers, negation, or numbers.
+    types:
+      - id: scope_quantification
+        label: (MIT) Scope quantification
+        note: >-
+          all / any / each / every scope; includes (MIT) implicative
+          ambiguity of "some".
+        example_triggers: ["all", "any", "each", "every", "some"]
+      - id: scope_negation
+        label: Scope of negation
+        note: What the "not"/"no" negates is ambiguous.
+        example_triggers: ["not", "no", "shall not", "never"]
+      - id: scope_numbers
+        label: Scope of numbers / collective-distributive
+        note: >-
+          "two books" = any 2 or a specific 2; collective vs distributive
+          ("the students wrote a paper" - same paper or different papers).
+        example_triggers: ["two", "both", "a paper each", "three sensors"]
+
+  # ------------------------------------------------------------------
+  # 5. PRAGMATIC
+  # ------------------------------------------------------------------
+  pragmatic:
+    class: ambiguous
+    description: Context/presupposition-dependent readings.
+    types:
+      - id: presuppositional
+        label: (MIT) Presuppositional ambiguity
+        note: >-
+          Trigger presupposes prior event/state ("too", "also", "again",
+          "return to") - ambiguous WHAT was presupposed.
+        example_triggers: ["too", "also", "again", "return to", "resume"]
+      - id: idiomatic
+        label: (MIT) Idiomatic ambiguity
+        severity: low
+        note: Idiom readable literally or figuratively.
+        example_triggers: ["fail safe", "hand over", "ride out"]
+      - id: generic_nongeneric
+        label: (MIT) Generic / non-generic ambiguity
+        severity: low
+        note: Bare NP as a kind vs a specific instance ("the operator").
+        example_triggers: ["the operator", "an aircraft", "the battery"]
+      - id: type_ambiguity
+        label: (MIT) Type ambiguity
+        severity: low
+        note: A term read as a type/class vs a token/instance.
+        example_triggers: ["a waypoint", "the mission"]
+
+  # ------------------------------------------------------------------
+  # 6. VAGUENESS   (class: vague)
+  # ------------------------------------------------------------------
+  vagueness:
+    class: vague
+    description: No discrete competing readings - an underspecified threshold/modal.
+    types:
+      - id: temporal_vagueness
+        label: (ClarifySTL) Temporal vagueness
+        note: Unquantified time ("soon", "later", "promptly", "shortly").
+        example_triggers: ["soon", "later", "promptly", "shortly", "in a timely manner"]
+      - id: threshold_vagueness
+        label: (QuARS) Sorites / threshold vagueness
+        note: Unquantified magnitude adjective ("high", "low", "large", "fast").
+        example_triggers: ["high", "low", "large", "small", "fast", "sufficient", "adequate"]
+      - id: comparative_superlative
+        label: (QuARS) Comparatives & superlatives
+        note: Comparative/superlative with no baseline ("higher", "highest", "minimal").
+        example_triggers: ["higher", "highest", "minimal", "maximum possible", "as low as possible"]
+      - id: subject_vagueness
+        label: Subject vagueness (passive voice)
+        note: Passive voice hides the responsible actor ("shall be provided").
+        example_triggers: ["shall be provided", "is to be ensured", "will be maintained"]
+      - id: subjectivity
+        label: (QuARS) Subjectivity
+        note: Feelings / personal-opinion wording ("similarly", "user-friendly", "having in mind").
+        example_triggers: ["similarly", "user-friendly", "as appropriate", "having in mind", "acceptable"]
+      - id: optionality_vague_modals
+        label: (QuARS) Optionality / vague modals
+        note: Optional/uncertain modal ("possibly", "could", "if needed", "might", "may", "approximately").
+        example_triggers: ["possibly", "could", "if needed", "might", "may", "approximately", "as required"]
+
+  # ------------------------------------------------------------------
+  # 7. INCOMPLETENESS   (ISO/IEC/IEEE 29148:2018)  (class: vague)
+  # ------------------------------------------------------------------
+  incompleteness:
+    class: vague
+    description: ISO/IEC/IEEE 29148:2018 completeness defects.
+    types:
+      - id: underspecification
+        label: (QuARS) Under-specification
+        note: A referenced quantity/behaviour/condition is left unspecified (TBD gaps).
+        example_triggers: ["to be determined", "as specified elsewhere", "etc."]
+      - id: missing_units
+        label: Missing units
+        note: A numeric value stated without its unit of measure.
+        example_triggers: ["a value with no unit", "bare number"]

@@ -1,0 +1,18 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.2.3. Tiltwing
+# START_PAGE: 15
+
+Unfortunately, literature on uniﬁed control laws for tiltwing ve-
+hicles is still rather sparse. The few academic works which suc-
+cessfully cover the full ﬂight envelope with a single controller, 
+follow the same patterns as introduced above. For example, [166]
+very well shows the controller synthesis process for a model-based 
+Dynamic Inversion approach with a baseline LQR controller. Adap-
+tive parameter formulations and corresponding estimation laws for 
+observer-based Dynamic Inversion are presented in Table 8.
+Similar to tiltrotor vehicles, a recent work investigates the use 
+of NMPC for autonomous tiltwing control [155]. Herein, the full 
+development process covering system modeling, parameter esti-
+mation and identiﬁcation, trim-map generation for NMPC regular-
+ization and ﬁnally the NMPC design and implementation itself is 
+discussed in detail.

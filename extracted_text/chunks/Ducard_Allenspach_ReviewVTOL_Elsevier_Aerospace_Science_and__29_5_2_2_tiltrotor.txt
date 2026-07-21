@@ -1,0 +1,80 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.2.2. Tiltrotor
+# START_PAGE: 14
+
+An initial approach for tiltrotor UAV control was using conser-
+vatively tuned Robust Control. As a reference, [99] demonstrates a 
+particle swarm optimization approach to tune the controller gains. 
+Since this algorithm allows to include constraints in the gain and 
+phase margin, rising time and maximum overshoot, stability over 
+the entire ﬂight envelope can be ensured. Stability and robustness 
+over the whole ﬂight envelope could also be proven in [219,141], 
+using an H∞control approach together with a Linear Parameter 
+Varying [234] system representation. The corresponding gain ma-
+trix is obtained through μ-synthesis [219] or Lyapunov methods 
+[141]. Further H∞-like controller designs are found in [111,218].
+Tracking performance can be improved through Direct Gain 
+Scheduling implementations, as shown in [113]. Here, a single neu-
+ron NN continuously adapts the gains of a PID controller as shown 
+14
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 18. Reinforcement learning has been recently used to train neural networks to control a wide variety of hybrid VTOL aircraft as shown in [90].
+Fig. 19. The pitch angle control architecture used in [113]. The pitch torque 
+θ(k)
+applied to the aircraft is computed from the pitch angle error eθ(k) = θd(k) −θ(k)
+and passed through a PID controller whose gains are adapted on line, as being the 
+weights of one-neuron neural network.
+in Fig. 19. Based on equation (19), the adaptation law takes the 
+form
+K j(t) ←K j(t) + ηe(t)2 ∂uP I D(x(t))
+∂x(t)
+j ∈{P, I, D},
+where η is the learning rate. NN-based Direct Gain Scheduling 
+is also used in [150], where the SMC gains are scaled with the 
+output of a radial-basis function NN to counteract the chattering 
+phenomenon.
+As for tailsitters, the addition of nonlinear Dynamic Inversion 
+terms helps to improve ﬂight performance and simplify controller 
+tuning. While some implementations are purely model based [133,
+121,235], newer publications tend more towards the use of data-
+driven methods. A classical example is the use of extended state 
+observers as shown in [110,107]. On the other hand, [125] de-
+velops an adaptive control strategy, shown in Fig. 20, whereby 
+all model-uncertainty and nonlinearities are lumped into a single 
+compensation term computed by a radial-basis function NN. The 
+results show that modeling errors, CoG-location errors, and inertia-
+term errors are well compensated. Similar NN-based Dynamic In-
+version approaches are presented in [102,236,135,124,112]. An-
+other machine learning technique known as iterative learning is 
+used in [89]. These different formulations for adaptive parameters 
+and corresponding estimation laws in observer-based Dynamic In-
+version are collected in Table 8.
+As a promising alternative to the prevailing Dynamic Inver-
+sion strategy, recent works have started to look at Nonlinear Model 
+Predictive Control (NMPC) for full envelope tiltrotor UAV control 
+[143,146,147]. NMPC is an optimal control scheme, implemented 
+in a receding horizon fashion, meaning that an optimization prob-
+lem of the form:
+min
+ x2,...,xN+1
+u1,...,uN
+
+N
+j=1 h j(x j, u j) + hN+1(xN+1)
+(27a)
+s.t.
+˙x = f (x, u)
+(27b)
+x1 = x(t)
+(27c)
+x j ∈X ∀j ∈{1,..., N + 1}
+(27d)
+u j ∈U ∀j ∈{1,..., N}
+(27e)
+with ﬁnite prediction horizon N is reinitialized (27c) and solved at 
+every iteration [237]. As shown in [143,146,147], the problem for-
+mulation allows the inclusion of the full nonlinear system model 
+(including aerodynamic and coupling effects, as well as potential 
+tilt angle dynamics) together with vehicle speciﬁc state (27d) and 
+actuator (27e) constraints.

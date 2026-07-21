@@ -1,0 +1,66 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.1.3. Tiltrotor
+# START_PAGE: 13
+
+It has been shown in Section 4.2 that the trajectory genera-
+tion of tiltrotor UAVs is strongly based on trim states. Accordingly, 
+most control structures are using the same trim points to employ 
+Divide and Conquer methodologies. Using rotor-tilt angles or air-
+speed as scheduling variables, this approach has for example been 
+investigated in [106,220]. The work in [138] reduces the number of 
+controller switches, by using only one controller per ﬂight stage or 
+even just two controllers for hover and cruise modes. Alternatively, 
+Control Authority Weighting has been successfully applied in mul-
+tiple different occasions. In [140], the controllers are weighted 
+based on their underlying model, by evaluating the quality of the 
+approximation at each iteration. Other applications use the refer-
+ence tilt angles to distribute the control authority between VTOL 
+and cruise controllers [130]. In [144], the airspeed is used to mod-
+ify the relative weight between two velocity controllers running in 
+parallel, one designed for RW and one for FW mode.
+As for tailsitters, the P/PD/PID control law shown in equation 
+(19) is a well established choice for tiltrotor UAV control in com-
+bination with the mentioned scheduling policies. LQR and general 
+state feedback methods are also widely used. Here, the Bryson’s 
+rule is presented for a tiltrotor UAV as an example of a tuning 
+method in [227], where the weights are the inverse of the respec-
+tive maximum state- or input-allowed value squared.
+To reduce the design complexity and computational burden as-
+sociated with having many isolated trim-points, [109,228] used a 
+robust Sliding Mode Control (SMC) that only requires two such lin-
+earization points instead. SMC is known to provide robustness and 
+ﬁnite-time convergence to the controlled system [229]. However, 
+one drawback of this approach is the chattering phenomenon of 
+the control signal, caused by the zig-zag motion of the state along 
+the sliding surface. For a system with state x = ( x⊤
+1 x⊤
+2 )⊤where 
+uncertainties only affect x2, SMC deﬁnes a sliding surface
+σ(x) =
+
+K
+I
+x1
+x2
+
+= Lx.
+(22)
+The gain K is chosen such that it stabilizes the ˙x1 subsystem. Try-
+ing to achieve σ(x) = 0, the control input u is designed to fulﬁll 
+σ(x) ˙σ(x) < 0 by choosing
+u = (LB)−1 (−L Ax) −a sgn(σ(x))
+(23)
+Fig. 15. H∞-control components.
+Fig. 16. Uniﬁed control approach: Given a desired velocity reference vI
+ref , the trans-
+lational controller directly computes the total thrust command Tcmd, as well as tilt 
+angle χcmd (only for tiltrotor and tiltwing vehicles) and attitude values RBcmd
+I
+for 
+thrust vector alignment. Control torques MB
+cmd from the rotational controller are 
+fed into the control allocation, together with the previously obtained total thrust 
+and tilt angle commands to compute the actuator commands for the hybrid UAV.
+where a is a tuning parameter. To avoid the common chattering 
+phenomenon, [228] incorporates fuzzy control into the baseline 
+SMC implementation.

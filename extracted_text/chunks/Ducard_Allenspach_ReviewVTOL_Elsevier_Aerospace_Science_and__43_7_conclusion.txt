@@ -1,0 +1,95 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 7. Conclusion
+# START_PAGE: 20
+
+This paper reviewed the major currently-available designs for 
+hybrid or convertible VTOL UAVs, together with state-of-the-art 
+ﬂight control methodologies encountered in recent literature. The 
+comparative study has been conducted on the three main different 
+types of hybrid VTOL aircraft, namely 1) tailsitters, 2) tilting-rotors, 
+and 3) tiltwing vehicles. Each class displays inherent advantages 
+and drawbacks over the others, regarding mechanical complexity, 
+stability, eﬃciency and maneuverability.
+This study shows that the simplest design is the tailsitter type 
+with either two propellers and two elevons, or four propellers and 
+no elevons. As their name indicates, tailsitters require the fuselage 
+to change orientation during ﬂight mode transition. Although they 
+allow eﬃcient wing design, tailsitters also display high suscepti-
+bility to wind disturbances during the take off, hover, and landing 
+phases, because of a large vertical wing surface exposed to side 
+winds. On the other hand, the tiltrotor and tiltwing conﬁgurations 
+require complex tilting actuation to achieve transition between 
+ﬂight modes. While tiltrotor hybrid UAV are generally less eﬃcient 
+than the other two types, studies also show that it is the most 
+agile and less-wind-susceptible vehicle during the (quasi-)station-
+ary ﬂight phases. In particular, designs with a pair of propellers 
+on each side of the fuselage offer the possibility to produce ex-
+tra yaw torque by differential-tilting propeller pairs on each side 
+of the fuselage.
+This review also focused on the four main components that 
+make up a successful ﬂight control system for an autonomous 
+VTOL aircraft. They are namely: a rigorously-designed 1) physi-
+cal model of the ﬂying system, 2) reference-trajectory generation 
+during ﬂight mode transition, 3) ﬂight controller and 4) actuator-
+control allocation.
+A highly-nonlinear model is required to accurately capture the 
+combined lift generation from the propellers and wings in the 
+different ﬂight phases. During the transitions from RW mode to 
+FW mode and back, hybrid UAVs encounter large AoA and slow-
+translational speed ﬂight conditions, during which there are large 
+aerodynamic-lift force variations. These complex dynamics make 
+the generation of reference signals for hybrid VTOL aircraft more 
+challenging compared to conventional RW or FW vehicles alone. In 
+addition, the following constraints must be taken into account: a) 
+physical vehicles limitations such as the limited power or thrust 
+provided by the motors, b) the under-actuated nature of the ﬂy-
+ing machines, and c) the (strong) nonlinearities and uncertainties 
+in the equations that describe the behavior of the ﬂying machines 
+for the full ﬂight envelope.
+In order to handle the varying ﬂight conditions, this study revealed 
+there are two main families of ﬂight control approaches, namely 1) 
+controller-scheduling policies, and 2) uniﬁed-control policies. In the 
+ﬁrst family of control architectures, separate ﬂight controllers are 
+activated successively or blended depending on the ﬂight operat-
+ing conditions. These controllers are based on a linearized system 
+model at different operating points or trim points within the ﬂight 
+envelope. Those trim points are then scheduled together with the 
+corresponding linear controllers throughout the ﬂight modes. Re-
+cent investigations to augment or replace these controllers with 
+data-driven methods and machine learning promise to increase the 
+robustness with respect to modeling and system identiﬁcation er-
+rors.
+The second main family of control architecture involves uniﬁed-
+control policies without the need to switch among ﬂight con-
+trollers. It consists in a continuous single control approach a) valid 
+in all ﬂight modes (VTOL, cruising) despite the fundamental behav-
+ior differences between them, b) able to transition between these 
+modes in a controlled, smooth and safe manner, c) robust against 
+model uncertainties and unpredictable external perturbations. To 
+this end, the current trend is to incorporate as much knowledge 
+of the vehicle as possible into the ﬂight controller, for example 
+through highly-nonlinear control laws, model predictive control, 
+neural networks or machine learning approaches. These methods 
+remove the need to schedule oﬄine-precomputed controllers, but 
+rather they are able to capture and exploit the nonlinearities of the 
+system and compute control signals that can take into account the 
+vehicle’s physical limitations simultaneously, in realtime.
+To conclude, control system design for hybrid UAVs is still a 
+very active ﬁeld in modern research. Only a few projects have 
+successfully completed their development phase and are ready to 
+be used in real-world applications. Current and future develop-
+ment concentrate on elaborated more sophisticated approaches, 
+both to improve model ﬁdelity and control performance. This is 
+done through combination of data-driven, model-based, optimiza-
+tion and self-learning ﬂight control approaches. However, such ap-
+proaches often require more computing power aboard the vehicle. 
+Although processors keeps increasing in speed and memory, it is 
+still required to mitigate control complexity and available comput-
+ing resources.
+20
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Declaration of competing interest
+The authors declare that they have no known competing ﬁnan-
+cial interests or personal relationships that could have appeared to 
+inﬂuence the work reported in this paper.

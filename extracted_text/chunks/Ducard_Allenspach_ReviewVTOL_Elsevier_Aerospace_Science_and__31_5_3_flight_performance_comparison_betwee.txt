@@ -1,0 +1,210 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 5.3. Flight performance comparison between a scheduled vs. a uniﬁed
+# START_PAGE: 15
+
+control approach
+The scheduled and uniﬁed control approaches presented in Sec-
+tions 5.1 and 5.2 respectively compose two fundamentally different 
+methodologies for hybrid UAV control. To provide some intuition 
+about the ﬂight performance and difference thereof, this section 
+will compare and discuss the simulation results of a representa-
+tive state-of-the-art controller from each section. As a comparison 
+platform, a high-ﬁdelity simulator of the tiltrotor vehicle shown in 
+Fig. 6 has been developed, based on the detailed vehicle model 
+derived in [134]. Amongst other things, the simulation includes 
+precise aerodynamic models of the wing, fuselage, stabilizers and 
+control surfaces, gyroscopic effects and inherent dynamics of the 
+tilting actuation, as well as changes in propeller thrust generation 
+due to airspeed.
+As an exemplary scheduled control approach, the recently de-
+veloped FPID implementation is selected [144]. As sketched and 
+explained in Fig. 21a, the method uses the Control Authority 
+Weighting scheduling policy. Similarly, the latest development in 
+uniﬁed control approaches is given by the novel NMPC algorithm 
+described in [143,146] and portrait in Fig. 21b. Although both con-
+trol approaches have been successfully tested in outdoor experi-
+ments, the simulator mentioned above is used here to ensure a 
+fair comparison. Furthermore, both methods use the same control 
+allocation strategy and are commanded to track the exact same 
+trajectory, namely a constant acceleration for RW-to-FW and con-
+stant deceleration for FW-to-RW transitions. Each controller has 
+been tuned to achieve best performance respectively. The simula-
+tion results of the two approaches are shown in Fig. 22.
+Due to the inherent linearization and statically-determined 
+rotor-tilt angle commands of scheduled control approaches, the
+15
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Table 5
+Tailsitter control methods.
+Control methodology
+Description
+Source
+Scheduled Control Approach
+Divide and Conquer with P/PD/PID
+[32,41,65,71,72,77,78,213,226,238,239]
+Divide and Conquer with LQR
+[32,55,64,67,68]
+Divide and Conquer with Backstepping
+[61]
+Control Authority Weighting with P/PD/PID
+[49]
+Uniﬁed Control Approach
+Robust Control
+[34,52,56,66,70,76]
+Direct Gain Scheduling with P/PD/PID
+[36]
+Dynamic Inversion with P/PD/PID
+[94,95,81,59,48,84,60,74,44,37,88,53,54,62,73,75,80,45,89]
+Dynamic Inversion with LQR
+[93,91,92,82,83]
+Dynamic Inversion with Backstepping
+[31,33,38,87,216]
+Model Reference Adaptive Control
+[58,51,30]
+Reinforcement Learning
+[90]
+Table 6
+Tiltrotor control methods.
+Control methodology
+Description
+Source
+Scheduled Control Approach
+Divide and Conquer with P/PD/PID
+[117,132,138,149,240]
+Divide and Conquer with LQR
+[100,101,105,106,220,222,227,241]
+Divide and Conquer with SMC
+[109,228]
+Control Authority Weighting with P/PD/PID
+[130,131,142,144]
+Control Authority Weighting with LQR
+[140]
+Uniﬁed Control Approach
+Robust Control
+[120,218,242,122,243,223,99,111]
+Linear Parameter Varying with H∞
+[141,219]
+Direct Gain Scheduling with SMC
+[150]
+Direct Gain Scheduling with P/PD/PID
+[113]
+Dynamic Inversion with P/PD/PID
+[133,102,135,236,235,244,104,96,97,125,112]
+Dynamic Inversion with SMC
+[110,121]
+Dynamic Inversion with Backstepping
+[136,137]
+Nonlinear Model Predictive Control
+[147,146]
+Table 7
+Tiltwing control methods.
+Control methodology
+Description
+Source
+Scheduled Control Approach
+Divide and Conquer with P/PD/PID
+[151,153,154,165]
+Divide and Conquer with H∞
+[171–175]
+Control Authority Weighting with P/PD/PID
+[156]
+Uniﬁed Control Approach
+Dynamic Inversion with P/PD/PID
+[160,161]
+Dynamic Inversion with LQR
+[166]
+Model Reference Adaptive Control
+[167]
+Nonlinear Model Predictive Control
+[155]
+Table 8
+Collection of common adaptive parameters and estimation laws in the observer-based Dynamic Inversion
+uniﬁed control approach for hybrid UAV control.
+Type
+Adaptive parameters
+Estimation Law
+Source
+Tailsitter
+Aﬃne Model Parameters
+Inverse Laplace Transform
+[59]
+Aerodynamic Effects
+Filtered Plant Inversion
+[74]
+Equivalent Disturbance
+Filtered Plant Inversion
+[91,92,83,82,95,94,93]
+Aerodynamic Effects
+Extended State Observer
+[87]
+Equivalent Disturbance
+Luenberger/Kalman Observer
+[37]
+Aerodynamic Coeﬃcients
+Luenberger/Kalman Observer
+[53,54]
+Aﬃne Model Parameters
+Recursive Least Squares
+[31,33]
+Aﬃne Model Parameters
+Lyapunov-based Design
+[44,216,58]
+Equivalent Disturbance
+Lyapunov-based Design
+[30,51]
+Tiltrotor
+Equivalent Disturbance
+Neural Networks
+[236,102,135,89,112,124]
+Equivalent Disturbance
+Extended State Observer
+[96,97,104,110]
+Tiltwing
+Equivalent Disturbance
+Filtered Plant Inversion
+[161,160]
+Aﬃne Model Parameters
+Lyapunov-based Design
+[167]
+FPID controller initially accelerates the vehicle by pitching down, 
+as if it were a regular multi-copter (t = 7 s −11 s). However, this 
+maneuver results in undesired downwards lift forces being gener-
+ated by the main wing (see Section 4.2). On the other hand, the 
+combined tilt angle and attitude computation in the NMPC con-
+troller accelerates the vehicle only through increasing tilt angles. 
+In addition, the ﬁxed airspeed-dependent mapping of the rotor-
+tilt angle in the FPID control approach has the main drawback 
+that, as long as the airspeed remains high, the rotors are not com-
+manded to tilt back to the RW conﬁguration. This results in a very 
+slow speed decrease and poor vertical tracking compared to NMPC 
+(t = 24 s −27 s).
+16
+G.J.J. Ducard and M. Allenspach
+Aerospace Science and Technology 118 (2021) 107035
+Fig. 20. Neural network augmentation for nonlinear Dynamic Inversion in [125].
+Fig. 21. Representative state-of-the-art scheduled and uniﬁed control approaches.
+In summary, the uniﬁed NMPC control approach outperforms 
+the scheduled FPID methodology in all ﬂight phases. On the one 
+hand, this is related to the fundamental difference in tilt angle 
+computation between scheduled and uniﬁed controllers. While the 
+former use static mappings (hand-crafted or trim-point based), the 
+latter allow an online adaptive and thus potentially more optimal 
+design. On the other hand, the discretization of the ﬂight envelope 
+in scheduled control approaches means that the knowledge of the 
+model is incomplete. Thus, control performance is affected, espe-
+cially in between the selected operating points. In uniﬁed control 
+approaches and NMPC in particular, the full model is included to 
+optimize the control sequence. For a more detailed discussion, the 
+interested reader is referred to [146].
+This analysis conﬁrms the observable trend in academia, mov-
+ing towards nonlinear, uniﬁed approaches. However, the superior-
+ity of such methods strongly relies on the accuracy of the underly-
+ing model. In case a high-quality system identiﬁcation is not pos-
+sible, machine learning or general data-driven methods are used to 
+mitigate these effects as mentioned in Section 5.2.
+More advanced and optimization-based approaches might also 
+come at the cost of increased computational load. In practice, this 
+might require a powerful on-board companion computer, while 
+the simple scheduled control implementations can run directly on 
+standard-available autopilots.

@@ -1,0 +1,12 @@
+# SOURCE: Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and
+# SECTION: 2.2. Academic research-project prototypes
+# START_PAGE: 5
+
+Table 3 provides an overview of the most common hybrid UAVs 
+found in modern scientiﬁc literature within academic research. 
+Three main types of unmanned VTOL platform are standing out, 
+namely tailsitter-, tiltrotor-, and tiltwing-VTOL aircraft. A general 
+comparison of the three vehicle types regarding mechanical com-
+plexity, stability concerns, eﬃciency and maneuverability is pro-
+vided in Table 4. Additional performance comparisons and evalua-
+tions for hybrid VTOL aircraft can be found in [26].

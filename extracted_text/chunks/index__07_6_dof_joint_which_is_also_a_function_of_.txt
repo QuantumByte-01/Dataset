@@ -1,0 +1,43 @@
+# SOURCE: index
+# SECTION: 6 DoF Joint, which is also a function of the Simscape. The 3D CAD model has its
+# START_PAGE: 103
+
+own degrees of freedom, such as rotors, control surface deflections. Forces and 
+moments blocks are generating force and moments according to the control surface 
+deflection, motor RPMs, dynamic pressure. The Plant Model blocks have a 
+connection with the Mechanics Explorer, which enables us to see the aircraft 
+movements in a 3D environment. 
+There are Lookup Tables that are embedded in the force and moment blocks. These 
+look-up tables are generated using the CFD Database. CFD database gives us the 
+static coefficients while the dynamic coefficients are calculated using the related 
+equations in Roskam.  
+Thrust forces and moments are also included in the forces and moments block. They 
+are also calculated using the Look-up tables. The manufacturer provides the values 
+used in the look-up tables. 
+ 
+Figure 3.10. Plant Model 
+ Mechanics Explorer3D CAD Model6 DoF JointWorld BlockForces and Moments
+ 
+ 
+82 
+3D CAD model of the aircraft includes six motor actuators, one aileron actuator, and 
+one elevator actuator. The upper and lower limits of these actuators and tilting 
+mechanisms are tabulated in Table 3.3. 
+Table 3.3 Upper and Lower Limits of the Actuators 
+Actuator 
+Lower Limit Upper Limit 
+Front Right Tip Motor 
+0 RPM
+5462 RPM 
+Front Right Root Motor 0 RPM 
+5462 RPM 
+Front Left Root Motor 
+0 RPM
+5462 RPM 
+Front Left Tip Motor 
+0 RPM
+5462 RPM 
+Rear Right Motor 
+0 RPM
+8842 RPM 
+Rear Left Motor
