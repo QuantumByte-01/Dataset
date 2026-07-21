@@ -1,0 +1,1080 @@
+[
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "fitz",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fitz",
+        "description": "fitz",
+        "detail": "fitz",
+        "documentation": {}
+    },
+    {
+        "label": "statistics",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "statistics",
+        "description": "statistics",
+        "detail": "statistics",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "assemble_dataset",
+        "description": "assemble_dataset",
+        "peekOfCode": "def main() -> None:\n    manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    plan = {r[\"id\"]: r for r in json.loads(PLAN.read_text(encoding=\"utf-8\"))}\n    records: list[dict] = []\n    shard_stats: list[tuple[str, int]] = []\n    for m in manifest:\n        path = Path(m[\"output_shard_file\"])\n        if not path.exists():\n            raise SystemExit(f\"Missing shard: {path}\")\n        lines = path.read_text(encoding=\"utf-8\").strip().split(\"\\n\")",
+        "detail": "assemble_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "assemble_dataset",
+        "description": "assemble_dataset",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\nSHARDS = ROOT / \"shards\"\nOUT_JSONL = ROOT / \"fw_vtol_requirements_dataset.jsonl\"\nOUT_SUMMARY = ROOT / \"dataset_summary.md\"\nMANIFEST = ROOT / \"batches\" / \"_manifest.json\"\nPLAN = ROOT / \"dataset_plan.json\"\ndef main() -> None:\n    manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    plan = {r[\"id\"]: r for r in json.loads(PLAN.read_text(encoding=\"utf-8\"))}\n    records: list[dict] = []",
+        "detail": "assemble_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "SHARDS",
+        "kind": 5,
+        "importPath": "assemble_dataset",
+        "description": "assemble_dataset",
+        "peekOfCode": "SHARDS = ROOT / \"shards\"\nOUT_JSONL = ROOT / \"fw_vtol_requirements_dataset.jsonl\"\nOUT_SUMMARY = ROOT / \"dataset_summary.md\"\nMANIFEST = ROOT / \"batches\" / \"_manifest.json\"\nPLAN = ROOT / \"dataset_plan.json\"\ndef main() -> None:\n    manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    plan = {r[\"id\"]: r for r in json.loads(PLAN.read_text(encoding=\"utf-8\"))}\n    records: list[dict] = []\n    shard_stats: list[tuple[str, int]] = []",
+        "detail": "assemble_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "OUT_JSONL",
+        "kind": 5,
+        "importPath": "assemble_dataset",
+        "description": "assemble_dataset",
+        "peekOfCode": "OUT_JSONL = ROOT / \"fw_vtol_requirements_dataset.jsonl\"\nOUT_SUMMARY = ROOT / \"dataset_summary.md\"\nMANIFEST = ROOT / \"batches\" / \"_manifest.json\"\nPLAN = ROOT / \"dataset_plan.json\"\ndef main() -> None:\n    manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    plan = {r[\"id\"]: r for r in json.loads(PLAN.read_text(encoding=\"utf-8\"))}\n    records: list[dict] = []\n    shard_stats: list[tuple[str, int]] = []\n    for m in manifest:",
+        "detail": "assemble_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "OUT_SUMMARY",
+        "kind": 5,
+        "importPath": "assemble_dataset",
+        "description": "assemble_dataset",
+        "peekOfCode": "OUT_SUMMARY = ROOT / \"dataset_summary.md\"\nMANIFEST = ROOT / \"batches\" / \"_manifest.json\"\nPLAN = ROOT / \"dataset_plan.json\"\ndef main() -> None:\n    manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    plan = {r[\"id\"]: r for r in json.loads(PLAN.read_text(encoding=\"utf-8\"))}\n    records: list[dict] = []\n    shard_stats: list[tuple[str, int]] = []\n    for m in manifest:\n        path = Path(m[\"output_shard_file\"])",
+        "detail": "assemble_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "MANIFEST",
+        "kind": 5,
+        "importPath": "assemble_dataset",
+        "description": "assemble_dataset",
+        "peekOfCode": "MANIFEST = ROOT / \"batches\" / \"_manifest.json\"\nPLAN = ROOT / \"dataset_plan.json\"\ndef main() -> None:\n    manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    plan = {r[\"id\"]: r for r in json.loads(PLAN.read_text(encoding=\"utf-8\"))}\n    records: list[dict] = []\n    shard_stats: list[tuple[str, int]] = []\n    for m in manifest:\n        path = Path(m[\"output_shard_file\"])\n        if not path.exists():",
+        "detail": "assemble_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "PLAN",
+        "kind": 5,
+        "importPath": "assemble_dataset",
+        "description": "assemble_dataset",
+        "peekOfCode": "PLAN = ROOT / \"dataset_plan.json\"\ndef main() -> None:\n    manifest = json.loads(MANIFEST.read_text(encoding=\"utf-8\"))\n    plan = {r[\"id\"]: r for r in json.loads(PLAN.read_text(encoding=\"utf-8\"))}\n    records: list[dict] = []\n    shard_stats: list[tuple[str, int]] = []\n    for m in manifest:\n        path = Path(m[\"output_shard_file\"])\n        if not path.exists():\n            raise SystemExit(f\"Missing shard: {path}\")",
+        "detail": "assemble_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "next_true",
+        "kind": 2,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "def next_true():\n    global _true_iter\n    try:\n        return next(_true_iter)\n    except StopIteration:\n        random.shuffle(_true_cycle)\n        _true_iter = iter(_true_cycle)\n        return next(_true_iter)\ndef next_vague():\n    global _vague_iter",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "next_vague",
+        "kind": 2,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "def next_vague():\n    global _vague_iter\n    try:\n        return next(_vague_iter)\n    except StopIteration:\n        random.shuffle(_vague_cycle)\n        _vague_iter = iter(_vague_cycle)\n        return next(_vague_iter)\ndef make_sites(bucket: str):\n    \"\"\"Return (class, list[(type,family)]) for a record given its difficulty bucket.\"\"\"",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "make_sites",
+        "kind": 2,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "def make_sites(bucket: str):\n    \"\"\"Return (class, list[(type,family)]) for a record given its difficulty bucket.\"\"\"\n    if bucket == \"precise\":\n        return \"precise\", []\n    if bucket == \"amb12\":\n        n = random.choice([1, 1, 2, 2, 2])\n        is_vague = random.random() < 0.4\n        if is_vague:\n            sites = [next_vague() for _ in range(n)]\n            return \"vague\", sites",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "make_obligations",
+        "kind": 2,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "def make_obligations(bucket: str, high_sites: bool | None):\n    if bucket == \"precise\":\n        return 1\n    if bucket == \"amb12\":\n        return random.choice([1, 1, 1, 2, 2, 3])\n    # amb3plus\n    if high_sites:\n        return random.choice([1, 2, 2, 3, 4])\n    return random.choice([3, 4, 5])\n# ---------------------------------------------------------------------",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "new_id",
+        "kind": 2,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "def new_id(prefix):\n    id_counters[prefix] += 1\n    return f\"REQ-{prefix}-{id_counters[prefix]:03d}\"\n# ---- Mission level (10) ----\nmission_topics = [\n    \"overall FW-VTOL mission capability (VTOL + cruise + payload delivery)\",\n    \"operational endurance and range envelope\",\n    \"payload carriage capability\",\n    \"autonomous mission execution and waypoint navigation\",\n    \"operator command and monitoring capability\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\nCHUNK_DIR = ROOT / \"extracted_text\" / \"chunks\"\nBATCH_DIR = ROOT / \"batches\"\nrandom.seed(42)\n# ---------------------------------------------------------------------\n# 1. Subsystem threads (10) — id prefix tags + grounding chunk mapping\n# ---------------------------------------------------------------------\nSUBSYSTEMS = [\n    \"airframe_aerostructures\",\n    \"propulsion\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "CHUNK_DIR",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "CHUNK_DIR = ROOT / \"extracted_text\" / \"chunks\"\nBATCH_DIR = ROOT / \"batches\"\nrandom.seed(42)\n# ---------------------------------------------------------------------\n# 1. Subsystem threads (10) — id prefix tags + grounding chunk mapping\n# ---------------------------------------------------------------------\nSUBSYSTEMS = [\n    \"airframe_aerostructures\",\n    \"propulsion\",\n    \"tilt_actuation\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "BATCH_DIR",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "BATCH_DIR = ROOT / \"batches\"\nrandom.seed(42)\n# ---------------------------------------------------------------------\n# 1. Subsystem threads (10) — id prefix tags + grounding chunk mapping\n# ---------------------------------------------------------------------\nSUBSYSTEMS = [\n    \"airframe_aerostructures\",\n    \"propulsion\",\n    \"tilt_actuation\",\n    \"power_energy\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "SUBSYSTEMS",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "SUBSYSTEMS = [\n    \"airframe_aerostructures\",\n    \"propulsion\",\n    \"tilt_actuation\",\n    \"power_energy\",\n    \"flight_control_system\",\n    \"navigation_sensing\",\n    \"datalink_comms\",\n    \"payload\",\n    \"ground_control_station\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "DUCARD",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "DUCARD = \"Ducard_Allenspach_ReviewVTOL_Elsevier_Aerospace_Science_and\"\nCHUNKS = {\n    \"airframe_aerostructures\": [\n        \"index__05_2_aerodynamic_design_and_optimization.txt\",\n        \"index__01_abstract.txt\",\n        f\"{DUCARD}__03_2_platform_designs.txt\",\n    ],\n    \"propulsion\": [\n        \"index__03_4_rotors.txt\",\n        \"index__08_0_rpm.txt\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "CHUNKS",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "CHUNKS = {\n    \"airframe_aerostructures\": [\n        \"index__05_2_aerodynamic_design_and_optimization.txt\",\n        \"index__01_abstract.txt\",\n        f\"{DUCARD}__03_2_platform_designs.txt\",\n    ],\n    \"propulsion\": [\n        \"index__03_4_rotors.txt\",\n        \"index__08_0_rpm.txt\",\n        \"index__05_2_aerodynamic_design_and_optimization.txt\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "INTEGRATION_CHUNKS",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "INTEGRATION_CHUNKS = [\n    \"index__01_abstract.txt\",\n    \"index__02_1_introduction.txt\",\n    f\"{DUCARD}__01_1_introduction.txt\",\n    f\"{DUCARD}__02_1_authors_contributed_equally_to_the_wor.txt\",\n]\n# ---------------------------------------------------------------------\n# 2. Axis rotation pools (from requirement_categories.yaml)\n# ---------------------------------------------------------------------\nAXIS1 = [\"functional\", \"non_functional_reliability_availability\", \"non_functional_safety\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "AXIS1",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "AXIS1 = [\"functional\", \"non_functional_reliability_availability\", \"non_functional_safety\",\n         \"non_functional_security\", \"non_functional_usability\",\n         \"non_functional_maintainability\", \"interface\", \"constraint\"]\nAXIS2 = [\"structural\", \"state_driven\", \"event_driven\", \"quantitative\",\n         \"probabilistic\", \"hybrid_continuous\", \"domain_semantics_heavy\"]\n# subsystem -> axis1/axis2 weighting (which categories are plausible there)\nAXIS_BIAS = {\n    \"airframe_aerostructures\": ([\"constraint\", \"functional\", \"non_functional_maintainability\"],\n                                 [\"structural\", \"quantitative\"]),\n    \"propulsion\": ([\"functional\", \"constraint\", \"non_functional_reliability_availability\"],",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "AXIS2",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "AXIS2 = [\"structural\", \"state_driven\", \"event_driven\", \"quantitative\",\n         \"probabilistic\", \"hybrid_continuous\", \"domain_semantics_heavy\"]\n# subsystem -> axis1/axis2 weighting (which categories are plausible there)\nAXIS_BIAS = {\n    \"airframe_aerostructures\": ([\"constraint\", \"functional\", \"non_functional_maintainability\"],\n                                 [\"structural\", \"quantitative\"]),\n    \"propulsion\": ([\"functional\", \"constraint\", \"non_functional_reliability_availability\"],\n                   [\"quantitative\", \"state_driven\", \"hybrid_continuous\"]),\n    \"tilt_actuation\": ([\"functional\", \"interface\"],\n                        [\"state_driven\", \"event_driven\", \"hybrid_continuous\"]),",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "AXIS_BIAS",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "AXIS_BIAS = {\n    \"airframe_aerostructures\": ([\"constraint\", \"functional\", \"non_functional_maintainability\"],\n                                 [\"structural\", \"quantitative\"]),\n    \"propulsion\": ([\"functional\", \"constraint\", \"non_functional_reliability_availability\"],\n                   [\"quantitative\", \"state_driven\", \"hybrid_continuous\"]),\n    \"tilt_actuation\": ([\"functional\", \"interface\"],\n                        [\"state_driven\", \"event_driven\", \"hybrid_continuous\"]),\n    \"power_energy\": ([\"non_functional_reliability_availability\", \"constraint\", \"functional\"],\n                      [\"quantitative\", \"event_driven\", \"probabilistic\"]),\n    \"flight_control_system\": ([\"functional\", \"non_functional_safety\"],",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "TRUE_AMBIGUITY_TYPES",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "TRUE_AMBIGUITY_TYPES = [\n    (\"coordination\", \"syntactic_structural\"),\n    (\"pp_attachment\", \"syntactic_structural\"),\n    (\"sequence_syntactic\", \"syntactic_structural\"),\n    (\"homonymy\", \"lexical\"),\n    (\"polysemy\", \"lexical\"),\n    (\"coreferential\", \"referential\"),\n    (\"underspecification_common_noun\", \"referential\"),\n    (\"metonymy\", \"referential\"),\n    (\"elliptical\", \"referential\"),",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "VAGUE_TYPES",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "VAGUE_TYPES = [\n    (\"temporal_vagueness\", \"vagueness\"),\n    (\"threshold_vagueness\", \"vagueness\"),\n    (\"comparative_superlative\", \"vagueness\"),\n    (\"subject_vagueness\", \"vagueness\"),\n    (\"subjectivity\", \"vagueness\"),\n    (\"optionality_vague_modals\", \"vagueness\"),\n    (\"underspecification\", \"incompleteness\"),\n    (\"missing_units\", \"incompleteness\"),\n]",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "_true_cycle",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "_true_cycle = TRUE_AMBIGUITY_TYPES * 6\n_vague_cycle = VAGUE_TYPES * 6\nrandom.shuffle(_true_cycle)\nrandom.shuffle(_vague_cycle)\n_true_iter = iter(_true_cycle)\n_vague_iter = iter(_vague_cycle)\ndef next_true():\n    global _true_iter\n    try:\n        return next(_true_iter)",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "_vague_cycle",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "_vague_cycle = VAGUE_TYPES * 6\nrandom.shuffle(_true_cycle)\nrandom.shuffle(_vague_cycle)\n_true_iter = iter(_true_cycle)\n_vague_iter = iter(_vague_cycle)\ndef next_true():\n    global _true_iter\n    try:\n        return next(_true_iter)\n    except StopIteration:",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "_true_iter",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "_true_iter = iter(_true_cycle)\n_vague_iter = iter(_vague_cycle)\ndef next_true():\n    global _true_iter\n    try:\n        return next(_true_iter)\n    except StopIteration:\n        random.shuffle(_true_cycle)\n        _true_iter = iter(_true_cycle)\n        return next(_true_iter)",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "_vague_iter",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "_vague_iter = iter(_vague_cycle)\ndef next_true():\n    global _true_iter\n    try:\n        return next(_true_iter)\n    except StopIteration:\n        random.shuffle(_true_cycle)\n        _true_iter = iter(_true_cycle)\n        return next(_true_iter)\ndef next_vague():",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "plan",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "plan = []\nid_counters = {\"ML\": 0, \"SYS\": 0, \"SUB\": 0, \"CMP\": 0}\nintroduced = {}  # subsystem_tag -> list of ids introduced so far (in order)\nfor tag in SUBSYSTEMS:\n    introduced[tag] = []\nintroduced[\"_integration\"] = []\ndef new_id(prefix):\n    id_counters[prefix] += 1\n    return f\"REQ-{prefix}-{id_counters[prefix]:03d}\"\n# ---- Mission level (10) ----",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "id_counters",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "id_counters = {\"ML\": 0, \"SYS\": 0, \"SUB\": 0, \"CMP\": 0}\nintroduced = {}  # subsystem_tag -> list of ids introduced so far (in order)\nfor tag in SUBSYSTEMS:\n    introduced[tag] = []\nintroduced[\"_integration\"] = []\ndef new_id(prefix):\n    id_counters[prefix] += 1\n    return f\"REQ-{prefix}-{id_counters[prefix]:03d}\"\n# ---- Mission level (10) ----\nmission_topics = [",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "introduced",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "introduced = {}  # subsystem_tag -> list of ids introduced so far (in order)\nfor tag in SUBSYSTEMS:\n    introduced[tag] = []\nintroduced[\"_integration\"] = []\ndef new_id(prefix):\n    id_counters[prefix] += 1\n    return f\"REQ-{prefix}-{id_counters[prefix]:03d}\"\n# ---- Mission level (10) ----\nmission_topics = [\n    \"overall FW-VTOL mission capability (VTOL + cruise + payload delivery)\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "introduced[\"_integration\"]",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "introduced[\"_integration\"] = []\ndef new_id(prefix):\n    id_counters[prefix] += 1\n    return f\"REQ-{prefix}-{id_counters[prefix]:03d}\"\n# ---- Mission level (10) ----\nmission_topics = [\n    \"overall FW-VTOL mission capability (VTOL + cruise + payload delivery)\",\n    \"operational endurance and range envelope\",\n    \"payload carriage capability\",\n    \"autonomous mission execution and waypoint navigation\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "mission_topics",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "mission_topics = [\n    \"overall FW-VTOL mission capability (VTOL + cruise + payload delivery)\",\n    \"operational endurance and range envelope\",\n    \"payload carriage capability\",\n    \"autonomous mission execution and waypoint navigation\",\n    \"operator command and monitoring capability\",\n    \"environmental operating envelope for the mission\",\n    \"safety-of-flight and contingency-return capability\",\n    \"airworthiness / regulatory compliance posture\",\n    \"transportability and field deployability\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "mission_ids",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "mission_ids = []\nfor i, topic in enumerate(mission_topics):\n    rid = new_id(\"ML\")\n    mission_ids.append(rid)\n    introduced[\"_integration\"].append(rid)\n    plan.append({\n        \"id\": rid, \"level\": \"mission\", \"parent_id\": None,\n        \"subsystem_tag\": \"_integration\", \"topic_hint\": topic,\n        \"bucket\": None,  # filled later\n    })",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "sys_integration_topics",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "sys_integration_topics = [\n    \"cross-subsystem mode transition (vertical <-> forward flight) coordination\",\n    \"system-level health monitoring and fault reporting\",\n    \"system-level interface control between airframe, propulsion and FCS\",\n    \"system-level mass/power budget allocation across subsystems\",\n    \"system-level compliance with a named airworthiness standard\",\n]\nfor i, topic in enumerate(sys_integration_topics):\n    rid = new_id(\"SYS\")\n    introduced[\"_integration\"].append(rid)",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "sys_topics_by_subsystem",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "sys_topics_by_subsystem = {\n    \"airframe_aerostructures\": [\"wing/tail structural load capability\", \"mass budget compliance\",\n                                 \"aerodynamic performance across flight regimes\", \"structural interface to propulsion/tilt mounts\"],\n    \"propulsion\": [\"thrust-to-weight capability across the envelope\", \"rotor redundancy on partial failure\",\n                   \"propulsion system interface to FCS\", \"propulsion thermal/power limits\"],\n    \"tilt_actuation\": [\"wing/tail tilt range and rate capability\", \"tilt subsystem interface to FCS\",\n                        \"tilt actuator fault behavior\", \"tilt position sensing accuracy\"],\n    \"power_energy\": [\"energy budget for full mission profile\", \"power distribution to subsystems\",\n                      \"battery health monitoring\", \"power subsystem interface to propulsion and payload\"],\n    \"flight_control_system\": [\"6-DoF control across all trim points\", \"gain-scheduled control through transition\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "sub_topic_templates",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "sub_topic_templates = [\n    \"primary functional obligation of {sub}\",\n    \"{sub} performance envelope / quantitative bound\",\n    \"{sub} interface to an adjacent subsystem\",\n    \"{sub} behavior in a specific flight mode/state\",\n    \"{sub} response to a triggering event\",\n    \"{sub} fault/degraded-mode behavior\",\n    \"{sub} design constraint (mass/volume/standard)\",\n    \"{sub} monitoring/reporting obligation\",\n    \"{sub} calibration/initialization obligation\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "cmp_counts",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "cmp_counts = {\"airframe_aerostructures\": 9, \"propulsion\": 9, \"tilt_actuation\": 9, \"power_energy\": 9,\n              \"flight_control_system\": 9, \"navigation_sensing\": 10, \"datalink_comms\": 10, \"payload\": 10,\n              \"ground_control_station\": 10, \"safety_flight_termination\": 10}\nassert sum(cmp_counts.values()) == 95\ncmp_topic_templates = [\n    \"a named component's precise obligation within {sub}\",\n    \"a named component's quantitative parameter within {sub}\",\n    \"a named component's interface to its parent subsystem\",\n    \"a named component's event-triggered response within {sub}\",\n    \"a named component's fault-condition response within {sub}\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "cmp_topic_templates",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "cmp_topic_templates = [\n    \"a named component's precise obligation within {sub}\",\n    \"a named component's quantitative parameter within {sub}\",\n    \"a named component's interface to its parent subsystem\",\n    \"a named component's event-triggered response within {sub}\",\n    \"a named component's fault-condition response within {sub}\",\n    \"a named component's state/mode-dependent behavior within {sub}\",\n    \"a named component's design constraint within {sub}\",\n    \"a named component's calibration/init obligation within {sub}\",\n    \"a named component's monitoring/telemetry obligation within {sub}\",",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "bucket_pool",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "bucket_pool = [\"precise\"] * 50 + [\"amb12\"] * 100 + [\"amb3plus\"] * 100\nrandom.shuffle(bucket_pool)\n# never let mission-level be amb3plus-bundling >90% precise-ish; just assign directly,\n# shuffle already guarantees spread since plan order interleaves ML/SYS/SUB/CMP per subsystem.\norder = list(range(len(plan)))\nrandom.shuffle(order)\nfor idx, bucket in zip(order, bucket_pool):\n    plan[idx][\"bucket\"] = bucket\n# ---------------------------------------------------------------------\n# 6. Assign ambiguity class / sites / obligation counts + axis1/axis2",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "order",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "order = list(range(len(plan)))\nrandom.shuffle(order)\nfor idx, bucket in zip(order, bucket_pool):\n    plan[idx][\"bucket\"] = bucket\n# ---------------------------------------------------------------------\n# 6. Assign ambiguity class / sites / obligation counts + axis1/axis2\n# ---------------------------------------------------------------------\nfor rec in plan:\n    bucket = rec[\"bucket\"]\n    if bucket == \"amb3plus\":",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "by_id",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "by_id = {r[\"id\"]: r for r in plan}\nnon_mission = [r for r in plan if r[\"level\"] != \"mission\"]\nrandom.shuffle(non_mission)\nn_context = max(1, int(len(non_mission) * 0.16))\ncontext_targets = non_mission[:n_context]\ncontext_target_ids = {r[\"id\"] for r in context_targets}\nfor r in plan:\n    r[\"context_refs\"] = []\n# process in generation order so \"earlier\" is well-defined (ML->SYS->SUB->CMP, id order)\nordered_ids = [r[\"id\"] for r in plan]",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "non_mission",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "non_mission = [r for r in plan if r[\"level\"] != \"mission\"]\nrandom.shuffle(non_mission)\nn_context = max(1, int(len(non_mission) * 0.16))\ncontext_targets = non_mission[:n_context]\ncontext_target_ids = {r[\"id\"] for r in context_targets}\nfor r in plan:\n    r[\"context_refs\"] = []\n# process in generation order so \"earlier\" is well-defined (ML->SYS->SUB->CMP, id order)\nordered_ids = [r[\"id\"] for r in plan]\npos = {rid: i for i, rid in enumerate(ordered_ids)}",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "n_context",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "n_context = max(1, int(len(non_mission) * 0.16))\ncontext_targets = non_mission[:n_context]\ncontext_target_ids = {r[\"id\"] for r in context_targets}\nfor r in plan:\n    r[\"context_refs\"] = []\n# process in generation order so \"earlier\" is well-defined (ML->SYS->SUB->CMP, id order)\nordered_ids = [r[\"id\"] for r in plan]\npos = {rid: i for i, rid in enumerate(ordered_ids)}\nfor r in plan:\n    if r[\"id\"] not in context_target_ids:",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "context_targets",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "context_targets = non_mission[:n_context]\ncontext_target_ids = {r[\"id\"] for r in context_targets}\nfor r in plan:\n    r[\"context_refs\"] = []\n# process in generation order so \"earlier\" is well-defined (ML->SYS->SUB->CMP, id order)\nordered_ids = [r[\"id\"] for r in plan]\npos = {rid: i for i, rid in enumerate(ordered_ids)}\nfor r in plan:\n    if r[\"id\"] not in context_target_ids:\n        continue",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "context_target_ids",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "context_target_ids = {r[\"id\"] for r in context_targets}\nfor r in plan:\n    r[\"context_refs\"] = []\n# process in generation order so \"earlier\" is well-defined (ML->SYS->SUB->CMP, id order)\nordered_ids = [r[\"id\"] for r in plan]\npos = {rid: i for i, rid in enumerate(ordered_ids)}\nfor r in plan:\n    if r[\"id\"] not in context_target_ids:\n        continue\n    tag = r[\"subsystem_tag\"]",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "ordered_ids",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "ordered_ids = [r[\"id\"] for r in plan]\npos = {rid: i for i, rid in enumerate(ordered_ids)}\nfor r in plan:\n    if r[\"id\"] not in context_target_ids:\n        continue\n    tag = r[\"subsystem_tag\"]\n    pool = [rid for rid in introduced.get(tag, []) if pos[rid] < pos[r[\"id\"]] and rid != r[\"parent_id\"]]\n    if not pool:\n        continue\n    r[\"context_refs\"] = [random.choice(pool)]",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "pos",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "pos = {rid: i for i, rid in enumerate(ordered_ids)}\nfor r in plan:\n    if r[\"id\"] not in context_target_ids:\n        continue\n    tag = r[\"subsystem_tag\"]\n    pool = [rid for rid in introduced.get(tag, []) if pos[rid] < pos[r[\"id\"]] and rid != r[\"parent_id\"]]\n    if not pool:\n        continue\n    r[\"context_refs\"] = [random.choice(pool)]\n# ---------------------------------------------------------------------",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_OUT",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "ROOT_OUT = ROOT / \"dataset_plan.json\"\nROOT_OUT.write_text(json.dumps(plan, indent=2, ensure_ascii=False), encoding=\"utf-8\")\n# ---------------------------------------------------------------------\n# 9. Build per-subsystem batches (+ 1 integration batch) for parallel gen\n# ---------------------------------------------------------------------\nBATCH_DIR.mkdir(exist_ok=True)\nbatches = []\nintegration_rows = [r for r in plan if r[\"subsystem_tag\"] == \"_integration\"]\nbatches.append((\"00_integration\", \"_integration\", integration_rows, INTEGRATION_CHUNKS))\nfor i, tag in enumerate(SUBSYSTEMS, start=1):",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "batches",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "batches = []\nintegration_rows = [r for r in plan if r[\"subsystem_tag\"] == \"_integration\"]\nbatches.append((\"00_integration\", \"_integration\", integration_rows, INTEGRATION_CHUNKS))\nfor i, tag in enumerate(SUBSYSTEMS, start=1):\n    rows = [r for r in plan if r[\"subsystem_tag\"] == tag]\n    batches.append((f\"{i:02d}_{tag}\", tag, rows, CHUNKS[tag]))\nmanifest = []\nfor name, tag, rows, chunk_files in batches:\n    batch_obj = {\n        \"batch_name\": name,",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "integration_rows",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "integration_rows = [r for r in plan if r[\"subsystem_tag\"] == \"_integration\"]\nbatches.append((\"00_integration\", \"_integration\", integration_rows, INTEGRATION_CHUNKS))\nfor i, tag in enumerate(SUBSYSTEMS, start=1):\n    rows = [r for r in plan if r[\"subsystem_tag\"] == tag]\n    batches.append((f\"{i:02d}_{tag}\", tag, rows, CHUNKS[tag]))\nmanifest = []\nfor name, tag, rows, chunk_files in batches:\n    batch_obj = {\n        \"batch_name\": name,\n        \"subsystem_tag\": tag,",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "manifest",
+        "kind": 5,
+        "importPath": "build_plan",
+        "description": "build_plan",
+        "peekOfCode": "manifest = []\nfor name, tag, rows, chunk_files in batches:\n    batch_obj = {\n        \"batch_name\": name,\n        \"subsystem_tag\": tag,\n        \"grounding_chunk_files\": [str((CHUNK_DIR / f)) for f in chunk_files],\n        \"shared_config_files\": {\n            \"schema_and_contract\": str(ROOT / \"dataset_schema.md\"),\n            \"ambiguity_taxonomy\": str(ROOT / \"ambiguity_taxonomy.yaml\"),\n            \"requirement_categories\": str(ROOT / \"requirement_categories.yaml\"),",
+        "detail": "build_plan",
+        "documentation": {}
+    },
+    {
+        "label": "load_records",
+        "kind": 2,
+        "importPath": "consistency_check",
+        "description": "consistency_check",
+        "peekOfCode": "def load_records() -> list[dict]:\n    merged = ROOT / \"fw_vtol_requirements_dataset.jsonl\"\n    if merged.exists():\n        return [json.loads(l) for l in merged.read_text(encoding=\"utf-8\").splitlines() if l.strip()]\n    records = []\n    for p in sorted((ROOT / \"shards\").glob(\"shard_*.jsonl\")):\n        for l in p.read_text(encoding=\"utf-8\").splitlines():\n            if l.strip():\n                records.append(json.loads(l))\n    return records",
+        "detail": "consistency_check",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "consistency_check",
+        "description": "consistency_check",
+        "peekOfCode": "def main() -> None:\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--fix\", action=\"store_true\", help=\"Apply minimal fixes for clear contradictions\")\n    args = ap.parse_args()\n    records = load_records()\n    by_id = {r[\"id\"]: r for r in records}\n    findings: list[str] = []\n    fixed: list[str] = []\n    # Collect numeric mentions\n    mentions: dict[str, list[tuple[str, str]]] = defaultdict(list)",
+        "detail": "consistency_check",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "consistency_check",
+        "description": "consistency_check",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\nOUT = ROOT / \"consistency_report.md\"\n# Patterns: (param_key, regex extracting a comparable number/string, unit note)\nPATTERNS = [\n    (\"mtow_kg\", re.compile(r\"\\b(?:MTOW|take-?off weight|maximum take-?off mass)\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*kg\", re.I), \"kg\"),\n    (\"payload_kg\", re.compile(r\"\\bpayload\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*kg\", re.I), \"kg\"),\n    (\"cruise_ms\", re.compile(r\"\\bcruise\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*(?:-|to|–)\\s*(\\d+(?:\\.\\d+)?)\\s*m/s\", re.I), \"m/s range\"),\n    (\"endurance_min\", re.compile(r\"\\bendurance\\b[^\\n.]{0,40}?(?:>|exceeding|at least|minimum of)?\\s*(\\d+)\\s*min\", re.I), \"min\"),\n    (\"control_hz\", re.compile(r\"\\b(\\d+)\\s*Hz\\b\", re.I), \"Hz\"),\n    (\"tilt_deg\", re.compile(r\"\\btilt\\b[^\\n.]{0,40}?(?:0\\s*(?:°|degrees)\\s*(?:to|–|-)\\s*)?(90)\\s*(?:°|degrees)\", re.I), \"deg\"),",
+        "detail": "consistency_check",
+        "documentation": {}
+    },
+    {
+        "label": "OUT",
+        "kind": 5,
+        "importPath": "consistency_check",
+        "description": "consistency_check",
+        "peekOfCode": "OUT = ROOT / \"consistency_report.md\"\n# Patterns: (param_key, regex extracting a comparable number/string, unit note)\nPATTERNS = [\n    (\"mtow_kg\", re.compile(r\"\\b(?:MTOW|take-?off weight|maximum take-?off mass)\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*kg\", re.I), \"kg\"),\n    (\"payload_kg\", re.compile(r\"\\bpayload\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*kg\", re.I), \"kg\"),\n    (\"cruise_ms\", re.compile(r\"\\bcruise\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*(?:-|to|–)\\s*(\\d+(?:\\.\\d+)?)\\s*m/s\", re.I), \"m/s range\"),\n    (\"endurance_min\", re.compile(r\"\\bendurance\\b[^\\n.]{0,40}?(?:>|exceeding|at least|minimum of)?\\s*(\\d+)\\s*min\", re.I), \"min\"),\n    (\"control_hz\", re.compile(r\"\\b(\\d+)\\s*Hz\\b\", re.I), \"Hz\"),\n    (\"tilt_deg\", re.compile(r\"\\btilt\\b[^\\n.]{0,40}?(?:0\\s*(?:°|degrees)\\s*(?:to|–|-)\\s*)?(90)\\s*(?:°|degrees)\", re.I), \"deg\"),\n    (\"rotors\", re.compile(r\"\\b([Ss]ix|[6])\\s+(?:fixed\\s+)?rotors?\\b\"), \"count\"),",
+        "detail": "consistency_check",
+        "documentation": {}
+    },
+    {
+        "label": "PATTERNS",
+        "kind": 5,
+        "importPath": "consistency_check",
+        "description": "consistency_check",
+        "peekOfCode": "PATTERNS = [\n    (\"mtow_kg\", re.compile(r\"\\b(?:MTOW|take-?off weight|maximum take-?off mass)\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*kg\", re.I), \"kg\"),\n    (\"payload_kg\", re.compile(r\"\\bpayload\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*kg\", re.I), \"kg\"),\n    (\"cruise_ms\", re.compile(r\"\\bcruise\\b[^\\n.]{0,40}?(\\d+(?:\\.\\d+)?)\\s*(?:-|to|–)\\s*(\\d+(?:\\.\\d+)?)\\s*m/s\", re.I), \"m/s range\"),\n    (\"endurance_min\", re.compile(r\"\\bendurance\\b[^\\n.]{0,40}?(?:>|exceeding|at least|minimum of)?\\s*(\\d+)\\s*min\", re.I), \"min\"),\n    (\"control_hz\", re.compile(r\"\\b(\\d+)\\s*Hz\\b\", re.I), \"Hz\"),\n    (\"tilt_deg\", re.compile(r\"\\btilt\\b[^\\n.]{0,40}?(?:0\\s*(?:°|degrees)\\s*(?:to|–|-)\\s*)?(90)\\s*(?:°|degrees)\", re.I), \"deg\"),\n    (\"rotors\", re.compile(r\"\\b([Ss]ix|[6])\\s+(?:fixed\\s+)?rotors?\\b\"), \"count\"),\n]\ndef load_records() -> list[dict]:",
+        "detail": "consistency_check",
+        "documentation": {}
+    },
+    {
+        "label": "load_jsonl",
+        "kind": 2,
+        "importPath": "finalize_quality_fixes",
+        "description": "finalize_quality_fixes",
+        "peekOfCode": "def load_jsonl(p: Path) -> list[dict]:\n    return [json.loads(l) for l in p.read_text(encoding=\"utf-8\").splitlines() if l.strip()]\ndef save_jsonl(p: Path, rows: list[dict]) -> None:\n    p.write_text(\"\\n\".join(json.dumps(r, ensure_ascii=False) for r in rows) + \"\\n\", encoding=\"utf-8\")\ndef main() -> None:\n    # shard 08: strengthen discourse for REQ-SUB-071\n    p08 = ROOT / \"shards\" / \"shard_08_payload.jsonl\"\n    rows08 = load_jsonl(p08)\n    for r in rows08:\n        if r[\"id\"] != \"REQ-SUB-071\":",
+        "detail": "finalize_quality_fixes",
+        "documentation": {}
+    },
+    {
+        "label": "save_jsonl",
+        "kind": 2,
+        "importPath": "finalize_quality_fixes",
+        "description": "finalize_quality_fixes",
+        "peekOfCode": "def save_jsonl(p: Path, rows: list[dict]) -> None:\n    p.write_text(\"\\n\".join(json.dumps(r, ensure_ascii=False) for r in rows) + \"\\n\", encoding=\"utf-8\")\ndef main() -> None:\n    # shard 08: strengthen discourse for REQ-SUB-071\n    p08 = ROOT / \"shards\" / \"shard_08_payload.jsonl\"\n    rows08 = load_jsonl(p08)\n    for r in rows08:\n        if r[\"id\"] != \"REQ-SUB-071\":\n            continue\n        old = \"To satisfy the ground-control imagery return obligation,\"",
+        "detail": "finalize_quality_fixes",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "finalize_quality_fixes",
+        "description": "finalize_quality_fixes",
+        "peekOfCode": "def main() -> None:\n    # shard 08: strengthen discourse for REQ-SUB-071\n    p08 = ROOT / \"shards\" / \"shard_08_payload.jsonl\"\n    rows08 = load_jsonl(p08)\n    for r in rows08:\n        if r[\"id\"] != \"REQ-SUB-071\":\n            continue\n        old = \"To satisfy the ground-control imagery return obligation,\"\n        new = \"To satisfy the aforementioned ground-control imagery return obligation established above,\"\n        r[\"requirement\"] = r[\"requirement\"].replace(old, new)",
+        "detail": "finalize_quality_fixes",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "finalize_quality_fixes",
+        "description": "finalize_quality_fixes",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\ndef load_jsonl(p: Path) -> list[dict]:\n    return [json.loads(l) for l in p.read_text(encoding=\"utf-8\").splitlines() if l.strip()]\ndef save_jsonl(p: Path, rows: list[dict]) -> None:\n    p.write_text(\"\\n\".join(json.dumps(r, ensure_ascii=False) for r in rows) + \"\\n\", encoding=\"utf-8\")\ndef main() -> None:\n    # shard 08: strengthen discourse for REQ-SUB-071\n    p08 = ROOT / \"shards\" / \"shard_08_payload.jsonl\"\n    rows08 = load_jsonl(p08)\n    for r in rows08:",
+        "detail": "finalize_quality_fixes",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "kind": 2,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "def slugify(s: str, n: int = 40) -> str:\n    s = re.sub(r\"[^A-Za-z0-9]+\", \"_\", s).strip(\"_\").lower()\n    return s[:n] or \"section\"\ndef extract_pdf(pdf_path: Path):\n    doc = fitz.open(pdf_path)\n    pages = []\n    for i, page in enumerate(doc):\n        pages.append({\"page\": i + 1, \"text\": page.get_text(\"text\")})\n    doc.close()\n    return pages",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "extract_pdf",
+        "kind": 2,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "def extract_pdf(pdf_path: Path):\n    doc = fitz.open(pdf_path)\n    pages = []\n    for i, page in enumerate(doc):\n        pages.append({\"page\": i + 1, \"text\": page.get_text(\"text\")})\n    doc.close()\n    return pages\ndef write_full(stem: str, pages):\n    full = OUT_DIR / f\"{stem}.full.txt\"\n    with full.open(\"w\", encoding=\"utf-8\") as f:",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "write_full",
+        "kind": 2,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "def write_full(stem: str, pages):\n    full = OUT_DIR / f\"{stem}.full.txt\"\n    with full.open(\"w\", encoding=\"utf-8\") as f:\n        for p in pages:\n            f.write(f\"\\n\\n===== PAGE {p['page']} =====\\n\\n\")\n            f.write(p[\"text\"])\n    with (OUT_DIR / f\"{stem}.pages.jsonl\").open(\"w\", encoding=\"utf-8\") as f:\n        for p in pages:\n            f.write(json.dumps(p, ensure_ascii=False) + \"\\n\")\ndef chunk_by_section(stem: str, pages):",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "chunk_by_section",
+        "kind": 2,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "def chunk_by_section(stem: str, pages):\n    \"\"\"Split the concatenated body into section-level chunks using header regex.\"\"\"\n    lines = []\n    for p in pages:\n        for ln in p[\"text\"].splitlines():\n            lines.append((p[\"page\"], ln))\n    chunks = []  # list of dict(title, start_page, lines[])\n    cur = {\"title\": \"front_matter\", \"page\": pages[0][\"page\"] if pages else 1, \"lines\": []}\n    for page, ln in lines:\n        m = SECTION_RE.match(ln) or NAMED_RE.match(ln)",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "def main():\n    OUT_DIR.mkdir(exist_ok=True)\n    CHUNK_DIR.mkdir(exist_ok=True)\n    pdfs = sorted(IN_DIR.glob(\"*.pdf\"))\n    if not pdfs:\n        print(\"No PDFs in input_pdfs/\", file=sys.stderr)\n        sys.exit(1)\n    all_manifest = []\n    for pdf in pdfs:\n        stem = re.sub(r\"[^A-Za-z0-9]+\", \"_\", pdf.stem)[:60].strip(\"_\")",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\nIN_DIR = ROOT / \"input_pdfs\"\nOUT_DIR = ROOT / \"extracted_text\"\nCHUNK_DIR = OUT_DIR / \"chunks\"\n# Heuristic: numbered section headers like \"3\", \"3.1\", \"3.1.2\" followed by a Title.\nSECTION_RE = re.compile(r\"^\\s{0,3}(\\d{1,2}(?:\\.\\d{1,2}){0,3})\\.?\\s+([A-Z][^\\n]{2,80})\\s*$\")\n# Also catch all-caps / title-case unnumbered headers (Abstract, Introduction, etc.)\nNAMED_RE = re.compile(\n    r\"^\\s{0,3}(Abstract|Introduction|Conclusion[s]?|References|Nomenclature|\"\n    r\"Acknowledial?gements?|Appendix[^\\n]{0,40})\\s*$\",",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "IN_DIR",
+        "kind": 5,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "IN_DIR = ROOT / \"input_pdfs\"\nOUT_DIR = ROOT / \"extracted_text\"\nCHUNK_DIR = OUT_DIR / \"chunks\"\n# Heuristic: numbered section headers like \"3\", \"3.1\", \"3.1.2\" followed by a Title.\nSECTION_RE = re.compile(r\"^\\s{0,3}(\\d{1,2}(?:\\.\\d{1,2}){0,3})\\.?\\s+([A-Z][^\\n]{2,80})\\s*$\")\n# Also catch all-caps / title-case unnumbered headers (Abstract, Introduction, etc.)\nNAMED_RE = re.compile(\n    r\"^\\s{0,3}(Abstract|Introduction|Conclusion[s]?|References|Nomenclature|\"\n    r\"Acknowledial?gements?|Appendix[^\\n]{0,40})\\s*$\",\n    re.IGNORECASE,",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "OUT_DIR",
+        "kind": 5,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "OUT_DIR = ROOT / \"extracted_text\"\nCHUNK_DIR = OUT_DIR / \"chunks\"\n# Heuristic: numbered section headers like \"3\", \"3.1\", \"3.1.2\" followed by a Title.\nSECTION_RE = re.compile(r\"^\\s{0,3}(\\d{1,2}(?:\\.\\d{1,2}){0,3})\\.?\\s+([A-Z][^\\n]{2,80})\\s*$\")\n# Also catch all-caps / title-case unnumbered headers (Abstract, Introduction, etc.)\nNAMED_RE = re.compile(\n    r\"^\\s{0,3}(Abstract|Introduction|Conclusion[s]?|References|Nomenclature|\"\n    r\"Acknowledial?gements?|Appendix[^\\n]{0,40})\\s*$\",\n    re.IGNORECASE,\n)",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "CHUNK_DIR",
+        "kind": 5,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "CHUNK_DIR = OUT_DIR / \"chunks\"\n# Heuristic: numbered section headers like \"3\", \"3.1\", \"3.1.2\" followed by a Title.\nSECTION_RE = re.compile(r\"^\\s{0,3}(\\d{1,2}(?:\\.\\d{1,2}){0,3})\\.?\\s+([A-Z][^\\n]{2,80})\\s*$\")\n# Also catch all-caps / title-case unnumbered headers (Abstract, Introduction, etc.)\nNAMED_RE = re.compile(\n    r\"^\\s{0,3}(Abstract|Introduction|Conclusion[s]?|References|Nomenclature|\"\n    r\"Acknowledial?gements?|Appendix[^\\n]{0,40})\\s*$\",\n    re.IGNORECASE,\n)\ndef slugify(s: str, n: int = 40) -> str:",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "SECTION_RE",
+        "kind": 5,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "SECTION_RE = re.compile(r\"^\\s{0,3}(\\d{1,2}(?:\\.\\d{1,2}){0,3})\\.?\\s+([A-Z][^\\n]{2,80})\\s*$\")\n# Also catch all-caps / title-case unnumbered headers (Abstract, Introduction, etc.)\nNAMED_RE = re.compile(\n    r\"^\\s{0,3}(Abstract|Introduction|Conclusion[s]?|References|Nomenclature|\"\n    r\"Acknowledial?gements?|Appendix[^\\n]{0,40})\\s*$\",\n    re.IGNORECASE,\n)\ndef slugify(s: str, n: int = 40) -> str:\n    s = re.sub(r\"[^A-Za-z0-9]+\", \"_\", s).strip(\"_\").lower()\n    return s[:n] or \"section\"",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "NAMED_RE",
+        "kind": 5,
+        "importPath": "pdf_to_text_extractor",
+        "description": "pdf_to_text_extractor",
+        "peekOfCode": "NAMED_RE = re.compile(\n    r\"^\\s{0,3}(Abstract|Introduction|Conclusion[s]?|References|Nomenclature|\"\n    r\"Acknowledial?gements?|Appendix[^\\n]{0,40})\\s*$\",\n    re.IGNORECASE,\n)\ndef slugify(s: str, n: int = 40) -> str:\n    s = re.sub(r\"[^A-Za-z0-9]+\", \"_\", s).strip(\"_\").lower()\n    return s[:n] or \"section\"\ndef extract_pdf(pdf_path: Path):\n    doc = fitz.open(pdf_path)",
+        "detail": "pdf_to_text_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "parse_family_map",
+        "kind": 2,
+        "importPath": "quality_audit",
+        "description": "quality_audit",
+        "peekOfCode": "def parse_family_map(taxo_text: str) -> dict[str, str]:\n    family_of: dict[str, str] = {}\n    cur_family = None\n    in_families = False\n    for line in taxo_text.splitlines():\n        if line.startswith(\"families:\"):\n            in_families = True\n            continue\n        if not in_families:\n            continue",
+        "detail": "quality_audit",
+        "documentation": {}
+    },
+    {
+        "label": "shard_metrics",
+        "kind": 2,
+        "importPath": "quality_audit",
+        "description": "quality_audit",
+        "peekOfCode": "def shard_metrics(rows: list[dict]) -> dict:\n    wl = [len(r[\"requirement\"].split()) for r in rows]\n    expl = [len(inst[\"explanation\"].split()) for r in rows for inst in r[\"ambiguity\"][\"instances\"]]\n    return {\n        \"n\": len(rows),\n        \"med_words\": int(statistics.median(wl)) if wl else 0,\n        \"mean_words\": round(statistics.mean(wl), 1) if wl else 0,\n        \"med_expl\": int(statistics.median(expl)) if expl else 0,\n        \"shall_pct\": round(100 * sum(1 for r in rows if \"shall\" in r[\"requirement\"].lower()) / len(rows), 1),\n        \"multi_sent\": sum(1 for r in rows if r[\"requirement\"].count(\".\") >= 2),",
+        "detail": "quality_audit",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "quality_audit",
+        "description": "quality_audit",
+        "peekOfCode": "def main() -> None:\n    plan = {r[\"id\"]: r for r in json.loads((ROOT / \"dataset_plan.json\").read_text(encoding=\"utf-8\"))}\n    taxo = (ROOT / \"ambiguity_taxonomy.yaml\").read_text(encoding=\"utf-8\")\n    taxo_ids = set(re.findall(r\"- id:\\s*(\\w+)\", taxo))\n    family_of = parse_family_map(taxo)\n    recs = [\n        json.loads(l)\n        for l in (ROOT / \"fw_vtol_requirements_dataset.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n        if l.strip()\n    ]",
+        "detail": "quality_audit",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "quality_audit",
+        "description": "quality_audit",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\ndef parse_family_map(taxo_text: str) -> dict[str, str]:\n    family_of: dict[str, str] = {}\n    cur_family = None\n    in_families = False\n    for line in taxo_text.splitlines():\n        if line.startswith(\"families:\"):\n            in_families = True\n            continue\n        if not in_families:",
+        "detail": "quality_audit",
+        "documentation": {}
+    },
+    {
+        "label": "show",
+        "kind": 2,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "def show(rid: str) -> None:\n    r = by[rid]\n    print(f\"--- {rid}\")\n    print(r[\"requirement\"])\n    print()\n# Collect candidates\npairs: list[tuple[str, list[str], str]] = []\n# 1. Control / telemetry rates\nhz_ids = []\nfor r in recs:",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\nrecs = [\n    json.loads(l)\n    for l in (ROOT / \"fw_vtol_requirements_dataset.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n    if l.strip()\n]\nby = {r[\"id\"]: r for r in recs}\ndef show(rid: str) -> None:\n    r = by[rid]\n    print(f\"--- {rid}\")",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "recs",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "recs = [\n    json.loads(l)\n    for l in (ROOT / \"fw_vtol_requirements_dataset.jsonl\").read_text(encoding=\"utf-8\").splitlines()\n    if l.strip()\n]\nby = {r[\"id\"]: r for r in recs}\ndef show(rid: str) -> None:\n    r = by[rid]\n    print(f\"--- {rid}\")\n    print(r[\"requirement\"])",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "by",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "by = {r[\"id\"]: r for r in recs}\ndef show(rid: str) -> None:\n    r = by[rid]\n    print(f\"--- {rid}\")\n    print(r[\"requirement\"])\n    print()\n# Collect candidates\npairs: list[tuple[str, list[str], str]] = []\n# 1. Control / telemetry rates\nhz_ids = []",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "hz_ids",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "hz_ids = []\nfor r in recs:\n    if re.search(r\"\\b\\d+\\s*Hz\\b\", r[\"requirement\"]):\n        hz_ids.append(r[\"id\"])\npairs.append(\n    (\n        \"Loop / reporting rate (50 Hz control vs 10 Hz / 1 Hz monitoring)\",\n        [\"REQ-SYS-012\", \"REQ-SYS-045\", \"REQ-SUB-008\", \"REQ-CMP-027\"],\n        \"Primary FCS loop is specified at 50 Hz, but other requirements also state 10 Hz and 1 Hz rates without saying they are a different channel — a verifier could read them as conflicting control-loop rates.\",\n    )",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "link_ids",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "link_ids = [r[\"id\"] for r in recs if re.search(r\"link[- ]loss|lost link|datalink loss\", r[\"requirement\"], re.I)]\nrtl_ids = [r[\"id\"] for r in recs if re.search(r\"return-to-launch|\\bRTL\\b\", r[\"requirement\"])]\n# pick a couple interesting ones\nsample_link = []\nfor rid in link_ids + rtl_ids:\n    t = by[rid][\"requirement\"].lower()\n    if \"ms\" in t or \"second\" in t or \"s \" in t or \"timeout\" in t or \"within\" in t:\n        sample_link.append(rid)\n    if len(sample_link) >= 3:\n        break",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "rtl_ids",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "rtl_ids = [r[\"id\"] for r in recs if re.search(r\"return-to-launch|\\bRTL\\b\", r[\"requirement\"])]\n# pick a couple interesting ones\nsample_link = []\nfor rid in link_ids + rtl_ids:\n    t = by[rid][\"requirement\"].lower()\n    if \"ms\" in t or \"second\" in t or \"s \" in t or \"timeout\" in t or \"within\" in t:\n        sample_link.append(rid)\n    if len(sample_link) >= 3:\n        break\nif len(sample_link) >= 2:",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "sample_link",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "sample_link = []\nfor rid in link_ids + rtl_ids:\n    t = by[rid][\"requirement\"].lower()\n    if \"ms\" in t or \"second\" in t or \"s \" in t or \"timeout\" in t or \"within\" in t:\n        sample_link.append(rid)\n    if len(sample_link) >= 3:\n        break\nif len(sample_link) >= 2:\n    pairs.append(\n        (",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "mtow_ids",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "mtow_ids = [r[\"id\"] for r in recs if re.search(r\"9\\.5|< ?10|less than 10|under 10\", r[\"requirement\"])]\nif len(mtow_ids) >= 2:\n    pairs.append(\n        (\n            \"Mass envelope (9.5 kg design vs <10 kg)\",\n            mtow_ids[:3],\n            \"Design MTOW 9.5 kg vs envelope '<10 kg' appear together across the set — usually compatible, but a strict checker may flag dual ceilings.\",\n        )\n    )\n# 6. Find any conflicting payload language",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "pay",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "pay = [r[\"id\"] for r in recs if re.search(r\"2\\.5\\s*kg\", r[\"requirement\"])]\n# look for a looser payload phrasing\nloose = [r[\"id\"] for r in recs if re.search(r\"payload.*(adequate|sufficient|as needed|approximately)\", r[\"requirement\"], re.I)]\nif pay and loose:\n    pairs.append(\n        (\n            \"Payload mass: hard 2.5 kg vs vague capacity wording\",\n            (pay[:2] + loose[:2])[:4],\n            \"Hard 2.5 kg limits coexist with vaguer payload-capacity language elsewhere.\",\n        )",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "loose",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "loose = [r[\"id\"] for r in recs if re.search(r\"payload.*(adequate|sufficient|as needed|approximately)\", r[\"requirement\"], re.I)]\nif pay and loose:\n    pairs.append(\n        (\n            \"Payload mass: hard 2.5 kg vs vague capacity wording\",\n            (pay[:2] + loose[:2])[:4],\n            \"Hard 2.5 kg limits coexist with vaguer payload-capacity language elsewhere.\",\n        )\n    )\nout_lines = [\"# Inconsistency samples (mild — retained on purpose)\", \"\"]",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "out_lines",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "out_lines = [\"# Inconsistency samples (mild — retained on purpose)\", \"\"]\nprint(\"=\" * 72)\nfor title, ids, why in pairs:\n    print(f\"\\n## {title}\")\n    print(why)\n    out_lines += [f\"## {title}\", \"\", why, \"\"]\n    for rid in ids:\n        if rid not in by:\n            continue\n        show(rid)",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "report",
+        "kind": 5,
+        "importPath": "show_inconsistency_samples",
+        "description": "show_inconsistency_samples",
+        "peekOfCode": "report = ROOT / \"inconsistency_samples.md\"\nreport.write_text(\"\\n\".join(out_lines), encoding=\"utf-8\")\nprint(f\"\\nWrote {report}\")",
+        "detail": "show_inconsistency_samples",
+        "documentation": {}
+    },
+    {
+        "label": "check",
+        "kind": 2,
+        "importPath": "validate_shard",
+        "description": "validate_shard",
+        "peekOfCode": "def check(fname: Path, batch_file: Path | None = None) -> int:\n    lines = fname.read_text(encoding=\"utf-8\").strip().split(\"\\n\")\n    seen: set[str] = set()\n    problems = 0\n    for i, line in enumerate(lines):\n        try:\n            r = json.loads(line)\n        except Exception as e:\n            print(f\"  line {i}: BAD JSON: {e}\")\n            problems += 1",
+        "detail": "validate_shard",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "validate_shard",
+        "description": "validate_shard",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parent\nplan = {r[\"id\"]: r for r in json.loads((ROOT / \"dataset_plan.json\").read_text(encoding=\"utf-8\"))}\ntaxo_ids = set(re.findall(r\"- id:\\s*(\\w+)\", (ROOT / \"ambiguity_taxonomy.yaml\").read_text(encoding=\"utf-8\")))\naxis1_ids = {\n    \"functional\", \"non_functional_reliability_availability\", \"non_functional_safety\",\n    \"non_functional_security\", \"non_functional_usability\", \"non_functional_maintainability\",\n    \"interface\", \"constraint\",\n}\naxis2_ids = {\n    \"structural\", \"state_driven\", \"event_driven\", \"quantitative\", \"probabilistic\",",
+        "detail": "validate_shard",
+        "documentation": {}
+    },
+    {
+        "label": "plan",
+        "kind": 5,
+        "importPath": "validate_shard",
+        "description": "validate_shard",
+        "peekOfCode": "plan = {r[\"id\"]: r for r in json.loads((ROOT / \"dataset_plan.json\").read_text(encoding=\"utf-8\"))}\ntaxo_ids = set(re.findall(r\"- id:\\s*(\\w+)\", (ROOT / \"ambiguity_taxonomy.yaml\").read_text(encoding=\"utf-8\")))\naxis1_ids = {\n    \"functional\", \"non_functional_reliability_availability\", \"non_functional_safety\",\n    \"non_functional_security\", \"non_functional_usability\", \"non_functional_maintainability\",\n    \"interface\", \"constraint\",\n}\naxis2_ids = {\n    \"structural\", \"state_driven\", \"event_driven\", \"quantitative\", \"probabilistic\",\n    \"hybrid_continuous\", \"domain_semantics_heavy\",",
+        "detail": "validate_shard",
+        "documentation": {}
+    },
+    {
+        "label": "taxo_ids",
+        "kind": 5,
+        "importPath": "validate_shard",
+        "description": "validate_shard",
+        "peekOfCode": "taxo_ids = set(re.findall(r\"- id:\\s*(\\w+)\", (ROOT / \"ambiguity_taxonomy.yaml\").read_text(encoding=\"utf-8\")))\naxis1_ids = {\n    \"functional\", \"non_functional_reliability_availability\", \"non_functional_safety\",\n    \"non_functional_security\", \"non_functional_usability\", \"non_functional_maintainability\",\n    \"interface\", \"constraint\",\n}\naxis2_ids = {\n    \"structural\", \"state_driven\", \"event_driven\", \"quantitative\", \"probabilistic\",\n    \"hybrid_continuous\", \"domain_semantics_heavy\",\n}",
+        "detail": "validate_shard",
+        "documentation": {}
+    },
+    {
+        "label": "axis1_ids",
+        "kind": 5,
+        "importPath": "validate_shard",
+        "description": "validate_shard",
+        "peekOfCode": "axis1_ids = {\n    \"functional\", \"non_functional_reliability_availability\", \"non_functional_safety\",\n    \"non_functional_security\", \"non_functional_usability\", \"non_functional_maintainability\",\n    \"interface\", \"constraint\",\n}\naxis2_ids = {\n    \"structural\", \"state_driven\", \"event_driven\", \"quantitative\", \"probabilistic\",\n    \"hybrid_continuous\", \"domain_semantics_heavy\",\n}\ndef check(fname: Path, batch_file: Path | None = None) -> int:",
+        "detail": "validate_shard",
+        "documentation": {}
+    },
+    {
+        "label": "axis2_ids",
+        "kind": 5,
+        "importPath": "validate_shard",
+        "description": "validate_shard",
+        "peekOfCode": "axis2_ids = {\n    \"structural\", \"state_driven\", \"event_driven\", \"quantitative\", \"probabilistic\",\n    \"hybrid_continuous\", \"domain_semantics_heavy\",\n}\ndef check(fname: Path, batch_file: Path | None = None) -> int:\n    lines = fname.read_text(encoding=\"utf-8\").strip().split(\"\\n\")\n    seen: set[str] = set()\n    problems = 0\n    for i, line in enumerate(lines):\n        try:",
+        "detail": "validate_shard",
+        "documentation": {}
+    }
+]
