@@ -1,0 +1,902 @@
+[
+  {
+    "id": "REQ-ML-001",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "When commanded to execute an assigned mission, the air vehicle shall complete the full vertical-takeoff-to-cruise-to-vertical-landing mission profile in a single continuous flight while carrying a payload of up to 2.5 kg, using its six-rotor tilt-wing and tilt-tail configuration and a maximum take-off weight of 9.5 kg.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-ML-004",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The air vehicle shall autonomously navigate through every waypoint in the uploaded mission plan using the onboard flight control system with encrypted telemetry links to the ground control station, and shall not deviate from the planned route without authorization from the operator, and shall report its current position to the operator throughout the mission, and when an updated waypoint list is received on the datalink, the flight control system shall accept the update for the active mission segment.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-ML-006",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The air vehicle shall withstand the environmental envelope specified for its current flight mode, including wind gusts up to the design limit, throughout the mission, and if a weather hold suspends the mission, the air vehicle shall resume the mission once conditions return within the environmental envelope.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-ML-007",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The air vehicle shall continuously monitor its health status, including datalink and battery condition, throughout the mission, and while the gravest fault condition is active, the air vehicle shall not proceed beyond the point of safe return, and when a critical fault is detected, the air vehicle shall initiate return-to-launch.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-ML-008",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The air vehicle shall comply with the airworthiness requirements applicable to its class, consistent with STANAG 4703 for fixed-wing light UAS, and shall maintain sufficient structural margin under the environmental test conditions defined by MIL-STD-810, and shall not be operated outside the airworthiness envelope established for its certification basis without prior approval from the responsible airworthiness authority, and the flight control software shall be developed to a level of rigor appropriate for the safety criticality of its functions, in accordance with criteria yet to be published in the certification basis.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-ML-009",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "For field deployment, the air vehicle shall be disassembled into its major structural sections (tilt-wing, tilt-tail, and fuselage) such that all sections fit collectively within a single two-person-carry transport case, and ground crew shall trim the tilt-wing tilt mechanism to its stowage position before packing, and spare rotors shall be provided in the transport case for field replacement, and following transport, the air vehicle shall be reassembled by two ground crew within 30 minutes of arrival at the launch site.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-ML-010",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The air vehicle shall transmit captured payload imagery to the operator with the ground control station over the encrypted C2 datalink, and once transmission is confirmed, the air vehicle shall retain a local copy of the imagery onboard until mission debrief.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-002",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "The flight control system shall report a fault code to the operator whenever a monitored parameter from the propulsion, power, or tilt-actuation subsystems exceeds a threshold specified elsewhere in the subsystem interface control documents, and the system shall log this health telemetry at a rate of 50 for post-flight analysis.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-004",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "Whenever a subsystem's mass or power allocation changes, the systems engineering team shall update the mass and power budget promptly to keep the total within the 9.5 kg maximum take-off weight and 2700 W power loading target, and the power budget shall reserve as low as possible unallocated margin, to account for estimation uncertainty, across the propulsion, power, flight control, navigation, and payload subsystems.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-006",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The airframe structure shall withstand the limit and ultimate loads generated by the wing and the tail during hover, transition, and cruise, using the load cases specified elsewhere in the structural analysis, and the structure shall fail safe if a single load path is lost.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-007",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The airframe aerostructures subsystem shall keep the mass of the wing structure and the tail structure within the 2 kg structural mass allocation, and the design shall preserve the aircraft's trim margin as structural mass is finalized.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-008",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The air vehicle shall achieve a lift-to-drag ratio of at least 8.5 in both hover and cruise flight, and the wing shall generate more lift than the tail during the transition phase, and it shall keep the stall speed below 12 m/s to reduce risk during the transition phase, and the aircraft shall return to the target cruise speed of 15 to 25 m/s once the transition maneuver is complete.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=5,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-009",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "The airframe structure shall provide a tilt mount capable of transferring rotor thrust and tilt-actuator loads into the wing spar and the tail spar without exceeding the allowable joint stress across the 0° to 90° tilt range.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-010",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "Across the flight envelope, and given the flight regimes to be determined during integration testing, the propulsion system shall also sustain a thrust-to-weight ratio of at least 1.5, drawing on six rotors, four wing-mounted and two tail-mounted, to generate a maximum thrust of 15 across hover, transition, and cruise flight, and shall not reduce total thrust output when transitioning between flight regimes.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-013",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "The propulsion system shall limit total electrical power draw from the battery to 2700 W to prevent motor and ESC overheating across the flight envelope.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-019",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The power distribution board shall route LiPo battery pack power to the downstream avionics and payload loads, delivering more current to the flight control system than the payload, and shall fail-safe onto the backup power line switch within 10 milliseconds whenever primary-bus voltage sags below 9 V.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-020",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The battery management system shall monitor the LiPo battery pack's state of charge and state of health throughout the mission, and it shall flag the sensor as degraded whenever its confidence estimate falls to an acceptable minimum, and when cumulative discharge tracking indicates that remaining capacity is approaching zero, the battery management system shall report a higher probability of imminent depletion than the previous reporting cycle, and it shall estimate battery end-of-life with minimal uncertainty before the mission's final trim point.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-024",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "To satisfy the 6-DoF control performance established for those trim points, the flight control system shall allocate the commanded virtual forces and moments across the six rotor thrusts, the wing and tail tilt angles, and the aileron and elevator surfaces via a control allocation strategy scheduled by tilt-wing angle.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-027",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "When the primary GNSS receiver signal is lost for more than 2 seconds, the navigation sensing subsystem shall switch state estimation to the backup dead-reckoning solution derived from the IMU and pitot-static airspeed sensor within 200 ms.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-028",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The navigation sensing subsystem shall output attitude, velocity, and position estimates to the flight control system whenever the sensor suite updates, and the state estimator shall recompute the navigation solution using the latest sensor fusion filter output, and the aforementioned estimates and sensor status flags shall be delivered to the controller over the navigation interface, and the operator shall be alerted if navigation quality becomes low.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-030",
+    "bucket": "vague",
+    "num_obligations_gold": 1,
+    "requirement": "Whenever the air vehicle operates within its assigned operational radius of approximately 1 km from the ground control station, command and telemetry link availability shall be maintained at an acceptable level, with uplink and downlink availability each expressed as at least 95 across the mission profile.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-032",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "While operating beyond visual line of sight, the datalink subsystem shall encrypt the command-and-control channel to the same standard as the telemetry downlink, and it shall authenticate the ground control station before accepting any command traffic.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-033",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "If the command-and-control link is lost for longer than 3 seconds, the flight control system shall command the air vehicle to enter return-to-launch, the receiver shall continue attempting to reacquire the link at fixed intervals, and the flight control system shall report link-loss status to the operator once contact is restored.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-035",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The payload subsystem shall hand over 28 V DC power and the serial data bus to the EO/IR gimbal camera through the payload power/data harness, and it shall isolate the payload interface controller from airframe EMI while maintaining return-path continuity to the same standard as the datalink subsystem.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-037",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "Subject to the envelope limits established for installed payload mass, the payload subsystem shall stream EO/IR imagery with gimbal pitch telemetry and two telemetry channels to the ground control station over the 433 MHz RF link.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-039",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The command-uplink console shall resume forward-flight mode commands to the flight control system after the pilot confirms transition completion again, and all pending roll-rate commands shall be cleared before any new yaw command is accepted.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-040",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "When the air vehicle reports a tilt-wing angle deviation exceeding 5 degrees from the scheduled trim target during transition mode, the operator alert panel shall display a critical transition alert within 500 ms and emit an audible tone until acknowledged.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-041",
+    "bucket": "vague",
+    "num_obligations_gold": 4,
+    "requirement": "Flight data shall be logged throughout the mission profile, and critical transition parameters may be retained as required for post-mission analysis, and logged records shall include Euler angles and body velocities, and the archive shall be maintained until disposal.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-042",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "When any unrecoverable fault is detected during autonomous flight, the air vehicle shall enter the predefined safe state within 500 ms by commanding zero thrust on all six rotors, holding the tilt-wing and tilt-tail at their instantaneous commanded angles, and neutralizing aileron and elevator deflection to 0 degrees.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-044",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "The flight-termination subsystem shall deploy the recovery parachute within 50 after receiving an authenticated flight-termination command from the ground control station, and shall report parachute-deployment status to the GCS shortly thereafter.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SYS-045",
+    "bucket": "vague",
+    "num_obligations_gold": 4,
+    "requirement": "As defined for the flight-termination interface in REQ-SYS-044, the cross-subsystem safety monitor shall sample propulsion, navigation, and flight-control health telemetry at 10 Hz and shall archive each sample in non-volatile memory, and when any monitored parameter crosses an elevated limit, shall raise a fault alert to the GCS promptly and may optionally recommend activating flight termination if warranted, and shall maintain cross-subsystem telemetry coverage throughout autonomous flight with availability restored shortly after any detected outage.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=6,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-004",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "While in the vertical-takeoff and transition modes, the wing-tilt bearing and the tilt gear shall remain structurally engaged, transferring rotor thrust into the wing spar without requiring in-field disassembly.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-006",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "If the tilt-tail hinge assembly develops excessive play, the airframe aerostructures subsystem shall flag a degraded-mode condition and ground the aircraft until it is inspected, and the hinge shall be replaced when wear exceeds 0.5, and both the wing and tail hinges shall be checked at the same interval.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=5,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-012",
+    "bucket": "vague",
+    "num_obligations_gold": 4,
+    "requirement": "During vertical takeoff and landing, the propulsion system shall sustain hover thrust at least equal to the 9.5 kg design weight, and during the transition band of 0 to 16 it shall redistribute thrust between the wing rotors and the tail rotor as required and shall maintain a positive climb rate throughout the transition, and once the aircraft reaches the 15 to 25 m/s cruise band it shall reduce total thrust draw to the level required for level flight.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-013",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "To satisfy the thrust-to-weight envelope established above, the propulsion system shall draw electrical power from the power and energy subsystem through six independent per-motor circuits, and shall hand over power-fault status to the power and energy subsystem within 20 ms of detection, and shall report per-rotor current draw to the power and energy subsystem at the 50 Hz control-loop rate.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=6,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-016",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "If a rotor fails during flight, the propulsion system shall isolate the affected rotor's motor and ESC from the shared power bus within 50 ms and shall redistribute the lost thrust across the remaining rotors according to the allocation matrix specified elsewhere, and once the fault clears it shall resume nominal six-rotor operation and shall log the fault event for post-flight analysis of a rotor failure.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=5,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-019",
+    "bucket": "vague",
+    "num_obligations_gold": 5,
+    "requirement": "Prior to each flight, the propulsion system shall perform an electronic speed controller self-test on all six rotors, and shall verify that each rotor spins in its commanded direction, and shall confirm that motor current draw at idle throttle falls within the manufacturer-rated range for each motor, and shall zero the current sensors' offset promptly before arming is permitted, and once these checks pass it shall report a calibration-complete status to the flight control system.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=5)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-022",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "When commanded to a trim point, the tilt-actuation subsystem shall complete the wing/tail tilt transition within an acceptable settling time, and once transition is complete it shall hold tilt position there, and this may be relaxed as required near the edges of the transition speed band, and similarly for the reverse transition back to hover.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-023",
+    "bucket": "vague",
+    "num_obligations_gold": 1,
+    "requirement": "While the aircraft is operating in transition mode, tilt-position feedback shall be provided to the power and energy subsystem for adjusting motor commands if needed.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-037",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "The power and energy subsystem shall comply with the mass allocation and volume envelope defined for the LiPo battery pack and the power distribution board, in accordance with the battery's environmental qualification standard.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-038",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "Whenever the ground control station requests a status update, the power and energy subsystem shall report cell voltage and pack temperature and current draw for all six motor battery packs, and it shall report the LiPo battery pack's operating mode at every telemetry cycle, and when any single cell exceeds its rated temperature it shall raise a thermal alert to the flight control system within one second, and before each of the eight trim points, it shall log all six current-draw values to nonvolatile memory.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=6,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-039",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "Before flight, the operator shall initiate calibration of the power and energy subsystem's current sensors, and the battery management system shall zero each of the six current sensors against a known reference to within 2 of the reference value, and the system shall promptly confirm calibration completion to the ground control station.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-040",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "If the primary power bus fails during flight, the redundant power distribution path shall energize within 50 ms, and the six motor battery packs shall continue supplying their respective motors without interruption, and once the fault clears, the power and energy subsystem shall resume nominal supply through the primary bus.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-047",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The flight control system and the navigation subsystem shall share a single flight-computer enclosure within the airframe's electronics bay, and it shall execute the 50 Hz control loop, the trim-scheduling logic, and the control-allocation mixer without exceeding the allocated processing budget.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-049",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "Before flight, the flight control system shall not calibrate the trim-point and gain-schedule tables at the same time, possibly reporting calibration status to the ground.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-050",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "While in flight, the flight control system shall maintain a stability margin of at least 6 for each active trim-point controller, and the specific compute-channel redundancy architecture backing this margin is to be determined during detailed design.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-051",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The navigation sensing subsystem shall provide sufficient state estimation accuracy to support closed-loop control of an aircraft of this design across all flight regimes, and if sensor inputs become invalid, it shall fail safe by reconfiguring redundant sensing paths as required to sustain navigation availability.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-052",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "As specified for the navigation interface described above, the navigation sensing subsystem shall bound position uncertainty growth rate to an acceptable level with at least 95% confidence during GNSS-denied flight, and it shall not deliver degraded position estimates and unvalidated velocity estimates to the flight control system, and the position confidence metrics shall be refreshed at the sensor fusion update rate, with the underlying confidence-interval method as specified elsewhere.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-058",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "As specified for the sensor suite defined above, the navigation sensing subsystem shall report bank angle and trim status for every sensor channel to the ground control station whenever a monitoring poll is received.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-059",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "On power-up, the navigation sensing subsystem shall perform an initialization sequence for the IMU, GNSS receiver, and magnetometer before normal operation begins, and the magnetometer shall be recalibrated again against a waypoint of known position whenever magnetic interference is detected, and the calibration convergence shall be achieved within three attempts.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-063",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "Building on the throughput and latency bounds established above, the datalink subsystem shall interface with the flight control system with a deterministic message queue for command injection, and it may buffer telemetry frames if needed before handoff to the C2 radio transceiver, and it shall support the flight control system's health-telemetry stream at the rate defined for that bound, and it shall expose a waypoint update channel accepting a waypoint from the ground control station.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-068",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The datalink subsystem shall monitor link quality with the signal-strength indicator at a reporting threshold specified elsewhere, without suppressing a degraded-link report absent operator acknowledgment, and it may hand over reporting duty to the ground control station's own signal meter as required.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-070",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The datalink subsystem shall provide a redundant command-and-control path such that loss of the primary C2 radio transceiver does not prevent the operator from retaining control, consistent with the link-margin practice expected of an aircraft in this operational class, and the backup receiver's unallocated margin shall be determined during integration testing.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-072",
+    "bucket": "vague",
+    "num_obligations_gold": 1,
+    "requirement": "The payload power/data harness shall be routed with minimal bend radius through the fuselage payload bay, and connector mating force shall be kept as low as possible during field replacement.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-073",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "The payload interface controller may periodically exchange health status with the flight control system over the serial data bus at a rate of 10, and following payload bay door closure the controller shall synchronize gimbal pointing to the navigation solution once practicable using parameters as specified elsewhere.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-078",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The payload subsystem shall ride out transient thermal excursions during cruise flight while keeping payload bay thermal margins acceptable, and following each mission the operator shall inspect the payload bay latch and sign off on the EO/IR optical window surface condition faster than the pre-flight checklist allows.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-080",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The payload power/data harness shall provide EMI shielding margin on the 28 V DC supply line for the payload interface controller and on the serial data bus pairs routed to the EO/IR gimbal camera with the same shield coverage as the forward motor battery leads.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-081",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "the ground station shall not disable operator monitoring of altitude hold performance unless the air vehicle has entered return-to-launch, and the ground control station shall present acceptable transition tracking status during forward flight.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-085",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "When the mission-planning module detects that the planned route exceeds the approximately 1 km operational radius, the ground control station shall block mission upload and notify the operator within 2 seconds.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-091",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "The safe-state supervisor shall command entry into the predefined safe state within an acceptable interval after an unrecoverable fault is declared, and shall hold aggregate rotor thrust at a sufficiently low level throughout the safe-state entry maneuver.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-092",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "The geofence monitor shall detect GNSS position estimates exceeding the approved mission geofence by more than 5 m and shall command return-to-launch within 200 ms of boundary violation detection.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-095",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "When an unrecoverable navigation or propulsion fault is detected, the safe-state response controller shall command zero thrust on all six rotors and neutralize aileron and elevator deflection to 0 degrees within 300 ms.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-096",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "During degraded geofence-monitor operation, return-to-launch shall be initiated when boundary-position uncertainty is deemed unacceptable, and operator notification shall be provided as appropriate through the datalink subsystem.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-098",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "As defined for the flight-termination interface in REQ-SYS-044, the cross-subsystem safety monitor shall report two sensor faults and a datalink outage to the GCS, and shall optionally recommend operator intervention when the aggregated cross-subsystem health score is considered marginal.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-099",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The safe-state supervisor initialization data shall be loaded from non-volatile memory before each preflight cycle, and when checksum validation fails, the safe-state supervisor shall fail safe and inhibit autonomous takeoff, and calibration coefficients shall be applied as required during ground checkout.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-SUB-100",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "The geofence monitor shall provide dual-independent GNSS position inputs with cross-check voting and shall achieve geofence-boundary evaluation availability of at least 0.9999 per flight hour.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-002",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 5,
+    "requirement": "The wing-tilt bearing shall have a rated load capacity of at least 450 N and a mass of no more than 85 g, and it shall be replaced promptly once its rated load capacity is exceeded, and it shall ride out transient gust loads during transition without permanent set, and the bearing's service life shall be no less than the tilt gear.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=5)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-003",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "The payload bay mounting frame shall be provided with four standardized attachment points matching the 2.5 kg camera payload envelope, and structural continuity with the fuselage skin panel will be maintained across the interface.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-016",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "Each rotor shall draw power from its own dedicated wing-rotor or tail-rotor battery pack, isolated from the packs of the other five rotors, preventing a single battery-pack fault from propagating to another rotor circuit.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-018",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The wing-rotor ESC shall sample motor current and rotor RPM and/or ESC case temperature at the 50 Hz control-loop rate, and shall timestamp each sample using the shared propulsion clock, and shall buffer the last 10 seconds of telemetry in onboard memory, and shall transmit the sensor data to the propulsion subsystem whenever a fault flag is asserted.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=7,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-019",
+    "bucket": "vague",
+    "num_obligations_gold": 1,
+    "requirement": "When the fault condition defined above for the tilt-actuation subsystem is detected on its channel, the wing-tilt servo shall hold its last commanded tilt angle using the hold-torque profile as specified elsewhere, and it may adjust hold current based on winding temperature.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-021",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The tilt-position encoder shall report tilt angle across its full range to the tilt-actuation subsystem, resolving tilt angle to a finer resolution than the tilt-position potentiometer, and it shall not update the reported tilt angle without first validating the checksum, and it shall also flag an out-of-range fault whenever the encoder reading exceeds the mechanical travel limits.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-025",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "When the fault-detection logic defined above flags an actuator anomaly, the tilt hinge bearing shall retain wing-tilt and tail-tilt rotational freedom without binding for at least two fault cycles.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-026",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "At each trim point defined above for the tilt-actuation performance envelope, the wing-tilt servo shall calibrate its temperature-warning threshold using the sensor reading captured at power-up, and it shall not apply the calibrated threshold until self-test completes, and it shall log the calibration result for maintenance review.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-033",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "When cell 4 in the affected string drifts further than cell 3 by more than 50 mV, the cell-balancing circuit shall equalize the affected string's cells and log the imbalance event or notify the battery management system, and it shall complete equalization within 30 seconds of detection.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-035",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "In support of the low-voltage load-shed response defined above, the cell-voltage monitoring circuit shall calibrate both redundant channels against three calibration points spanning the cell's operating range, achieving accuracy more precise than the flight control system's fault-detection resolution, and calibration validity shall be verified with high confidence before each flight.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-042",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "While in forward flight mode, the outer-loop tracking controller shall track commanded lateral velocity, roll angle, pitch angle, heading, and altitude using the trim values established for the level-flight trim point.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-043",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "Adequate margin for growth shall be verified before the trim-scheduling module is qualified under DO-178C, and the trim-scheduling module shall store its gain bank, including the coordinated-turn mode's unique gain set, within a non-volatile memory allocation of no more than 512.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-044",
+    "bucket": "vague",
+    "num_obligations_gold": 1,
+    "requirement": "Before the first flight of each sortie, the transition-mode sequencer shall initialize its throttle-and-tilt schedule coefficients from the stored minimum-time solution, confirming that residual scheduling error remains low and does not exceed 0.05.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-045",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The control allocator shall log actuator-saturation events for the elevator as often as for the ailerons, and it shall flag a control-authority imbalance to the trim-scheduling module when cumulative saturation events exceed the mixer's allocation-error budget, and it shall resume full-authority logging once saturation clears.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-046",
+    "bucket": "vague",
+    "num_obligations_gold": 1,
+    "requirement": "When commanded by the navigation sensing subsystem, the IMU shall output raw angular rate and specific-force samples, adjusting its internal sampling behavior as appropriate and recalibrating its bias estimate if needed.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-048",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "Building on the hover-mode behavior defined above, the navigation state estimator shall fuse IMU, GNSS, and barometric altimeter data into a single attitude-velocity-position estimate with a probability of validity of at least 99% per hour of flight, and it shall flag the fused estimate as degraded whenever any contributing sensor exceeds its rated noise bound, and the estimator shall report position uncertainty to the flight control system more frequently than the ground station, and the ground station shall receive the fused estimate only over the telemetry downlink.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-052",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "Consistent with the degraded-mode reporting behavior defined above, the GNSS receiver module shall be selected to keep single-point failure probability as low as possible across the navigation sensing suite, and the module shall achieve a mean-time-between-failures of at least 5000 hours with 90% confidence.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-053",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "Shortly after power-up, the magnetometer shall execute a hard-iron and soft-iron calibration sweep, and the calibration validity shall be ensured before the estimate is admitted into the sensor fusion filter.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-058",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "While interfacing with the datalink subsystem, the command uplink buffer shall retain both queued commands and pending acknowledgments or discard the oldest entry when capacity is reached, and it shall discard a command soon after three retry attempts complete, and it shall report adequate headroom to the datalink subsystem at each polling interval.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=4,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-062",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The datalink antenna shall be mounted to fail safe if a mount fracture occurs, remaining electrically isolated from the airframe, and it shall withstand a vibration spectrum consistent with MIL-STD-810, and the antenna's connector shall be rated for at least 500 mate cycles, and the keying and locking-torque specification shall be determined during the critical design review.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-066",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The fuselage payload bay shall accommodate the EO/IR gimbal camera on the payload mounting plate again after field swap, and during FORWARD_FLIGHT the camera shall deliver stabilized imagery at a frame rate sufficient for operator tracking within a short interval after gimbal cue commands.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-067",
+    "bucket": "vague",
+    "num_obligations_gold": 5,
+    "requirement": "The payload bay latch shall engage within 500 ms of door closure command, and shall maintain hold force above 150 during vibration testing, and shall release when unlock voltage exceeds 12, and shall begin re-latch monitoring shortly after payload swap, and shall provide the lowest possible mechanical backlash in the secured state.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=5)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-068",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "The payload interface controller may optionally buffer gimbal telemetry when the serial data bus is contended, and it may defer non-critical health reports if needed during TRANSITION_FWD.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-070",
+    "bucket": "vague",
+    "num_obligations_gold": 2,
+    "requirement": "When payload bus fault is detected, safe gimbal stow shall be commanded and recording continuity shall be maintained according to procedures as specified elsewhere.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-071",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "In degraded payload power mode, the payload telemetry encoder shall prioritize transmission of all critical status words and any EO/IR thumbnail frames queued since the last successful downlink.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-072",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "The payload mounting plate shall be fabricated from carbon-fiber composite with bolt-hole spacing compatible with the fuselage payload bay rails for the EO/IR gimbal camera and with vibration isolation pads on the forward edge to the stiffest achievable mounting interface.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-074",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 2,
+    "requirement": "During cruise flight the payload telemetry encoder shall publish payload bay latch status and EO/IR gimbal camera health telemetry words on the serial data bus at 50 Hz, and it shall increment a mission payload frame counter on each successful imagery packet assembly.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=2)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-076",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The mission-planning module shall not export every waypoint revision to the command-uplink console without operator review, and acceptable route geometry shall be computed for all missions, and the module shall maintain transition position targets at each of the eight trim points, and it shall present mode sequencing in a user-friendly order before upload.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-078",
+    "bucket": "precise",
+    "num_obligations_gold": 1,
+    "requirement": "The operator alert panel shall expose a UDP telemetry subscription on port 14550 to receive link-quality and transition-state messages from the datalink subsystem.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-079",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 1,
+    "requirement": "When the air vehicle enters return-to-launch, the operator alert panel shall notify the operator and the ground shall display recovery guidance.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=1)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-082",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 3,
+    "requirement": "The flight-data logger shall archive Euler-angle samples for each transition segment, and it shall attach mission event time stamp metadata without ground GPS correction, and it shall export transition segment boundary marker files after landing.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=2,gold=3)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-089",
+    "bucket": "vague",
+    "num_obligations_gold": 4,
+    "requirement": "During TRANSITION_FWD flight, the control-allocation safety-margin monitor shall detect promptly when virtual moment demand exceeds available actuator authority, and when authority is inadequate, the monitor shall command a conservative allocation fallback to the flight control system, and the fallback shall keep altitude deviation at acceptable levels within 15 of the commanded transition profile, and the monitor shall report anomaly events to the safe-state supervisor in a timely manner before transition completes.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-093",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "When an operator revises the mission geofence, the geofence calibration module shall not shift boundary vertices by more than 3 without dual-operator approval, and when the tower approves reduced-margin operations, the module shall set clearance margin to the tightest feasible value, and calibration events shall be logged appropriately within 10 of operator confirmation, and when invalid checksums are detected, the module shall trigger automatic revert to the last validated boundary set.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=3,gold=4)"
+    ]
+  },
+  {
+    "id": "REQ-CMP-095",
+    "bucket": "ambiguous",
+    "num_obligations_gold": 4,
+    "requirement": "The geofence redundancy voter shall require both GNSS receivers to agree within 2 m before accepting a boundary-crossing alert, and while the aircraft exceeds a 30-degree bank angle, the voter shall use the trim position estimate for boundary evaluation, and shall maintain a 5 m hysteresis band on RTL initiation, and the operator shall acknowledge dual-receiver disagreement events within 30 s.",
+    "flags": [
+      "ATOMIC_COUNT_MISMATCH(oracle=1,gold=4)"
+    ]
+  }
+]

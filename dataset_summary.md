@@ -101,3 +101,31 @@ Remaining `consistency_report.md` note (1 Hz / 10 Hz vs 50 Hz) is retained on pu
 those rates apply to monitoring/telemetry channels, not the 50 Hz control loop.
 
 **Status: FINAL** — `fw_vtol_requirements_dataset.jsonl` is the deliverable.
+
+## nuclear_sentences_v2 algorithm compatibility (post-hoc pass)
+
+A collaborator's `nuclear_sentences_v2` requirements-decomposition tool
+(rule-based: regex + spaCy POS/dependency parsing, no LLM) was reconstructed
+from 50 screenshots (the real code is not present on this machine) into
+`nuclear_sentences_v2_ALGORITHM_SPEC.md`. A compatibility oracle
+(`nuclear_lite.py`, validated against every worked example in the source
+docs) was run over all 250 requirements to check whether their phrasing
+stays inside that tool's closed vocabulary and single-sentence assumption.
+
+| Check | Before | After |
+|---|---|---|
+| Requirement text spans >1 sentence (tool takes one sentence per call) | 77 | **0** |
+| Uses a condition/purpose phrase outside the tool's 18-word subordinator registry | 9 | **0** |
+| Uses a modal outside the tool's 7-word closed set (shall/must/can/may/will/should/would) | 0 | 0 |
+
+81 records (32%) were rewritten via 9 parallel sub-agents (grouped by
+subsystem) to merge multi-sentence discourse text into one grammatical
+sentence and replace non-registry condition phrasing, preserving `id`,
+`hierarchy`, `axis1_nature`, `axis2_behavior`, `context_refs`, ambiguity
+class/sites/types, and the same set of atomic obligations throughout. Full
+before/after schema re-validation: **0 problems**, same distribution as the
+original sign-off above.
+
+See `algorithm_compatibility_report.md` for the full methodology, results,
+and an honest accounting of the oracle's own known limitations (it does not
+chase `ATOMIC_COUNT_MISMATCH` to zero — see that report for why).
