@@ -126,6 +126,30 @@ class/sites/types, and the same set of atomic obligations throughout. Full
 before/after schema re-validation: **0 problems**, same distribution as the
 original sign-off above.
 
-See `algorithm_compatibility_report.md` for the full methodology, results,
-and an honest accounting of the oracle's own known limitations (it does not
-chase `ATOMIC_COUNT_MISMATCH` to zero — see that report for why).
+### Pass 2 — independent audit, deep-trace verification, final score
+
+A second pass: an independent sub-agent re-audited the algorithm spec
+against all 50 source images (found and corrected 3 real errors, notably
+that rule R7 is the tool's mechanism for handling nested embedded triggers
+within a conjunction branch — not "right starts with modal" as first
+drafted). Every `ATOMIC_COUNT_MISMATCH` was then root-caused rather than
+accepted at face value; 18 records had a genuine issue (9 Oxford-comma
+bundles the tool can't chain-split on bare commas, 6 pre-existing
+gold-annotation defects — duplicate/near-duplicate atomics unrelated to the
+algorithm, 1 stray-period text bug, 2 records reworded to keep a closed-set
+modal without losing their ambiguity annotation) and were fixed; the rest
+traced to documented limitations of the compatibility oracle itself
+(no spaCy, no R7/recursive-descent implementation), not the dataset.
+
+**Final score:**
+
+| Check | Result |
+|---|---|
+| Single-sentence / closed-set-modal / registry-condition compliance | 250/250 (100%) each |
+| Raw lite-oracle exact atomic-count match | 151/250 (60.4%) |
+| **Estimated real-tool compatibility** | **~240/250 (~96%)** |
+
+See `algorithm_compatibility_report.md` for the full methodology, the
+per-cause mismatch breakdown, and an honest accounting of why the 96%
+figure is a well-argued estimate rather than a measurement against the real
+(unavailable) code.
